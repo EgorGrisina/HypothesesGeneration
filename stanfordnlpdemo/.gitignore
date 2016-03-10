@@ -1,2 +1,5 @@
-/build
-/libs
+bin
+build
+gen
+target
+libs
