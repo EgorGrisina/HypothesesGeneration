@@ -1,0 +1,1 @@
+{"userName":"Egor","tungstenIP":"52.37.41.142","latitude":41.787764,"longitude":-87.598064,"timeZone":"GMT-5:00","manner":"Off Duty"}
