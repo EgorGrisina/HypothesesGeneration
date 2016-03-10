@@ -1,6 +1,6 @@
 *.properties
 *.iml
-/.idea/*
+.idea
 bin
 build
 gen
