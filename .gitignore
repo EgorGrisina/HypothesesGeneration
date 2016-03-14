@@ -6,3 +6,5 @@ build
 gen
 target
 libs
+misc.xml
+workspace.xml
