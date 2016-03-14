@@ -1,4 +1,4 @@
-package com.example;
+package com.motorolasolution.inputhypothesis;
 
 import java.io.*;
 import java.util.*;
@@ -191,8 +191,6 @@ public class StanfordCoreNlpDemo {
             }
         }
         return tree;
-
-
     }
 
     static void printSentenceFromTree(Tree tree, PrintWriter out) {
