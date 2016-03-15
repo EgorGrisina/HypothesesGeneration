@@ -19,15 +19,53 @@ public abstract class NumberProcessingRule extends AbstractHypothesisRule {
         for (int i = 0; i < inputListSize; i++) {
             inputTrees.add(getNewTree(replaceNo(inputTrees.get(i).deepCopy())));
         }
-        for(Tree tree : inputTrees) {
+        inputListSize = inputTrees.size();
+        for (int i = 0; i < inputListSize; i++) {
+            inputTrees.add(getNewTree(removeNumberWord(inputTrees.get(i).deepCopy())));
+        }
+
+        List<Tree> results = cleanTreeList(inputTrees);
+
+        for(Tree tree : results) {
             tree.pennPrint(out);
             out.flush();
         }
-        return super.getHypothesis(inputTrees);
+        return results;
     }
 
-    private List<Tree> removeNumberWord(Tree tree){
-        return null;
+    private Tree removeNumberWord(Tree tree){
+        List<Tree> childs = tree.getChildrenAsList();
+
+        boolean isSimpleChilds = true;
+        for (Tree children : childs) {
+            if (children.depth()>0) {
+                isSimpleChilds = false;
+            }
+        }
+
+        if (isSimpleChilds) {
+
+            for (int i = 0; i < childs.size(); i++) {
+
+                Tree children = childs.get(i);
+
+                    if (children.value().toLowerCase().equals(CoreNlpConstants.NUMBER)){
+                        tree.removeChild(i);
+                        childs.remove(i);
+                        i--;
+                    }
+            }
+
+        } else {
+
+            for (int i = 0; i < childs.size(); i++) {
+                Tree children = childs.get(i);
+                Tree new_children = removeNumberWord(children);
+                tree.setChild(i, new_children);
+            }
+        }
+
+        return tree;
     }
 
     private Tree replaceNo(Tree tree) {

@@ -57,8 +57,16 @@ public class HypothesisGeneratorTest {
             out.println("");
             out.flush();
 
-            rulesList[2].getHypothesis(sentencesTree);
+            List<Tree> result = rulesList[2].getHypothesis(sentencesTree);
+            result = rulesList[1].getHypothesis(sentencesTree);
 
+            out.println("Input:");
+            out.println("0. "+input);
+            out.println("Result:");
+            for(int i = 0; i < result.size(); i++){
+                out.println(i + 1 +". " + CoreNlpOutput.getSentenceFromTree(result.get(i)));
+            }
+            out.flush();
             out.println("Enter something: ");
             out.flush();
             input = in.readLine();

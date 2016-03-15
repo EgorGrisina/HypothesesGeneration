@@ -17,12 +17,12 @@ public class AbstractHypothesisRule {
         return inputTrees;
     }
 
-    Tree removeWordFromTree(Tree tree, String removeWord) {
+    private Tree removeWordFromTree(Tree tree, String removeWord) {
 
         Tree[] childs = tree.children();
         for (int i = 0; i < childs.length; i++) {
             Tree children = childs[i];
-            if (children.yieldWords().size() > 1) {
+            if (children.depth() > 1) {
                 tree.setChild(i, removeWordFromTree(children, removeWord));
             } else {
                 String word = children.yieldWords().get(0).word();
@@ -40,8 +40,8 @@ public class AbstractHypothesisRule {
             String treeString = CoreNlpOutput.getSentenceFromTree(treeList.get(i));
             for(int j = i+1; j < treeList.size(); j++) {
                 if (treeString.equals(CoreNlpOutput.getSentenceFromTree(treeList.get(j)))) {
-                    treeList.remove(i);
-                    i--;
+                    treeList.remove(j);
+                    j--;
                     break;
                 }
             }
