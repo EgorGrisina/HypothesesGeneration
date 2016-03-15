@@ -1,5 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
+import com.motorolasolution.inputhypothesis.CoreNlpOutput;
+
 import java.io.PrintWriter;
 import java.util.List;
 
@@ -31,5 +33,19 @@ public class AbstractHypothesisRule {
             }
         }
         return tree;
+    }
+
+    protected List<Tree> cleanTreeList(List<Tree> treeList){
+        for (int i = 0; i<treeList.size(); i++) {
+            String treeString = CoreNlpOutput.getSentenceFromTree(treeList.get(i));
+            for(int j = i+1; j < treeList.size(); j++) {
+                if (treeString.equals(CoreNlpOutput.getSentenceFromTree(treeList.get(j)))) {
+                    treeList.remove(i);
+                    i--;
+                    break;
+                }
+            }
+        }
+        return treeList;
     }
 }

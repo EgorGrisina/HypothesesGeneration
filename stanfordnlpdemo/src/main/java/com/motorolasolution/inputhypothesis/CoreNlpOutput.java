@@ -8,7 +8,7 @@ import edu.stanford.nlp.trees.Tree;
 
 public class CoreNlpOutput {
 
-    static String getSentenceFromTree(Tree tree) {
+    public static String getSentenceFromTree(Tree tree) {
         String sentence = "";
         List<CoreLabel> list = tree.taggedLabeledYield();
         for (CoreLabel label : list) {

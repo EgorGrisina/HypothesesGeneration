@@ -8,13 +8,22 @@ import edu.stanford.nlp.trees.Tree;
 
 public class JJafterNounRule extends AbstractHypothesisRule {
 
-    private List<Tree> results;
+    String[] JJlist = {"JJ", "JJR", "JJS", "PRP$"};
+    String[] NNlist = {"NN", "NNS", "NNP", "NNPS", "PRP"};
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
-        results = new ArrayList<Tree>();
-        results.add(inputTrees.get(0));
-        removePOSFromTree(inputTrees.get(0), true);
+        List<Tree> results = new ArrayList<Tree>();
+        int i = 0;
+        while (i < inputTrees.size() ) {
+            results = removePOSFromTree(inputTrees.get(i));
+            for (int j = 1; j < results.size(); j++) {
+                inputTrees.add(results.get(j));
+            }
+            i++;
+        }
+
+        results = cleanTreeList(inputTrees);
 
         PrintWriter out = new PrintWriter(System.out);
         for (Tree tree : results) {
@@ -22,60 +31,56 @@ public class JJafterNounRule extends AbstractHypothesisRule {
             tree.pennPrint(out);
             out.flush();
         }
-        return inputTrees;
+        return results;
     }
 
-    Tree removePOSFromTree(Tree tree, boolean firstRun) {
+    List<Tree> removePOSFromTree(Tree tree) {
+
+        List<Tree> changedTree = new ArrayList<>();
+        changedTree.add(tree);
 
         Tree[] childs = tree.children();
 
-        PrintWriter out = new PrintWriter(System.out);
-
         boolean isSimpleChilds = true;
-        for (Tree children : childs){
-            if (children.children().length > 1){
+        for (Tree children : childs) {
+            if (children.depth()>1) {
                 isSimpleChilds = false;
             }
         }
 
         if (isSimpleChilds) {
-            /*out.println("isSimpleChilds");
-            tree.pennPrint(out);
-            out.flush();*/
-            for (int i = 0; i < childs.length-1; i++) {
+
+            for (int i = 0; i < childs.length - 1; i++) {
                 Tree children = childs[i];
-                Tree next_children = childs[i+1];
-                if ( children.label().value().equals("JJ") && next_children.value().equals("NN")){
-                    tree.removeChild(i);
-                    return tree;
+                Tree next_children = childs[i + 1];
+                for (String jj : JJlist){
+                    if (children.label().value().equals(jj)){
+                        for (String nn : NNlist) {
+                            if ( next_children.value().equals(nn)){
+                                Tree newTree = tree.deepCopy();
+                                newTree.removeChild(i);
+                                changedTree.add(newTree);
+                            }
+                        }
+                    }
                 }
             }
 
         } else {
-        /*    out.println("not isSimpleChilds");
-            tree.pennPrint(out);
-            out.flush();*/
             for (int i = 0; i < childs.length; i++) {
+
                 Tree children = childs[i];
-                int leaves_cout = children.getLeaves().size();
-                Tree old_tree = tree.deepCopy();
-                Tree new_children = removePOSFromTree(children, false);
+                List<Tree> new_children_list = removePOSFromTree(children);
 
-                out.println("new tree");
-                tree.pennPrint(out);
-                out.println("old tree");
-                old_tree.pennPrint(out);
-                out.flush();
-
-                if (old_tree.getLeaves().size() != tree.getLeaves().size()) {
-                    tree.setChild(i, new_children);
-                    if (firstRun) {
-                        results.add(old_tree);
-                    }
-                    return tree;
+                for (int j = 1; j<new_children_list.size(); j++) {
+                    Tree newTree = tree.deepCopy();
+                    newTree.setChild(i, new_children_list.get(j));
+                    changedTree.add(newTree);
                 }
+
             }
         }
-        return tree;
+
+        return changedTree;
     }
 }
