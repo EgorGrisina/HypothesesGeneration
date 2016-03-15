@@ -1,5 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
+import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -8,8 +10,7 @@ import edu.stanford.nlp.trees.Tree;
 
 public class JJafterNounRule extends AbstractHypothesisRule {
 
-    String[] JJlist = {"JJ", "JJR", "JJS", "PRP$"};
-    String[] NNlist = {"NN", "NNS", "NNP", "NNPS", "PRP"};
+
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
@@ -34,7 +35,7 @@ public class JJafterNounRule extends AbstractHypothesisRule {
         return results;
     }
 
-    List<Tree> removePOSFromTree(Tree tree) {
+    private List<Tree> removePOSFromTree(Tree tree) {
 
         List<Tree> changedTree = new ArrayList<>();
         changedTree.add(tree);
@@ -53,9 +54,9 @@ public class JJafterNounRule extends AbstractHypothesisRule {
             for (int i = 0; i < childs.length - 1; i++) {
                 Tree children = childs[i];
                 Tree next_children = childs[i + 1];
-                for (String jj : JJlist){
+                for (String jj : CoreNlpConstants.JJlist){
                     if (children.label().value().equals(jj)){
-                        for (String nn : NNlist) {
+                        for (String nn : CoreNlpConstants.NNlist) {
                             if ( next_children.value().equals(nn)){
                                 Tree newTree = tree.deepCopy();
                                 newTree.removeChild(i);

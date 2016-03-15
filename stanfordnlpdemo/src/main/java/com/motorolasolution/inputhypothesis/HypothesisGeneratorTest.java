@@ -2,6 +2,7 @@ package com.motorolasolution.inputhypothesis;
 
 import com.motorolasolution.inputhypothesis.rules.AbstractHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.JJafterNounRule;
+import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
 
 import java.io.BufferedReader;
@@ -20,16 +21,22 @@ public class HypothesisGeneratorTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
 
-        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[2];
+        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[3];
         rulesList[0] = new PunctuationRule();
         rulesList[1] = new JJafterNounRule();
+        rulesList[2] = new NumberProcessingRule() {
+            @Override
+            public Tree getNewTree(Tree oldTree) {
+                return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
+            }
+        };
 
         out.print("Enter something:");
         out.flush();
 
         String input = in.readLine();
 
-        while (!input.equals(InputMessageType.EXIT)) {
+        while (!input.equals(CoreNlpConstants.EXIT)) {
 
 
             //out.println(input);
@@ -50,7 +57,7 @@ public class HypothesisGeneratorTest {
             out.println("");
             out.flush();
 
-            rulesList[1].getHypothesis(sentencesTree);
+            rulesList[2].getHypothesis(sentencesTree);
 
             out.println("Enter something: ");
             out.flush();
