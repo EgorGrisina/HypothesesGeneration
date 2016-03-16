@@ -8,7 +8,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class AdverbRule extends AbstractHypothesisRule {
+public abstract class AdverbRule extends AbstractHypothesisRule {
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
@@ -26,18 +26,18 @@ public class AdverbRule extends AbstractHypothesisRule {
 
         result = cleanTreeList(result);
 
+        POSresults = new ArrayList<Tree>();
+        for (Tree tree : result){                   //update tree for all results
+            POSresults.add(getNewTree(tree));
+        }
+
         PrintWriter out = new PrintWriter(System.out);
-        for (Tree tree : result) {
+        for (Tree tree : POSresults) {
             out.println(" ");
             tree.pennPrint(out);
             out.flush();
         }
-        return result;
-    }
-
-    @Override
-    protected Tree getNewTree(Tree oldTree) {
-        return null;
+        return POSresults;
     }
 
     private List<Tree> removeRBFromTree(Tree tree){

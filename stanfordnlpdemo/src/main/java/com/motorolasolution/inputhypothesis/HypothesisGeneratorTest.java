@@ -42,7 +42,12 @@ public class HypothesisGeneratorTest {
             }
         };
         rulesList[4] = new NumeralRule();
-        rulesList[5] = new AdverbRule();
+        rulesList[5] = new AdverbRule() {
+            @Override
+            protected Tree getNewTree(Tree oldTree) {
+                return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
+            }
+        };
 
         out.print("Enter something:");
         out.flush();
@@ -76,7 +81,7 @@ public class HypothesisGeneratorTest {
             /*results = rulesList[2].getHypothesis(results);
             results = rulesList[1].getHypothesis(results);
             results = rulesList[3].getHypothesis(results);*/
-            results = rulesList[1].getHypothesis(results);
+            results = rulesList[5].getHypothesis(results);
 
             out.println("Input:");
             out.println("0. "+input);
