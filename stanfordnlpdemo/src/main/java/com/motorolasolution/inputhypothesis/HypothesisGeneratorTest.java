@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis;
 
 import com.motorolasolution.inputhypothesis.rules.AbstractHypothesisRule;
+import com.motorolasolution.inputhypothesis.rules.AdverbRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.JJafterNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
@@ -24,7 +25,7 @@ public class HypothesisGeneratorTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         final CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
 
-        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[5];
+        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[6];
         rulesList[0] = new PunctuationRule();
         rulesList[1] = new JJafterNounRule();
         rulesList[2] = new NumberProcessingRule() {
@@ -40,6 +41,7 @@ public class HypothesisGeneratorTest {
             }
         };
         rulesList[4] = new NumeralRule();
+        rulesList[5] = new AdverbRule();
 
         out.print("Enter something:");
         out.flush();
@@ -73,7 +75,7 @@ public class HypothesisGeneratorTest {
             /*results = rulesList[2].getHypothesis(results);
             results = rulesList[1].getHypothesis(results);
             results = rulesList[3].getHypothesis(results);*/
-            results = rulesList[4].getHypothesis(results);
+            results = rulesList[5].getHypothesis(results);
 
             out.println("Input:");
             out.println("0. "+input);
