@@ -37,7 +37,7 @@ public class JJafterNounRule extends AbstractHypothesisRule {
 
     private List<Tree> removePOSFromTree(Tree tree) {
 
-        List<Tree> changedTree = new ArrayList<>();
+        List<Tree> changedTree = new ArrayList<Tree>();
         changedTree.add(tree);
 
         Tree[] childs = tree.children();

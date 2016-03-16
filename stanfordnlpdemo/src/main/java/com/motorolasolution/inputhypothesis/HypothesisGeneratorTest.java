@@ -19,7 +19,7 @@ public class HypothesisGeneratorTest {
 
         PrintWriter out = new PrintWriter(System.out);
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-        CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
+        final CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
 
         AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[3];
         rulesList[0] = new PunctuationRule();

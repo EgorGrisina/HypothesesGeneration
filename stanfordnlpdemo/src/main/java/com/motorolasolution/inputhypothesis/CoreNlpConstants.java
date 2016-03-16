@@ -10,4 +10,6 @@ public class CoreNlpConstants {
 
     public final static String[] NUMBList = {"no", "no.", "num", "N", "#"};
     public final static String NUMBER = "number";
+
+    public final static String  NUMERAL = "CD";
 }

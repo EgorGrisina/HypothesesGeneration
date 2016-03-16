@@ -23,6 +23,10 @@ public abstract class NumberProcessingRule extends AbstractHypothesisRule {
         for (int i = 0; i < inputListSize; i++) {
             inputTrees.add(getNewTree(removeNumberWord(inputTrees.get(i).deepCopy())));
         }
+        inputListSize = inputTrees.size();
+        for (int i = 0; i < inputListSize; i++) {
+            inputTrees.add(getNewTree(removeTimePeriod(inputTrees.get(i).deepCopy())));
+        }
 
         List<Tree> results = cleanTreeList(inputTrees);
 
@@ -31,6 +35,42 @@ public abstract class NumberProcessingRule extends AbstractHypothesisRule {
             out.flush();
         }
         return results;
+    }
+
+    private Tree removeTimePeriod(Tree tree){
+
+        Tree[] childs = tree.children();
+
+        boolean isSimpleChilds = true;
+        for (Tree children : childs) {
+            if (children.depth()>0) {
+                isSimpleChilds = false;
+            }
+        }
+
+        if (isSimpleChilds) {
+
+                for (int i = 0; i < childs.length; i++) {
+
+                    Tree children = childs[i];
+                    String childrenTextValue = children.value().toLowerCase().replaceAll("\\d", "");
+
+                    if (childrenTextValue.equals("s")){
+                        String childrenValue = children.value().toLowerCase().replaceAll("[^0-9]","");
+                        children.setValue(childrenValue);
+                    }
+                }
+
+        } else {
+
+            for (int i = 0; i < childs.length; i++) {
+                Tree children = childs[i];
+                Tree new_children = removeTimePeriod(children);
+                tree.setChild(i, new_children);
+            }
+        }
+
+        return tree;
     }
 
     private Tree removeNumberWord(Tree tree){
