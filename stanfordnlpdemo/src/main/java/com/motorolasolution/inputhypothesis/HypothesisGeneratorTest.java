@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis;
 
 import com.motorolasolution.inputhypothesis.rules.AbstractHypothesisRule;
+import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.JJafterNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
@@ -9,6 +10,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
@@ -21,12 +23,18 @@ public class HypothesisGeneratorTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         final CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
 
-        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[3];
+        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[4];
         rulesList[0] = new PunctuationRule();
         rulesList[1] = new JJafterNounRule();
         rulesList[2] = new NumberProcessingRule() {
             @Override
             public Tree getNewTree(Tree oldTree) {
+                return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
+            }
+        };
+        rulesList[3] = new DatePeriodRule() {
+            @Override
+            protected Tree getNewTree(Tree oldTree) {
                 return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
             }
         };
@@ -57,14 +65,18 @@ public class HypothesisGeneratorTest {
             out.println("");
             out.flush();
 
-            List<Tree> result = rulesList[2].getHypothesis(sentencesTree);
-            result = rulesList[1].getHypothesis(sentencesTree);
+            List<Tree> results = new ArrayList<Tree>();
+            results.addAll(sentencesTree);
+
+            results = rulesList[2].getHypothesis(results);
+            results = rulesList[1].getHypothesis(results);
+            results = rulesList[3].getHypothesis(results);
 
             out.println("Input:");
             out.println("0. "+input);
             out.println("Result:");
-            for(int i = 0; i < result.size(); i++){
-                out.println(i + 1 +". " + CoreNlpOutput.getSentenceFromTree(result.get(i)));
+            for(int i = 0; i < results.size(); i++){
+                out.println(i + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(i)));
             }
             out.flush();
             out.println("Enter something: ");

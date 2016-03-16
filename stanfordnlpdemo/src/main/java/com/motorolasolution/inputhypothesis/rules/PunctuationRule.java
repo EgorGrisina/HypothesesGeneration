@@ -11,4 +11,9 @@ public class PunctuationRule extends AbstractHypothesisRule {
         input = input.replaceAll("[,.;!?(){}\\[\\]<>%]", "");
         return input;
     }
+
+    @Override
+    protected Tree getNewTree(Tree oldTree) {
+        return null;
+    }
 }

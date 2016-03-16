@@ -14,25 +14,32 @@ public class JJafterNounRule extends AbstractHypothesisRule {
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
-        List<Tree> results = new ArrayList<Tree>();
+        List<Tree> result = new ArrayList<Tree>();
+        result.addAll(inputTrees);
+        List<Tree> POSresults = new ArrayList<Tree>();
         int i = 0;
-        while (i < inputTrees.size() ) {
-            results = removePOSFromTree(inputTrees.get(i));
-            for (int j = 1; j < results.size(); j++) {
-                inputTrees.add(results.get(j));
+        while (i < result.size() ) {
+            POSresults = removePOSFromTree(result.get(i));
+            for (int j = 1; j < POSresults.size(); j++) {
+                result.add(POSresults.get(j));
             }
             i++;
         }
 
-        results = cleanTreeList(inputTrees);
+        result = cleanTreeList(result);
 
         PrintWriter out = new PrintWriter(System.out);
-        for (Tree tree : results) {
+        for (Tree tree : result) {
             out.println(" ");
             tree.pennPrint(out);
             out.flush();
         }
-        return results;
+        return result;
+    }
+
+    @Override
+    protected Tree getNewTree(Tree oldTree) {
+        return null;
     }
 
     private List<Tree> removePOSFromTree(Tree tree) {

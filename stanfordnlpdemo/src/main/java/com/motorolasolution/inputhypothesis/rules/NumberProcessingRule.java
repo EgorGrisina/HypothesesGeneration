@@ -14,63 +14,25 @@ public abstract class NumberProcessingRule extends AbstractHypothesisRule {
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
 
         PrintWriter out = new PrintWriter(System.out);
+        List<Tree> result = new ArrayList<Tree>();
+        result.addAll(inputTrees);
 
-        int inputListSize = inputTrees.size();
+        int inputListSize = result.size();
         for (int i = 0; i < inputListSize; i++) {
-            inputTrees.add(getNewTree(replaceNo(inputTrees.get(i).deepCopy())));
+            result.add(getNewTree(replaceNo(result.get(i).deepCopy())));
         }
-        inputListSize = inputTrees.size();
+        inputListSize = result.size();
         for (int i = 0; i < inputListSize; i++) {
-            inputTrees.add(getNewTree(removeNumberWord(inputTrees.get(i).deepCopy())));
-        }
-        inputListSize = inputTrees.size();
-        for (int i = 0; i < inputListSize; i++) {
-            inputTrees.add(getNewTree(removeTimePeriod(inputTrees.get(i).deepCopy())));
+            result.add(getNewTree(removeNumberWord(result.get(i).deepCopy())));
         }
 
-        List<Tree> results = cleanTreeList(inputTrees);
+        result = cleanTreeList(result);
 
-        for(Tree tree : results) {
+        for(Tree tree : result) {
             tree.pennPrint(out);
             out.flush();
         }
-        return results;
-    }
-
-    private Tree removeTimePeriod(Tree tree){
-
-        Tree[] childs = tree.children();
-
-        boolean isSimpleChilds = true;
-        for (Tree children : childs) {
-            if (children.depth()>0) {
-                isSimpleChilds = false;
-            }
-        }
-
-        if (isSimpleChilds) {
-
-                for (int i = 0; i < childs.length; i++) {
-
-                    Tree children = childs[i];
-                    String childrenTextValue = children.value().toLowerCase().replaceAll("\\d", "");
-
-                    if (childrenTextValue.equals("s")){
-                        String childrenValue = children.value().toLowerCase().replaceAll("[^0-9]","");
-                        children.setValue(childrenValue);
-                    }
-                }
-
-        } else {
-
-            for (int i = 0; i < childs.length; i++) {
-                Tree children = childs[i];
-                Tree new_children = removeTimePeriod(children);
-                tree.setChild(i, new_children);
-            }
-        }
-
-        return tree;
+        return result;
     }
 
     private Tree removeNumberWord(Tree tree){
@@ -110,8 +72,6 @@ public abstract class NumberProcessingRule extends AbstractHypothesisRule {
 
     private Tree replaceNo(Tree tree) {
 
-        PrintWriter out = new PrintWriter(System.out);
-
         Tree[] childs = tree.children();
 
         boolean isSimpleChilds = true;
@@ -145,7 +105,5 @@ public abstract class NumberProcessingRule extends AbstractHypothesisRule {
 
         return tree;
     }
-
-    abstract public Tree getNewTree(Tree oldTree);
 
 }

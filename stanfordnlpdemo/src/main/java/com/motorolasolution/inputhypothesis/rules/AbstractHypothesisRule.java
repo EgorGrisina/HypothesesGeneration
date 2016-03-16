@@ -7,7 +7,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class AbstractHypothesisRule {
+public abstract class AbstractHypothesisRule {
 
     public String getRuleName(){
         return getClass().getSimpleName();
@@ -48,4 +48,6 @@ public class AbstractHypothesisRule {
         }
         return treeList;
     }
+
+    abstract protected Tree getNewTree(Tree oldTree);
 }
