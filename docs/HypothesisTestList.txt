@@ -1,4 +1,4 @@
-/********** JJafterNounRule ***********/
+/************* JJafterNounRule *************/
 
 describe white car and black bike
 Find me the quickest route to witness No 2
@@ -7,4 +7,16 @@ Find me the quickest route to witness No 2
 /********** NumberProcessingRule ***********/
 
 find me a route to witness No.2 in case #1112
-1990s green jeep cherokee
+
+/************* DatePeriodRule **************/
+
+1990s green jeep cherokee in case no.2
+
+
+/*************** NumeralRule ***************/
+
+find me a route to witness number 2 in case number 1112
+route to the witness for incident 1112
+describe two robberies in 2 miles last month
+information about incident 1112
+details about wiy

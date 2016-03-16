@@ -42,7 +42,6 @@ public abstract class AbstractHypothesisRule {
                 if (treeString.equals(CoreNlpOutput.getSentenceFromTree(treeList.get(j)))) {
                     treeList.remove(j);
                     j--;
-                    break;
                 }
             }
         }

@@ -1,5 +1,6 @@
 package com.motorolasolution.inputhypothesis.rules;
 
+
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
 
 import java.io.PrintWriter;
@@ -8,18 +9,26 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class JJafterNounRule extends AbstractHypothesisRule {
-
-
+public class NumeralRule extends AbstractHypothesisRule{
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
         List<Tree> result = new ArrayList<Tree>();
         result.addAll(inputTrees);
         List<Tree> POSresults = new ArrayList<Tree>();
+        int inputTreeCount = result.size();
         int i = 0;
         while (i < result.size() ) {
-            POSresults = removeJJFromTree(result.get(i));
+            POSresults = removeCDFromTree(result.get(i), false);   // from non IN blocks
+            for (int j = 1; j < POSresults.size(); j++) {
+                result.add(POSresults.get(j));
+            }
+            i++;
+        }
+
+        i = inputTreeCount;
+        while (i < result.size() ) {
+            POSresults = removeCDFromTree(result.get(i), true);    // from all blocks
             for (int j = 1; j < POSresults.size(); j++) {
                 result.add(POSresults.get(j));
             }
@@ -37,12 +46,7 @@ public class JJafterNounRule extends AbstractHypothesisRule {
         return result;
     }
 
-    @Override
-    protected Tree getNewTree(Tree oldTree) {
-        return null;
-    }
-
-    private List<Tree> removeJJFromTree(Tree tree) {
+    private List<Tree> removeCDFromTree(Tree tree, boolean removeFromIn) {
 
         List<Tree> changedTree = new ArrayList<Tree>();
         changedTree.add(tree);
@@ -56,29 +60,31 @@ public class JJafterNounRule extends AbstractHypothesisRule {
             }
         }
 
+        boolean isNoInTree = true;
+        if (!removeFromIn) {
+            for (Tree children : childs) {
+                if (children.value().equals(CoreNlpConstants.IN)) {
+                    isNoInTree = false;
+                }
+            }
+        }
+
         if (isSimpleChilds) {
 
-            for (int i = 0; i < childs.length - 1; i++) {
+            for (int i = 0; i < childs.length; i++) {
                 Tree children = childs[i];
-                Tree next_children = childs[i + 1];
-                for (String jj : CoreNlpConstants.JJlist){
-                    if (children.label().value().equals(jj)){
-                        for (String nn : CoreNlpConstants.NNlist) {
-                            if ( next_children.value().equals(nn)){
-                                Tree newTree = tree.deepCopy();
-                                newTree.removeChild(i);
-                                changedTree.add(newTree);
-                            }
-                        }
-                    }
+                if (children.value().equals(CoreNlpConstants.NUMERAL)) {
+                    Tree newTree = tree.deepCopy();
+                    newTree.removeChild(i);
+                    changedTree.add(newTree);
                 }
             }
 
-        } else {
+        } else if (isNoInTree) {
             for (int i = 0; i < childs.length; i++) {
 
                 Tree children = childs[i];
-                List<Tree> new_children_list = removeJJFromTree(children);
+                List<Tree> new_children_list = removeCDFromTree(children, removeFromIn);
 
                 for (int j = 1; j<new_children_list.size(); j++) {
                     Tree newTree = tree.deepCopy();
@@ -90,5 +96,12 @@ public class JJafterNounRule extends AbstractHypothesisRule {
         }
 
         return changedTree;
+    }
+
+
+
+    @Override
+    protected Tree getNewTree(Tree oldTree) {
+        return null;
     }
 }
