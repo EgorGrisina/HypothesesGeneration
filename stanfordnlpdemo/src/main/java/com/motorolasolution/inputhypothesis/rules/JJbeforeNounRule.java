@@ -8,7 +8,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class JJafterNounRule extends AbstractHypothesisRule {
+public class JJbeforeNounRule extends AbstractHypothesisRule {
 
 
 

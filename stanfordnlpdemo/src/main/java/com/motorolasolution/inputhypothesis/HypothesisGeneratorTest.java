@@ -3,7 +3,7 @@ package com.motorolasolution.inputhypothesis;
 import com.motorolasolution.inputhypothesis.rules.AbstractHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.AdverbRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
-import com.motorolasolution.inputhypothesis.rules.JJafterNounRule;
+import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
@@ -26,8 +26,9 @@ public class HypothesisGeneratorTest {
         final CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
 
         AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[6];
+
         rulesList[0] = new PunctuationRule();
-        rulesList[1] = new JJafterNounRule();
+        rulesList[1] = new JJbeforeNounRule();
         rulesList[2] = new NumberProcessingRule() {
             @Override
             public Tree getNewTree(Tree oldTree) {
@@ -75,7 +76,7 @@ public class HypothesisGeneratorTest {
             /*results = rulesList[2].getHypothesis(results);
             results = rulesList[1].getHypothesis(results);
             results = rulesList[3].getHypothesis(results);*/
-            results = rulesList[5].getHypothesis(results);
+            results = rulesList[1].getHypothesis(results);
 
             out.println("Input:");
             out.println("0. "+input);
