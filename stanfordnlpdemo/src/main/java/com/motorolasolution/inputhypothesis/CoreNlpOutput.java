@@ -25,7 +25,6 @@ public class CoreNlpOutput {
 
     static void printTrees(List<Tree> trees, PrintWriter out){
         for (Tree tree : trees) {
-            out.println("Sentence: "+getSentenceFromTree(tree));
             tree.pennPrint(out);
             out.println("");
         }

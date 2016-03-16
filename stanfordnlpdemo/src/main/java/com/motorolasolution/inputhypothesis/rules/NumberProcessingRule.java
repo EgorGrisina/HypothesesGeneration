@@ -13,7 +13,6 @@ public class NumberProcessingRule extends BaseHypothesisRule {
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
 
-        PrintWriter out = new PrintWriter(System.out);
         List<Tree> result = new ArrayList<Tree>();
         result.addAll(inputTrees);
 
@@ -28,10 +27,11 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
         result = cleanTreeList(result);
 
+        /*PrintWriter out = new PrintWriter(System.out);
         for(Tree tree : result) {
             tree.pennPrint(out);
             out.flush();
-        }
+        }*/
         return result;
     }
 

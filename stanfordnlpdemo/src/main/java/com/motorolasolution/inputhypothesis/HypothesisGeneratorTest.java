@@ -54,11 +54,15 @@ public class HypothesisGeneratorTest {
 
         while (!input.equals(CoreNlpConstants.EXIT)) {
 
-
-            //out.println(input);
-           // out.flush();
+            out.println("Inpute text:");
+            out.println(input);
+            out.flush();
 
             input = ((PunctuationRule)rulesList[0]).removePunctuation(input);
+            out.println("");
+            out.println("Punctuation rule:");
+            out.println(input);
+            out.flush();
 
             List<Tree> sentencesTree = mCoreNlpPipeline.getTrees(input);
 
@@ -68,29 +72,40 @@ public class HypothesisGeneratorTest {
                 input = in.readLine();
                 continue;
             }
-
+            out.println("");
+            out.println("Input tree:");
             CoreNlpOutput.printTrees(sentencesTree, out);
             out.println("");
             out.flush();
 
             List<Tree> results = new ArrayList<Tree>();
-            results.addAll(sentencesTree);
 
-           /* results = rulesList[2].getHypothesis(results);
+            for (int i = 1; i < rulesList.length; i++ ){
+                results = rulesList[i].getHypothesis(sentencesTree);
+                out.println("#"+ i +" " + rulesList[i].getRuleName()+" result:");
+                for(int j = 0; j < results.size(); j++){
+                    out.println(j + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(j)));
+                }
+                out.println("");
+                out.flush();
+            }
+
+            out.println("-----------All rules-----------");
+            results = rulesList[2].getHypothesis(sentencesTree);
             results = rulesList[1].getHypothesis(results);
             results = rulesList[3].getHypothesis(results);
             results = rulesList[5].getHypothesis(results);
-            results = rulesList[4].getHypothesis(results);*/
-
+            results = rulesList[4].getHypothesis(results);
             results = rulesList[6].getHypothesis(results);
 
-            out.println("Input:");
-            out.println("0. "+input);
-            out.println("Result:");
+            out.println("Input:\n"+input+"\nResult:\n");
+
             for(int i = 0; i < results.size(); i++){
                 out.println(i + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(i)));
             }
+
             out.flush();
+            out.println("-------------------------");
             out.println("Enter something: ");
             out.flush();
             input = in.readLine();

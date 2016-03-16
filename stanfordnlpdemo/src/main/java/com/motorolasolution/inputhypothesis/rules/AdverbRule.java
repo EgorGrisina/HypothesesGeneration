@@ -31,12 +31,12 @@ public class AdverbRule extends BaseHypothesisRule {
             POSresults.add(getNewTree(tree));
         }
 
-        PrintWriter out = new PrintWriter(System.out);
+        /*PrintWriter out = new PrintWriter(System.out);
         for (Tree tree : POSresults) {
             out.println(" ");
             tree.pennPrint(out);
             out.flush();
-        }
+        }*/
         return POSresults;
     }
 

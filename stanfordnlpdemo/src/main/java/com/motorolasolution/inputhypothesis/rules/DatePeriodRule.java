@@ -15,7 +15,7 @@ public class DatePeriodRule extends BaseHypothesisRule {
         List<Tree> result = new ArrayList<Tree>();
         result.addAll(inputTrees);
 
-        PrintWriter out = new PrintWriter(System.out);
+
 
         int inputListSize = result.size();
         for (int i = 0; i < inputListSize; i++) {
@@ -24,10 +24,12 @@ public class DatePeriodRule extends BaseHypothesisRule {
 
         result = cleanTreeList(result);
 
+        /*
+        PrintWriter out = new PrintWriter(System.out);
         for(Tree tree : result) {
             tree.pennPrint(out);
             out.flush();
-        }
+        }*/
         return result;
     }
 
