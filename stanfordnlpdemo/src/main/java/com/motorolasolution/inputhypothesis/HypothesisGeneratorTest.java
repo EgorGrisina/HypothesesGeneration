@@ -6,6 +6,7 @@ import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
+import com.motorolasolution.inputhypothesis.rules.ProperNounRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
 
 import java.io.BufferedReader;
@@ -32,7 +33,7 @@ public class HypothesisGeneratorTest {
             }
         };
 
-        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[6];
+        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[7];
 
         rulesList[0] = new PunctuationRule();
         rulesList[1] = new JJbeforeNounRule();
@@ -40,6 +41,7 @@ public class HypothesisGeneratorTest {
         rulesList[3] = new DatePeriodRule();
         rulesList[4] = new NumeralRule();
         rulesList[5] = new AdverbRule();
+        rulesList[6] = new ProperNounRule();
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -56,7 +58,7 @@ public class HypothesisGeneratorTest {
             //out.println(input);
            // out.flush();
 
-            //input = ((PunctuationRule)rulesList[0]).removePunctuation(input);
+            input = ((PunctuationRule)rulesList[0]).removePunctuation(input);
 
             List<Tree> sentencesTree = mCoreNlpPipeline.getTrees(input);
 
@@ -74,10 +76,13 @@ public class HypothesisGeneratorTest {
             List<Tree> results = new ArrayList<Tree>();
             results.addAll(sentencesTree);
 
-            /*results = rulesList[2].getHypothesis(results);
+           /* results = rulesList[2].getHypothesis(results);
             results = rulesList[1].getHypothesis(results);
-            results = rulesList[3].getHypothesis(results);*/
+            results = rulesList[3].getHypothesis(results);
             results = rulesList[5].getHypothesis(results);
+            results = rulesList[4].getHypothesis(results);*/
+
+            results = rulesList[6].getHypothesis(results);
 
             out.println("Input:");
             out.println("0. "+input);

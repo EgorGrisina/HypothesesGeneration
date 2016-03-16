@@ -28,3 +28,13 @@ details about witness 2
 what area is today the most dangerous about murders
 you speak extremely loudly 
 show the most popular way to Moscow 
+
+
+/************* ProperNounRule ***************/
+
+check Samantha Cooper
+Find me the quickest route to witness number 2, Jake Verdinier
+
+
+/******************* HARD TEST ****************/
+find me the most shorter route to witness No.2 in case #1112
