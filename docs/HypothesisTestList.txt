@@ -2,6 +2,7 @@
 
 describe white car and black bike
 Find me the quickest route to witness No 2
+show the shortest way to witness 
 
 
 /********** NumberProcessingRule ***********/
@@ -19,4 +20,11 @@ find me a route to witness number 2 in case number 1112
 route to the witness for incident 1112
 describe two robberies in 2 miles last month
 information about incident 1112
-details about wiy
+details about witness 2
+
+
+/*************** AdverbRule ******************/
+
+what area is today the most dangerous about murders
+you speak extremely loudly 
+show the most popular way to Moscow 

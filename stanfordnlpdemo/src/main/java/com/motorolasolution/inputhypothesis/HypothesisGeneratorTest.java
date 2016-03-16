@@ -1,6 +1,6 @@
 package com.motorolasolution.inputhypothesis;
 
-import com.motorolasolution.inputhypothesis.rules.AbstractHypothesisRule;
+import com.motorolasolution.inputhypothesis.rules.BaseHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.AdverbRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
@@ -25,29 +25,25 @@ public class HypothesisGeneratorTest {
         BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         final CoreNlpPipeline mCoreNlpPipeline = new CoreNlpPipeline();
 
-        AbstractHypothesisRule rulesList[] = new AbstractHypothesisRule[6];
-
-        rulesList[0] = new PunctuationRule();
-        rulesList[1] = new JJbeforeNounRule();
-        rulesList[2] = new NumberProcessingRule() {
+        BaseHypothesisRule.CoreNlpRulesCallback mCoreNlpRulesCallback = new BaseHypothesisRule.CoreNlpRulesCallback() {
             @Override
             public Tree getNewTree(Tree oldTree) {
                 return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
             }
         };
-        rulesList[3] = new DatePeriodRule() {
-            @Override
-            protected Tree getNewTree(Tree oldTree) {
-                return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
-            }
-        };
+
+        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[6];
+
+        rulesList[0] = new PunctuationRule();
+        rulesList[1] = new JJbeforeNounRule();
+        rulesList[2] = new NumberProcessingRule();
+        rulesList[3] = new DatePeriodRule();
         rulesList[4] = new NumeralRule();
-        rulesList[5] = new AdverbRule() {
-            @Override
-            protected Tree getNewTree(Tree oldTree) {
-                return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
-            }
-        };
+        rulesList[5] = new AdverbRule();
+
+        for (int i = 0; i < rulesList.length; i++ ){
+            rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
+        }
 
         out.print("Enter something:");
         out.flush();

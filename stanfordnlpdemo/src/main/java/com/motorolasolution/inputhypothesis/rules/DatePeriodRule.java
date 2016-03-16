@@ -7,7 +7,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public abstract class DatePeriodRule extends AbstractHypothesisRule{
+public class DatePeriodRule extends BaseHypothesisRule {
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {

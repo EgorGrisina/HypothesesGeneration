@@ -7,7 +7,17 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public abstract class AbstractHypothesisRule {
+public class BaseHypothesisRule {
+
+    protected CoreNlpRulesCallback mCoreNlpRulesCallback = null;
+
+    public interface CoreNlpRulesCallback {
+        Tree getNewTree(Tree oldTree);
+    }
+
+    public void setCoreNlpRulesCallback(CoreNlpRulesCallback callback){
+        mCoreNlpRulesCallback = callback;
+    }
 
     public String getRuleName(){
         return getClass().getSimpleName();
@@ -48,5 +58,12 @@ public abstract class AbstractHypothesisRule {
         return treeList;
     }
 
-    abstract protected Tree getNewTree(Tree oldTree);
+    protected Tree getNewTree(Tree oldTree) {
+
+        if (mCoreNlpRulesCallback != null) {
+            return mCoreNlpRulesCallback.getNewTree(oldTree);
+        } else {
+            return oldTree;
+        }
+    }
 }

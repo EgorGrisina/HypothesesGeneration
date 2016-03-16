@@ -8,7 +8,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public abstract class AdverbRule extends AbstractHypothesisRule {
+public class AdverbRule extends BaseHypothesisRule {
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {

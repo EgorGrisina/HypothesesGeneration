@@ -8,9 +8,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class JJbeforeNounRule extends AbstractHypothesisRule {
-
-
+public class JJbeforeNounRule extends BaseHypothesisRule {
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
@@ -35,11 +33,6 @@ public class JJbeforeNounRule extends AbstractHypothesisRule {
             out.flush();
         }
         return result;
-    }
-
-    @Override
-    protected Tree getNewTree(Tree oldTree) {
-        return null;
     }
 
     private List<Tree> removeJJFromTree(Tree tree) {

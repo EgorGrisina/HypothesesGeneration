@@ -9,7 +9,7 @@ import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class NumeralRule extends AbstractHypothesisRule{
+public class NumeralRule extends BaseHypothesisRule {
 
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
@@ -98,10 +98,4 @@ public class NumeralRule extends AbstractHypothesisRule{
         return changedTree;
     }
 
-
-
-    @Override
-    protected Tree getNewTree(Tree oldTree) {
-        return null;
-    }
 }
