@@ -8,6 +8,7 @@ import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
 import com.motorolasolution.inputhypothesis.rules.ProperNounRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
+import com.motorolasolution.inputhypothesis.rules.SimilarLeavesRule;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -33,7 +34,7 @@ public class HypothesisGeneratorTest {
             }
         };
 
-        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[7];
+        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[8];
 
         rulesList[0] = new PunctuationRule();
         rulesList[1] = new JJbeforeNounRule();
@@ -42,6 +43,7 @@ public class HypothesisGeneratorTest {
         rulesList[4] = new NumeralRule();
         rulesList[5] = new AdverbRule();
         rulesList[6] = new ProperNounRule();
+        rulesList[7] = new SimilarLeavesRule();
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -79,8 +81,9 @@ public class HypothesisGeneratorTest {
             out.flush();
 
             List<Tree> results = new ArrayList<Tree>();
+            results.addAll(sentencesTree);
 
-            for (int i = 1; i < rulesList.length; i++ ){
+           /* for (int i = 1; i < rulesList.length; i++ ){
                 results = rulesList[i].getHypothesis(sentencesTree);
                 out.println("#"+ i +" " + rulesList[i].getRuleName()+" result:");
                 for(int j = 0; j < results.size(); j++){
@@ -96,7 +99,8 @@ public class HypothesisGeneratorTest {
             results = rulesList[3].getHypothesis(results);
             results = rulesList[5].getHypothesis(results);
             results = rulesList[4].getHypothesis(results);
-            results = rulesList[6].getHypothesis(results);
+            results = rulesList[6].getHypothesis(results);*/
+            results = rulesList[7].getHypothesis(results);
 
             out.println("Input:\n"+input+"\nResult:\n");
 

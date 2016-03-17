@@ -36,5 +36,21 @@ check Samantha Cooper
 Find me the quickest route to witness number 2, Jake Verdinier
 
 
+/************ SimilarLeavesRule *************/
+
+find me route to witness No 2
+check Samantha Cooper
+1990s green jeep cherokee
+
+
+
+
+
+
+
+
+
+
+
 /******************* HARD TEST ****************/
 find me the most shorter route to witness No.2 in case #1112
