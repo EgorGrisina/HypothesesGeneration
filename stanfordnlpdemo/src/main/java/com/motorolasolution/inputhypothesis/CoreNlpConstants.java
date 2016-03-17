@@ -14,6 +14,7 @@ public class CoreNlpConstants {
     public final static String  NUMERAL = "CD";
     public final static String  IN = "IN";
     public final static String  RB = "RB";
+    public final static String  NP = "NP";
 
     public final static String[] RBListNoclear = {"RBR", "RBS"};
     public final static String[] NNPList = {"NNP", "NNPS"};

@@ -3,6 +3,7 @@ package com.motorolasolution.inputhypothesis;
 import com.motorolasolution.inputhypothesis.rules.BaseHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.AdverbRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
+import com.motorolasolution.inputhypothesis.rules.INprocessingRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
@@ -34,7 +35,7 @@ public class HypothesisGeneratorTest {
             }
         };
 
-        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[8];
+        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[9];
 
         rulesList[0] = new PunctuationRule();
         rulesList[1] = new JJbeforeNounRule();
@@ -44,6 +45,7 @@ public class HypothesisGeneratorTest {
         rulesList[5] = new AdverbRule();
         rulesList[6] = new ProperNounRule();
         rulesList[7] = new SimilarLeavesRule();
+        rulesList[8] = new INprocessingRule();
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -100,9 +102,9 @@ public class HypothesisGeneratorTest {
             results = rulesList[5].getHypothesis(results);
             results = rulesList[4].getHypothesis(results);
             results = rulesList[6].getHypothesis(results);*/
-            results = rulesList[7].getHypothesis(results);
+            results = rulesList[8].getHypothesis(results);
 
-            out.println("Input:\n"+input+"\nResult:\n");
+            out.println("Input:\n0. "+input+"\n\nResult:");
 
             for(int i = 0; i < results.size(); i++){
                 out.println(i + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(i)));

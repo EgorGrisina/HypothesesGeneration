@@ -41,7 +41,16 @@ Find me the quickest route to witness number 2, Jake Verdinier
 find me route to witness No 2
 check Samantha Cooper
 1990s green jeep cherokee
+what's the best way to get to witness number one from here?
 
+
+/************ INprocessingRule *************/
+
+show information about second witness
+tell me about witness 2 in that case
+is the suspect connected with any gang activity?
+do we have contact information for the suspect in the case?
+give me all rapes in the city that happened last week
 
 
 
