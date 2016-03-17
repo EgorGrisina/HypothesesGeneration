@@ -14,25 +14,25 @@ public class NumberProcessingRule extends BaseHypothesisRule {
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
 
         List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
+        //result.addAll(inputTrees);
 
-        int inputListSize = result.size();
-        for (int i = 0; i < inputListSize; i++) {
-            result.add(getNewTree(replaceNo(result.get(i).deepCopy())));
+
+        for (int i = 0; i < inputTrees.size(); i++) {
+            result.add(getNewTree(replaceNo(inputTrees.get(i).deepCopy())));
         }
-        inputListSize = result.size();
-        for (int i = 0; i < inputListSize; i++) {
-            result.add(getNewTree(removeNumberWord(result.get(i).deepCopy())));
+        List<Tree> withoutNumberResult = new ArrayList<Tree>();
+        for (int i = 0; i < result.size(); i++) {
+            withoutNumberResult.add(getNewTree(removeNumberWord(result.get(i).deepCopy())));
         }
 
-        result = cleanTreeList(result);
+        withoutNumberResult = cleanTreeList(withoutNumberResult);
 
         /*PrintWriter out = new PrintWriter(System.out);
         for(Tree tree : result) {
             tree.pennPrint(out);
             out.flush();
         }*/
-        return result;
+        return withoutNumberResult;
     }
 
     private Tree removeNumberWord(Tree tree){

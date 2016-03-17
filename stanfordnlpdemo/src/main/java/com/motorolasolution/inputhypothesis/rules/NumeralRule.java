@@ -26,7 +26,7 @@ public class NumeralRule extends BaseHypothesisRule {
             i++;
         }
 
-        i = inputTreeCount;
+        i = 0;
         while (i < result.size() ) {
             POSresults = removeCDFromTree(result.get(i), true);    // from all blocks
             for (int j = 1; j < POSresults.size(); j++) {

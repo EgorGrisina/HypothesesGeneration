@@ -54,12 +54,5 @@ give me all rapes in the city that happened last week
 
 
 
-
-
-
-
-
-
-
 /******************* HARD TEST ****************/
 find me the most shorter route to witness No.2 in case #1112
