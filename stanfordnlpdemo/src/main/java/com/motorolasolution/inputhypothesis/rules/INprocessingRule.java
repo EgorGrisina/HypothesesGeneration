@@ -28,12 +28,6 @@ public class INprocessingRule extends BaseHypothesisRule {
 
         result = cleanTreeList(result);
 
-        PrintWriter out = new PrintWriter(System.out);
-        for (Tree tree : result) {
-            out.println(" ");
-            tree.pennPrint(out);
-            out.flush();
-        }
         return result;
     }
 
