@@ -9,6 +9,7 @@ import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
 import com.motorolasolution.inputhypothesis.rules.ProperNounRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
+import com.motorolasolution.inputhypothesis.rules.SProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.SimilarLeavesRule;
 
 import java.io.BufferedReader;
@@ -32,6 +33,11 @@ public class HypothesisGeneratorTest {
             @Override
             public Tree getNewTree(Tree oldTree) {
                 return mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(oldTree));
+            }
+
+            @Override
+            public Tree getNewTree(String sentence) {
+                return mCoreNlpPipeline.getTree(sentence);
             }
         };
 
@@ -81,8 +87,11 @@ public class HypothesisGeneratorTest {
             mNumberProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
             PunctuationRule mPunctuationRule = new PunctuationRule();
             mPunctuationRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
+            SProcessingRule mSProcessingRule = new SProcessingRule();
+            mSProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
 
             results = mNumberProcessingRule.getHypothesis(sentencesTree);
+            results = mSProcessingRule.getHypothesis(results);
             for (int i = 0; i < results.size(); i++) {
                 inputTrees.add(mCoreNlpPipeline.getTree(
                         mPunctuationRule.removePunctuation(
