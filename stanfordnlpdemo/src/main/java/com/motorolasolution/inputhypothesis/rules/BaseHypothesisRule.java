@@ -13,6 +13,7 @@ public class BaseHypothesisRule {
 
     public interface CoreNlpRulesCallback {
         Tree getNewTree(Tree oldTree);
+        Tree getNewTree(String sentence);
     }
 
     public void setCoreNlpRulesCallback(CoreNlpRulesCallback callback){
@@ -64,6 +65,15 @@ public class BaseHypothesisRule {
             return mCoreNlpRulesCallback.getNewTree(oldTree);
         } else {
             return oldTree;
+        }
+    }
+
+    protected Tree getNewTree(String sentence) {
+
+        if (mCoreNlpRulesCallback != null) {
+            return mCoreNlpRulesCallback.getNewTree(sentence);
+        } else {
+            return null;
         }
     }
 }

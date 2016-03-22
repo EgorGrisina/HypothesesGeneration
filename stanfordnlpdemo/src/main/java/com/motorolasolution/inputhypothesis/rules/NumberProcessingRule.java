@@ -1,11 +1,14 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.CoreNlpOutput;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.stanford.nlp.ling.LabeledWord;
+import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.trees.Tree;
 
 public class NumberProcessingRule extends BaseHypothesisRule {
@@ -13,29 +16,49 @@ public class NumberProcessingRule extends BaseHypothesisRule {
     @Override
     public List<Tree> getHypothesis(List<Tree> inputTrees) {
 
+        //PrintWriter out = new PrintWriter(System.out);
         List<Tree> result = new ArrayList<Tree>();
-        //result.addAll(inputTrees);
 
 
         for (int i = 0; i < inputTrees.size(); i++) {
             result.add(getNewTree(replaceNo(inputTrees.get(i).deepCopy())));
         }
+
         List<Tree> withoutNumberResult = new ArrayList<Tree>();
         for (int i = 0; i < result.size(); i++) {
-            withoutNumberResult.add(getNewTree(removeNumberWord(result.get(i).deepCopy())));
+            withoutNumberResult.add(getNewTree(removeNumberWord2(result.get(i).deepCopy())));
         }
 
         withoutNumberResult = cleanTreeList(withoutNumberResult);
 
-        /*PrintWriter out = new PrintWriter(System.out);
-        for(Tree tree : result) {
+        /*for(Tree tree : inputTrees) {
             tree.pennPrint(out);
             out.flush();
         }*/
+
         return withoutNumberResult;
     }
 
-    private Tree removeNumberWord(Tree tree){
+    private String removeNumberWord2(Tree tree) {
+        PrintWriter out = new PrintWriter(System.out);
+        List <LabeledWord> words = tree.labeledYield();
+
+        for (int i = 0; i < words.size()-1; i++) {
+            if (words.get(i).word().equals(CoreNlpConstants.NUMBER)){
+                if (words.get(i+1).tag().value().equals(CoreNlpConstants.NUMERAL)){
+                    words.remove(i);
+                    i--;
+                }
+            }
+        }
+        String sentence = "";
+        for (LabeledWord word : words) {
+            sentence+=word.word()+" ";
+        }
+        return sentence;
+    }
+
+    private Tree removeNumberWord(Tree tree) {
         List<Tree> childs = tree.getChildrenAsList();
 
         boolean isSimpleChilds = true;
