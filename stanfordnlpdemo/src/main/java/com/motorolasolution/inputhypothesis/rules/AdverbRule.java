@@ -53,7 +53,7 @@ public class AdverbRule extends BaseHypothesisRule {
             }
         }
 
-        if (isSimpleChilds) {
+
 
             for (int i = 0; i < childs.length; i++) {
                 Tree children = childs[i];
@@ -80,7 +80,7 @@ public class AdverbRule extends BaseHypothesisRule {
                 }
             }
 
-        } else {
+        if (!isSimpleChilds) {
             for (int i = 0; i < childs.length; i++) {
 
                 Tree children = childs[i];
