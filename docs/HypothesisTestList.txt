@@ -8,7 +8,9 @@ show the shortest way to witness
 /********** NumberProcessingRule ***********/
 
 find me a route to witness No.2 in case #1112
-
+how do i get to witness No. 2 in this incident?
+get suspect's call number
+give me a call number for witness in case N 1112
 /************* DatePeriodRule **************/
 
 1990s green jeep cherokee in case no.2
@@ -51,6 +53,10 @@ tell me about witness 2 in that case
 is the suspect connected with any gang activity?
 do we have contact information for the suspect in the case?
 give me all rapes in the city that happened last week
+
+/************ SProcessingRule *************/
+
+let's make our way to the witness
 
 
 
