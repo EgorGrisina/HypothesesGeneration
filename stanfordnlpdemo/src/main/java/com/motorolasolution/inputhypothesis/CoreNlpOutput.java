@@ -14,12 +14,14 @@ public class CoreNlpOutput {
         for (CoreLabel label : list) {
             sentence+=label.word() + " ";
         }
+        sentence = sentence.replace(" '", "'");
         return sentence;
     }
 
 
     static void printTree(Tree tree, PrintWriter out){
         tree.pennPrint(out);
+        out.println("");
         out.flush();
     }
 
