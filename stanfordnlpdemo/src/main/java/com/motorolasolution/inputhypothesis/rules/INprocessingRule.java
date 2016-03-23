@@ -21,7 +21,7 @@ public class INprocessingRule extends BaseHypothesisRule {
         while (i < result.size() ) {
             POSresults = removeINContent(result.get(i));
             for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+                result.add(getNewTree(POSresults.get(j)));
             }
             i++;
         }
@@ -33,8 +33,6 @@ public class INprocessingRule extends BaseHypothesisRule {
 
 
     private List<Tree> removeINContent(Tree tree) {
-
-        PrintWriter out = new PrintWriter(System.out);
 
         List<Tree> changedTree = new ArrayList<Tree>();
         changedTree.add(tree);

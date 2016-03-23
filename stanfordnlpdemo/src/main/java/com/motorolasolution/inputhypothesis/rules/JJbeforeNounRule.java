@@ -19,7 +19,7 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
         while (i < result.size() ) {
             POSresults = removeJJFromTree(result.get(i));
             for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+                result.add(getNewTree(POSresults.get(j)));
             }
             i++;
         }

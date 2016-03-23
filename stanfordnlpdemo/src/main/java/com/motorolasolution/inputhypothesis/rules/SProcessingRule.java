@@ -16,7 +16,7 @@ public class SProcessingRule extends BaseHypothesisRule {
         List<Tree> withoutPOS = new ArrayList<Tree>();
 
         for (int i = 0; i < inputTrees.size(); i++) {
-            withoutPOS.add(removePOS(inputTrees.get(i).deepCopy()));
+            withoutPOS.add(getNewTree(removePOS(inputTrees.get(i).deepCopy())));
         }
 
         withoutPOS = cleanTreeList(withoutPOS);

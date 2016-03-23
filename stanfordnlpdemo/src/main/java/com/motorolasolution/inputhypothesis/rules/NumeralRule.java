@@ -21,7 +21,7 @@ public class NumeralRule extends BaseHypothesisRule {
         while (i < result.size() ) {
             POSresults = removeCDFromTree(result.get(i), false);   // from non IN blocks
             for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+                result.add(getNewTree(POSresults.get(j)));
             }
             i++;
         }
@@ -30,7 +30,7 @@ public class NumeralRule extends BaseHypothesisRule {
         while (i < result.size() ) {
             POSresults = removeCDFromTree(result.get(i), true);    // from all blocks
             for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+                result.add(getNewTree(POSresults.get(j)));
             }
             i++;
         }
