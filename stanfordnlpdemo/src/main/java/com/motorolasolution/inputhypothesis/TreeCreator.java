@@ -1,7 +1,6 @@
 package com.motorolasolution.inputhypothesis;
 
 import com.motorolasolution.inputhypothesis.rules.BaseHypothesisRule;
-import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
 
 import java.io.BufferedReader;
