@@ -54,10 +54,19 @@ is the suspect connected with any gang activity?
 do we have contact information for the suspect in the case?
 give me all rapes in the city that happened last week
 
+
 /************ SProcessingRule *************/
 
 let's make our way to the witness
 
+
+/************ INinsideINRule *************/
+
+tell me about robberies in 2 miles last month
+tell about a pink Jeep with leather seats
+tell about a pink Jeep and green Volkswagen
+what are the robbery stats for the willis tower area for the past year
+find my video record with car crashing in the gallery
 
 
 /******************* HARD TEST ****************/

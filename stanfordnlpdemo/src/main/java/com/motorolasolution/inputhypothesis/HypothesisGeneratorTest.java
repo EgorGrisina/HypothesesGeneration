@@ -3,6 +3,7 @@ package com.motorolasolution.inputhypothesis;
 import com.motorolasolution.inputhypothesis.rules.BaseHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.AdverbRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
+import com.motorolasolution.inputhypothesis.rules.INinsideINRule;
 import com.motorolasolution.inputhypothesis.rules.INprocessingRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
@@ -41,7 +42,7 @@ public class HypothesisGeneratorTest {
             }
         };
 
-        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[7];
+        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[8];
 
         rulesList[0] = new JJbeforeNounRule();
         rulesList[1] = new DatePeriodRule();
@@ -50,6 +51,7 @@ public class HypothesisGeneratorTest {
         rulesList[4] = new ProperNounRule();
         rulesList[5] = new SimilarLeavesRule();
         rulesList[6] = new INprocessingRule();
+        rulesList[7] = new INinsideINRule();
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -125,6 +127,7 @@ public class HypothesisGeneratorTest {
             results = rulesList[4].getHypothesis(results);
             results = rulesList[5].getHypothesis(results);
             results = rulesList[6].getHypothesis(results);
+            results = rulesList[7].getHypothesis(results);
 
             out.println("Input:\n0. "+input+"\n\nResult:");
 
