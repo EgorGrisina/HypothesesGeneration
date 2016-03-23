@@ -56,6 +56,7 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                 Tree next_children = childs[i + 1];
                 for (String jj : CoreNlpConstants.JJlist){
                     if (children.label().value().equals(jj)){
+
                         for (String nn : CoreNlpConstants.NNlist) {
                             if ( next_children.value().equals(nn)){
                                 Tree newTree = tree.deepCopy();
@@ -63,6 +64,14 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                                 changedTree.add(newTree);
                             }
                         }
+                        for (String other_jj : CoreNlpConstants.JJlist) {
+                            if ( next_children.value().equals(other_jj)){
+                                Tree newTree = tree.deepCopy();
+                                newTree.removeChild(i);
+                                changedTree.add(newTree);
+                            }
+                        }
+
                     }
                 }
             }
