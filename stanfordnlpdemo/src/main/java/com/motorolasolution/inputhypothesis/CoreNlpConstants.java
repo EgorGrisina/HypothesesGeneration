@@ -8,7 +8,7 @@ public class CoreNlpConstants {
     public final static String[] JJlist = {"JJ", "JJR", "JJS", "PRP$"};
     public final static String[] NNlist = {"NN", "NNS", "NNP", "NNPS", "PRP"};
 
-    public final static String[] NUMBList = {"no", "no.", "num", "n", "#"};
+    public final static String[] NUMBList = {"numb", "no.", "num", "n", "#"};
     public final static String NUMBER = "number";
 
     public final static String  NUMERAL = "CD";
