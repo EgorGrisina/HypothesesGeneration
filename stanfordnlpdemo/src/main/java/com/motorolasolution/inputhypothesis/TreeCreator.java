@@ -32,7 +32,7 @@ public class TreeCreator {
             }
         };
 
-        out.print("Enter something:");
+        out.print("Enter something:  ");
         out.flush();
 
         String input = in.readLine();
