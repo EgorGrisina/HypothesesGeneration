@@ -84,6 +84,12 @@ public class HypothesisGeneratorTest {
                 inputHypothesises.add(new InputHypothesis(sentense, 1.0));
             }
 
+            out.println("");
+            out.println("Input tree:");
+            CoreNlpOutput.printHypothesisTrees(inputHypothesises, out);
+            out.println("");
+            out.flush();
+
             NumberProcessingRule mNumberProcessingRule = new NumberProcessingRule();
             mNumberProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
             PunctuationRule mPunctuationRule = new PunctuationRule();
@@ -107,7 +113,7 @@ public class HypothesisGeneratorTest {
             results = new ArrayList<InputHypothesis>();
 
             out.println("");
-            out.println("Input tree:");
+            out.println("After prepare tree:");
             CoreNlpOutput.printHypothesisTrees(inputHypothesises, out);
             out.println("");
             out.flush();
