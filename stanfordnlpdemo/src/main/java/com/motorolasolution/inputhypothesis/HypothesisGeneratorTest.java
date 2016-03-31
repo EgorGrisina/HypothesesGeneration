@@ -120,15 +120,16 @@ public class HypothesisGeneratorTest {
 
             //results.addAll(sentencesTree);
 
-            /*for (int i = 0; i < rulesList.length; i++ ){
-                results = rulesList[i].getHypothesis(inputTrees);
+            for (int i = 0; i < rulesList.length; i++ ){
+                results = rulesList[i].getHypothesis(inputHypothesises);
+
                 out.println("#"+ (i+1) +" " + rulesList[i].getRuleName()+" result:");
                 for(int j = 0; j < results.size(); j++){
-                    out.println(j + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(j)));
+                    out.println(j + 1 +". "+results.get(i).getHConfidence()+" : " + CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()));
                 }
                 out.println("");
                 out.flush();
-            }*/
+            }
 
             out.println("-----------All rules-----------");
             /*results = rulesList[0].getHypothesis(inputTrees);
