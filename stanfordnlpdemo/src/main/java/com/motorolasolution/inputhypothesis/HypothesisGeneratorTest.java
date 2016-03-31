@@ -125,7 +125,7 @@ public class HypothesisGeneratorTest {
 
                 out.println("#"+ (i+1) +" " + rulesList[i].getRuleName()+" result:");
                 for(int j = 0; j < results.size(); j++){
-                    out.println(j + 1 +". "+results.get(i).getHConfidence()+" : " + CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()));
+                    out.println(j + 1 +". "+results.get(j).getHConfidence()+" : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree()));
                 }
                 out.println("");
                 out.flush();
