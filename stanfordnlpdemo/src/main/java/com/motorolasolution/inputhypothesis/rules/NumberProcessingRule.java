@@ -6,7 +6,9 @@ import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.ling.LabeledWord;
 import edu.stanford.nlp.ling.Word;
@@ -21,14 +23,27 @@ public class NumberProcessingRule extends BaseHypothesisRule {
         List<InputHypothesis> result = new ArrayList<InputHypothesis>();
 
 
-       /* for (int i = 0; i < inputTrees.size(); i++) {
-            result.add(getNewTree(replaceNo(inputTrees.get(i).deepCopy())));
+        for (InputHypothesis hypothesis : inputHypothesisList) {
+            Map<Tree, Double> resultMap = replaceNo(hypothesis.getHTree().deepCopy(), hypothesis.getHConfidence());
+            if (resultMap.size() > 0) {
+                Tree[] trees = (Tree[]) resultMap.keySet().toArray();
+                Double[] confidences = (Double[]) resultMap.values().toArray();
+                result.add(new InputHypothesis(getNewTree(trees[0]), confidences[0]));
+            }
         }
-*/
+
         List<InputHypothesis> withoutNumberResult = new ArrayList<InputHypothesis>();
-        /*for (int i = 0; i < result.size(); i++) {
-            withoutNumberResult.add(getNewTree(removeNumberWord2(result.get(i).deepCopy())));
-        }*/
+
+        for (int i = 0; i < result.size(); i++) {
+
+            Map<String, Double> resultMap = removeNumberWord2(result.get(i).getHTree().deepCopy(), result.get(i).getHConfidence());
+
+            if (resultMap.size() > 0) {
+                String[] sentenses = (String[]) resultMap.keySet().toArray();
+                Double[] confidences = (Double[]) resultMap.values().toArray();
+                withoutNumberResult.add(new InputHypothesis(getNewTree(sentenses[0]), confidences[0]));
+            }
+        }
 
         withoutNumberResult = cleanHypothesisList(withoutNumberResult);
 
@@ -40,13 +55,13 @@ public class NumberProcessingRule extends BaseHypothesisRule {
         return withoutNumberResult;
     }
 
-    private String removeNumberWord2(Tree tree) {
+    private Map<String, Double> removeNumberWord2(Tree tree, Double confidence) {
         PrintWriter out = new PrintWriter(System.out);
-        List <LabeledWord> words = tree.labeledYield();
+        List<LabeledWord> words = tree.labeledYield();
 
-        for (int i = 0; i < words.size()-1; i++) {
-            if (words.get(i).word().equals(CoreNlpConstants.NUMBER)){
-                if (words.get(i+1).tag().value().equals(CoreNlpConstants.NUMERAL)){
+        for (int i = 0; i < words.size() - 1; i++) {
+            if (words.get(i).word().equals(CoreNlpConstants.NUMBER)) {
+                if (words.get(i + 1).tag().value().equals(CoreNlpConstants.NUMERAL)) {
                     words.remove(i);
                     i--;
                 }
@@ -54,17 +69,19 @@ public class NumberProcessingRule extends BaseHypothesisRule {
         }
         String sentence = "";
         for (LabeledWord word : words) {
-            sentence+=word.word()+" ";
+            sentence += word.word() + " ";
         }
-        return sentence;
+        Map<String, Double> resultMap = new HashMap<String, Double>();
+        resultMap.put(sentence, confidence);
+        return resultMap;
     }
 
-    private Tree removeNumberWord(Tree tree) {
+    private Map<Tree, Double> removeNumberWord(Tree tree, double confidence) {
         List<Tree> childs = tree.getChildrenAsList();
 
         boolean isSimpleChilds = true;
         for (Tree children : childs) {
-            if (children.depth()>0) {
+            if (children.depth() > 0) {
                 isSimpleChilds = false;
             }
         }
@@ -75,32 +92,40 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
                 Tree children = childs.get(i);
 
-                    if (children.value().toLowerCase().equals(CoreNlpConstants.NUMBER)){
-                        tree.removeChild(i);
-                        childs.remove(i);
-                        i--;
-                    }
+                if (children.value().toLowerCase().equals(CoreNlpConstants.NUMBER)) {
+                    tree.removeChild(i);
+                    childs.remove(i);
+                    i--;
+                }
             }
 
         } else {
 
             for (int i = 0; i < childs.size(); i++) {
                 Tree children = childs.get(i);
-                Tree new_children = removeNumberWord(children);
-                tree.setChild(i, new_children);
+                Map<Tree, Double> result = removeNumberWord(children, confidence);
+                Tree[] newChildren = (Tree[]) result.keySet().toArray();
+                Double[] newConfidence = (Double[]) result.values().toArray();
+                if (result.size() > 0) {
+                    confidence = newConfidence[0];
+                    tree.setChild(i, newChildren[0]);
+                }
+
             }
         }
 
-        return tree;
+        Map<Tree, Double> resultMap = new HashMap<Tree, Double>();
+        resultMap.put(tree, confidence);
+        return resultMap;
     }
 
-    private Tree replaceNo(Tree tree) {
+    private Map<Tree, Double> replaceNo(Tree tree, double confidence) {
 
         Tree[] childs = tree.children();
 
         boolean isSimpleChilds = true;
         for (Tree children : childs) {
-            if (children.depth()>0) {
+            if (children.depth() > 0) {
                 isSimpleChilds = false;
             }
         }
@@ -111,8 +136,8 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
                 Tree children = childs[i];
 
-                for (String numb : CoreNlpConstants.NUMBList){
-                    if (children.value().toLowerCase().equals(numb)){
+                for (String numb : CoreNlpConstants.NUMBList) {
+                    if (children.value().toLowerCase().equals(numb)) {
                         children.setValue(CoreNlpConstants.NUMBER);
                     }
                 }
@@ -122,12 +147,19 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
             for (int i = 0; i < childs.length; i++) {
                 Tree children = childs[i];
-                Tree new_children = replaceNo(children);
-                tree.setChild(i, new_children);
+                Map<Tree, Double> result = replaceNo(children, confidence);
+                Tree[] newChildren = (Tree[]) result.keySet().toArray();
+                Double[] newConfidence = (Double[]) result.values().toArray();
+                if (result.size() > 0) {
+                    confidence = newConfidence[0];
+                    tree.setChild(i, newChildren[0]);
+                }
             }
         }
 
-        return tree;
+        Map<Tree, Double> resultMap = new HashMap<Tree, Double>();
+        resultMap.put(tree, confidence);
+        return resultMap;
     }
 
 }
