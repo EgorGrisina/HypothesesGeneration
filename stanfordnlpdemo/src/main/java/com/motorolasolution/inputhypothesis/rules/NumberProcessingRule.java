@@ -25,11 +25,11 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
         for (InputHypothesis hypothesis : inputHypothesisList) {
             Map<Tree, Double> resultMap = replaceNo(hypothesis.getHTree().deepCopy(), hypothesis.getHConfidence());
-            if (resultMap.size() > 0) {
-                Tree[] trees = (Tree[]) resultMap.keySet().toArray();
-                Double[] confidences = (Double[]) resultMap.values().toArray();
-                result.add(new InputHypothesis(getNewTree(trees[0]), confidences[0]));
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
             }
+
         }
 
         List<InputHypothesis> withoutNumberResult = new ArrayList<InputHypothesis>();
@@ -38,10 +38,8 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
             Map<String, Double> resultMap = removeNumberWord2(result.get(i).getHTree().deepCopy(), result.get(i).getHConfidence());
 
-            if (resultMap.size() > 0) {
-                String[] sentenses = (String[]) resultMap.keySet().toArray();
-                Double[] confidences = (Double[]) resultMap.values().toArray();
-                withoutNumberResult.add(new InputHypothesis(getNewTree(sentenses[0]), confidences[0]));
+            for (Map.Entry entry : resultMap.entrySet()) {
+                withoutNumberResult.add(new InputHypothesis(getNewTree((String) entry.getKey()), (Double) entry.getValue()));
             }
         }
 
@@ -104,11 +102,10 @@ public class NumberProcessingRule extends BaseHypothesisRule {
             for (int i = 0; i < childs.size(); i++) {
                 Tree children = childs.get(i);
                 Map<Tree, Double> result = removeNumberWord(children, confidence);
-                Tree[] newChildren = (Tree[]) result.keySet().toArray();
-                Double[] newConfidence = (Double[]) result.values().toArray();
-                if (result.size() > 0) {
-                    confidence = newConfidence[0];
-                    tree.setChild(i, newChildren[0]);
+
+                for (Map.Entry entry : result.entrySet()) {
+                    confidence = (Double) entry.getValue();
+                    tree.setChild(i, (Tree) entry.getKey());
                 }
 
             }
@@ -148,11 +145,10 @@ public class NumberProcessingRule extends BaseHypothesisRule {
             for (int i = 0; i < childs.length; i++) {
                 Tree children = childs[i];
                 Map<Tree, Double> result = replaceNo(children, confidence);
-                Tree[] newChildren = (Tree[]) result.keySet().toArray();
-                Double[] newConfidence = (Double[]) result.values().toArray();
-                if (result.size() > 0) {
-                    confidence = newConfidence[0];
-                    tree.setChild(i, newChildren[0]);
+
+                for (Map.Entry entry : result.entrySet()) {
+                    confidence = (Double) entry.getValue();
+                    tree.setChild(i, (Tree) entry.getKey());
                 }
             }
         }
