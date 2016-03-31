@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -11,15 +12,15 @@ import edu.stanford.nlp.trees.Tree;
 public class SProcessingRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputTrees) {
 
-        List<Tree> withoutPOS = new ArrayList<Tree>();
+        List<InputHypothesis> withoutPOS = new ArrayList<InputHypothesis>();
 
-        for (int i = 0; i < inputTrees.size(); i++) {
+        /*for (int i = 0; i < inputTrees.size(); i++) {
             withoutPOS.add(getNewTree(removePOS(inputTrees.get(i).deepCopy())));
         }
-
-        withoutPOS = cleanTreeList(withoutPOS);
+*/
+        withoutPOS = cleanHypothesisList(withoutPOS);
 
         /*PrintWriter out = new PrintWriter(System.out);
         for(Tree tree : withoutPOS) {

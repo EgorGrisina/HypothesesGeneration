@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -11,22 +12,22 @@ import edu.stanford.nlp.trees.Tree;
 public class INprocessingRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
-        List<Tree> POSresults = new ArrayList<Tree>();
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
+        List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
 
-        int i = 0;
+        /*int i = 0;
         while (i < result.size() ) {
             POSresults = removeINContent(result.get(i));
             for (int j = 1; j < POSresults.size(); j++) {
                 result.add(getNewTree(POSresults.get(j)));
             }
             i++;
-        }
+        }*/
 
-        result = cleanTreeList(result);
+        result = cleanHypothesisList(result);
 
         return result;
     }

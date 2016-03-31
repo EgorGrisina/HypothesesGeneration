@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpOutput;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.List;
@@ -24,8 +25,8 @@ public class BaseHypothesisRule {
         return getClass().getSimpleName();
     }
 
-    public List<Tree> getHypothesis(List<Tree> inputTrees){
-        return inputTrees;
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> hypothesises){
+        return hypothesises;
     }
 
     private Tree removeWordFromTree(Tree tree, String removeWord) {
@@ -47,7 +48,7 @@ public class BaseHypothesisRule {
     }
 
     protected List<Tree> cleanTreeList(List<Tree> treeList){
-        for (int i = 0; i<treeList.size(); i++) {
+        for (int i = 0; i < treeList.size(); i++) {
             String treeString = CoreNlpOutput.getSentenceFromTree(treeList.get(i));
             for(int j = i+1; j < treeList.size(); j++) {
                 if (treeString.equals(CoreNlpOutput.getSentenceFromTree(treeList.get(j)))) {
@@ -57,6 +58,19 @@ public class BaseHypothesisRule {
             }
         }
         return treeList;
+    }
+
+    protected List<InputHypothesis> cleanHypothesisList(List<InputHypothesis> hypothesisList){
+        for (int i = 0; i < hypothesisList.size(); i++) {
+            String treeString = CoreNlpOutput.getSentenceFromTree(hypothesisList.get(i).getHTree());
+            for(int j = i+1; j < hypothesisList.size(); j++) {
+                if (treeString.equals(CoreNlpOutput.getSentenceFromTree(hypothesisList.get(j).getHTree()))) {
+                    hypothesisList.remove(j);
+                    j--;
+                }
+            }
+        }
+        return hypothesisList;
     }
 
     protected Tree getNewTree(Tree oldTree) {

@@ -2,6 +2,7 @@ package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
 import com.motorolasolution.inputhypothesis.CoreNlpOutput;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -14,22 +15,22 @@ import edu.stanford.nlp.trees.Tree;
 public class NumberProcessingRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
         //PrintWriter out = new PrintWriter(System.out);
-        List<Tree> result = new ArrayList<Tree>();
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
 
 
-        for (int i = 0; i < inputTrees.size(); i++) {
+       /* for (int i = 0; i < inputTrees.size(); i++) {
             result.add(getNewTree(replaceNo(inputTrees.get(i).deepCopy())));
         }
-
-        List<Tree> withoutNumberResult = new ArrayList<Tree>();
-        for (int i = 0; i < result.size(); i++) {
+*/
+        List<InputHypothesis> withoutNumberResult = new ArrayList<InputHypothesis>();
+        /*for (int i = 0; i < result.size(); i++) {
             withoutNumberResult.add(getNewTree(removeNumberWord2(result.get(i).deepCopy())));
-        }
+        }*/
 
-        withoutNumberResult = cleanTreeList(withoutNumberResult);
+        withoutNumberResult = cleanHypothesisList(withoutNumberResult);
 
         /*for(Tree tree : inputTrees) {
             tree.pennPrint(out);

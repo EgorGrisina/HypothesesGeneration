@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -11,11 +12,12 @@ import edu.stanford.nlp.trees.Tree;
 public class AdverbRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
-        List<Tree> POSresults = new ArrayList<Tree>();
-        int i = 0;
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
+        List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
+
+        /*int i = 0;
         while (i < result.size() ) {
             POSresults = removeRBFromTree(result.get(i));
             for (int j = 1; j < POSresults.size(); j++) {
@@ -24,12 +26,12 @@ public class AdverbRule extends BaseHypothesisRule {
             i++;
         }
 
-        result = cleanTreeList(result);
+        result = cleanHypothesisList(result);
 
-        POSresults = new ArrayList<Tree>();
+        POSresults = new ArrayList<InputHypothesis>();
         for (Tree tree : result){                   //update tree for all results
             POSresults.add(getNewTree(tree));
-        }
+        }*/
 
         /*PrintWriter out = new PrintWriter(System.out);
         for (Tree tree : POSresults) {

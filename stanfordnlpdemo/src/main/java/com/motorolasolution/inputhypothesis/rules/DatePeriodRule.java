@@ -1,6 +1,8 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 
+import com.motorolasolution.inputhypothesis.InputHypothesis;
+
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
@@ -10,19 +12,19 @@ import edu.stanford.nlp.trees.Tree;
 public class DatePeriodRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
 
 
 
-        int inputListSize = result.size();
+        /*int inputListSize = result.size();
         for (int i = 0; i < inputListSize; i++) {
             result.add(getNewTree(removeDatePeriod(result.get(i).deepCopy())));
-        }
+        }*/
 
-        result = cleanTreeList(result);
+        result = cleanHypothesisList(result);
 
         /*
         PrintWriter out = new PrintWriter(System.out);
