@@ -131,15 +131,18 @@ public class HypothesisGeneratorTest {
                 out.flush();
             }
 
+            results = new ArrayList<InputHypothesis>();
+            results.addAll(inputHypothesises);
+
             out.println("-----------All rules-----------");
-            /*results = rulesList[0].getHypothesis(inputTrees);
+            results = rulesList[0].getHypothesis(results);
             results = rulesList[1].getHypothesis(results);
             results = rulesList[2].getHypothesis(results);
             results = rulesList[3].getHypothesis(results);
             results = rulesList[4].getHypothesis(results);
             results = rulesList[5].getHypothesis(results);
             results = rulesList[6].getHypothesis(results);
-            results = rulesList[7].getHypothesis(results);*/
+            results = rulesList[7].getHypothesis(results);
 
             out.println("Input:\n0. "+input+"\n\nResult:");
 
