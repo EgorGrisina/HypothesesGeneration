@@ -5,7 +5,9 @@ import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
@@ -16,16 +18,17 @@ public class INinsideINRule extends BaseHypothesisRule {
 
         List<InputHypothesis> result = new ArrayList<InputHypothesis>();
         result.addAll(inputHypothesisList);
-        List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
 
-        /*int i = 0;
+        int i = 0;
         while (i < result.size() ) {
-            POSresults = removeINContent(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(getNewTree(POSresults.get(j)));
+
+            Map<Tree, Double> resultMap = removeINContent(result.get(i).getHTree(), result.get(i).getHConfidence());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
             }
             i++;
-        }*/
+        }
 
         result = cleanHypothesisList(result);
 
@@ -33,10 +36,9 @@ public class INinsideINRule extends BaseHypothesisRule {
     }
 
 
-    private List<Tree> removeINContent(Tree tree) {
+    private Map<Tree, Double> removeINContent(Tree tree, double confidence) {
 
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
 
         Tree[] childs = tree.children();
 
@@ -46,12 +48,12 @@ public class INinsideINRule extends BaseHypothesisRule {
 
             if (children.depth() > 1) {
 
-                List<Tree> new_children_list = removeINContent(children);
+                Map<Tree, Double> resultMap = removeINContent(children, confidence);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (Double) entry.getValue());
                 }
             }
 
@@ -63,12 +65,12 @@ public class INinsideINRule extends BaseHypothesisRule {
 
             if (children.depth() > 1 && isContainIN(children)) {
 
-                List<Tree> new_children_list = removeINinsideIN(children);
+                Map<Tree, Double> resultMap = removeINinsideIN(children, confidence);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (Double) entry.getValue());
                 }
             }
 
@@ -77,10 +79,9 @@ public class INinsideINRule extends BaseHypothesisRule {
         return changedTree;
     }
 
-    private List<Tree> removeINinsideIN(Tree tree) {
+    private Map<Tree, Double> removeINinsideIN(Tree tree, double confidence) {
 
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
 
         Tree[] childs = tree.children();
 
@@ -92,23 +93,24 @@ public class INinsideINRule extends BaseHypothesisRule {
 
                 Tree newTree = tree.deepCopy();
                 newTree.removeChild(i);
-                changedTree.add(newTree);
+                double newConfidence = confidence;
+                changedTree.put(newTree, confidence);
 
             } else {
 
-                List<Tree> new_children_list = removeINinsideIN(children);
+                Map<Tree, Double> resultMap = removeINinsideIN(children, confidence);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (Double) entry.getValue());
                 }
             }
 
         }
 
         return changedTree;
-    };
+    }
 
     private boolean isContainIN(Tree tree) {
         Tree childs[] = tree.children();
