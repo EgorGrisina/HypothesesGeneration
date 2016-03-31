@@ -6,7 +6,9 @@ import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
@@ -17,16 +19,18 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
 
         List<InputHypothesis> result = new ArrayList<InputHypothesis>();
         result.addAll(inputHypothesisList);
-        List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
+        //List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
 
-       /* int i = 0;
+        int i = 0;
         while (i < result.size() ) {
-            POSresults = removeSimilarLeaves(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(getNewTree(POSresults.get(j)));
+
+            Map<Tree, Double> resultMap = removeSimilarLeaves(result.get(i).getHTree(), result.get(i).getHConfidence());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
             }
             i++;
-        }*/
+        }
 
         result = cleanHypothesisList(result);
 
@@ -34,10 +38,10 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
     }
 
 
-    private List<Tree> removeSimilarLeaves(Tree tree) {
+    private Map<Tree, Double> removeSimilarLeaves(Tree tree, double confidence) {
 
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
+        //changedTree.put(tree, confidence);
 
         Tree[] childs = tree.children();
 
@@ -45,12 +49,13 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
 
             Tree children = childs[i];
             if (children.depth() > 0) {
-                List<Tree> new_children_list = removeSimilarLeaves(children);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+                Map<Tree, Double> resultMap = removeSimilarLeaves(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (Double) entry.getValue());
                 }
             }
 
@@ -68,7 +73,9 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
 
                         Tree newTree = tree.deepCopy();
                         newTree.removeChild(j);
-                        changedTree.add(newTree);
+                        //CONFIDENCE
+                        double newConfidence = confidence;
+                        changedTree.put(newTree, newConfidence);
                     }
                 }
             }
