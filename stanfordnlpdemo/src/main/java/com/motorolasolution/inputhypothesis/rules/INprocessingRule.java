@@ -5,7 +5,9 @@ import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
@@ -16,16 +18,15 @@ public class INprocessingRule extends BaseHypothesisRule {
 
         List<InputHypothesis> result = new ArrayList<InputHypothesis>();
         result.addAll(inputHypothesisList);
-        List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
 
-        /*int i = 0;
+        int i = 0;
         while (i < result.size() ) {
-            POSresults = removeINContent(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(getNewTree(POSresults.get(j)));
+            Map<Tree, Double> resultMap = removeINContent(result.get(i).getHTree(), result.get(i).getHConfidence());
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
             }
             i++;
-        }*/
+        }
 
         result = cleanHypothesisList(result);
 
@@ -33,23 +34,23 @@ public class INprocessingRule extends BaseHypothesisRule {
     }
 
 
-    private List<Tree> removeINContent(Tree tree) {
+    private Map<Tree, Double> removeINContent(Tree tree, double confidence) {
 
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
 
         Tree[] childs = tree.children();
 
         for (int i = 0; i < childs.length; i++) {
 
             Tree children = childs[i];
-            if (children.depth() > 1) {
-                List<Tree> new_children_list = removeINContent(children);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+            if (children.depth() > 1) {
+                Map<Tree, Double> resultMap = removeINContent(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (Double) entry.getValue());
                 }
             }
 
@@ -77,13 +78,16 @@ public class INprocessingRule extends BaseHypothesisRule {
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NPchild);
-                        changedTree.add(newTree);
+                        double newConfidence = confidence;
+                        changedTree.put(newTree, newConfidence);
+
                     } else {
                         for (int j = 1; j < childs.length; j++) {
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NNchild);
-                        changedTree.add(newTree);
+                        double newConfidence = confidence;
+                        changedTree.put(newTree, newConfidence);
                     }
                 }
             }
