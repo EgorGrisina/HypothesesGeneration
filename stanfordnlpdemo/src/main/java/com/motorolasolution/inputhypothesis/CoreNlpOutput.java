@@ -33,7 +33,7 @@ public class CoreNlpOutput {
         out.flush();
     }
 
-    static void printHypothesis(List<InputHypothesis> hypothesises, PrintWriter out) {
+    static void printHypothesisTrees(List<InputHypothesis> hypothesises, PrintWriter out) {
         for (InputHypothesis hyp : hypothesises) {
             hyp.getHTree().pennPrint(out);
             out.println("");

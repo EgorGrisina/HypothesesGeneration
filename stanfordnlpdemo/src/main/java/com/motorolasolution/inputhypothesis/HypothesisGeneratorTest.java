@@ -91,19 +91,24 @@ public class HypothesisGeneratorTest {
             SProcessingRule mSProcessingRule = new SProcessingRule();
             mSProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
 
-            /*results = mNumberProcessingRule.getHypothesis(sentencesTree);
+            results = mNumberProcessingRule.getHypothesis(inputHypothesises);
             results = mSProcessingRule.getHypothesis(results);
+
+            inputHypothesises = new ArrayList<InputHypothesis>();
+
             for (int i = 0; i < results.size(); i++) {
-                inputTrees.add(mCoreNlpPipeline.getTree(
-                        mPunctuationRule.removePunctuation(
-                                CoreNlpOutput.getSentenceFromTree(results.get(i))
-                        )
-                ));
-            }*/
+
+                InputHypothesis hyp = new InputHypothesis();
+                hyp.setHTree(mCoreNlpPipeline.getTree(mPunctuationRule.removePunctuation(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()))));
+                hyp.setHConfidence(results.get(i).getHConfidence());
+
+                inputHypothesises.add(hyp);
+            }
+            results = new ArrayList<InputHypothesis>();
 
             out.println("");
             out.println("Input tree:");
-            CoreNlpOutput.printHypothesis(inputHypothesises, out);
+            CoreNlpOutput.printHypothesisTrees(inputHypothesises, out);
             out.println("");
             out.flush();
 
