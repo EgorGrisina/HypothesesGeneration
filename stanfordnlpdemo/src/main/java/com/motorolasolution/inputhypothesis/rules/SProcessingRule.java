@@ -5,21 +5,30 @@ import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
 public class SProcessingRule extends BaseHypothesisRule {
 
     @Override
-    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
         List<InputHypothesis> withoutPOS = new ArrayList<InputHypothesis>();
 
-        /*for (int i = 0; i < inputTrees.size(); i++) {
-            withoutPOS.add(getNewTree(removePOS(inputTrees.get(i).deepCopy())));
+        for (int i = 0; i < inputHypothesisList.size(); i++) {
+
+            Map<Tree, Double> resultMap = removePOS(
+                    inputHypothesisList.get(i).getHTree().deepCopy(),
+                    inputHypothesisList.get(i).getHConfidence());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                withoutPOS.add(new InputHypothesis(getNewTree((Tree)entry.getKey()), (Double)entry.getValue()));
+            }
         }
-*/
+
         withoutPOS = cleanHypothesisList(withoutPOS);
 
         /*PrintWriter out = new PrintWriter(System.out);
@@ -30,7 +39,8 @@ public class SProcessingRule extends BaseHypothesisRule {
         return withoutPOS;
     }
 
-    private Tree removePOS(Tree tree){
+    private Map<Tree, Double> removePOS(Tree tree, double confidence){
+
         List<Tree> childs = tree.getChildrenAsList();
 
         boolean isSimpleChilds = true;
@@ -55,13 +65,22 @@ public class SProcessingRule extends BaseHypothesisRule {
         } else {
 
             for (int i = 0; i < childs.size(); i++) {
+
                 Tree children = childs.get(i);
-                Tree new_children = removePOS(children);
-                tree.setChild(i, new_children);
+                Map<Tree, Double> result = removePOS(children, confidence);
+
+                for (Map.Entry entry : result.entrySet()) {
+                    confidence = (Double) entry.getValue();
+                    tree.setChild(i, (Tree) entry.getKey());
+                }
+
+
             }
         }
 
-        return tree;
+        Map<Tree, Double> resultMap = new HashMap<Tree, Double>();
+        resultMap.put(tree, confidence);
+        return resultMap;
     }
 
 
