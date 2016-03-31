@@ -5,7 +5,9 @@ import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
@@ -16,20 +18,15 @@ public class ProperNounRule extends BaseHypothesisRule {
 
         List<InputHypothesis> result = new ArrayList<InputHypothesis>();
         result.addAll(inputHypothesisList);
-        List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
 
-        /*int i = 0;
-        while (i < result.size() ) {
-            *//*POSresults = removeNNP(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+        for (InputHypothesis hypothesis : inputHypothesisList) {
+            Map<Tree, Double> resultMap = removeNNP(hypothesis.getHTree().deepCopy(), hypothesis.getHConfidence());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
             }
-            i++;*//*
-            POSresults.add(getNewTree(removeNNP(result.get(i).deepCopy())));
-            i++;
-        }*/
 
-        result.addAll(POSresults);
+        }
 
         result = cleanHypothesisList(result);
 
@@ -42,7 +39,7 @@ public class ProperNounRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Tree removeNNP(Tree tree) {
+    private Map<Tree, Double> removeNNP(Tree tree, double confidence) {
 
         List<Tree> childs = tree.getChildrenAsList();
 
@@ -63,18 +60,27 @@ public class ProperNounRule extends BaseHypothesisRule {
                         tree.removeChild(i);
                         childs.remove(i);
                         i--;
+                        confidence = confidence; //!!!!!!
                     }
                 }
             }
 
         } else {
             for (int i = 0; i < childs.size(); i++) {
+
                 Tree children = childs.get(i);
-                tree.setChild(i, removeNNP(children));
+                Map<Tree, Double> resultMap= removeNNP(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
+                    confidence = (Double) entry.getValue();
+                    tree.setChild(i, (Tree) entry.getKey());
+                }
             }
         }
 
-        return tree;
+        Map<Tree, Double> resultMap = new HashMap<Tree, Double>();
+        resultMap.put(tree, confidence);
+        return resultMap;
     }
 
 }
