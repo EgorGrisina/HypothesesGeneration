@@ -40,7 +40,7 @@ Find me the quickest route to witness number 2, Jake Verdinier
 
 /************ SimilarLeavesRule *************/
 
-find me route to witness No 2
+find me route to witness No. 2
 check Samantha Cooper
 1990s green jeep cherokee
 what's the best way to get to witness number one from here?
