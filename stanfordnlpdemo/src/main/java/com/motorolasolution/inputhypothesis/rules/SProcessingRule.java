@@ -60,6 +60,9 @@ public class SProcessingRule extends BaseHypothesisRule {
                     tree.removeChild(i);
                     childs.remove(i);
                     i--;
+                    double confVal = confidence.getConfidence();
+                    confVal -= (1.0/(double)confidence.getWordCount()) * CoreNlpConstants.getPOScoefficient(children.value());
+                    confidence.setConfidence(confVal);
                 }
             }
 
