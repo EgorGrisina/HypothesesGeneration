@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
@@ -22,10 +23,10 @@ public class DatePeriodRule extends BaseHypothesisRule {
         int inputListSize = result.size();
 
         for (int i = 0; i < inputListSize; i++) {
-            Map<Tree, Double> resultMap = removeDatePeriod(result.get(i).getHTree().deepCopy(), result.get(i).getHConfidence());
+            Map<Tree, HypothesisConfidence> resultMap = removeDatePeriod(result.get(i).getHTree().deepCopy(), result.get(i).getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
         }
 
@@ -40,7 +41,7 @@ public class DatePeriodRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Map<Tree, Double> removeDatePeriod(Tree tree, double confidence){
+    private Map<Tree, HypothesisConfidence> removeDatePeriod(Tree tree, HypothesisConfidence confidence){
 
         Tree[] childs = tree.children();
 
@@ -70,16 +71,16 @@ public class DatePeriodRule extends BaseHypothesisRule {
             for (int i = 0; i < childs.length; i++) {
 
                 Tree children = childs[i];
-                Map<Tree, Double> resultMap = removeDatePeriod(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeDatePeriod(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
-                    confidence = (Double) entry.getValue();
+                    confidence = (HypothesisConfidence) entry.getValue();
                     tree.setChild(i, (Tree) entry.getKey());
                 }
             }
         }
 
-        Map<Tree, Double> resultMap = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> resultMap = new HashMap<Tree, HypothesisConfidence>();
         resultMap.put(tree, confidence);
         return resultMap;
     }

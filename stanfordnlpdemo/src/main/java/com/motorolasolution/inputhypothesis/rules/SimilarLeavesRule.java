@@ -2,6 +2,7 @@ package com.motorolasolution.inputhypothesis.rules;
 
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
@@ -24,10 +25,10 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
         int i = 0;
         while (i < result.size() ) {
 
-            Map<Tree, Double> resultMap = removeSimilarLeaves(result.get(i).getHTree(), result.get(i).getHConfidence());
+            Map<Tree, HypothesisConfidence> resultMap = removeSimilarLeaves(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
@@ -38,9 +39,9 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
     }
 
 
-    private Map<Tree, Double> removeSimilarLeaves(Tree tree, double confidence) {
+    private Map<Tree, HypothesisConfidence> removeSimilarLeaves(Tree tree, HypothesisConfidence confidence) {
 
-        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
         //changedTree.put(tree, confidence);
 
         Tree[] childs = tree.children();
@@ -50,12 +51,12 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
             Tree children = childs[i];
             if (children.depth() > 0) {
 
-                Map<Tree, Double> resultMap = removeSimilarLeaves(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeSimilarLeaves(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
                     newTree.setChild(i, (Tree) entry.getKey());
-                    changedTree.put(newTree, (Double) entry.getValue());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
             }
 
@@ -74,7 +75,7 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
                         Tree newTree = tree.deepCopy();
                         newTree.removeChild(j);
                         //CONFIDENCE
-                        double newConfidence = confidence;
+                        HypothesisConfidence newConfidence = confidence.copy();
                         changedTree.put(newTree, newConfidence);
                     }
                 }

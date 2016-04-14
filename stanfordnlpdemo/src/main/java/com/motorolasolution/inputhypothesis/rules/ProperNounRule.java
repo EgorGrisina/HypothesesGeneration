@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
@@ -20,10 +21,10 @@ public class ProperNounRule extends BaseHypothesisRule {
         result.addAll(inputHypothesisList);
 
         for (InputHypothesis hypothesis : inputHypothesisList) {
-            Map<Tree, Double> resultMap = removeNNP(hypothesis.getHTree().deepCopy(), hypothesis.getHConfidence());
+            Map<Tree, HypothesisConfidence> resultMap = removeNNP(hypothesis.getHTree().deepCopy(), hypothesis.getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
 
         }
@@ -39,7 +40,7 @@ public class ProperNounRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Map<Tree, Double> removeNNP(Tree tree, double confidence) {
+    private Map<Tree, HypothesisConfidence> removeNNP(Tree tree, HypothesisConfidence confidence) {
 
         List<Tree> childs = tree.getChildrenAsList();
 
@@ -69,16 +70,16 @@ public class ProperNounRule extends BaseHypothesisRule {
             for (int i = 0; i < childs.size(); i++) {
 
                 Tree children = childs.get(i);
-                Map<Tree, Double> resultMap= removeNNP(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap= removeNNP(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
-                    confidence = (Double) entry.getValue();
+                    confidence = (HypothesisConfidence) entry.getValue();
                     tree.setChild(i, (Tree) entry.getKey());
                 }
             }
         }
 
-        Map<Tree, Double> resultMap = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> resultMap = new HashMap<Tree, HypothesisConfidence>();
         resultMap.put(tree, confidence);
         return resultMap;
     }

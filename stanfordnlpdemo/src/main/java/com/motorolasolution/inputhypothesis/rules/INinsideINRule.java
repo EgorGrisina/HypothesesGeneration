@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
@@ -22,10 +23,10 @@ public class INinsideINRule extends BaseHypothesisRule {
         int i = 0;
         while (i < result.size() ) {
 
-            Map<Tree, Double> resultMap = removeINContent(result.get(i).getHTree(), result.get(i).getHConfidence());
+            Map<Tree, HypothesisConfidence> resultMap = removeINContent(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
@@ -36,9 +37,9 @@ public class INinsideINRule extends BaseHypothesisRule {
     }
 
 
-    private Map<Tree, Double> removeINContent(Tree tree, double confidence) {
+    private Map<Tree, HypothesisConfidence> removeINContent(Tree tree, HypothesisConfidence confidence) {
 
-        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
         Tree[] childs = tree.children();
 
@@ -48,12 +49,12 @@ public class INinsideINRule extends BaseHypothesisRule {
 
             if (children.depth() > 1) {
 
-                Map<Tree, Double> resultMap = removeINContent(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeINContent(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
                     newTree.setChild(i, (Tree) entry.getKey());
-                    changedTree.put(newTree, (Double) entry.getValue());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
             }
 
@@ -65,12 +66,12 @@ public class INinsideINRule extends BaseHypothesisRule {
 
             if (children.depth() > 1 && isContainIN(children)) {
 
-                Map<Tree, Double> resultMap = removeINinsideIN(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeINinsideIN(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
                     newTree.setChild(i, (Tree) entry.getKey());
-                    changedTree.put(newTree, (Double) entry.getValue());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
             }
 
@@ -79,9 +80,9 @@ public class INinsideINRule extends BaseHypothesisRule {
         return changedTree;
     }
 
-    private Map<Tree, Double> removeINinsideIN(Tree tree, double confidence) {
+    private Map<Tree, HypothesisConfidence> removeINinsideIN(Tree tree, HypothesisConfidence confidence) {
 
-        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
         Tree[] childs = tree.children();
 
@@ -93,17 +94,17 @@ public class INinsideINRule extends BaseHypothesisRule {
 
                 Tree newTree = tree.deepCopy();
                 newTree.removeChild(i);
-                double newConfidence = confidence;
-                changedTree.put(newTree, confidence);
+                HypothesisConfidence newConfidence = confidence.copy();
+                changedTree.put(newTree, newConfidence);
 
             } else {
 
-                Map<Tree, Double> resultMap = removeINinsideIN(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeINinsideIN(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
                     newTree.setChild(i, (Tree) entry.getKey());
-                    changedTree.put(newTree, (Double) entry.getValue());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
             }
 

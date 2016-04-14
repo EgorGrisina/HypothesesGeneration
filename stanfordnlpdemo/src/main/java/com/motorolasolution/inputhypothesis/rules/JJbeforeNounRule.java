@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
@@ -22,10 +23,10 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
         int i = 0;
         while (i < result.size() ) {
 
-            Map<Tree, Double> resultMap = removeJJFromTree(result.get(i).getHTree(), result.get(i).getHConfidence());
+            Map<Tree, HypothesisConfidence> resultMap = removeJJFromTree(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
@@ -41,9 +42,9 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Map<Tree, Double> removeJJFromTree(Tree tree, double confidence) {
+    private Map<Tree, HypothesisConfidence> removeJJFromTree(Tree tree, HypothesisConfidence confidence) {
 
-        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
         Tree[] childs = tree.children();
 
@@ -66,7 +67,7 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                             if ( next_children.value().equals(nn)){
                                 Tree newTree = tree.deepCopy();
                                 newTree.removeChild(i);
-                                double newConfidence = confidence;
+                                HypothesisConfidence newConfidence = confidence.copy();
                                 changedTree.put(newTree, newConfidence);
                             }
                         }
@@ -74,7 +75,7 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                             if ( next_children.value().equals(other_jj)){
                                 Tree newTree = tree.deepCopy();
                                 newTree.removeChild(i);
-                                double newConfidence = confidence;
+                                HypothesisConfidence newConfidence = confidence.copy();
                                 changedTree.put(newTree, newConfidence);
                             }
                         }
@@ -88,12 +89,12 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
 
                 Tree children = childs[i];
 
-                Map<Tree, Double> resultMap = removeJJFromTree(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeJJFromTree(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
                     newTree.setChild(i, (Tree) entry.getKey());
-                    changedTree.put(newTree, (Double) entry.getValue());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
 
             }

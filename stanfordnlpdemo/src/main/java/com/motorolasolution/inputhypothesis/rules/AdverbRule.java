@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
@@ -22,10 +23,11 @@ public class AdverbRule extends BaseHypothesisRule {
         int i = 0;
         while (i < result.size() ) {
 
-            Map<Tree, Double> resultMap = removeRBFromTree(result.get(i).getHTree(), result.get(i).getHConfidence());
+            Map<Tree, HypothesisConfidence> resultMap =
+                    removeRBFromTree(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (Double) entry.getValue()));
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
@@ -41,9 +43,9 @@ public class AdverbRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Map<Tree, Double> removeRBFromTree(Tree tree, double confidence) {
+    private Map<Tree, HypothesisConfidence> removeRBFromTree(Tree tree, HypothesisConfidence confidence) {
 
-        Map<Tree, Double> changedTree = new HashMap<Tree, Double>();
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
         Tree[] childs = tree.children();
 
@@ -66,7 +68,8 @@ public class AdverbRule extends BaseHypothesisRule {
 
                 Tree newTree = tree.deepCopy();
                 newTree.removeChild(i);
-                double newConfidence = confidence;
+
+                HypothesisConfidence newConfidence = confidence.copy();
                 changedTree.put(newTree, newConfidence);
 
             } else {
@@ -75,7 +78,7 @@ public class AdverbRule extends BaseHypothesisRule {
                     if (children.label().value().equals(rbNoclear)) {
                         Tree newTree = tree.deepCopy();
                         newTree.removeChild(i);
-                        double newConfidence = confidence;
+                        HypothesisConfidence newConfidence = confidence.copy();
                         changedTree.put(newTree, newConfidence);
                     }
                 }
@@ -87,12 +90,12 @@ public class AdverbRule extends BaseHypothesisRule {
 
                 Tree children = childs[i];
 
-                Map<Tree, Double> resultMap = removeRBFromTree(children, confidence);
+                Map<Tree, HypothesisConfidence> resultMap = removeRBFromTree(children, confidence);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
                     newTree.setChild(i, (Tree) entry.getKey());
-                    changedTree.put(newTree, (Double) entry.getValue());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
 
             }
@@ -100,7 +103,5 @@ public class AdverbRule extends BaseHypothesisRule {
 
         return changedTree;
     }
-
-    ;
 
 }
