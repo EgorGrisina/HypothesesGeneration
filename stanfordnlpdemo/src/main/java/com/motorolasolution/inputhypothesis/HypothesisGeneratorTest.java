@@ -125,7 +125,11 @@ public class HypothesisGeneratorTest {
 
                 out.println("#"+ (i+1) +" " + rulesList[i].getRuleName()+" result:");
                 for(int j = 0; j < results.size(); j++){
-                    out.println(j + 1 +". "+results.get(j).getHConfidence()+" : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree()));
+                    out.println(j + 1 +"."+
+                            " w:"+results.get(j).getHConfidence().getWordCount()+
+                            " d:"+results.get(j).getHConfidence().getTreeDeep()+
+                            " c:"+results.get(j).getHConfidence().getConfidence()+
+                            " : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree()));
                 }
                 out.println("");
                 out.flush();
@@ -147,7 +151,11 @@ public class HypothesisGeneratorTest {
             out.println("Input:\n0. "+input+"\n\nResult:");
 
             for(int i = 0; i < results.size(); i++){
-                out.println(i + 1 +". "+results.get(i).getHConfidence()+" : " + CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()));
+                out.println(i + 1 +"."+
+                        " w:"+results.get(i).getHConfidence().getWordCount()+
+                        " d:"+results.get(i).getHConfidence().getTreeDeep()+
+                        " c:"+results.get(i).getHConfidence().getConfidence()+
+                        " : " + CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()));
             }
 
             out.flush();
