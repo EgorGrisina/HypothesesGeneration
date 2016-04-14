@@ -24,17 +24,7 @@ public class NumeralRule extends BaseHypothesisRule {
         int i = 0;
         while (i < result.size() ) {
 
-            Map<Tree, HypothesisConfidence> resultMap = removeCDFromTree(result.get(i).getHTree(), result.get(i).getHConfidence().copy(), false);   // from non IN blocks
-
-            for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
-            }
-            i++;
-        }
-
-        i = 0;
-        while (i < result.size() ) {
-            Map<Tree, HypothesisConfidence> resultMap = removeCDFromTree(result.get(i).getHTree(), result.get(i).getHConfidence().copy(), true);   // from non IN blocks
+            Map<Tree, HypothesisConfidence> resultMap = removeCDFromTree(result.get(i).getHTree(), result.get(i).getHConfidence().copy(), true);
 
             for (Map.Entry entry : resultMap.entrySet()) {
                 result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
@@ -53,7 +43,7 @@ public class NumeralRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Map<Tree, HypothesisConfidence> removeCDFromTree(Tree tree, HypothesisConfidence confidence,  boolean removeFromIn) {
+    private Map<Tree, HypothesisConfidence> removeCDFromTree(Tree tree, HypothesisConfidence confidence,  boolean isNoInTree) {
 
         Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
@@ -61,17 +51,13 @@ public class NumeralRule extends BaseHypothesisRule {
 
         boolean isSimpleChilds = true;
         for (Tree children : childs) {
-            if (children.depth()>1) {
+            if (children.depth() > 1) {
                 isSimpleChilds = false;
             }
         }
-
-        boolean isNoInTree = true;
-        if (!removeFromIn) {
-            for (Tree children : childs) {
-                if (children.value().equals(CoreNlpConstants.IN)) {
-                    isNoInTree = false;
-                }
+        for (Tree children : childs) {
+            if (children.value().equals(CoreNlpConstants.IN)) {
+                isNoInTree = false;
             }
         }
 
@@ -84,16 +70,29 @@ public class NumeralRule extends BaseHypothesisRule {
                 if (children.value().equals(CoreNlpConstants.CD)) {
                     Tree newTree = tree.deepCopy();
                     newTree.removeChild(i);
+
                     HypothesisConfidence newConfidence = confidence.copy();
+                    double confVal = newConfidence.getConfidence();
+                    if (isNoInTree) {
+                        confVal -= (1.0/(double)newConfidence.getWordCount())
+                                * CoreNlpConstants.getPOScoefficient(children.value())
+                                * CoreNlpConstants.NumeralNoINc;
+                    } else {
+                        confVal -= (1.0/(double)newConfidence.getWordCount())
+                                * CoreNlpConstants.getPOScoefficient(children.value())
+                                * CoreNlpConstants.NumeralInINc;
+                    }
+                    newConfidence.setConfidence(confVal);
+
                     changedTree.put(newTree, newConfidence);
                 }
             }
 
-        } else if (isNoInTree) {
+        } else {
             for (int i = 0; i < childs.length; i++) {
 
                 Tree children = childs[i];
-                Map<Tree, HypothesisConfidence> resultMap = removeCDFromTree(children, confidence, removeFromIn);
+                Map<Tree, HypothesisConfidence> resultMap = removeCDFromTree(children, confidence, isNoInTree);
 
                 for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
