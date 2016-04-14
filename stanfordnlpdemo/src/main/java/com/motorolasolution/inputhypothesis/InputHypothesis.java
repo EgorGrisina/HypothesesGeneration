@@ -2,7 +2,7 @@ package com.motorolasolution.inputhypothesis;
 
 import edu.stanford.nlp.trees.Tree;
 
-public class InputHypothesis {
+public class InputHypothesis implements Comparable<InputHypothesis>{
 
     private Tree hTree;
     private HypothesisConfidence hConfidence;
@@ -40,4 +40,14 @@ public class InputHypothesis {
         hConfidence = confidence;
     }
 
+    @Override
+    public int compareTo(InputHypothesis o) {
+        if (this.getHConfidence().getConfidence() > o.getHConfidence().getConfidence()) {
+            return -1;
+        }
+        if (this.getHConfidence().getConfidence() < o.getHConfidence().getConfidence()) {
+            return 1;
+        }
+        return 0;
+    }
 }

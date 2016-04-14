@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
@@ -149,6 +150,8 @@ public class HypothesisGeneratorTest {
             results = rulesList[7].getHypothesis(results);
 
             out.println("Input:\n0. "+input+"\n\nResult:");
+
+            Collections.sort(results);
 
             for(int i = 0; i < results.size(); i++){
                 out.println(i + 1 +"."+
