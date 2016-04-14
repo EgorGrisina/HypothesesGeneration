@@ -4,6 +4,7 @@ describe white car and black bike
 Find me the quickest route to witness No 2
 show the shortest way to witness 
 
+show me big white car
 
 /********** NumberProcessingRule ***********/
 

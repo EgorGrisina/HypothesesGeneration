@@ -67,16 +67,30 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                             if ( next_children.value().equals(nn)){
                                 Tree newTree = tree.deepCopy();
                                 newTree.removeChild(i);
+                                //CONFIDENCE
                                 HypothesisConfidence newConfidence = confidence.copy();
+                                double confVal = newConfidence.getConfidence();
+                                confVal -= (1.0/(double)newConfidence.getWordCount())
+                                        * CoreNlpConstants.getPOScoefficient(children.label().value())
+                                        * CoreNlpConstants.JJbeforeNNc;
+                                newConfidence.setConfidence(confVal);
                                 changedTree.put(newTree, newConfidence);
+                                //CONFIDENCE
                             }
                         }
                         for (String other_jj : CoreNlpConstants.JJlist) {
                             if ( next_children.value().equals(other_jj)){
                                 Tree newTree = tree.deepCopy();
                                 newTree.removeChild(i);
+                                //CONFIDENCE
                                 HypothesisConfidence newConfidence = confidence.copy();
+                                double confVal = newConfidence.getConfidence();
+                                confVal -= (1.0/(double)newConfidence.getWordCount())
+                                        * CoreNlpConstants.getPOScoefficient(children.label().value())
+                                        * CoreNlpConstants.JJbeforeJJc;
+                                newConfidence.setConfidence(confVal);
                                 changedTree.put(newTree, newConfidence);
+                                //CONFIDENCE
                             }
                         }
 
