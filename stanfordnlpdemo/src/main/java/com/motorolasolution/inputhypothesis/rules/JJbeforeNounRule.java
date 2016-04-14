@@ -69,11 +69,7 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                                 newTree.removeChild(i);
                                 //CONFIDENCE
                                 HypothesisConfidence newConfidence = confidence.copy();
-                                double confVal = newConfidence.getConfidence();
-                                confVal -= (1.0/(double)newConfidence.getWordCount())
-                                        * CoreNlpConstants.getPOScoefficient(children.label().value())
-                                        * CoreNlpConstants.JJbeforeNNc;
-                                newConfidence.setConfidence(confVal);
+                                newConfidence.updateConfidence(1, children.label().value(), CoreNlpConstants.JJbeforeNNc);
                                 changedTree.put(newTree, newConfidence);
                                 //CONFIDENCE
                             }
@@ -84,11 +80,7 @@ public class JJbeforeNounRule extends BaseHypothesisRule {
                                 newTree.removeChild(i);
                                 //CONFIDENCE
                                 HypothesisConfidence newConfidence = confidence.copy();
-                                double confVal = newConfidence.getConfidence();
-                                confVal -= (1.0/(double)newConfidence.getWordCount())
-                                        * CoreNlpConstants.getPOScoefficient(children.label().value())
-                                        * CoreNlpConstants.JJbeforeJJc;
-                                newConfidence.setConfidence(confVal);
+                                newConfidence.updateConfidence(1, children.label().value(), CoreNlpConstants.JJbeforeJJc);
                                 changedTree.put(newTree, newConfidence);
                                 //CONFIDENCE
                             }

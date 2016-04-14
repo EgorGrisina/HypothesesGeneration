@@ -64,9 +64,7 @@ public class DatePeriodRule extends BaseHypothesisRule {
                     String childrenValue = children.value().toLowerCase().replaceAll("[^0-9]","");
                     children.setValue(childrenValue);
 
-                    double confVal = confidence.getConfidence();
-                    confVal -= (1.0/(double)(confidence.getWordCount()+1)) * CoreNlpConstants.DatePeriodc;
-                    confidence.setConfidence(confVal);
+                    confidence.updateConfidence(1, CoreNlpConstants.DatePeriodc);
                 }
             }
 

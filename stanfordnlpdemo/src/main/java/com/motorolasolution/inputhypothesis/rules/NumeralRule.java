@@ -72,17 +72,11 @@ public class NumeralRule extends BaseHypothesisRule {
                     newTree.removeChild(i);
 
                     HypothesisConfidence newConfidence = confidence.copy();
-                    double confVal = newConfidence.getConfidence();
                     if (isNoInTree) {
-                        confVal -= (1.0/(double)newConfidence.getWordCount())
-                                * CoreNlpConstants.getPOScoefficient(children.value())
-                                * CoreNlpConstants.NumeralNoINc;
+                        newConfidence.updateConfidence(1, children.value(), CoreNlpConstants.NumeralNoINc);
                     } else {
-                        confVal -= (1.0/(double)newConfidence.getWordCount())
-                                * CoreNlpConstants.getPOScoefficient(children.value())
-                                * CoreNlpConstants.NumeralInINc;
+                        newConfidence.updateConfidence(1, children.value(), CoreNlpConstants.NumeralInINc);
                     }
-                    newConfidence.setConfidence(confVal);
 
                     changedTree.put(newTree, newConfidence);
                 }

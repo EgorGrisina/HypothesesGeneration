@@ -71,9 +71,7 @@ public class NumberProcessingRule extends BaseHypothesisRule {
             sentence += word.word() + " ";
         }
 
-        double confVal = confidence.getConfidence();
-        confVal -= ((double)count/(double)confidence.getWordCount()) * CoreNlpConstants.getPOScoefficient(CoreNlpConstants.NUMBER);
-        confidence.setConfidence(confVal);
+        confidence.updateConfidence(count, CoreNlpConstants.NUMBER);
 
         Map<String, HypothesisConfidence> resultMap = new HashMap<String, HypothesisConfidence>();
         resultMap.put(sentence, confidence);
@@ -142,9 +140,7 @@ public class NumberProcessingRule extends BaseHypothesisRule {
                 for (String numb : CoreNlpConstants.NUMBList) {
                     if (children.value().toLowerCase().equals(numb)) {
                         children.setValue(CoreNlpConstants.NUMBER);
-                        double confVal = confidence.getConfidence();
-                        confVal -= (1.0/(double)confidence.getWordCount()) * CoreNlpConstants.ReplaceNOc;
-                        confidence.setConfidence(confVal);
+                        confidence.updateConfidence(1, CoreNlpConstants.ReplaceNOc);
                     }
                 }
             }
