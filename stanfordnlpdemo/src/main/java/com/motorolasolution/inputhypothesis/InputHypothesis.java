@@ -22,6 +22,8 @@ public class InputHypothesis {
     public InputHypothesis(Tree tree, HypothesisConfidence hypothesisConfidence) {
         hTree = tree;
         hConfidence = hypothesisConfidence;
+        hConfidence.setWordCount(tree.getLeaves().size());
+        hConfidence.setTreeDeep(tree.depth());
     }
 
     public Tree getHTree() {
