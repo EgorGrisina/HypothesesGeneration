@@ -49,7 +49,7 @@ public class CoreNlpConstants {
     public final static double POSc = 0.15;
     public final static double NUMBERc = 0.1;
 
-    public final static double DEFAULTc = 0.5;
+    public final static double DEFAULTc = 0.15;
 
     public static double getPOScoefficient(String POSstring) {
         if (POSstring.equals(NN)) return NNc;
@@ -75,5 +75,6 @@ public class CoreNlpConstants {
     // Coefficients for Rules
     public final static double JJbeforeNNc = 1.0;
     public final static double JJbeforeJJc = 0.7;
+    public final static double ReplaceNOc = 0.01;
 
 }
