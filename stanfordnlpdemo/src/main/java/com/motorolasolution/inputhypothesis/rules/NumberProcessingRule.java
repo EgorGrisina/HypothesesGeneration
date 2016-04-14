@@ -72,7 +72,7 @@ public class NumberProcessingRule extends BaseHypothesisRule {
         }
 
         double confVal = confidence.getConfidence();
-        confVal -= ((double)count/(double)confidence.getWordCount()) * CoreNlpConstants.NUMBERc;
+        confVal -= ((double)count/(double)confidence.getWordCount()) * CoreNlpConstants.getPOScoefficient(CoreNlpConstants.NUMBER);
         confidence.setConfidence(confVal);
 
         Map<String, HypothesisConfidence> resultMap = new HashMap<String, HypothesisConfidence>();

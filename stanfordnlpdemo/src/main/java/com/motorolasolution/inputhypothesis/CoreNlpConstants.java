@@ -27,7 +27,7 @@ public class CoreNlpConstants {
     public final static String RBS = "RBS";
     public final static String RBR = "RBR";
     public final static String CD = "CD";
-    public final static String RPR$ = "RPR$";
+    public final static String PRP$ = "PRP$";
     public final static String POS = "POS";
 
     public final static String[] RBListNoclear = {"RBR", "RBS"};
@@ -45,8 +45,8 @@ public class CoreNlpConstants {
     public final static double RBSc = 0.6;
     public final static double RBRc = 0.6;
     public final static double CDc = 0.5;
-    public final static double RPR$c = 0.2;
-    public final static double POSc = 0.15;
+    public final static double PRP$c = 0.2;
+    public final static double POSc = 0.1;
     public final static double NUMBERc = 0.1;
 
     public final static double DEFAULTc = 0.15;
@@ -63,11 +63,11 @@ public class CoreNlpConstants {
         if (POSstring.equals(RBS)) return RBSc;
         if (POSstring.equals(RBR)) return RBRc;
         if (POSstring.equals(CD)) return CDc;
-        if (POSstring.equals(RPR$)) return RPR$c;
+        if (POSstring.equals(PRP$)) return PRP$c;
         if (POSstring.equals(POS)) return POSc;
         if (POSstring.equals(NUMBER)) return NUMBERc;
 
-        System.out.println("No coefficient for :" + POSstring);
+        System.out.println("\n !-------!\nNo coefficient for :" + POSstring+"\n!---------!");
         return DEFAULTc;
     }
 
