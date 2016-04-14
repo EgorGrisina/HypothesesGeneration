@@ -45,25 +45,23 @@ public class HypothesisConfidence {
         return new HypothesisConfidence(wordCount, treeDeep, confidence);
     }
 
-    public void updateConfidence(int rwc, String POSname, double RuleCoeff) {
+    public void updateConfidence(int rwc, double POSc, double RuleCoeff) {
         double confVal = getConfidence();
         confVal -= ((double)rwc/(double)getWordCount())
-                * CoreNlpConstants.getPOScoefficient(POSname)
+                * POSc
                 * RuleCoeff;
         setConfidence(confVal);
+    }
+
+    public void updateConfidence(int rwc, String POSname, double RuleCoeff) {
+        updateConfidence(rwc, CoreNlpConstants.getPOScoefficient(POSname), RuleCoeff);
     }
 
     public void updateConfidence(int rwc, double RuleCoeff) {
-        double confVal = getConfidence();
-        confVal -= ((double)rwc/(double)getWordCount())
-                * RuleCoeff;
-        setConfidence(confVal);
+        updateConfidence(rwc, 1.0, RuleCoeff);
     }
 
     public void updateConfidence(int rwc, String POSname) {
-        double confVal = getConfidence();
-        confVal -= ((double)rwc/(double)getWordCount())
-                * CoreNlpConstants.getPOScoefficient(POSname);
-        setConfidence(confVal);
+        updateConfidence(rwc, CoreNlpConstants.getPOScoefficient(POSname), 1.0);
     }
 }
