@@ -55,12 +55,14 @@ public class NumberProcessingRule extends BaseHypothesisRule {
     private Map<String, HypothesisConfidence> removeNumberWord2(Tree tree, HypothesisConfidence confidence) {
         PrintWriter out = new PrintWriter(System.out);
         List<LabeledWord> words = tree.labeledYield();
+        int count = 0;
 
         for (int i = 0; i < words.size() - 1; i++) {
             if (words.get(i).word().equals(CoreNlpConstants.NUMBER)) {
                 if (words.get(i + 1).tag().value().equals(CoreNlpConstants.CD)) {
                     words.remove(i);
                     i--;
+                    count++;
                 }
             }
         }
@@ -68,6 +70,11 @@ public class NumberProcessingRule extends BaseHypothesisRule {
         for (LabeledWord word : words) {
             sentence += word.word() + " ";
         }
+
+        double confVal = confidence.getConfidence();
+        confVal -= ((double)count/(double)confidence.getWordCount()) * CoreNlpConstants.NUMBERc;
+        confidence.setConfidence(confVal);
+
         Map<String, HypothesisConfidence> resultMap = new HashMap<String, HypothesisConfidence>();
         resultMap.put(sentence, confidence);
         return resultMap;
@@ -135,6 +142,9 @@ public class NumberProcessingRule extends BaseHypothesisRule {
                 for (String numb : CoreNlpConstants.NUMBList) {
                     if (children.value().toLowerCase().equals(numb)) {
                         children.setValue(CoreNlpConstants.NUMBER);
+                        double confVal = confidence.getConfidence();
+                        confVal -= (1.0/(double)confidence.getWordCount()) * CoreNlpConstants.ReplaceNOc;
+                        confidence.setConfidence(confVal);
                     }
                 }
             }
