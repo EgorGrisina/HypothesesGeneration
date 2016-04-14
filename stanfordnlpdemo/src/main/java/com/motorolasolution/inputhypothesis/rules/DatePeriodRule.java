@@ -1,6 +1,7 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 
+import com.motorolasolution.inputhypothesis.CoreNlpConstants;
 import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
@@ -62,7 +63,10 @@ public class DatePeriodRule extends BaseHypothesisRule {
                 if (childrenTextValue.equals("s")){
                     String childrenValue = children.value().toLowerCase().replaceAll("[^0-9]","");
                     children.setValue(childrenValue);
-                    confidence = confidence; //!!!!!!!!!!!!!!!!
+
+                    double confVal = confidence.getConfidence();
+                    confVal -= (1.0/(double)(confidence.getWordCount()+1)) * CoreNlpConstants.DatePeriodc;
+                    confidence.setConfidence(confVal);
                 }
             }
 

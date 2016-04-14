@@ -76,5 +76,6 @@ public class CoreNlpConstants {
     public final static double JJbeforeNNc = 1.0;
     public final static double JJbeforeJJc = 0.7;
     public final static double ReplaceNOc = 0.01;
+    public final static double DatePeriodc = 0.4;
 
 }
