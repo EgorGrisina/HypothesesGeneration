@@ -1,7 +1,6 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
-import com.motorolasolution.inputhypothesis.CoreNlpOutput;
 import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
@@ -12,7 +11,6 @@ import java.util.List;
 import java.util.Map;
 
 import edu.stanford.nlp.ling.LabeledWord;
-import edu.stanford.nlp.ling.Word;
 import edu.stanford.nlp.trees.Tree;
 
 public class NumberProcessingRule extends BaseHypothesisRule {
@@ -60,7 +58,7 @@ public class NumberProcessingRule extends BaseHypothesisRule {
 
         for (int i = 0; i < words.size() - 1; i++) {
             if (words.get(i).word().equals(CoreNlpConstants.NUMBER)) {
-                if (words.get(i + 1).tag().value().equals(CoreNlpConstants.NUMERAL)) {
+                if (words.get(i + 1).tag().value().equals(CoreNlpConstants.CD)) {
                     words.remove(i);
                     i--;
                 }

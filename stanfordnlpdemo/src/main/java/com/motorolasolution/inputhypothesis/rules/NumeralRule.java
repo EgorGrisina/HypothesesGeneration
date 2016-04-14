@@ -5,7 +5,6 @@ import com.motorolasolution.inputhypothesis.CoreNlpConstants;
 import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -82,7 +81,7 @@ public class NumeralRule extends BaseHypothesisRule {
 
                 Tree children = childs[i];
 
-                if (children.value().equals(CoreNlpConstants.NUMERAL)) {
+                if (children.value().equals(CoreNlpConstants.CD)) {
                     Tree newTree = tree.deepCopy();
                     newTree.removeChild(i);
                     HypothesisConfidence newConfidence = confidence.copy();
