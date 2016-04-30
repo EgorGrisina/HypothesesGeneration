@@ -81,4 +81,6 @@ public class CoreNlpConstants {
     public final static double NumeralNoINc = 0.7;
     public final static double NumeralInINc = 1.0;
 
+    public final static double SimilarLeavesMaxDiff = 0.25;
+
 }

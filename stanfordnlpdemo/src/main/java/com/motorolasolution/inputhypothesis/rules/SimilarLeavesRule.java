@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.trees.Tree;
 
 public class SimilarLeavesRule extends BaseHypothesisRule{
@@ -63,7 +64,7 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
         }
 
         for (int i = 0; i < childs.length; i++) {
-            for (int j =0; j < childs.length; j++) {
+            for (int j = 0; j < childs.length; j++) {
                 if (i != j) {
 
                     Tree children1 = childs[i];
@@ -74,8 +75,10 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
 
                         Tree newTree = tree.deepCopy();
                         newTree.removeChild(j);
-                        //CONFIDENCE
+
                         HypothesisConfidence newConfidence = confidence.copy();
+                        updateConfidence(newConfidence, children2, j+1, childs.length);
+
                         changedTree.put(newTree, newConfidence);
                     }
                 }
@@ -83,6 +86,19 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
         }
 
         return changedTree;
+    }
+
+    void updateConfidence(HypothesisConfidence confidence, Tree children, double chPosition, double chCount) {
+
+        double ruleCoeff = 1.0 - ((CoreNlpConstants.SimilarLeavesMaxDiff/chCount)*chPosition);
+        int wordCount = children.getLeaves().size();
+
+        for (CoreLabel leave : children.taggedLabeledYield()) {
+            confidence.updateConfidence(1, leave.value(), ruleCoeff);
+        }
+
+        confidence.setWordCount(confidence.getWordCount()-wordCount);
+
     }
 
 }
