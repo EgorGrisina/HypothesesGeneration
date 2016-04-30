@@ -61,7 +61,9 @@ public class ProperNounRule extends BaseHypothesisRule {
                         tree.removeChild(i);
                         childs.remove(i);
                         i--;
-                        confidence = confidence; //!!!!!!
+                        /*WARNING: there are no updating of depth of the tree! only word count*/
+                        confidence.updateConfidence(1, children.label().value());
+                        confidence.setWordCount(confidence.getWordCount()-1);
                     }
                 }
             }
