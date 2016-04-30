@@ -70,15 +70,21 @@ public class AdverbRule extends BaseHypothesisRule {
                 newTree.removeChild(i);
 
                 HypothesisConfidence newConfidence = confidence.copy();
+                newConfidence.updateConfidence(1, children.value());
+
                 changedTree.put(newTree, newConfidence);
 
             } else {
 
                 for (String rbNoclear : CoreNlpConstants.RBListNoclear) {
                     if (children.label().value().equals(rbNoclear)) {
+
                         Tree newTree = tree.deepCopy();
                         newTree.removeChild(i);
+
                         HypothesisConfidence newConfidence = confidence.copy();
+                        newConfidence.updateConfidence(1, children.value());
+
                         changedTree.put(newTree, newConfidence);
                     }
                 }
