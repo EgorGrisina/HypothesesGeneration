@@ -29,6 +29,14 @@ public class CoreNlpConstants {
     public final static String CD = "CD";
     public final static String PRP$ = "PRP$";
     public final static String POS = "POS";
+    public final static String DT = "DT";
+    public final static String VB = "VB";
+    public final static String VBD = "VBD";
+    public final static String VBG = "VBG";
+    public final static String VBN = "VBN";
+    public final static String VBP = "VBP";
+    public final static String VBZ = "VBZ";
+
 
     public final static String[] RBListNoclear = {"RBR", "RBS"};
     public final static String[] NNPList = {"NNP", "NNPS"};
@@ -45,9 +53,12 @@ public class CoreNlpConstants {
     public final static double RBSc = 0.6;
     public final static double RBRc = 0.6;
     public final static double CDc = 0.5;
+    public final static double VBc = 0.25;
     public final static double PRP$c = 0.2;
+    public final static double INc = 0.2;
     public final static double POSc = 0.1;
     public final static double NUMBERc = 0.1;
+    public final static double DTc = 0.1;
 
     public final static double DEFAULTc = 0.15;
 
@@ -66,6 +77,15 @@ public class CoreNlpConstants {
         if (POSstring.equals(PRP$)) return PRP$c;
         if (POSstring.equals(POS)) return POSc;
         if (POSstring.equals(NUMBER)) return NUMBERc;
+        if (POSstring.equals(DT)) return DTc;
+        if (POSstring.equals(IN)) return INc;
+        if (POSstring.equals(VB)) return VBc;
+        if (POSstring.equals(VBD)) return VBc;
+        if (POSstring.equals(VBG)) return VBc;
+        if (POSstring.equals(VBN)) return VBc;
+        if (POSstring.equals(VBP)) return VBc;
+        if (POSstring.equals(VBZ)) return VBc;
+
 
         System.out.println("\n !-------!\nNo coefficient for :" + POSstring+"\n!---------!");
         return DEFAULTc;
