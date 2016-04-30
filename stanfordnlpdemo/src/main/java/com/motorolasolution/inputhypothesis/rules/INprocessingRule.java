@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.trees.Tree;
 
 public class INprocessingRule extends BaseHypothesisRule {
@@ -71,15 +72,19 @@ public class INprocessingRule extends BaseHypothesisRule {
 
                         Tree NPchild = childs[1].deepCopy();
                         int NPchildcount = NPchild.children().length;
+
+                        HypothesisConfidence newConfidence = confidence.copy();
+                        updateConfidence(newConfidence, NPchild);
+
                         for (int k = NPchildcount - 1 ; k >= 0; k-- ){
                             NPchild.removeChild(k);
                         }
+
                         NPchild.addChild(NNchild);
                         for (int j = 1; j < childs.length; j++){
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NPchild);
-                        HypothesisConfidence newConfidence = confidence.copy();
                         changedTree.put(newTree, newConfidence);
 
                     } else {
@@ -95,6 +100,20 @@ public class INprocessingRule extends BaseHypothesisRule {
         }
 
         return changedTree;
+    }
+
+    private void updateConfidence(HypothesisConfidence confidence, Tree NPchildren) {
+
+        Tree NNleave = getNNchild(NPchildren);
+        CoreLabel NNLabel = NNleave.taggedLabeledYield().get(0);
+        int wordCount = NPchildren.getLeaves().size();
+        for (CoreLabel leave : NPchildren.taggedLabeledYield()) {
+            if (!(leave.value().equals(NNLabel.value()) && leave.word().equals(NNLabel.word()))) {
+                confidence.updateConfidence(1, leave.value());
+            }
+        }
+        confidence.setWordCount(confidence.getWordCount()-wordCount+1);
+
     }
 
     private Tree getNNchild(Tree tree) {
