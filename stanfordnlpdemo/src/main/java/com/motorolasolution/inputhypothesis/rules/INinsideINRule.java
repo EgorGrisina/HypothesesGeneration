@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.trees.Tree;
 
 public class INinsideINRule extends BaseHypothesisRule {
@@ -92,9 +93,11 @@ public class INinsideINRule extends BaseHypothesisRule {
 
             if (isContainIN(children)) {
 
+                HypothesisConfidence newConfidence = confidence.copy();
+                updateConfidence(newConfidence, children);
+
                 Tree newTree = tree.deepCopy();
                 newTree.removeChild(i);
-                HypothesisConfidence newConfidence = confidence.copy();
                 changedTree.put(newTree, newConfidence);
 
             } else {
@@ -121,5 +124,16 @@ public class INinsideINRule extends BaseHypothesisRule {
             }
         }
         return false;
+    }
+
+    private void updateConfidence(HypothesisConfidence confidence, Tree children) {
+
+        int wordCount = children.getLeaves().size();
+
+        for (CoreLabel leave : children.taggedLabeledYield()) {
+            confidence.updateConfidence(1, leave.value());
+        }
+
+        confidence.setWordCount(confidence.getWordCount()-wordCount);
     }
 }
