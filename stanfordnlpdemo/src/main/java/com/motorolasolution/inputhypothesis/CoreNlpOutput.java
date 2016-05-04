@@ -51,14 +51,14 @@ public class CoreNlpOutput {
             try {
                 String phrase = java.net.URLEncoder.encode(
                         CoreNlpOutput.getSentenceFromTree(hypothesis.getHTree()), "ISO-8859-1");
-                query+="query="+phrase+"&";
-                confidence+="confidence="+hypothesis.getHConfidence().getConfidence()+"&";
+                query += "query="+phrase+"&";
+                confidence += "confidence="+hypothesis.getHConfidence().getConfidence()+"&";
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
         }
         confidence = confidence.substring(0, confidence.lastIndexOf("&"));
-        query+=confidence;
+        query += confidence;
         //query = "query=describe+witness+sdfsfs+in+case+11+&query=describe+witness+in+case&confidence=1.0&confidence=0.94";
 
         return query;
