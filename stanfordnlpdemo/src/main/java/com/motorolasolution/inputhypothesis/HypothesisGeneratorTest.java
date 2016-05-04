@@ -164,9 +164,10 @@ public class HypothesisGeneratorTest {
             }
 
             out.flush();
-            out.println("----------------------------------------------");
+            out.println("\n----------------------------------------------");
             out.println("Start S2i processing");
             out.println(CoreNlpOutput.getS2iQuery(results));
+            out.println("");
             AiResponse response = S2iCommunicator.query(CoreNlpOutput.getS2iQuery(results));
             if (response == null) {
                 out.println("No response");
