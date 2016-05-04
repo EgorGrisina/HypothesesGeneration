@@ -1,25 +1,36 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
 public class SProcessingRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
-        List<Tree> withoutPOS = new ArrayList<Tree>();
+        List<InputHypothesis> withoutPOS = new ArrayList<InputHypothesis>();
 
-        for (int i = 0; i < inputTrees.size(); i++) {
-            withoutPOS.add(getNewTree(removePOS(inputTrees.get(i).deepCopy())));
+        for (int i = 0; i < inputHypothesisList.size(); i++) {
+
+            Map<Tree, HypothesisConfidence> resultMap = removePOS(
+                    inputHypothesisList.get(i).getHTree().deepCopy(),
+                    inputHypothesisList.get(i).getHConfidence().copy());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                withoutPOS.add(new InputHypothesis(getNewTree((Tree)entry.getKey()), (HypothesisConfidence)entry.getValue()));
+            }
         }
 
-        withoutPOS = cleanTreeList(withoutPOS);
+        withoutPOS = cleanHypothesisList(withoutPOS);
 
         /*PrintWriter out = new PrintWriter(System.out);
         for(Tree tree : withoutPOS) {
@@ -29,7 +40,8 @@ public class SProcessingRule extends BaseHypothesisRule {
         return withoutPOS;
     }
 
-    private Tree removePOS(Tree tree){
+    private Map<Tree, HypothesisConfidence> removePOS(Tree tree, HypothesisConfidence confidence){
+
         List<Tree> childs = tree.getChildrenAsList();
 
         boolean isSimpleChilds = true;
@@ -48,19 +60,29 @@ public class SProcessingRule extends BaseHypothesisRule {
                     tree.removeChild(i);
                     childs.remove(i);
                     i--;
+                    confidence.updateConfidence(1, children.value());
                 }
             }
 
         } else {
 
             for (int i = 0; i < childs.size(); i++) {
+
                 Tree children = childs.get(i);
-                Tree new_children = removePOS(children);
-                tree.setChild(i, new_children);
+                Map<Tree, HypothesisConfidence> result = removePOS(children, confidence);
+
+                for (Map.Entry entry : result.entrySet()) {
+                    confidence = (HypothesisConfidence) entry.getValue();
+                    tree.setChild(i, (Tree) entry.getKey());
+                }
+
+
             }
         }
 
-        return tree;
+        Map<Tree, HypothesisConfidence> resultMap = new HashMap<Tree, HypothesisConfidence>();
+        resultMap.put(tree, confidence);
+        return resultMap;
     }
 
 

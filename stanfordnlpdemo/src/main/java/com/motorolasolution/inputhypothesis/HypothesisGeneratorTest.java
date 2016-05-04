@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;
@@ -64,18 +65,12 @@ public class HypothesisGeneratorTest {
 
         while (!input.equals(CoreNlpConstants.EXIT)) {
 
-            List<Tree> inputTrees = new ArrayList<Tree>();
-            List<Tree> results = new ArrayList<Tree>();
+            List<InputHypothesis> inputHypothesises = new ArrayList<InputHypothesis>();
+            List<InputHypothesis> results = new ArrayList<InputHypothesis>();
 
             out.println("Inpute text:");
             out.println(input);
             out.flush();
-
-            //input = ((PunctuationRule)rulesList[0]).removePunctuation(input);
-            /*out.println("");
-            out.println("Punctuation rule:");
-            out.println(input);
-            out.flush();*/
 
             List<Tree> sentencesTree = mCoreNlpPipeline.getTrees(input);
 
@@ -85,6 +80,17 @@ public class HypothesisGeneratorTest {
                 input = in.readLine();
                 continue;
             }
+
+            for (Tree sentense : sentencesTree) {
+                inputHypothesises.add(new InputHypothesis(sentense, 1.0));
+            }
+
+            out.println("");
+            out.println("Input tree:");
+            CoreNlpOutput.printHypothesisTrees(inputHypothesises, out);
+            out.println("");
+            out.flush();
+
             NumberProcessingRule mNumberProcessingRule = new NumberProcessingRule();
             mNumberProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
             PunctuationRule mPunctuationRule = new PunctuationRule();
@@ -92,35 +98,49 @@ public class HypothesisGeneratorTest {
             SProcessingRule mSProcessingRule = new SProcessingRule();
             mSProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
 
-            results = mNumberProcessingRule.getHypothesis(sentencesTree);
+            results = mNumberProcessingRule.getHypothesis(inputHypothesises);
             results = mSProcessingRule.getHypothesis(results);
+
+            inputHypothesises = new ArrayList<InputHypothesis>();
+
             for (int i = 0; i < results.size(); i++) {
-                inputTrees.add(mCoreNlpPipeline.getTree(
-                        mPunctuationRule.removePunctuation(
-                                CoreNlpOutput.getSentenceFromTree(results.get(i))
-                        )
-                ));
+
+                InputHypothesis hyp = new InputHypothesis();
+                hyp.setHTree(mCoreNlpPipeline.getTree(mPunctuationRule.removePunctuation(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()))));
+                hyp.setHConfidence(results.get(i).getHConfidence());
+
+                inputHypothesises.add(hyp);
             }
+            results = new ArrayList<InputHypothesis>();
+
             out.println("");
-            out.println("Input tree:");
-            CoreNlpOutput.printTrees(inputTrees, out);
+            out.println("After prepare tree:");
+            CoreNlpOutput.printHypothesisTrees(inputHypothesises, out);
             out.println("");
             out.flush();
 
             //results.addAll(sentencesTree);
 
             for (int i = 0; i < rulesList.length; i++ ){
-                results = rulesList[i].getHypothesis(inputTrees);
+                results = rulesList[i].getHypothesis(inputHypothesises);
+
                 out.println("#"+ (i+1) +" " + rulesList[i].getRuleName()+" result:");
                 for(int j = 0; j < results.size(); j++){
-                    out.println(j + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(j)));
+                    out.println(j + 1 +"."+
+                            " w:"+results.get(j).getHConfidence().getWordCount()+
+                            " d:"+results.get(j).getHConfidence().getTreeDeep()+
+                            " c:"+results.get(j).getHConfidence().getConfidence()+
+                            " : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree()));
                 }
                 out.println("");
                 out.flush();
             }
 
+            results = new ArrayList<InputHypothesis>();
+            results.addAll(inputHypothesises);
+
             out.println("-----------All rules-----------");
-            results = rulesList[0].getHypothesis(inputTrees);
+            results = rulesList[0].getHypothesis(results);
             results = rulesList[1].getHypothesis(results);
             results = rulesList[2].getHypothesis(results);
             results = rulesList[3].getHypothesis(results);
@@ -131,8 +151,14 @@ public class HypothesisGeneratorTest {
 
             out.println("Input:\n0. "+input+"\n\nResult:");
 
+            Collections.sort(results);
+
             for(int i = 0; i < results.size(); i++){
-                out.println(i + 1 +". " + CoreNlpOutput.getSentenceFromTree(results.get(i)));
+                out.println(i + 1 +"."+
+                        " w:"+results.get(i).getHConfidence().getWordCount()+
+                        " d:"+results.get(i).getHConfidence().getTreeDeep()+
+                        " c:"+results.get(i).getHConfidence().getConfidence()+
+                        " : " + CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()));
             }
 
             out.flush();

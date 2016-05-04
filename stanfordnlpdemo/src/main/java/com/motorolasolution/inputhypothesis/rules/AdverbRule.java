@@ -1,35 +1,38 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
 public class AdverbRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
-        List<Tree> POSresults = new ArrayList<Tree>();
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
+
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
+
         int i = 0;
         while (i < result.size() ) {
-            POSresults = removeRBFromTree(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+
+            Map<Tree, HypothesisConfidence> resultMap =
+                    removeRBFromTree(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
 
-        result = cleanTreeList(result);
-
-        POSresults = new ArrayList<Tree>();
-        for (Tree tree : result){                   //update tree for all results
-            POSresults.add(getNewTree(tree));
-        }
+        result = cleanHypothesisList(result);
 
         /*PrintWriter out = new PrintWriter(System.out);
         for (Tree tree : POSresults) {
@@ -37,65 +40,74 @@ public class AdverbRule extends BaseHypothesisRule {
             tree.pennPrint(out);
             out.flush();
         }*/
-        return POSresults;
+        return result;
     }
 
-    private List<Tree> removeRBFromTree(Tree tree){
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+    private Map<Tree, HypothesisConfidence> removeRBFromTree(Tree tree, HypothesisConfidence confidence) {
+
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
         Tree[] childs = tree.children();
 
         boolean isSimpleChilds = true;
         for (Tree children : childs) {
-            if (children.depth()>1) {
+            if (children.depth() > 1) {
                 isSimpleChilds = false;
             }
         }
 
 
+        for (int i = 0; i < childs.length; i++) {
+            Tree children = childs[i];
+            Tree next_children = null;
+            if (i < childs.length - 1) {
+                next_children = childs[i + 1];
+            }
+            if (next_children != null && children.label().value().equals(CoreNlpConstants.RB)
+                    && next_children.label().value().equals(CoreNlpConstants.RB)) {
 
-            for (int i = 0; i < childs.length; i++) {
-                Tree children = childs[i];
-                Tree next_children = null;
-                if (i < childs.length - 1) {
-                    next_children = childs[i + 1];
-                }
-                if (next_children != null && children.label().value().equals(CoreNlpConstants.RB)
-                        && next_children.label().value().equals(CoreNlpConstants.RB)) {
+                Tree newTree = tree.deepCopy();
+                newTree.removeChild(i);
 
-                    Tree newTree = tree.deepCopy();
-                    newTree.removeChild(i);
-                    changedTree.add(newTree);
+                HypothesisConfidence newConfidence = confidence.copy();
+                newConfidence.updateConfidence(1, children.value());
 
-                } else {
+                changedTree.put(newTree, newConfidence);
 
-                    for (String rbNoclear : CoreNlpConstants.RBListNoclear) {
-                        if (children.label().value().equals(rbNoclear)) {
-                            Tree newTree = tree.deepCopy();
-                            newTree.removeChild(i);
-                            changedTree.add(newTree);
-                        }
+            } else {
+
+                for (String rbNoclear : CoreNlpConstants.RBListNoclear) {
+                    if (children.label().value().equals(rbNoclear)) {
+
+                        Tree newTree = tree.deepCopy();
+                        newTree.removeChild(i);
+
+                        HypothesisConfidence newConfidence = confidence.copy();
+                        newConfidence.updateConfidence(1, children.value());
+
+                        changedTree.put(newTree, newConfidence);
                     }
                 }
             }
+        }
 
         if (!isSimpleChilds) {
             for (int i = 0; i < childs.length; i++) {
 
                 Tree children = childs[i];
-                List<Tree> new_children_list = removeRBFromTree(children);
 
-                for (int j = 1; j<new_children_list.size(); j++) {
+                Map<Tree, HypothesisConfidence> resultMap = removeRBFromTree(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
 
             }
         }
 
         return changedTree;
-    };
+    }
 
 }

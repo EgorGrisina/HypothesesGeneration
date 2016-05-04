@@ -1,34 +1,35 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import edu.stanford.nlp.trees.Tree;
 
 public class ProperNounRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
-        List<Tree> POSresults = new ArrayList<Tree>();
-        int i = 0;
-        while (i < result.size() ) {
-            /*POSresults = removeNNP(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(POSresults.get(j));
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
+
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
+
+        for (InputHypothesis hypothesis : inputHypothesisList) {
+            Map<Tree, HypothesisConfidence> resultMap = removeNNP(hypothesis.getHTree().deepCopy(), hypothesis.getHConfidence().copy());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
-            i++;*/
-            POSresults.add(getNewTree(removeNNP(result.get(i).deepCopy())));
-            i++;
+
         }
 
-        result.addAll(POSresults);
-
-        result = cleanTreeList(result);
+        result = cleanHypothesisList(result);
 
         /*PrintWriter out = new PrintWriter(System.out);
         for (Tree tree : result) {
@@ -39,7 +40,7 @@ public class ProperNounRule extends BaseHypothesisRule {
         return result;
     }
 
-    private Tree removeNNP(Tree tree) {
+    private Map<Tree, HypothesisConfidence> removeNNP(Tree tree, HypothesisConfidence confidence) {
 
         List<Tree> childs = tree.getChildrenAsList();
 
@@ -60,18 +61,29 @@ public class ProperNounRule extends BaseHypothesisRule {
                         tree.removeChild(i);
                         childs.remove(i);
                         i--;
+                        /*WARNING: there are no updating of depth of the tree! only word count*/
+                        confidence.updateConfidence(1, children.label().value());
+                        confidence.setWordCount(confidence.getWordCount()-1);
                     }
                 }
             }
 
         } else {
             for (int i = 0; i < childs.size(); i++) {
+
                 Tree children = childs.get(i);
-                tree.setChild(i, removeNNP(children));
+                Map<Tree, HypothesisConfidence> resultMap= removeNNP(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
+                    confidence = (HypothesisConfidence) entry.getValue();
+                    tree.setChild(i, (Tree) entry.getKey());
+                }
             }
         }
 
-        return tree;
+        Map<Tree, HypothesisConfidence> resultMap = new HashMap<Tree, HypothesisConfidence>();
+        resultMap.put(tree, confidence);
+        return resultMap;
     }
 
 }

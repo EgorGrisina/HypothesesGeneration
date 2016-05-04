@@ -2,41 +2,48 @@ package com.motorolasolution.inputhypothesis.rules;
 
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.trees.Tree;
 
 public class SimilarLeavesRule extends BaseHypothesisRule{
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
-        List<Tree> POSresults = new ArrayList<Tree>();
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
+        //List<InputHypothesis> POSresults = new ArrayList<InputHypothesis>();
 
         int i = 0;
         while (i < result.size() ) {
-            POSresults = removeSimilarLeaves(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(getNewTree(POSresults.get(j)));
+
+            Map<Tree, HypothesisConfidence> resultMap = removeSimilarLeaves(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
+
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
 
-        result = cleanTreeList(result);
+        result = cleanHypothesisList(result);
 
         return result;
     }
 
 
-    private List<Tree> removeSimilarLeaves(Tree tree) {
+    private Map<Tree, HypothesisConfidence> removeSimilarLeaves(Tree tree, HypothesisConfidence confidence) {
 
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
+        //changedTree.put(tree, confidence);
 
         Tree[] childs = tree.children();
 
@@ -44,19 +51,20 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
 
             Tree children = childs[i];
             if (children.depth() > 0) {
-                List<Tree> new_children_list = removeSimilarLeaves(children);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+                Map<Tree, HypothesisConfidence> resultMap = removeSimilarLeaves(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
             }
 
         }
 
         for (int i = 0; i < childs.length; i++) {
-            for (int j =0; j < childs.length; j++) {
+            for (int j = 0; j < childs.length; j++) {
                 if (i != j) {
 
                     Tree children1 = childs[i];
@@ -67,13 +75,30 @@ public class SimilarLeavesRule extends BaseHypothesisRule{
 
                         Tree newTree = tree.deepCopy();
                         newTree.removeChild(j);
-                        changedTree.add(newTree);
+
+                        HypothesisConfidence newConfidence = confidence.copy();
+                        updateConfidence(newConfidence, children2, j+1, childs.length);
+
+                        changedTree.put(newTree, newConfidence);
                     }
                 }
             }
         }
 
         return changedTree;
+    }
+
+    void updateConfidence(HypothesisConfidence confidence, Tree children, double chPosition, double chCount) {
+
+        double ruleCoeff = 1.0 - ((CoreNlpConstants.SimilarLeavesMaxDiff/chCount)*chPosition);
+        int wordCount = children.getLeaves().size();
+
+        for (CoreLabel leave : children.taggedLabeledYield()) {
+            confidence.updateConfidence(1, leave.value(), ruleCoeff);
+        }
+
+        confidence.setWordCount(confidence.getWordCount()-wordCount);
+
     }
 
 }

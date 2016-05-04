@@ -1,54 +1,58 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.HypothesisConfidence;
+import com.motorolasolution.inputhypothesis.InputHypothesis;
 
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
+import edu.stanford.nlp.ling.CoreLabel;
 import edu.stanford.nlp.trees.Tree;
 
 public class INprocessingRule extends BaseHypothesisRule {
 
     @Override
-    public List<Tree> getHypothesis(List<Tree> inputTrees) {
+    public List<InputHypothesis> getHypothesis(List<InputHypothesis> inputHypothesisList) {
 
-        List<Tree> result = new ArrayList<Tree>();
-        result.addAll(inputTrees);
-        List<Tree> POSresults = new ArrayList<Tree>();
+        List<InputHypothesis> result = new ArrayList<InputHypothesis>();
+        result.addAll(inputHypothesisList);
 
         int i = 0;
         while (i < result.size() ) {
-            POSresults = removeINContent(result.get(i));
-            for (int j = 1; j < POSresults.size(); j++) {
-                result.add(getNewTree(POSresults.get(j)));
+            Map<Tree, HypothesisConfidence> resultMap = removeINContent(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
+            for (Map.Entry entry : resultMap.entrySet()) {
+                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
             }
             i++;
         }
 
-        result = cleanTreeList(result);
+        result = cleanHypothesisList(result);
 
         return result;
     }
 
 
-    private List<Tree> removeINContent(Tree tree) {
+    private Map<Tree, HypothesisConfidence> removeINContent(Tree tree, HypothesisConfidence confidence) {
 
-        List<Tree> changedTree = new ArrayList<Tree>();
-        changedTree.add(tree);
+        Map<Tree, HypothesisConfidence> changedTree = new HashMap<Tree, HypothesisConfidence>();
 
         Tree[] childs = tree.children();
 
         for (int i = 0; i < childs.length; i++) {
 
             Tree children = childs[i];
-            if (children.depth() > 1) {
-                List<Tree> new_children_list = removeINContent(children);
 
-                for (int j = 1; j < new_children_list.size(); j++) {
+            if (children.depth() > 1) {
+                Map<Tree, HypothesisConfidence> resultMap = removeINContent(children, confidence);
+
+                for (Map.Entry entry : resultMap.entrySet()) {
                     Tree newTree = tree.deepCopy();
-                    newTree.setChild(i, new_children_list.get(j));
-                    changedTree.add(newTree);
+                    newTree.setChild(i, (Tree) entry.getKey());
+                    changedTree.put(newTree, (HypothesisConfidence) entry.getValue());
                 }
             }
 
@@ -68,27 +72,48 @@ public class INprocessingRule extends BaseHypothesisRule {
 
                         Tree NPchild = childs[1].deepCopy();
                         int NPchildcount = NPchild.children().length;
+
+                        HypothesisConfidence newConfidence = confidence.copy();
+                        updateConfidence(newConfidence, NPchild);
+
                         for (int k = NPchildcount - 1 ; k >= 0; k-- ){
                             NPchild.removeChild(k);
                         }
+
                         NPchild.addChild(NNchild);
                         for (int j = 1; j < childs.length; j++){
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NPchild);
-                        changedTree.add(newTree);
+                        changedTree.put(newTree, newConfidence);
+
                     } else {
                         for (int j = 1; j < childs.length; j++) {
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NNchild);
-                        changedTree.add(newTree);
+                        HypothesisConfidence newConfidence = confidence.copy();
+                        changedTree.put(newTree, newConfidence);
                     }
                 }
             }
         }
 
         return changedTree;
+    }
+
+    private void updateConfidence(HypothesisConfidence confidence, Tree NPchildren) {
+
+        Tree NNleave = getNNchild(NPchildren);
+        CoreLabel NNLabel = NNleave.taggedLabeledYield().get(0);
+        int wordCount = NPchildren.getLeaves().size();
+        for (CoreLabel leave : NPchildren.taggedLabeledYield()) {
+            if (!(leave.value().equals(NNLabel.value()) && leave.word().equals(NNLabel.word()))) {
+                confidence.updateConfidence(1, leave.value());
+            }
+        }
+        confidence.setWordCount(confidence.getWordCount()-wordCount+1);
+
     }
 
     private Tree getNNchild(Tree tree) {
