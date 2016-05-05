@@ -59,7 +59,7 @@ public class CoreNlpOutput {
         }
         confidence = confidence.substring(0, confidence.lastIndexOf("&"));
         query += confidence;
-        //query = "query=describe+witness+sdfsfs+in+case+11+&query=describe+witness+in+case&confidence=1.0&confidence=0.94";
+        //query = "query=describe+male+witness+in+case+1112&query=describe+witness+in+case+1112&query=describe+witness+in+case&confidence=0.75&confidence=0.64&confidence=0.45";
 
         return query;
     }
