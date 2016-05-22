@@ -1,0 +1,432 @@
+----------------------------TEST 1------------------------------
+Input phrase: I need to get to witness 3 in case 8776
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/commands/web/text/search
+Primary result: FAIL
+
+Received action: /private/search/cad/witness/describe
+Resolved query: I need to get to witness in case 8776
+Resolved result: FAIL
+
+Hypothesis:
+1. w:10 d:11 c:1.0 : I need to get to witness 3 in case 8776
+2. w:9 d:11 c:0.965 : I need to get to witness in case 8776
+3. w:9 d:11 c:0.95 : I need to get to witness 3 in case
+4. w:8 d:11 c:0.9094444444444444 : I need to get to witness in case
+
+----------------------------TEST 2------------------------------
+Input phrase: let's make our way to the residence of witness number 2
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/commands/notes/save
+Primary result: FAIL
+
+Received action: /private/search/cad/witness/navigate
+Resolved query: let make our way to the residence of witness
+Resolved result: DONE
+
+Hypothesis:
+1. w:10 d:9 c:0.9825757575757577 : let make our way to the residence of witness 2
+2. w:9 d:9 c:0.9625757575757576 : let make way to the residence of witness 2
+3. w:9 d:9 c:0.9325757575757576 : let make our way to the residence of witness
+4. w:8 d:9 c:0.9070202020202021 : let make way to the residence of witness
+
+----------------------------TEST 3------------------------------
+Input phrase: Find me the quickest route to witness No 2, Jake Verdinier
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/ecosystem/maps/navigation_start
+Primary result: FAIL
+
+Received action: /device/ecosystem/maps/navigation_start
+Resolved query: Find me the quickest route to witness No 2 Jake Verdinier
+Resolved result: FAIL
+
+Hypothesis:
+1. w:12 d:10 c:1.0 : Find me the quickest route to witness No 2 Jake Verdinier
+2. w:10 d:9 c:0.9708333333333333 : Find me the quickest route to witness No Jake Verdinier
+3. w:10 d:9 c:0.94375 : Find me the quickest route to witness No 2 Jake
+4. w:10 d:9 c:0.9390625 : Find me the quickest route to witness No 2 Verdinier
+5. w:10 d:9 c:0.9333333333333333 : Find me the route to witness No 2 Jake Verdinier
+6. w:10 d:8 c:0.9270833333333334 : Find me the quickest route to No 2 Jake Verdinier
+7. w:9 d:9 c:0.8983333333333333 : Find me the route to witness No Jake Verdinier
+8. w:9 d:8 c:0.8833333333333333 : Find me the quickest route to No Jake Verdinier
+9. w:9 d:8 c:0.8808333333333334 : Find me the quickest route to witness No Jake
+10. w:9 d:9 c:0.8658333333333333 : Find me the route to witness No 2 Jake
+11. w:9 d:9 c:0.8602083333333334 : Find me the route to witness No 2 Verdinier
+12. w:9 d:8 c:0.8595833333333334 : Find me the quickest route to No 2 Jake
+13. w:9 d:8 c:0.8539583333333334 : Find me the quickest route to No 2 Verdinier
+14. w:7 d:8 c:0.85 : Find me the quickest route to witness
+15. w:9 d:8 c:0.8458333333333333 : Find me the route to No 2 Jake Verdinier
+16. w:9 d:9 c:0.8431818181818183 : Find me the quickest route to witness No 2
+17. w:8 d:8 c:0.8011111111111111 : Find me the route to No Jake Verdinier
+18. w:8 d:8 c:0.7983333333333333 : Find me the route to witness No Jake
+19. w:8 d:8 c:0.7708333333333334 : Find me the route to No 2 Jake
+20. w:8 d:8 c:0.7645833333333334 : Find me the route to No 2 Verdinier
+21. w:6 d:8 c:0.7533333333333334 : Find me the route to witness
+22. w:8 d:8 c:0.745959595959596 : Find me the quickest route to No 2
+23. w:8 d:9 c:0.7433333333333334 : Find me the route to witness No 2
+24. w:7 d:8 c:0.6339583333333334 : Find me the route to No 2
+
+----------------------------TEST 4------------------------------
+Input phrase: show the route to the main eyewitness for incident 7865
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/ecosystem/maps/navigation_start
+Primary result: FAIL
+
+Received action: /private/search/cad/witness/navigate
+Resolved query: show the route to the eyewitness for incident 7865
+Resolved result: DONE
+
+Hypothesis:
+1. w:10 d:8 c:1.0 : show the route to the main eyewitness for incident 7865
+2. w:9 d:8 c:0.95 : show the route to the main eyewitness for incident
+3. w:9 d:8 c:0.9199999999999999 : show the route to the eyewitness for incident 7865
+4. w:8 d:8 c:0.8644444444444443 : show the route to the eyewitness for incident
+
+----------------------------TEST 5------------------------------
+Input phrase: what's our description for the female suspect in that incident?
+
+Expected action: /private/search/cad/arrestee/describe
+Primary action: /public/encyclopedia/generic
+Primary result: FAIL
+
+Received action: /public/encyclopedia/generic
+Resolved query: what's our description for the female suspect in that incident
+Resolved result: FAIL
+
+Hypothesis:
+1. w:12 d:9 c:1.0 : what's our description for the female suspect in that incident
+2. w:10 d:9 c:0.9916666666666667 : what's our description for the female suspect in incident
+3. w:10 d:9 c:0.9833333333333333 : what's description for the female suspect in that incident
+4. w:9 d:9 c:0.9733333333333333 : what's description for the female suspect in incident
+5. w:10 d:9 c:0.9333333333333333 : what's our description for the suspect in that incident
+6. w:9 d:9 c:0.9233333333333333 : what's our description for the suspect in incident
+7. w:9 d:9 c:0.9033333333333333 : what's description for the suspect in that incident
+8. w:8 d:9 c:0.8922222222222222 : what's description for the suspect in incident
+9. w:8 d:7 c:0.8916666666666666 : what's our description for the female suspect
+10. w:7 d:7 c:0.8533333333333333 : what's description for the female suspect
+11. w:6 d:7 c:0.8166666666666667 : what's our description for suspect
+12. w:7 d:7 c:0.8033333333333333 : what's our description for the suspect
+13. w:5 d:7 c:0.7633333333333333 : what's description for suspect
+14. w:6 d:7 c:0.758888888888889 : what's description for the suspect
+
+----------------------------TEST 6------------------------------
+Input phrase: describe the two male suspects in incident 769795
+
+Expected action: /private/search/cad/arrestee/describe
+Primary action: wisdom.unknown
+Primary result: FAIL
+
+Received action: wisdom.unknown
+Resolved query: describe the two male suspects in incident 769795
+Resolved result: FAIL
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : describe the two male suspects in incident 769795
+2. w:7 d:7 c:0.95625 : describe the male suspects in incident 769795
+3. w:7 d:6 c:0.95625 : describe the two male suspects in incident
+4. w:6 d:6 c:0.90625 : describe the male suspects in incident
+5. w:7 d:7 c:0.9 : describe the two suspects in incident 769795
+6. w:6 d:6 c:0.85 : describe the suspects in incident 769795
+7. w:6 d:6 c:0.85 : describe the two suspects in incident
+8. w:5 d:6 c:0.7916666666666666 : describe the suspects in incident
+
+----------------------------TEST 7------------------------------
+Input phrase: 1990s green jeep cherokee
+
+Expected action: /private/search/vehicle
+Primary action: input.unknown
+Primary result: FAIL
+
+Received action: /private/search/vehicle
+Resolved query: green jeep cherokee
+Resolved result: DONE
+
+Hypothesis:
+1. w:4 d:4 c:1.0 : 1990s green jeep cherokee
+2. w:4 d:4 c:0.9 : 1990 green jeep cherokee
+3. w:3 d:4 c:0.8125 : green jeep cherokee
+4. w:3 d:4 c:0.8125 : 1990s green jeep
+5. w:3 d:4 c:0.8 : 1990s jeep cherokee
+6. w:3 d:4 c:0.7916666666666666 : 1990s green cherokee
+7. w:3 d:4 c:0.7125 : 1990 green jeep
+8. w:3 d:4 c:0.6916666666666667 : 1990 green cherokee
+9. w:2 d:3 c:0.6833333333333333 : jeep cherokee
+10. w:3 d:4 c:0.6666666666666667 : 1990 jeep cherokee
+11. w:2 d:3 c:0.5625 : green jeep
+12. w:2 d:3 c:0.55 : 1990s jeep
+13. w:2 d:3 c:0.5347222222222222 : green cherokee
+14. w:1 d:3 c:0.475 : 1990s
+15. w:2 d:3 c:0.41666666666666674 : 1990 jeep
+16. w:1 d:4 c:0.375 : 1990
+17. w:1 d:3 c:0.36250000000000016 : cherokee
+18. w:1 d:3 c:0.30833333333333335 : jeep
+
+----------------------------TEST 8------------------------------
+Input phrase: Tell me about robberies in 2 miles last month
+
+Expected action: /private/search/incidents
+Primary action: wisdom.unknown
+Primary result: FAIL
+
+Received action: wisdom.unknown
+Resolved query: Tell me about robberies in 2 miles last month
+Resolved result: FAIL
+
+Hypothesis:
+1. w:9 d:8 c:1.0 : Tell me about robberies in 2 miles last month
+2. w:8 d:8 c:0.9444444444444444 : Tell me about robberies in miles last month
+3. w:8 d:8 c:0.9111111111111111 : Tell me about robberies in 2 miles month
+4. w:7 d:8 c:0.8486111111111111 : Tell me about robberies in miles month
+5. w:6 d:7 c:0.8111111111111111 : Tell me about robberies last month
+6. w:5 d:7 c:0.6986111111111111 : Tell me about robberies month
+7. w:4 d:6 c:0.6111111111111112 : Tell me about robberies
+
+----------------------------TEST 9------------------------------
+Input phrase: show me the nearest last month robberies
+
+Expected action: /private/search/incidents
+Primary action: images.search
+Primary result: FAIL
+
+Received action: /private/search/incidents
+Resolved query: show me the last month robberies
+Resolved result: DONE
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : show me the nearest last month robberies
+2. w:6 d:6 c:0.92 : show me the last month robberies
+3. w:5 d:5 c:0.8981250000000001 : show the last month robberies
+4. w:6 d:5 c:0.8928571428571429 : show me the nearest last month
+5. w:6 d:6 c:0.8857142857142857 : show me the nearest month robberies
+6. w:5 d:5 c:0.8720238095238095 : show the nearest last month
+7. w:5 d:5 c:0.8638392857142857 : show the nearest month robberies
+8. w:5 d:6 c:0.7866666666666667 : show me the month robberies
+9. w:4 d:5 c:0.7604166666666667 : show the month robberies
+10. w:3 d:6 c:0.6625000000000001 : show me robberies
+11. w:2 d:3 c:0.6187500000000001 : show robberies
+12. w:2 d:5 c:0.5575000000000001 : show me
+
+----------------------------TEST 10------------------------------
+Input phrase: give me all rapes in the city that happened last week
+
+Expected action: /private/search/incidents
+Primary action: input.unknown
+Primary result: FAIL
+
+Received action: input.unknown
+Resolved query: give me all rapes in the city that happened last week
+Resolved result: FAIL
+
+Hypothesis:
+1. w:11 d:10 c:1.0 : give me all rapes in the city that happened last week
+2. w:10 d:10 c:0.9880681818181818 : give all rapes in the city that happened last week
+3. w:10 d:10 c:0.9272727272727272 : give me all rapes in the city that happened week
+4. w:9 d:10 c:0.91875 : give me in the city that happened last week
+5. w:9 d:10 c:0.9141477272727272 : give all rapes in the city that happened week
+6. w:8 d:10 c:0.8378977272727272 : give me in the city that happened week
+7. w:6 d:7 c:0.7909090909090909 : give me all rapes in city
+8. w:5 d:6 c:0.7580681818181817 : give all rapes in city
+9. w:4 d:6 c:0.6631944444444444 : give me in city
+
+----------------------------TEST 11------------------------------
+Input phrase: find my video record with smth in gallery
+
+Expected action: /device/commands/media/video/search
+Primary action: /device/commands/media/video/search
+Primary result: DONE
+
+Received action: /device/commands/media/video/search
+Resolved query: find my video record with smth in gallery
+Resolved result: DONE
+
+Hypothesis:
+1. w:8 d:8 c:1.0 : find my video record with smth in gallery
+2. w:7 d:8 c:0.975 : find video record with smth in gallery
+3. w:7 d:8 c:0.90625 : find my video with smth in gallery
+4. w:7 d:8 c:0.8958333333333334 : find my record with smth in gallery
+5. w:6 d:8 c:0.8678571428571429 : find video with smth in gallery
+6. w:6 d:8 c:0.85 : find record with smth in gallery
+7. w:6 d:6 c:0.85 : find my video record with smth
+8. w:5 d:6 c:0.8035714285714286 : find video record with smth
+9. w:5 d:6 c:0.7348214285714285 : find my video with smth
+10. w:5 d:6 c:0.724404761904762 : find my record with smth
+11. w:4 d:6 c:0.6678571428571429 : find video with smth
+12. w:4 d:6 c:0.65 : find record with smth
+
+----------------------------TEST 12------------------------------
+Input phrase: can you search for newton's laws via internet
+
+Expected action: /device/commands/web/text/search
+Primary action: /personality/smalltalk/unknown
+Primary result: FAIL
+
+Received action: /personality/smalltalk/unknown
+Resolved query: can you search for newton laws via internet
+Resolved result: FAIL
+
+Hypothesis:
+1. w:8 d:8 c:0.9888888888888889 : can you search for newton laws via internet
+2. w:6 d:6 c:0.8388888888888889 : can you search for newton laws
+3. w:5 d:6 c:0.7138888888888889 : can you search for newton
+
+----------------------------TEST 13------------------------------
+Input phrase: show me the quickest way to the art museum
+
+Expected action: /device/ecosystem/maps/navigation_start
+Primary action: /private/search/incidents
+Primary result: FAIL
+
+Received action: /private/search/incidents
+Resolved query: show me the quickest way to the art museum
+Resolved result: FAIL
+
+Hypothesis:
+1. w:9 d:8 c:1.0 : show me the quickest way to the art museum
+2. w:8 d:8 c:0.9166666666666666 : show me the quickest way to the art
+3. w:8 d:8 c:0.9111111111111111 : show me the way to the art museum
+4. w:8 d:8 c:0.9074074074074074 : show me the quickest way to the museum
+5. w:7 d:8 c:0.8173611111111111 : show me the way to the art
+6. w:7 d:8 c:0.8069444444444445 : show me the way to the museum
+
+----------------------------TEST 14------------------------------
+Input phrase: what's the best way to get to witness number one from here?
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /personality/smalltalk/agent
+Primary result: FAIL
+
+Received action: /personality/smalltalk/agent
+Resolved query: what's the best way to get to witness one from here
+Resolved result: FAIL
+
+Hypothesis:
+1. w:13 d:10 c:0.9928571428571429 : what's the best way to get to witness one from here
+2. w:11 d:10 c:0.9659340659340659 : what's the best way to get to witness from here
+3. w:10 d:10 c:0.940934065934066 : what's the best way to get to witness one
+4. w:11 d:10 c:0.9313186813186813 : what's the way to get to witness one from here
+5. w:9 d:10 c:0.9045704295704295 : what's the best way to get to witness
+6. w:10 d:10 c:0.8995004995004995 : what's the way to get to witness from here
+7. w:9 d:10 c:0.8870879120879122 : what's the best way to get from here
+8. w:9 d:10 c:0.8699550449550449 : what's the way to get to witness one
+9. w:8 d:10 c:0.8320004995004995 : what's the way to get to witness
+10. w:8 d:10 c:0.8063186813186813 : what's the way to get from here
+
+----------------------------TEST 15------------------------------
+Input phrase: take me to the residence of witness Sally Heim
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/ecosystem/maps/navigation_start
+Primary result: FAIL
+
+Received action: /device/ecosystem/maps/navigation_start
+Resolved query: take me to the residence of witness Sally Heim
+Resolved result: FAIL
+
+Hypothesis:
+1. w:9 d:8 c:1.0 : take me to the residence of witness Sally Heim
+2. w:8 d:8 c:0.925 : take me to the residence of witness Sally
+3. w:8 d:8 c:0.9125 : take me to the residence of witness Heim
+4. w:7 d:8 c:0.7875 : take me to the residence of witness
+
+----------------------------TEST 16------------------------------
+Input phrase: Show me how to get to witness Bernie Dickens's house
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /public/encyclopedia/generic
+Primary result: FAIL
+
+Received action: /public/encyclopedia/generic
+Resolved query: Show me how to get to witness Bernie Dickens house
+Resolved result: FAIL
+
+Hypothesis:
+1. w:10 d:11 c:0.990909090909091 : Show me how to get to witness Bernie Dickens house
+2. w:9 d:10 c:0.923409090909091 : Show me how to get to witness Bernie house
+3. w:9 d:10 c:0.915909090909091 : Show me how to get to witness Bernie Dickens
+4. w:9 d:10 c:0.915909090909091 : Show me how to get to witness Dickens house
+5. w:8 d:10 c:0.840909090909091 : Show me how to get to witness Bernie
+6. w:8 d:10 c:0.8325757575757576 : Show me how to get to witness Dickens
+7. w:8 d:10 c:0.800909090909091 : Show me how to get to witness house
+8. w:7 d:10 c:0.745909090909091 : Show me how to get to house
+9. w:7 d:10 c:0.707159090909091 : Show me how to get to witness
+
+----------------------------TEST 17------------------------------
+Input phrase: describe suspect 1 in incident 088975
+
+Expected action: /private/search/cad/arrestee/describe
+Primary action: wisdom.unknown
+Primary result: FAIL
+
+Received action: /private/search/cad/arrestee/describe
+Resolved query: describe suspect in incident 088975
+Resolved result: DONE
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : describe suspect 1 in incident 088975
+2. w:5 d:6 c:0.9416666666666667 : describe suspect in incident 088975
+3. w:5 d:6 c:0.9166666666666666 : describe suspect 1 in incident
+4. w:4 d:6 c:0.8716666666666667 : describe suspect in incident
+
+----------------------------TEST 18------------------------------
+Input phrase: gimme the information on the female suspect in case 9765
+
+Expected action: /private/search/cad/arrestee/describe
+Primary action: input.unknown
+Primary result: FAIL
+
+Received action: input.unknown
+Resolved query: gim me the information on the female suspect in case 9765
+Resolved result: FAIL
+
+Hypothesis:
+1. w:11 d:10 c:1.0 : gim me the information on the female suspect in case 9765
+2. w:10 d:10 c:0.9545454545454546 : gim me the information on the female suspect in case
+3. w:10 d:10 c:0.9272727272727272 : gim me the information on the suspect in case 9765
+4. w:9 d:10 c:0.8772727272727272 : gim me the information on the suspect in case
+5. w:8 d:8 c:0.8454545454545455 : gim me the information on the female suspect
+6. w:6 d:8 c:0.7636363636363637 : gim me the information on suspect
+7. w:7 d:8 c:0.7572727272727272 : gim me the information on the suspect
+
+----------------------------TEST 19------------------------------
+Input phrase: how do i get to witness No. 2 in this incident?
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/ecosystem/maps/navigation_start
+Primary result: FAIL
+
+Received action: /private/search/cad/witness/describe
+Resolved query: how do i get to witness in this incident
+Resolved result: FAIL
+
+Hypothesis:
+1. w:11 d:9 c:0.9908333333333333 : how do i get to witness 2 in this incident
+2. w:9 d:9 c:0.9817424242424243 : how do i get to witness 2 in incident
+3. w:9 d:9 c:0.9590151515151515 : how do i get to witness in this incident
+4. w:8 d:9 c:0.9479040404040404 : how do i get to witness in incident
+
+----------------------------TEST 20------------------------------
+Input phrase: Please map the route to the main witness in case number 3456
+
+Expected action: /private/search/cad/witness/navigate
+Primary action: /device/ecosystem/maps/navigation_start
+Primary result: FAIL
+
+Received action: /device/ecosystem/maps/navigation_start
+Resolved query: Please map the route to the main witness in case 3456
+Resolved result: FAIL
+
+Hypothesis:
+1. w:11 d:9 c:0.9916666666666667 : Please map the route to the main witness in case 3456
+2. w:10 d:9 c:0.9462121212121213 : Please map the route to the main witness in case
+3. w:10 d:9 c:0.918939393939394 : Please map the route to the witness in case 3456
+4. w:9 d:9 c:0.8689393939393939 : Please map the route to the witness in case
+
+----------------------------TEST RESULTS------------------------------
+TOTAL TESTS: 20
+PASS BEFORE: 1/20
+PASS AFTER: 6/20
+
