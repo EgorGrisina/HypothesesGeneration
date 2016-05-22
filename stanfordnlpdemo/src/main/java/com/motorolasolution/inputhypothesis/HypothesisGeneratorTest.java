@@ -12,6 +12,8 @@ import com.motorolasolution.inputhypothesis.rules.ProperNounRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
 import com.motorolasolution.inputhypothesis.rules.SProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.SimilarLeavesRule;
+import com.motorolasolution.inputhypothesis.s2itest.S2iCommunicator;
+import com.motorolasolutions.bigdata.vip.controller.request.message.AiResponse;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -149,7 +151,7 @@ public class HypothesisGeneratorTest {
             results = rulesList[6].getHypothesis(results);
             results = rulesList[7].getHypothesis(results);
 
-            out.println("Input:\n0. "+input+"\n\nResult:");
+            out.println("Input:\n0. " + input + "\n\nResult:");
 
             Collections.sort(results);
 
@@ -159,6 +161,20 @@ public class HypothesisGeneratorTest {
                         " d:"+results.get(i).getHConfidence().getTreeDeep()+
                         " c:"+results.get(i).getHConfidence().getConfidence()+
                         " : " + CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()));
+            }
+
+            out.flush();
+            out.println("\n----------------------------------------------");
+            out.println("Start S2i processing");
+            out.println(CoreNlpOutput.getS2iQuery(results));
+            out.println("");
+            AiResponse response = S2iCommunicator.query(CoreNlpOutput.getS2iQuery(results));
+            if (response == null) {
+                out.println("No response");
+            } else {
+                out.println("ResolvedQuery: "+response.getResult().getResolvedQuery());
+                out.println("Action: "+response.getResult().getAction());
+                out.println("");
             }
 
             out.flush();
