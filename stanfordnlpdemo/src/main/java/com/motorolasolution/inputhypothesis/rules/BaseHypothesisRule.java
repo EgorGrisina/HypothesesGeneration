@@ -3,7 +3,6 @@ package com.motorolasolution.inputhypothesis.rules;
 import com.motorolasolution.inputhypothesis.CoreNlpOutput;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
-import java.io.PrintWriter;
 import java.util.List;
 
 import edu.stanford.nlp.trees.Tree;

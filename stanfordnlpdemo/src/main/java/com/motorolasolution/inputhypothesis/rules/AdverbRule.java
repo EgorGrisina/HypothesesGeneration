@@ -4,7 +4,6 @@ import com.motorolasolution.inputhypothesis.CoreNlpConstants;
 import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
