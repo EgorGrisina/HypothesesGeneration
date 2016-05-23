@@ -47,9 +47,14 @@ public class HypothesisConfidence {
 
     public void updateConfidence(int rwc, double POSc, double RuleCoeff) {
         double confVal = getConfidence();
-        confVal -= ((double)rwc/(double)getWordCount())
+        confVal -= confVal
+                *((double)(rwc)/(double)getWordCount())
                 * POSc
                 * RuleCoeff;
+
+        if (confVal < 0 ) {
+            confVal = 0.0;
+        }
         setConfidence(confVal);
     }
 

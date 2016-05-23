@@ -1,8 +1,5 @@
 package com.motorolasolution.inputhypothesis;
 
-
-import javafx.geometry.Pos;
-
 public class CoreNlpConstants {
 
     public final static String EXIT = "exit";

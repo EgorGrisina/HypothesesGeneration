@@ -7,5 +7,4 @@ public class PunctuationRule extends BaseHypothesisRule {
 
         return input;
     }
-
 }
