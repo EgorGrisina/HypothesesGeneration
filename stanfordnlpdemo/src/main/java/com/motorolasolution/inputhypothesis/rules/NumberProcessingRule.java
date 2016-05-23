@@ -58,7 +58,8 @@ public class NumberProcessingRule extends BaseHypothesisRule {
         int count = 0;
 
         for (int i = 0; i < words.size() - 1; i++) {
-            if (words.get(i).word().equals(CoreNlpConstants.NUMBER)) {
+            if (words.get(i).word().equals(CoreNlpConstants.NUMBER)
+                    || words.get(i).word().toLowerCase().equals(CoreNlpConstants.NONUMB)) {
                 if (words.get(i + 1).tag().value().equals(CoreNlpConstants.CD)) {
                     words.remove(i);
                     i--;
