@@ -15,7 +15,9 @@ public class CoreNlpOutput {
         for (CoreLabel label : list) {
             sentence+=label.word() + " ";
         }
-        sentence = sentence.substring(0, sentence.lastIndexOf(" "));
+        if (sentence.lastIndexOf(" ") > 0) {
+            sentence = sentence.substring(0, sentence.lastIndexOf(" "));
+        }
         sentence = sentence.replace(" '", "'");
         return sentence;
     }

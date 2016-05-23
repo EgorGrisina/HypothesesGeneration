@@ -5,6 +5,7 @@ import com.motorolasolution.inputhypothesis.rules.AdverbRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.INinsideINRule;
 import com.motorolasolution.inputhypothesis.rules.INprocessingRule;
+import com.motorolasolution.inputhypothesis.rules.INremovingRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
@@ -45,7 +46,7 @@ public class HypothesisGeneratorTest {
             }
         };
 
-        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[8];
+        BaseHypothesisRule rulesList[] = new BaseHypothesisRule[9];
 
         rulesList[0] = new JJbeforeNounRule();
         rulesList[1] = new DatePeriodRule();
@@ -55,6 +56,7 @@ public class HypothesisGeneratorTest {
         rulesList[5] = new SimilarLeavesRule();
         rulesList[6] = new INprocessingRule();
         rulesList[7] = new INinsideINRule();
+        rulesList[8] = new INremovingRule();
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -95,8 +97,8 @@ public class HypothesisGeneratorTest {
 
             NumberProcessingRule mNumberProcessingRule = new NumberProcessingRule();
             mNumberProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
-            PunctuationRule mPunctuationRule = new PunctuationRule();
-            mPunctuationRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
+            /*PunctuationRule mPunctuationRule = new PunctuationRule();
+            mPunctuationRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);*/
             SProcessingRule mSProcessingRule = new SProcessingRule();
             mSProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
 
@@ -108,7 +110,8 @@ public class HypothesisGeneratorTest {
             for (int i = 0; i < results.size(); i++) {
 
                 InputHypothesis hyp = new InputHypothesis();
-                hyp.setHTree(mCoreNlpPipeline.getTree(mPunctuationRule.removePunctuation(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()))));
+                //hyp.setHTree(mCoreNlpPipeline.getTree(mPunctuationRule.removePunctuation(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()))));
+                hyp.setHTree(mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree())));
                 hyp.setHConfidence(results.get(i).getHConfidence());
 
                 inputHypothesises.add(hyp);
@@ -150,6 +153,7 @@ public class HypothesisGeneratorTest {
             results = rulesList[5].getHypothesis(results);
             results = rulesList[6].getHypothesis(results);
             results = rulesList[7].getHypothesis(results);
+            results = rulesList[8].getHypothesis(results);
 
             out.println("Input:\n0. " + input + "\n\nResult:");
 
