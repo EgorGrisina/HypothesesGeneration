@@ -97,8 +97,8 @@ public class HypothesisGeneratorTest {
 
             NumberProcessingRule mNumberProcessingRule = new NumberProcessingRule();
             mNumberProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
-            /*PunctuationRule mPunctuationRule = new PunctuationRule();
-            mPunctuationRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);*/
+            PunctuationRule mPunctuationRule = new PunctuationRule();
+            mPunctuationRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
             SProcessingRule mSProcessingRule = new SProcessingRule();
             mSProcessingRule.setCoreNlpRulesCallback(mCoreNlpRulesCallback);
 
@@ -110,8 +110,8 @@ public class HypothesisGeneratorTest {
             for (int i = 0; i < results.size(); i++) {
 
                 InputHypothesis hyp = new InputHypothesis();
-                //hyp.setHTree(mCoreNlpPipeline.getTree(mPunctuationRule.removePunctuation(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()))));
-                hyp.setHTree(mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree())));
+                hyp.setHTree(mCoreNlpPipeline.getTree(mPunctuationRule.removePunctuation(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree()))));
+                //hyp.setHTree(mCoreNlpPipeline.getTree(CoreNlpOutput.getSentenceFromTree(results.get(i).getHTree())));
                 hyp.setHConfidence(results.get(i).getHConfidence());
 
                 inputHypothesises.add(hyp);

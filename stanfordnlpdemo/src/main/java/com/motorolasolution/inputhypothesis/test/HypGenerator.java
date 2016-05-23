@@ -8,6 +8,7 @@ import com.motorolasolution.inputhypothesis.rules.BaseHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.INinsideINRule;
 import com.motorolasolution.inputhypothesis.rules.INprocessingRule;
+import com.motorolasolution.inputhypothesis.rules.INremovingRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
@@ -28,9 +29,9 @@ public class HypGenerator {
 
     final CoreNlpPipeline mCoreNlpPipeline;
     BaseHypothesisRule.CoreNlpRulesCallback mCoreNlpRulesCallback;
-    BaseHypothesisRule rulesList[] = new BaseHypothesisRule[8];
+    BaseHypothesisRule rulesList[] = new BaseHypothesisRule[9];
     NumberProcessingRule mNumberProcessingRule;
-    PunctuationRule mPunctuationRule;
+    public PunctuationRule mPunctuationRule;
     SProcessingRule mSProcessingRule;
 
     public HypGenerator() {
@@ -56,6 +57,8 @@ public class HypGenerator {
         rulesList[5] = new SimilarLeavesRule();
         rulesList[6] = new INprocessingRule();
         rulesList[7] = new INinsideINRule();
+        rulesList[8] = new INremovingRule();
+
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -101,6 +104,7 @@ public class HypGenerator {
         results = rulesList[5].getHypothesis(results);
         results = rulesList[6].getHypothesis(results);
         results = rulesList[7].getHypothesis(results);
+        results = rulesList[8].getHypothesis(results);
 
         Collections.sort(results);
 
