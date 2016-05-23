@@ -91,6 +91,8 @@ public class HypTesting {
                             " : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree())+"\n");
                 }
 
+                LOG += "\n"+CoreNlpOutput.getS2iQuery(results) + "\n";
+
                 System.out.println(LOG);
                 writer.println(LOG);
 

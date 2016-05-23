@@ -84,7 +84,7 @@ public class HypothesisGeneratorTest {
             }
 
             for (Tree sentense : sentencesTree) {
-                inputHypothesises.add(new InputHypothesis(sentense, 0.9));
+                inputHypothesises.add(new InputHypothesis(sentense, 0.4));
             }
 
             out.println("");

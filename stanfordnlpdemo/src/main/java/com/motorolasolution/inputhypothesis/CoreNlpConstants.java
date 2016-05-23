@@ -41,23 +41,23 @@ public class CoreNlpConstants {
     // Coefficients for POS
     public final static double NNc = 1.0;
     public final static double NNSc = 1.0;
-    public final static double NNPc = 0.9;
-    public final static double NNPSc = 0.9;
-    public final static double JJc = 0.8;
-    public final static double JJSc = 0.8;
-    public final static double JJRc = 0.8;
-    public final static double RBc = 0.7;
-    public final static double RBSc = 0.6;
-    public final static double RBRc = 0.6;
-    public final static double CDc = 0.5;
-    public final static double VBc = 0.25;
-    public final static double PRP$c = 0.2;
-    public final static double INc = 0.2;
-    public final static double POSc = 0.1;
-    public final static double NUMBERc = 0.1;
-    public final static double DTc = 0.1;
+    public final static double NNPc = 0.95;
+    public final static double NNPSc = 0.95;
+    public final static double JJc = 0.9;
+    public final static double JJSc = 0.9;
+    public final static double JJRc = 0.9;
+    public final static double RBc = 0.85;
+    public final static double RBSc = 0.75;
+    public final static double RBRc = 0.75;
+    public final static double CDc = 0.7;
+    public final static double VBc = 0.45;
+    public final static double PRP$c = 0.4;
+    public final static double INc = 0.4;
+    public final static double POSc = 0.2;
+    public final static double NUMBERc = 0.2;
+    public final static double DTc = 0.2;
 
-    public final static double DEFAULTc = 0.15;
+    public final static double DEFAULTc = 0.25;
 
     public static double getPOScoefficient(String POSstring) {
         if (POSstring.equals(NN)) return NNc;
@@ -91,13 +91,13 @@ public class CoreNlpConstants {
 
     // Coefficients for Rules
     public final static double JJbeforeNNc = 1.0;
-    public final static double JJbeforeJJc = 0.7;
-    public final static double ReplaceNOc = 0.01;
-    public final static double DatePeriodc = 0.4;
+    public final static double JJbeforeJJc = 0.8;
+    public final static double ReplaceNOc = 0.05;
+    public final static double DatePeriodc = 0.5;
 
-    public final static double NumeralNoINc = 0.7;
+    public final static double NumeralNoINc = 0.8;
     public final static double NumeralInINc = 1.0;
 
-    public final static double SimilarLeavesMaxDiff = 0.25;
+    public final static double SimilarLeavesMaxDiff = 0.35;
 
 }
