@@ -13,6 +13,7 @@ import com.motorolasolution.inputhypothesis.rules.ProperNounRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
 import com.motorolasolution.inputhypothesis.rules.SProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.SimilarLeavesRule;
+import com.motorolasolution.inputhypothesis.rules.SimilarLeavesSimpleRule;
 import com.motorolasolution.inputhypothesis.s2itest.S2iCommunicator;
 import com.motorolasolutions.bigdata.vip.controller.request.message.AiResponse;
 
@@ -53,7 +54,7 @@ public class HypothesisGeneratorTest {
         rulesList[2] = new NumeralRule();
         rulesList[3] = new AdverbRule();
         rulesList[4] = new ProperNounRule();
-        rulesList[5] = new SimilarLeavesRule();
+        rulesList[5] = new SimilarLeavesSimpleRule();
         rulesList[6] = new INprocessingRule();
         rulesList[7] = new INinsideINRule();
         rulesList[8] = new INremovingRule();

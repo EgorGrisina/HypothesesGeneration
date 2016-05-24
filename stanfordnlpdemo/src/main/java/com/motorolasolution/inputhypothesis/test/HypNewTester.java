@@ -16,8 +16,8 @@ import java.util.List;
 
 public class HypNewTester {
 
-    final static String INPUT_FILE_NAME = "testlog/testPhrases.txt";
-    final static String OUTPUT_FILE_NAME = "testlog/testResults.txt";
+    final static String INPUT_FILE_NAME = "testlog/testNegative.txt";
+    final static String OUTPUT_FILE_NAME = "testlog/testNegativeResults.txt";
 
     public static void main(String[] args) throws IOException {
 
@@ -92,23 +92,23 @@ public class HypNewTester {
                                 + "Resolved result: " + (receivedResponse.getResult().getAction().equals(expectedAction) ? "DONE" : "FAIL") + "\n\n";
 */
 
-                //LOG += "Hypothesis:"+"\n";
+                LOG += "Hypothesis:"+"\n";
                 int passCount = 0;
 
                 for(int j = 0; j < results.size(); j++){
 
-                    for (String phrase : phrases) {
+                    for (int k = 1; k < phrases.length; k++) {
+                        String phrase = phrases[k];
                         String hyp = CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree()).toLowerCase().replaceAll(" ","");
                         if (hyp.equals(phrase.replaceAll(" ",""))){
                             passCount++;
                         }
                     }
-/*
                     LOG+= (j + 1 +"."+
                             " w:"+results.get(j).getHConfidence().getWordCount()+
                             " d:"+results.get(j).getHConfidence().getTreeDeep()+
                             " c:"+results.get(j).getHConfidence().getConfidence()+
-                            " : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree())+"\n");*/
+                            " : " + CoreNlpOutput.getSentenceFromTree(results.get(j).getHTree())+"\n");
                 }
 
                 if (passCount > (phrases.length-1)) {
