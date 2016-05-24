@@ -1,9 +1,11 @@
 package com.motorolasolution.inputhypothesis.rules;
 
 import com.motorolasolution.inputhypothesis.CoreNlpConstants;
+import com.motorolasolution.inputhypothesis.CoreNlpOutput;
 import com.motorolasolution.inputhypothesis.HypothesisConfidence;
 import com.motorolasolution.inputhypothesis.InputHypothesis;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +31,10 @@ public class INremovingRule extends BaseHypothesisRule {
             Map<Tree, HypothesisConfidence> resultMap = removeIN(result.get(i).getHTree(), result.get(i).getHConfidence().copy());
 
             for (Map.Entry entry : resultMap.entrySet()) {
-                result.add(new InputHypothesis(getNewTree((Tree) entry.getKey()), (HypothesisConfidence) entry.getValue()));
+                Tree newTree = getNewTree((Tree) entry.getKey());
+                if (newTree != null) {
+                    result.add(new InputHypothesis(newTree, (HypothesisConfidence) entry.getValue()));
+                }
             }
             i++;
         }

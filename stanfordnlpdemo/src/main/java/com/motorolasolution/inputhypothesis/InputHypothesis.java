@@ -1,5 +1,7 @@
 package com.motorolasolution.inputhypothesis;
 
+import java.io.PrintWriter;
+
 import edu.stanford.nlp.trees.Tree;
 
 public class InputHypothesis implements Comparable<InputHypothesis>{

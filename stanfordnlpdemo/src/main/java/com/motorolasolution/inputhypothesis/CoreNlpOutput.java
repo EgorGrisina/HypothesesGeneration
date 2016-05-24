@@ -23,7 +23,7 @@ public class CoreNlpOutput {
     }
 
 
-    static void printTree(Tree tree, PrintWriter out){
+    public static void printTree(Tree tree, PrintWriter out){
         tree.pennPrint(out);
         out.println("");
         out.flush();
