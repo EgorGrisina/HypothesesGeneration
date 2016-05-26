@@ -71,7 +71,7 @@ public class SimilarLeavesSimpleRule extends BaseHypothesisRule {
                     Tree children2 = childs[j];
 
                     if (children1.value().equals(children2.value())
-                            && children1.depth() < 2 && children2.depth() < 2
+                            && children1.depth() > 1 && children2.depth() > 1
                             && children1.depth() == children2.depth()) {
 
                         Tree newTree = tree.deepCopy();
