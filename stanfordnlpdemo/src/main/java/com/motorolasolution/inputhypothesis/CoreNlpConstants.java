@@ -85,7 +85,7 @@ public class CoreNlpConstants {
         if (POSstring.equals(VBZ)) return VBc;
 
 
-        System.out.println("\n !-------!\nNo coefficient for :" + POSstring+"\n!---------!");
+        //System.out.println("\n !-------!\nNo coefficient for :" + POSstring+"\n!---------!");
         return DEFAULTc;
     }
 

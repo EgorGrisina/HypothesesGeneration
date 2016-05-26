@@ -17,7 +17,7 @@ import java.util.List;
 public class HypTesting {
 
     final static String INPUT_FILE_NAME = "testlog/testInput.txt";
-    final static String OUTPUT_FILE_NAME = "testlog/testResults.txt";
+    final static String OUTPUT_FILE_NAME = "testlog/testS2iResults.txt";
 
     public static void main(String[] args) throws IOException {
 

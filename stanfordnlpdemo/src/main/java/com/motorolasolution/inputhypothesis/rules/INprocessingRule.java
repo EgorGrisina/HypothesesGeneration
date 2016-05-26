@@ -81,14 +81,14 @@ public class INprocessingRule extends BaseHypothesisRule {
                         }
 
                         NPchild.addChild(NNchild);
-                        for (int j = 1; j < childs.length; j++){
+                        for (int j = childs.length-1; j >= 1; j--) {
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NPchild);
                         changedTree.put(newTree, newConfidence);
 
                     } else {
-                        for (int j = 1; j < childs.length; j++) {
+                        for (int j = childs.length-1; j >= 1; j--) {
                             newTree.removeChild(j);
                         }
                         newTree.addChild(NNchild);

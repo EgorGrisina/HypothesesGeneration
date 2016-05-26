@@ -8,6 +8,7 @@ import com.motorolasolution.inputhypothesis.rules.BaseHypothesisRule;
 import com.motorolasolution.inputhypothesis.rules.DatePeriodRule;
 import com.motorolasolution.inputhypothesis.rules.INinsideINRule;
 import com.motorolasolution.inputhypothesis.rules.INprocessingRule;
+import com.motorolasolution.inputhypothesis.rules.INremovingRule;
 import com.motorolasolution.inputhypothesis.rules.JJbeforeNounRule;
 import com.motorolasolution.inputhypothesis.rules.NumberProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.NumeralRule;
@@ -15,6 +16,7 @@ import com.motorolasolution.inputhypothesis.rules.ProperNounRule;
 import com.motorolasolution.inputhypothesis.rules.PunctuationRule;
 import com.motorolasolution.inputhypothesis.rules.SProcessingRule;
 import com.motorolasolution.inputhypothesis.rules.SimilarLeavesRule;
+import com.motorolasolution.inputhypothesis.rules.SimilarLeavesSimpleRule;
 import com.motorolasolution.inputhypothesis.s2itest.S2iCommunicator;
 import com.motorolasolutions.bigdata.vip.controller.request.message.AiResponse;
 
@@ -28,9 +30,9 @@ public class HypGenerator {
 
     final CoreNlpPipeline mCoreNlpPipeline;
     BaseHypothesisRule.CoreNlpRulesCallback mCoreNlpRulesCallback;
-    BaseHypothesisRule rulesList[] = new BaseHypothesisRule[8];
+    BaseHypothesisRule rulesList[] = new BaseHypothesisRule[9];
     NumberProcessingRule mNumberProcessingRule;
-    PunctuationRule mPunctuationRule;
+    public PunctuationRule mPunctuationRule;
     SProcessingRule mSProcessingRule;
 
     public HypGenerator() {
@@ -53,9 +55,11 @@ public class HypGenerator {
         rulesList[2] = new NumeralRule();
         rulesList[3] = new AdverbRule();
         rulesList[4] = new ProperNounRule();
-        rulesList[5] = new SimilarLeavesRule();
+        rulesList[5] = new SimilarLeavesSimpleRule();
         rulesList[6] = new INprocessingRule();
         rulesList[7] = new INinsideINRule();
+        rulesList[8] = new INremovingRule();
+
 
         for (int i = 0; i < rulesList.length; i++ ){
             rulesList[i].setCoreNlpRulesCallback(mCoreNlpRulesCallback);
@@ -93,7 +97,7 @@ public class HypGenerator {
             results.add(hyp);
         }
 
-        results = rulesList[0].getHypothesis(results);
+       /* results = rulesList[0].getHypothesis(results);
         results = rulesList[1].getHypothesis(results);
         results = rulesList[2].getHypothesis(results);
         results = rulesList[3].getHypothesis(results);
@@ -101,6 +105,11 @@ public class HypGenerator {
         results = rulesList[5].getHypothesis(results);
         results = rulesList[6].getHypothesis(results);
         results = rulesList[7].getHypothesis(results);
+        results = rulesList[8].getHypothesis(results);*/
+
+        for (int i = 0; i < rulesList.length; i++) {
+            results = rulesList[i].getHypothesis(results);
+        }
 
         Collections.sort(results);
 

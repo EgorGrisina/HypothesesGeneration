@@ -14,8 +14,10 @@ Hypothesis:
 2. w:9 d:11 c:0.944 : I need to get to witness in case 8776
 3. w:9 d:11 c:0.93 : I need to get to witness 3 in case
 4. w:8 d:11 c:0.8705777777777778 : I need to get to witness in case
+5. w:7 d:9 c:0.80352 : I need to get to witness 3
+6. w:6 d:9 c:0.7394537174211248 : I need to get to witness
 
-query=I+need+to+get+to+witness+3+in+case+8776&query=I+need+to+get+to+witness+in+case+8776&query=I+need+to+get+to+witness+3+in+case&query=I+need+to+get+to+witness+in+case&confidence=1.0&confidence=0.944&confidence=0.93&confidence=0.8705777777777778
+query=I+need+to+get+to+witness+3+in+case+8776&query=I+need+to+get+to+witness+in+case+8776&query=I+need+to+get+to+witness+3+in+case&query=I+need+to+get+to+witness+in+case&query=I+need+to+get+to+witness+3&query=I+need+to+get+to+witness&confidence=1.0&confidence=0.944&confidence=0.93&confidence=0.8705777777777778&confidence=0.80352&confidence=0.7394537174211248
 
 ----------------------------TEST 2------------------------------
 Input phrase: let's make our way to the residence of witness number 2
@@ -33,8 +35,10 @@ Hypothesis:
 2. w:9 d:9 c:0.9268363636363637 : let make way to the residence of witness 2
 3. w:9 d:9 c:0.8978727272727273 : let make our way to the residence of witness
 4. w:8 d:9 c:0.8547490909090909 : let make way to the residence of witness
+5. w:7 d:7 c:0.7757620363636364 : let make our way to the residence
+6. w:6 d:7 c:0.7260091043771044 : let make way to the residence
 
-query=let+make+our+way+to+the+residence+of+witness+2&query=let+make+way+to+the+residence+of+witness+2&query=let+make+our+way+to+the+residence+of+witness&query=let+make+way+to+the+residence+of+witness&confidence=0.9654545454545455&confidence=0.9268363636363637&confidence=0.8978727272727273&confidence=0.8547490909090909
+query=let+make+our+way+to+the+residence+of+witness+2&query=let+make+way+to+the+residence+of+witness+2&query=let+make+our+way+to+the+residence+of+witness&query=let+make+way+to+the+residence+of+witness&query=let+make+our+way+to+the+residence&query=let+make+way+to+the+residence&confidence=0.9654545454545455&confidence=0.9268363636363637&confidence=0.8978727272727273&confidence=0.8547490909090909&confidence=0.7757620363636364&confidence=0.7260091043771044
 
 ----------------------------TEST 3------------------------------
 Input phrase: Find me the quickest route to witness No 2, Jake Verdinier
@@ -50,24 +54,14 @@ Resolved result: FAIL
 Hypothesis:
 1. w:11 d:9 c:0.9833333333333333 : Find me the quickest route to witness 2 Jake Verdinier
 2. w:9 d:8 c:0.9332727272727273 : Find me the quickest route to witness Jake Verdinier
-3. w:9 d:8 c:0.9281325757575757 : Find me the quickest route to witness 2 Jake
-4. w:9 d:8 c:0.9132708333333333 : Find me the quickest route to witness 2 Verdinier
-5. w:9 d:8 c:0.9028787878787878 : Find me the route to witness 2 Jake Verdinier
-6. w:8 d:8 c:0.8692398484848485 : Find me the quickest route to witness Jake
-7. w:8 d:8 c:0.8520002272727273 : Find me the quickest route to witness Verdinier
-8. w:8 d:8 c:0.8466996632996633 : Find me the route to witness Jake Verdinier
-9. w:8 d:8 c:0.840931271043771 : Find me the route to witness 2 Jake
-10. w:8 d:8 c:0.8242530934343434 : Find me the route to witness 2 Verdinier
-11. w:8 d:8 c:0.8130602272727272 : Find me the quickest route to witness 2
-12. w:7 d:8 c:0.7813450330387205 : Find me the route to witness Jake
-13. w:7 d:8 c:0.7795994891098484 : Find me the quickest route to Jake
-14. w:7 d:8 c:0.7637495556607744 : Find me the route to witness Verdinier
-15. w:7 d:8 c:0.7356327840909092 : Find me the quickest route to witness
-16. w:7 d:8 c:0.711675394570707 : Find me the route to witness 2
-17. w:6 d:8 c:0.689257939859157 : Find me the route to Jake
-18. w:6 d:8 c:0.6448903105158731 : Find me the route to witness
+3. w:9 d:8 c:0.9028787878787878 : Find me the route to witness 2 Jake Verdinier
+4. w:8 d:8 c:0.8466996632996633 : Find me the route to witness Jake Verdinier
+5. w:8 d:8 c:0.8130602272727272 : Find me the quickest route to witness 2
+6. w:7 d:8 c:0.7356327840909092 : Find me the quickest route to witness
+7. w:7 d:8 c:0.711675394570707 : Find me the route to witness 2
+8. w:6 d:8 c:0.6448903105158731 : Find me the route to witness
 
-query=Find+me+the+quickest+route+to+witness+2+Jake+Verdinier&query=Find+me+the+quickest+route+to+witness+Jake+Verdinier&query=Find+me+the+quickest+route+to+witness+2+Jake&query=Find+me+the+quickest+route+to+witness+2+Verdinier&query=Find+me+the+route+to+witness+2+Jake+Verdinier&query=Find+me+the+quickest+route+to+witness+Jake&query=Find+me+the+quickest+route+to+witness+Verdinier&query=Find+me+the+route+to+witness+Jake+Verdinier&query=Find+me+the+route+to+witness+2+Jake&query=Find+me+the+route+to+witness+2+Verdinier&query=Find+me+the+quickest+route+to+witness+2&query=Find+me+the+route+to+witness+Jake&query=Find+me+the+quickest+route+to+Jake&query=Find+me+the+route+to+witness+Verdinier&query=Find+me+the+quickest+route+to+witness&query=Find+me+the+route+to+witness+2&query=Find+me+the+route+to+Jake&query=Find+me+the+route+to+witness&confidence=0.9833333333333333&confidence=0.9332727272727273&confidence=0.9281325757575757&confidence=0.9132708333333333&confidence=0.9028787878787878&confidence=0.8692398484848485&confidence=0.8520002272727273&confidence=0.8466996632996633&confidence=0.840931271043771&confidence=0.8242530934343434&confidence=0.8130602272727272&confidence=0.7813450330387205&confidence=0.7795994891098484&confidence=0.7637495556607744&confidence=0.7356327840909092&confidence=0.711675394570707&confidence=0.689257939859157&confidence=0.6448903105158731
+query=Find+me+the+quickest+route+to+witness+2+Jake+Verdinier&query=Find+me+the+quickest+route+to+witness+Jake+Verdinier&query=Find+me+the+route+to+witness+2+Jake+Verdinier&query=Find+me+the+route+to+witness+Jake+Verdinier&query=Find+me+the+quickest+route+to+witness+2&query=Find+me+the+quickest+route+to+witness&query=Find+me+the+route+to+witness+2&query=Find+me+the+route+to+witness&confidence=0.9833333333333333&confidence=0.9332727272727273&confidence=0.9028787878787878&confidence=0.8466996632996633&confidence=0.8130602272727272&confidence=0.7356327840909092&confidence=0.711675394570707&confidence=0.6448903105158731
 
 ----------------------------TEST 4------------------------------
 Input phrase: show the route to the main eyewitness for incident 7865
@@ -85,8 +79,10 @@ Hypothesis:
 2. w:9 d:8 c:0.93 : show the route to the main eyewitness for incident
 3. w:9 d:8 c:0.91 : show the route to the eyewitness for incident 7865
 4. w:8 d:8 c:0.8392222222222223 : show the route to the eyewitness for incident
+5. w:7 d:6 c:0.80352 : show the route to the main eyewitness
+6. w:6 d:6 c:0.7128208504801098 : show the route to the eyewitness
 
-query=show+the+route+to+the+main+eyewitness+for+incident+7865&query=show+the+route+to+the+main+eyewitness+for+incident&query=show+the+route+to+the+eyewitness+for+incident+7865&query=show+the+route+to+the+eyewitness+for+incident&confidence=1.0&confidence=0.93&confidence=0.91&confidence=0.8392222222222223
+query=show+the+route+to+the+main+eyewitness+for+incident+7865&query=show+the+route+to+the+main+eyewitness+for+incident&query=show+the+route+to+the+eyewitness+for+incident+7865&query=show+the+route+to+the+eyewitness+for+incident&query=show+the+route+to+the+main+eyewitness&query=show+the+route+to+the+eyewitness&confidence=1.0&confidence=0.93&confidence=0.91&confidence=0.8392222222222223&confidence=0.80352&confidence=0.7128208504801098
 
 ----------------------------TEST 5------------------------------
 Input phrase: what's our description for the female suspect in that incident?
@@ -114,8 +110,10 @@ Hypothesis:
 12. w:7 d:7 c:0.783216 : what's our description for the suspect
 13. w:6 d:7 c:0.7305698033836305 : what's description for the suspect
 14. w:5 d:7 c:0.7299347328000001 : what's description for suspect
+15. w:4 d:5 c:0.7022950701410322 : what's our description
+16. w:3 d:5 c:0.6306636091391999 : what's description
 
-query=what%27s+our+description+for+the+female+suspect+in+that+incident&query=what%27s+our+description+for+the+female+suspect+in+incident&query=what%27s+description+for+the+female+suspect+in+that+incident&query=what%27s+description+for+the+female+suspect+in+incident&query=what%27s+our+description+for+the+suspect+in+that+incident&query=what%27s+our+description+for+the+suspect+in+incident&query=what%27s+description+for+the+suspect+in+that+incident&query=what%27s+our+description+for+the+female+suspect&query=what%27s+description+for+the+suspect+in+incident&query=what%27s+description+for+the+female+suspect&query=what%27s+our+description+for+suspect&query=what%27s+our+description+for+the+suspect&query=what%27s+description+for+the+suspect&query=what%27s+description+for+suspect&confidence=1.0&confidence=0.9833333333333333&confidence=0.9666666666666667&confidence=0.9473333333333334&confidence=0.925&confidence=0.9065000000000001&confidence=0.8796666666666667&confidence=0.8713425925925926&confidence=0.8601185185185185&confidence=0.818496&confidence=0.792558699845679&confidence=0.783216&confidence=0.7305698033836305&confidence=0.7299347328000001
+query=what%27s+our+description+for+the+female+suspect+in+that+incident&query=what%27s+our+description+for+the+female+suspect+in+incident&query=what%27s+description+for+the+female+suspect+in+that+incident&query=what%27s+description+for+the+female+suspect+in+incident&query=what%27s+our+description+for+the+suspect+in+that+incident&query=what%27s+our+description+for+the+suspect+in+incident&query=what%27s+description+for+the+suspect+in+that+incident&query=what%27s+our+description+for+the+female+suspect&query=what%27s+description+for+the+suspect+in+incident&query=what%27s+description+for+the+female+suspect&query=what%27s+our+description+for+suspect&query=what%27s+our+description+for+the+suspect&query=what%27s+description+for+the+suspect&query=what%27s+description+for+suspect&query=what%27s+our+description&query=what%27s+description&confidence=1.0&confidence=0.9833333333333333&confidence=0.9666666666666667&confidence=0.9473333333333334&confidence=0.925&confidence=0.9065000000000001&confidence=0.8796666666666667&confidence=0.8713425925925926&confidence=0.8601185185185185&confidence=0.818496&confidence=0.792558699845679&confidence=0.783216&confidence=0.7305698033836305&confidence=0.7299347328000001&confidence=0.7022950701410322&confidence=0.6306636091391999
 
 ----------------------------TEST 6------------------------------
 Input phrase: describe the two male suspects in incident 769795
@@ -134,11 +132,19 @@ Hypothesis:
 3. w:7 d:6 c:0.93 : describe the two male suspects in incident
 4. w:7 d:7 c:0.8875 : describe the two suspects in incident 769795
 5. w:6 d:6 c:0.8556 : describe the male suspects in incident
-6. w:6 d:6 c:0.8165 : describe the suspects in incident 769795
-7. w:6 d:6 c:0.8165 : describe the two suspects in incident
-8. w:5 d:6 c:0.7402933333333334 : describe the suspects in incident
+6. w:6 d:5 c:0.8312499999999999 : describe the two male suspects 769795
+7. w:6 d:6 c:0.8165 : describe the suspects in incident 769795
+8. w:6 d:6 c:0.8165 : describe the two suspects in incident
+9. w:5 d:5 c:0.7515918367346939 : describe the male suspects 769795
+10. w:5 d:5 c:0.7515918367346939 : describe the two male suspects
+11. w:5 d:6 c:0.7402933333333334 : describe the suspects in incident
+12. w:5 d:5 c:0.7172448979591837 : describe the two suspects 769795
+13. w:4 d:4 c:0.6654666666666667 : describe the male suspects
+14. w:4 d:5 c:0.6350555555555556 : describe the suspects 769795
+15. w:4 d:5 c:0.6350555555555556 : describe the two suspects
+16. w:3 d:4 c:0.5448558933333334 : describe the suspects
 
-query=describe+the+two+male+suspects+in+incident+769795&query=describe+the+male+suspects+in+incident+769795&query=describe+the+two+male+suspects+in+incident&query=describe+the+two+suspects+in+incident+769795&query=describe+the+male+suspects+in+incident&query=describe+the+suspects+in+incident+769795&query=describe+the+two+suspects+in+incident&query=describe+the+suspects+in+incident&confidence=1.0&confidence=0.93&confidence=0.93&confidence=0.8875&confidence=0.8556&confidence=0.8165&confidence=0.8165&confidence=0.7402933333333334
+query=describe+the+two+male+suspects+in+incident+769795&query=describe+the+male+suspects+in+incident+769795&query=describe+the+two+male+suspects+in+incident&query=describe+the+two+suspects+in+incident+769795&query=describe+the+male+suspects+in+incident&query=describe+the+two+male+suspects+769795&query=describe+the+suspects+in+incident+769795&query=describe+the+two+suspects+in+incident&query=describe+the+male+suspects+769795&query=describe+the+two+male+suspects&query=describe+the+suspects+in+incident&query=describe+the+two+suspects+769795&query=describe+the+male+suspects&query=describe+the+suspects+769795&query=describe+the+two+suspects&query=describe+the+suspects&confidence=1.0&confidence=0.93&confidence=0.93&confidence=0.8875&confidence=0.8556&confidence=0.8312499999999999&confidence=0.8165&confidence=0.8165&confidence=0.7515918367346939&confidence=0.7515918367346939&confidence=0.7402933333333334&confidence=0.7172448979591837&confidence=0.6654666666666667&confidence=0.6350555555555556&confidence=0.6350555555555556&confidence=0.5448558933333334
 
 ----------------------------TEST 7------------------------------
 Input phrase: 1990s green jeep cherokee
@@ -154,24 +160,17 @@ Resolved result: DONE
 Hypothesis:
 1. w:4 d:4 c:1.0 : 1990s green jeep cherokee
 2. w:4 d:4 c:0.875 : 1990 green jeep cherokee
-3. w:3 d:4 c:0.8375 : 1990s green jeep
-4. w:3 d:4 c:0.8083333333333333 : 1990s green cherokee
-5. w:3 d:4 c:0.775 : 1990s jeep cherokee
-6. w:3 d:4 c:0.7525 : green jeep cherokee
-7. w:3 d:4 c:0.7328125 : 1990 green jeep
-8. w:3 d:4 c:0.7072916666666667 : 1990 green cherokee
-9. w:3 d:4 c:0.6458333333333334 : 1990 jeep cherokee
-10. w:2 d:3 c:0.6303333333333334 : jeep cherokee
-11. w:2 d:3 c:0.6070833333333334 : 1990s jeep
-12. w:1 d:3 c:0.5988255859375 : 1990s
-13. w:2 d:3 c:0.5894583333333333 : green jeep
-14. w:2 d:3 c:0.5601944444444444 : green cherokee
-15. w:1 d:4 c:0.5239723876953125 : 1990
-16. w:2 d:3 c:0.5059027777777778 : 1990 jeep
-17. w:1 d:3 c:0.4537140625000001 : cherokee
-18. w:1 d:3 c:0.42547500000000005 : jeep
+3. w:3 d:4 c:0.775 : 1990s jeep cherokee
+4. w:3 d:4 c:0.7525 : green jeep cherokee
+5. w:3 d:4 c:0.6458333333333334 : 1990 jeep cherokee
+6. w:2 d:3 c:0.6303333333333334 : jeep cherokee
+7. w:2 d:3 c:0.6070833333333334 : 1990s jeep
+8. w:1 d:3 c:0.5988255859375 : 1990s
+9. w:1 d:4 c:0.5239723876953125 : 1990
+10. w:2 d:3 c:0.5059027777777778 : 1990 jeep
+11. w:1 d:3 c:0.4537140625000001 : cherokee
 
-query=1990s+green+jeep+cherokee&query=1990+green+jeep+cherokee&query=1990s+green+jeep&query=1990s+green+cherokee&query=1990s+jeep+cherokee&query=green+jeep+cherokee&query=1990+green+jeep&query=1990+green+cherokee&query=1990+jeep+cherokee&query=jeep+cherokee&query=1990s+jeep&query=1990s&query=green+jeep&query=green+cherokee&query=1990&query=1990+jeep&query=cherokee&query=jeep&confidence=1.0&confidence=0.875&confidence=0.8375&confidence=0.8083333333333333&confidence=0.775&confidence=0.7525&confidence=0.7328125&confidence=0.7072916666666667&confidence=0.6458333333333334&confidence=0.6303333333333334&confidence=0.6070833333333334&confidence=0.5988255859375&confidence=0.5894583333333333&confidence=0.5601944444444444&confidence=0.5239723876953125&confidence=0.5059027777777778&confidence=0.4537140625000001&confidence=0.42547500000000005
+query=1990s+green+jeep+cherokee&query=1990+green+jeep+cherokee&query=1990s+jeep+cherokee&query=green+jeep+cherokee&query=1990+jeep+cherokee&query=jeep+cherokee&query=1990s+jeep&query=1990s&query=1990&query=1990+jeep&query=cherokee&confidence=1.0&confidence=0.875&confidence=0.775&confidence=0.7525&confidence=0.6458333333333334&confidence=0.6303333333333334&confidence=0.6070833333333334&confidence=0.5988255859375&confidence=0.5239723876953125&confidence=0.5059027777777778&confidence=0.4537140625000001
 
 ----------------------------TEST 8------------------------------
 Input phrase: Tell me about robberies in 2 miles last month
@@ -192,8 +191,9 @@ Hypothesis:
 5. w:6 d:7 c:0.7833196159122084 : Tell me about robberies last month
 6. w:5 d:7 c:0.6826640625 : Tell me about robberies month
 7. w:4 d:6 c:0.6266556927297668 : Tell me about robberies
+8. w:2 d:5 c:0.5322705143186167 : Tell me
 
-query=Tell+me+about+robberies+in+2+miles+last+month&query=Tell+me+about+robberies+in+miles+last+month&query=Tell+me+about+robberies+in+2+miles+month&query=Tell+me+about+robberies+in+miles+month&query=Tell+me+about+robberies+last+month&query=Tell+me+about+robberies+month&query=Tell+me+about+robberies&confidence=1.0&confidence=0.9222222222222223&confidence=0.9&confidence=0.82125&confidence=0.7833196159122084&confidence=0.6826640625&confidence=0.6266556927297668
+query=Tell+me+about+robberies+in+2+miles+last+month&query=Tell+me+about+robberies+in+miles+last+month&query=Tell+me+about+robberies+in+2+miles+month&query=Tell+me+about+robberies+in+miles+month&query=Tell+me+about+robberies+last+month&query=Tell+me+about+robberies+month&query=Tell+me+about+robberies&query=Tell+me&confidence=1.0&confidence=0.9222222222222223&confidence=0.9&confidence=0.82125&confidence=0.7833196159122084&confidence=0.6826640625&confidence=0.6266556927297668&confidence=0.5322705143186167
 
 ----------------------------TEST 9------------------------------
 Input phrase: show me the nearest last month robberies
@@ -242,9 +242,12 @@ Hypothesis:
 6. w:8 d:10 c:0.8379215369318183 : give me in the city that happened week
 7. w:6 d:7 c:0.7681439730271777 : give me all rapes in city
 8. w:5 d:6 c:0.7333269309843748 : give all rapes in city
-9. w:4 d:6 c:0.6649927230639731 : give me in city
+9. w:4 d:5 c:0.6729195135609987 : give me all rapes
+10. w:4 d:6 c:0.6649927230639731 : give me in city
+11. w:3 d:5 c:0.6335944683704999 : give all rapes
+12. w:2 d:5 c:0.5648333252691525 : give me
 
-query=give+me+all+rapes+in+the+city+that+happened+last+week&query=give+all+rapes+in+the+city+that+happened+last+week&query=give+me+in+the+city+that+happened+last+week&query=give+me+all+rapes+in+the+city+that+happened+week&query=give+all+rapes+in+the+city+that+happened+week&query=give+me+in+the+city+that+happened+week&query=give+me+all+rapes+in+city&query=give+all+rapes+in+city&query=give+me+in+city&confidence=1.0&confidence=0.98125&confidence=0.9204444731404958&confidence=0.9181818181818182&confidence=0.8992443181818182&confidence=0.8379215369318183&confidence=0.7681439730271777&confidence=0.7333269309843748&confidence=0.6649927230639731
+query=give+me+all+rapes+in+the+city+that+happened+last+week&query=give+all+rapes+in+the+city+that+happened+last+week&query=give+me+in+the+city+that+happened+last+week&query=give+me+all+rapes+in+the+city+that+happened+week&query=give+all+rapes+in+the+city+that+happened+week&query=give+me+in+the+city+that+happened+week&query=give+me+all+rapes+in+city&query=give+all+rapes+in+city&query=give+me+all+rapes&query=give+me+in+city&query=give+all+rapes&query=give+me&confidence=1.0&confidence=0.98125&confidence=0.9204444731404958&confidence=0.9181818181818182&confidence=0.8992443181818182&confidence=0.8379215369318183&confidence=0.7681439730271777&confidence=0.7333269309843748&confidence=0.6729195135609987&confidence=0.6649927230639731&confidence=0.6335944683704999&confidence=0.5648333252691525
 
 ----------------------------TEST 11------------------------------
 Input phrase: find my video record with smth in gallery
@@ -260,18 +263,12 @@ Resolved result: DONE
 Hypothesis:
 1. w:8 d:8 c:1.0 : find my video record with smth in gallery
 2. w:7 d:8 c:0.95 : find video record with smth in gallery
-3. w:7 d:8 c:0.91875 : find my video with smth in gallery
-4. w:7 d:8 c:0.9041666666666667 : find my record with smth in gallery
-5. w:6 d:8 c:0.8617857142857143 : find video with smth in gallery
-6. w:6 d:8 c:0.8380357142857142 : find record with smth in gallery
-7. w:6 d:6 c:0.8312499999999999 : find my video record with smth
-8. w:5 d:6 c:0.7677551020408163 : find video record with smth
-9. w:5 d:6 c:0.7424999999999999 : find my video with smth
-10. w:5 d:6 c:0.7307142857142858 : find my record with smth
-11. w:4 d:6 c:0.6702777777777778 : find video with smth
-12. w:4 d:6 c:0.6518055555555555 : find record with smth
+3. w:6 d:6 c:0.8312499999999999 : find my video record with smth
+4. w:5 d:6 c:0.7677551020408163 : find video record with smth
+5. w:4 d:5 c:0.6909765625 : find my video record
+6. w:3 d:5 c:0.6204714702207413 : find video record
 
-query=find+my+video+record+with+smth+in+gallery&query=find+video+record+with+smth+in+gallery&query=find+my+video+with+smth+in+gallery&query=find+my+record+with+smth+in+gallery&query=find+video+with+smth+in+gallery&query=find+record+with+smth+in+gallery&query=find+my+video+record+with+smth&query=find+video+record+with+smth&query=find+my+video+with+smth&query=find+my+record+with+smth&query=find+video+with+smth&query=find+record+with+smth&confidence=1.0&confidence=0.95&confidence=0.91875&confidence=0.9041666666666667&confidence=0.8617857142857143&confidence=0.8380357142857142&confidence=0.8312499999999999&confidence=0.7677551020408163&confidence=0.7424999999999999&confidence=0.7307142857142858&confidence=0.6702777777777778&confidence=0.6518055555555555
+query=find+my+video+record+with+smth+in+gallery&query=find+video+record+with+smth+in+gallery&query=find+my+video+record+with+smth&query=find+video+record+with+smth&query=find+my+video+record&query=find+video+record&confidence=1.0&confidence=0.95&confidence=0.8312499999999999&confidence=0.7677551020408163&confidence=0.6909765625&confidence=0.6204714702207413
 
 ----------------------------TEST 12------------------------------
 Input phrase: can you search for newton's laws via internet
@@ -288,8 +285,9 @@ Hypothesis:
 1. w:8 d:8 c:0.9777777777777777 : can you search for newton laws via internet
 2. w:6 d:6 c:0.8127777777777778 : can you search for newton laws
 3. w:5 d:6 c:0.7111805555555555 : can you search for newton
+4. w:3 d:4 c:0.5911688368055557 : can you search
 
-query=can+you+search+for+newton+laws+via+internet&query=can+you+search+for+newton+laws&query=can+you+search+for+newton&confidence=0.9777777777777777&confidence=0.8127777777777778&confidence=0.7111805555555555
+query=can+you+search+for+newton+laws+via+internet&query=can+you+search+for+newton+laws&query=can+you+search+for+newton&query=can+you+search&confidence=0.9777777777777777&confidence=0.8127777777777778&confidence=0.7111805555555555&confidence=0.5911688368055557
 
 ----------------------------TEST 13------------------------------
 Input phrase: show me the quickest way to the art museum
@@ -304,13 +302,9 @@ Resolved result: FAIL
 
 Hypothesis:
 1. w:9 d:8 c:1.0 : show me the quickest way to the art museum
-2. w:8 d:8 c:0.9277777777777778 : show me the quickest way to the art
-3. w:8 d:8 c:0.9148148148148149 : show me the quickest way to the museum
-4. w:8 d:8 c:0.9 : show me the way to the art museum
-5. w:7 d:8 c:0.826875 : show me the way to the art
-6. w:7 d:8 c:0.81375 : show me the way to the museum
+2. w:8 d:8 c:0.9 : show me the way to the art museum
 
-query=show+me+the+quickest+way+to+the+art+museum&query=show+me+the+quickest+way+to+the+art&query=show+me+the+quickest+way+to+the+museum&query=show+me+the+way+to+the+art+museum&query=show+me+the+way+to+the+art&query=show+me+the+way+to+the+museum&confidence=1.0&confidence=0.9277777777777778&confidence=0.9148148148148149&confidence=0.9&confidence=0.826875&confidence=0.81375
+query=show+me+the+quickest+way+to+the+art+museum&query=show+me+the+way+to+the+art+museum&confidence=1.0&confidence=0.9
 
 ----------------------------TEST 14------------------------------
 Input phrase: what's the best way to get to witness number one from here?
@@ -334,8 +328,10 @@ Hypothesis:
 8. w:9 d:10 c:0.8507938846153846 : what's the way to get to witness one
 9. w:8 d:10 c:0.8012660459934066 : what's the way to get to witness
 10. w:8 d:10 c:0.7977391847874348 : what's the way to get from here
+11. w:7 d:8 c:0.7581649032588375 : what's the best way to get
+12. w:6 d:8 c:0.6773304265835813 : what's the way to get
 
-query=what%27s+the+best+way+to+get+to+witness+one+from+here&query=what%27s+the+best+way+to+get+to+witness+from+here&query=what%27s+the+best+way+to+get+to+witness+one&query=what%27s+the+way+to+get+to+witness+one+from+here&query=what%27s+the+best+way+to+get+from+here&query=what%27s+the+best+way+to+get+to+witness&query=what%27s+the+way+to+get+to+witness+from+here&query=what%27s+the+way+to+get+to+witness+one&query=what%27s+the+way+to+get+to+witness&query=what%27s+the+way+to+get+from+here&confidence=0.9857142857142858&confidence=0.9432527472527473&confidence=0.924945&confidence=0.9174725274725275&confidence=0.8761785870162054&confidence=0.8747004896376351&confidence=0.8707648351648352&confidence=0.8507938846153846&confidence=0.8012660459934066&confidence=0.7977391847874348
+query=what%27s+the+best+way+to+get+to+witness+one+from+here&query=what%27s+the+best+way+to+get+to+witness+from+here&query=what%27s+the+best+way+to+get+to+witness+one&query=what%27s+the+way+to+get+to+witness+one+from+here&query=what%27s+the+best+way+to+get+from+here&query=what%27s+the+best+way+to+get+to+witness&query=what%27s+the+way+to+get+to+witness+from+here&query=what%27s+the+way+to+get+to+witness+one&query=what%27s+the+way+to+get+to+witness&query=what%27s+the+way+to+get+from+here&query=what%27s+the+best+way+to+get&query=what%27s+the+way+to+get&confidence=0.9857142857142858&confidence=0.9432527472527473&confidence=0.924945&confidence=0.9174725274725275&confidence=0.8761785870162054&confidence=0.8747004896376351&confidence=0.8707648351648352&confidence=0.8507938846153846&confidence=0.8012660459934066&confidence=0.7977391847874348&confidence=0.7581649032588375&confidence=0.6773304265835813
 
 ----------------------------TEST 15------------------------------
 Input phrase: take me to the residence of witness Sally Heim
@@ -344,17 +340,17 @@ Expected action: /private/search/cad/witness/navigate
 Primary action: /device/ecosystem/maps/navigation_start
 Primary result: FAIL
 
-Received action: /device/ecosystem/maps/navigation_start
-Resolved query: take me to the residence of witness Sally Heim
-Resolved result: FAIL
+Received action: /private/search/cad/witness/navigate
+Resolved query: take me to the residence of witness
+Resolved result: DONE
 
 Hypothesis:
 1. w:9 d:8 c:1.0 : take me to the residence of witness Sally Heim
-2. w:8 d:8 c:0.9313888888888889 : take me to the residence of witness Sally
-3. w:8 d:8 c:0.9129166666666667 : take me to the residence of witness Heim
-4. w:7 d:8 c:0.7882291666666668 : take me to the residence of witness
+2. w:7 d:6 c:0.8493827160493828 : take me to the residence Sally Heim
+3. w:7 d:8 c:0.7882291666666668 : take me to the residence of witness
+4. w:5 d:6 c:0.6370178571428573 : take me to the residence
 
-query=take+me+to+the+residence+of+witness+Sally+Heim&query=take+me+to+the+residence+of+witness+Sally&query=take+me+to+the+residence+of+witness+Heim&query=take+me+to+the+residence+of+witness&confidence=1.0&confidence=0.9313888888888889&confidence=0.9129166666666667&confidence=0.7882291666666668
+query=take+me+to+the+residence+of+witness+Sally+Heim&query=take+me+to+the+residence+Sally+Heim&query=take+me+to+the+residence+of+witness&query=take+me+to+the+residence&confidence=1.0&confidence=0.8493827160493828&confidence=0.7882291666666668&confidence=0.6370178571428573
 
 ----------------------------TEST 16------------------------------
 Input phrase: Show me how to get to witness Bernie Dickens's house
@@ -363,22 +359,17 @@ Expected action: /private/search/cad/witness/navigate
 Primary action: /public/encyclopedia/generic
 Primary result: FAIL
 
-Received action: /public/encyclopedia/generic
-Resolved query: Show me how to get to witness Bernie Dickens house
-Resolved result: FAIL
+Received action: /private/search/cad/witness/navigate
+Resolved query: Show me how to get to witness house
+Resolved result: DONE
 
 Hypothesis:
 1. w:10 d:11 c:0.9818181818181818 : Show me how to get to witness Bernie Dickens house
-2. w:9 d:10 c:0.9211909090909091 : Show me how to get to witness Bernie house
-3. w:9 d:10 c:0.9179999999999999 : Show me how to get to witness Bernie Dickens
-4. w:9 d:10 c:0.910309090909091 : Show me how to get to witness Dickens house
-5. w:8 d:10 c:0.855015 : Show me how to get to witness Bernie
-6. w:8 d:10 c:0.84371 : Show me how to get to witness Dickens
-7. w:8 d:10 c:0.7947545454545455 : Show me how to get to witness house
-8. w:7 d:10 c:0.7651483341775569 : Show me how to get to house
-9. w:7 d:10 c:0.7301807386363637 : Show me how to get to witness
+2. w:9 d:10 c:0.9179999999999999 : Show me how to get to witness Bernie Dickens
+3. w:8 d:10 c:0.7947545454545455 : Show me how to get to witness house
+4. w:7 d:10 c:0.7651483341775569 : Show me how to get to house
 
-query=Show+me+how+to+get+to+witness+Bernie+Dickens+house&query=Show+me+how+to+get+to+witness+Bernie+house&query=Show+me+how+to+get+to+witness+Bernie+Dickens&query=Show+me+how+to+get+to+witness+Dickens+house&query=Show+me+how+to+get+to+witness+Bernie&query=Show+me+how+to+get+to+witness+Dickens&query=Show+me+how+to+get+to+witness+house&query=Show+me+how+to+get+to+house&query=Show+me+how+to+get+to+witness&confidence=0.9818181818181818&confidence=0.9211909090909091&confidence=0.9179999999999999&confidence=0.910309090909091&confidence=0.855015&confidence=0.84371&confidence=0.7947545454545455&confidence=0.7651483341775569&confidence=0.7301807386363637
+query=Show+me+how+to+get+to+witness+Bernie+Dickens+house&query=Show+me+how+to+get+to+witness+Bernie+Dickens&query=Show+me+how+to+get+to+witness+house&query=Show+me+how+to+get+to+house&confidence=0.9818181818181818&confidence=0.9179999999999999&confidence=0.7947545454545455&confidence=0.7651483341775569
 
 ----------------------------TEST 17------------------------------
 Input phrase: describe suspect 1 in incident 088975
@@ -396,8 +387,11 @@ Hypothesis:
 2. w:5 d:6 c:0.9066666666666667 : describe suspect in incident 088975
 3. w:5 d:6 c:0.8833333333333333 : describe suspect 1 in incident
 4. w:4 d:6 c:0.8051200000000001 : describe suspect in incident
+5. w:3 d:5 c:0.6870370370370371 : describe suspect 1
+6. w:3 d:5 c:0.6673066666666667 : describe suspect 088975
+7. w:2 d:4 c:0.543456 : describe suspect
 
-query=describe+suspect+1+in+incident+088975&query=describe+suspect+in+incident+088975&query=describe+suspect+1+in+incident&query=describe+suspect+in+incident&confidence=1.0&confidence=0.9066666666666667&confidence=0.8833333333333333&confidence=0.8051200000000001
+query=describe+suspect+1+in+incident+088975&query=describe+suspect+in+incident+088975&query=describe+suspect+1+in+incident&query=describe+suspect+in+incident&query=describe+suspect+1&query=describe+suspect+088975&query=describe+suspect&confidence=1.0&confidence=0.9066666666666667&confidence=0.8833333333333333&confidence=0.8051200000000001&confidence=0.6870370370370371&confidence=0.6673066666666667&confidence=0.543456
 
 ----------------------------TEST 18------------------------------
 Input phrase: gimme the information on the female suspect in case 9765
@@ -418,8 +412,9 @@ Hypothesis:
 5. w:8 d:8 c:0.8202854996243426 : gim me the information on the female suspect
 6. w:6 d:8 c:0.7394772090828371 : gim me the information on suspect
 7. w:7 d:8 c:0.7377774545454546 : gim me the information on the suspect
+8. w:4 d:6 c:0.6478064806841384 : gim me the information
 
-query=gim+me+the+information+on+the+female+suspect+in+case+9765&query=gim+me+the+information+on+the+female+suspect+in+case&query=gim+me+the+information+on+the+suspect+in+case+9765&query=gim+me+the+information+on+the+suspect+in+case&query=gim+me+the+information+on+the+female+suspect&query=gim+me+the+information+on+suspect&query=gim+me+the+information+on+the+suspect&confidence=1.0&confidence=0.9363636363636364&confidence=0.9181818181818182&confidence=0.853909090909091&confidence=0.8202854996243426&confidence=0.7394772090828371&confidence=0.7377774545454546
+query=gim+me+the+information+on+the+female+suspect+in+case+9765&query=gim+me+the+information+on+the+female+suspect+in+case&query=gim+me+the+information+on+the+suspect+in+case+9765&query=gim+me+the+information+on+the+suspect+in+case&query=gim+me+the+information+on+the+female+suspect&query=gim+me+the+information+on+suspect&query=gim+me+the+information+on+the+suspect&query=gim+me+the+information&confidence=1.0&confidence=0.9363636363636364&confidence=0.9181818181818182&confidence=0.853909090909091&confidence=0.8202854996243426&confidence=0.7394772090828371&confidence=0.7377774545454546&confidence=0.6478064806841384
 
 ----------------------------TEST 19------------------------------
 Input phrase: how do i get to witness No. 2 in this incident?
@@ -437,8 +432,10 @@ Hypothesis:
 2. w:9 d:9 c:0.9614318181818181 : how do i get to witness 2 in incident
 3. w:9 d:9 c:0.9293840909090909 : how do i get to witness in this incident
 4. w:8 d:9 c:0.9087311111111112 : how do i get to witness in incident
+5. w:7 d:7 c:0.8422460555972953 : how do i get to witness 2
+6. w:6 d:7 c:0.7718604993141289 : how do i get to witness
 
-query=how+do+i+get+to+witness+2+in+this+incident&query=how+do+i+get+to+witness+2+in+incident&query=how+do+i+get+to+witness+in+this+incident&query=how+do+i+get+to+witness+in+incident&confidence=0.9792361111111111&confidence=0.9614318181818181&confidence=0.9293840909090909&confidence=0.9087311111111112
+query=how+do+i+get+to+witness+2+in+this+incident&query=how+do+i+get+to+witness+2+in+incident&query=how+do+i+get+to+witness+in+this+incident&query=how+do+i+get+to+witness+in+incident&query=how+do+i+get+to+witness+2&query=how+do+i+get+to+witness&confidence=0.9792361111111111&confidence=0.9614318181818181&confidence=0.9293840909090909&confidence=0.9087311111111112&confidence=0.8422460555972953&confidence=0.7718604993141289
 
 ----------------------------TEST 20------------------------------
 Input phrase: Please map the route to the main witness in case number 3456
@@ -456,11 +453,13 @@ Hypothesis:
 2. w:10 d:9 c:0.9207575757575757 : Please map the route to the main witness in case
 3. w:10 d:9 c:0.9028787878787878 : Please map the route to the witness in case 3456
 4. w:9 d:9 c:0.8396772727272727 : Please map the route to the witness in case
+5. w:8 d:7 c:0.8066140746306035 : Please map the route to the main witness
+6. w:7 d:7 c:0.7254811636363635 : Please map the route to the witness
 
-query=Please+map+the+route+to+the+main+witness+in+case+3456&query=Please+map+the+route+to+the+main+witness+in+case&query=Please+map+the+route+to+the+witness+in+case+3456&query=Please+map+the+route+to+the+witness+in+case&confidence=0.9833333333333333&confidence=0.9207575757575757&confidence=0.9028787878787878&confidence=0.8396772727272727
+query=Please+map+the+route+to+the+main+witness+in+case+3456&query=Please+map+the+route+to+the+main+witness+in+case&query=Please+map+the+route+to+the+witness+in+case+3456&query=Please+map+the+route+to+the+witness+in+case&query=Please+map+the+route+to+the+main+witness&query=Please+map+the+route+to+the+witness&confidence=0.9833333333333333&confidence=0.9207575757575757&confidence=0.9028787878787878&confidence=0.8396772727272727&confidence=0.8066140746306035&confidence=0.7254811636363635
 
 ----------------------------TEST RESULTS------------------------------
 TOTAL TESTS: 20
 PASS BEFORE: 1/20
-PASS AFTER: 6/20
+PASS AFTER: 8/20
 

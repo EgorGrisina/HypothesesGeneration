@@ -1,0 +1,3500 @@
+Input phrase:
+the suspect is male with blue eyes
+
+Expected hypothesis:
+1. blue
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : the suspect is male with blue eyes
+2. w:6 d:7 c:0.8714285714285714 : the suspect is male with eyes
+3. w:4 d:5 c:0.7042565597667638 : the suspect is male
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+black female wearing maroon jeans
+
+Expected hypothesis:
+1. black
+2. maroon
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : black female wearing maroon jeans
+2. w:4 d:6 c:0.856 : female wearing maroon jeans
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+Sheldon Cooper
+
+Expected hypothesis:
+1. cooper
+
+Hypothesis:
+1. w:2 d:3 c:1.0 : Sheldon Cooper
+2. w:1 d:3 c:0.02625000000000005 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+dr. Sheldon Cooper
+
+Expected hypothesis:
+1. cooper
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : dr Sheldon Cooper
+2. w:2 d:3 c:0.7250000000000001 : Sheldon Cooper
+3. w:1 d:3 c:0.35875 : dr
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+white male, 1993 YOB
+
+Expected hypothesis:
+1. white
+
+Hypothesis:
+1. w:5 d:4 c:1.0 : white male 1993 YOB
+2. w:3 d:4 c:0.888 : white male YOB
+3. w:3 d:4 c:0.82 : male 1993 YOB
+4. w:3 d:4 c:0.81 : white male 1993
+5. w:2 d:4 c:0.6924233333333333 : 1993 YOB
+6. w:2 d:3 c:0.68715 : white male
+7. w:2 d:3 c:0.6669333333333333 : male YOB
+8. w:2 d:4 c:0.5603333333333333 : male 1993
+9. w:1 d:3 c:0.498267875 : YOB
+10. w:1 d:4 c:0.4419056250000001 : 1993
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+who is owner of case 12 car
+
+Expected hypothesis:
+1. car
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : who is owner of case 12 car
+2. w:6 d:7 c:0.9 : who is owner of case car
+3. w:5 d:7 c:0.7714285714285715 : who is owner of case
+4. w:3 d:5 c:0.6234402332361517 : who is owner
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+1993 YOB white male
+
+Expected hypothesis:
+1. white
+
+Hypothesis:
+1. w:4 d:4 c:1.0 : 1993 YOB white male
+2. w:3 d:4 c:0.86 : YOB white male
+3. w:3 d:4 c:0.775 : 1993 YOB male
+4. w:3 d:5 c:0.7625 : 1993 white male
+5. w:2 d:4 c:0.715015625 : 1993 YOB
+6. w:2 d:3 c:0.6303333333333334 : YOB male
+7. w:2 d:3 c:0.5876666666666668 : white male
+8. w:1 d:3 c:0.5423016666666667 : YOB
+9. w:2 d:3 c:0.5295833333333334 : 1993 male
+10. w:1 d:4 c:0.49425455078125 : 1993
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+planet saturn
+
+Expected hypothesis:
+1. saturn
+
+Hypothesis:
+1. w:2 d:3 c:1.0 : planet saturn
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+White male 5'11" around 180lbs with brown hair blue eyes and no facial hair or glasses
+
+Expected hypothesis:
+1. white
+2. brown
+3. blue
+
+Hypothesis:
+1. w:19 d:8 c:1.0 : White male 5' 11'' around 180lbs with brown hair blue eyes and no facial hair or glasses
+2. w:18 d:8 c:0.9705263157894737 : White male' 11'' around 180lbs with brown hair blue eyes and no facial hair or glasses
+3. w:18 d:7 c:0.9705263157894737 : White male 5''' around 180lbs with brown hair blue eyes and no facial hair or glasses
+4. w:18 d:9 c:0.9657894736842105 : White male 5' 11'' around 180lbs with brown hair blue eyes and no facial hair or
+5. w:18 d:8 c:0.9526315789473684 : White male 5' 11'' around 180lbs with hair blue eyes and no facial hair or glasses
+6. w:18 d:8 c:0.9526315789473684 : White male 5' 11'' around 180lbs with brown hair eyes and no facial hair or glasses
+7. w:18 d:8 c:0.9526315789473684 : White male 5' 11'' around 180lbs with brown hair blue eyes and no hair or glasses
+8. w:18 d:7 c:0.95 : male 5' 11'' around 180lbs with brown hair blue eyes and no facial hair or glasses
+9. w:17 d:10 c:0.94033216374269 : White male''' around 180lbs with brown hair blue eyes and no facial hair or glasses
+10. w:17 d:8 c:0.9360533240997231 : White male 5' 11'' around 180lbs with brown hair and no facial hair or glasses
+11. w:17 d:9 c:0.9354795321637427 : White male' 11'' around 180lbs with brown hair blue eyes and no facial hair or
+12. w:17 d:7 c:0.9354795321637427 : White male 5''' around 180lbs with brown hair blue eyes and no facial hair or
+13. w:17 d:9 c:0.9274238227146815 : White male 5' 11'' with brown hair blue eyes and no facial hair or glasses
+14. w:17 d:8 c:0.9229941520467836 : White male' 11'' around 180lbs with hair blue eyes and no facial hair or glasses
+15. w:17 d:7 c:0.9229941520467836 : White male 5''' around 180lbs with hair blue eyes and no facial hair or glasses
+16. w:17 d:8 c:0.9229941520467836 : White male' 11'' around 180lbs with brown hair eyes and no facial hair or glasses
+17. w:17 d:8 c:0.9229941520467836 : White male 5''' around 180lbs with brown hair eyes and no facial hair or glasses
+18. w:17 d:8 c:0.9229941520467836 : White male' 11'' around 180lbs with brown hair blue eyes and no hair or glasses
+19. w:17 d:7 c:0.9229941520467836 : White male 5''' around 180lbs with brown hair blue eyes and no hair or glasses
+20. w:17 d:7 c:0.9193040935672515 : male' 11'' around 180lbs with brown hair blue eyes and no facial hair or glasses
+21. w:17 d:8 c:0.9193040935672515 : male 5''' around 180lbs with brown hair blue eyes and no facial hair or glasses
+22. w:17 d:8 c:0.9191968490304708 : White male 5' 11'' around 180lbs with blue eyes and no facial hair or glasses
+23. w:17 d:9 c:0.9182309941520468 : White male 5' 11'' around 180lbs with hair blue eyes and no facial hair or
+24. w:17 d:9 c:0.9182309941520468 : White male 5' 11'' around 180lbs with brown hair eyes and no facial hair or
+25. w:17 d:9 c:0.9182309941520468 : White male 5' 11'' around 180lbs with brown hair blue eyes and no hair or
+26. w:17 d:7 c:0.9156944444444444 : male 5' 11'' around 180lbs with brown hair blue eyes and no facial hair or
+27. w:16 d:8 c:0.9155075458901885 : White male 5''' with brown hair blue eyes and no facial hair or glasses
+28. w:16 d:10 c:0.9051169691484019 : White male 5' 11'' around 180lbs with brown hair blue eyes and or glasses
+29. w:16 d:8 c:0.905076447368421 : White male' 11'' around 180lbs with brown hair and no facial hair or glasses
+30. w:17 d:8 c:0.9049999999999999 : White male 5' 11'' around 180lbs with hair eyes and no facial hair or glasses
+31. w:17 d:8 c:0.9049999999999999 : White male 5' 11'' around 180lbs with hair blue eyes and no hair or glasses
+32. w:17 d:8 c:0.9049999999999999 : White male 5' 11'' around 180lbs with brown hair eyes and no hair or glasses
+33. w:16 d:10 c:0.9043782868937048 : White male''' around 180lbs with brown hair blue eyes and no facial hair or
+34. w:17 d:7 c:0.9023538011695906 : male 5' 11'' around 180lbs with hair blue eyes and no facial hair or glasses
+35. w:17 d:8 c:0.9023538011695906 : male 5' 11'' around 180lbs with brown hair eyes and no facial hair or glasses
+36. w:17 d:7 c:0.9023538011695906 : male 5' 11'' around 180lbs with brown hair blue eyes and no hair or glasses
+37. w:16 d:9 c:0.9002630499429689 : White male 5' 11'' around 180lbs with brown hair and no facial hair or
+38. w:16 d:7 c:0.898627254913905 : White male 5' 11'' with hair blue eyes and no facial hair or glasses
+39. w:16 d:7 c:0.898627254913905 : White male 5' 11'' with brown hair eyes and no facial hair or glasses
+40. w:16 d:7 c:0.8962391163092918 : White male' 11'' with brown hair blue eyes and no facial hair or glasses
+41. w:16 d:7 c:0.8961448591820987 : male 5' 11'' with brown hair blue eyes and no facial hair or glasses
+42. w:16 d:9 c:0.8925896388028896 : White male''' around 180lbs with hair blue eyes and no facial hair or glasses
+43. w:16 d:9 c:0.8925896388028896 : White male''' around 180lbs with brown hair eyes and no facial hair or glasses
+44. w:16 d:10 c:0.8925896388028896 : White male''' around 180lbs with brown hair blue eyes and no hair or glasses
+45. w:15 d:7 c:0.8920031209064327 : White male 5''' around 180lbs blue eyes and no facial hair or glasses
+46. w:16 d:8 c:0.8918648473034438 : White male 5' 11'' with brown hair blue eyes and no facial hair or
+47. w:14 d:7 c:0.8901660384491032 : White male 5' 11'' around 180lbs with brown hair blue eyes and
+48. w:16 d:8 c:0.8883884868421053 : White male 5' 11'' around 180lbs with brown hair and no hair or glasses
+49. w:16 d:8 c:0.8878445504385964 : White male' 11'' around 180lbs with blue eyes and no facial hair or glasses
+50. w:16 d:8 c:0.8877841898864809 : male''' around 180lbs with brown hair blue eyes and no facial hair or glasses
+51. w:16 d:9 c:0.8877031991744065 : White male' 11'' around 180lbs with hair blue eyes and no facial hair or
+52. w:16 d:7 c:0.8877031991744065 : White male 5''' around 180lbs with hair blue eyes and no facial hair or
+53. w:16 d:9 c:0.8877031991744065 : White male' 11'' around 180lbs with brown hair eyes and no facial hair or
+54. w:16 d:7 c:0.8877031991744065 : White male 5''' around 180lbs with brown hair eyes and no facial hair or
+55. w:16 d:9 c:0.8877031991744065 : White male' 11'' around 180lbs with brown hair blue eyes and no hair or
+56. w:16 d:7 c:0.8841542311661508 : male' 11'' around 180lbs with brown hair blue eyes and no facial hair or
+57. w:16 d:8 c:0.8841542311661508 : male 5''' around 180lbs with brown hair blue eyes and no facial hair or
+58. w:16 d:9 c:0.8840510871557764 : White male 5' 11'' around 180lbs with blue eyes and no facial hair or
+59. w:15 d:7 c:0.8799065217816057 : White male 5' 11'' with brown hair and no facial hair or glasses
+60. w:16 d:9 c:0.8797141000649773 : White male 5' 11'' with brown hair blue eyes and no hair or glasses
+61. w:15 d:8 c:0.8783150518383995 : White male 5''' with brown hair blue eyes and no facial hair or
+62. w:16 d:8 c:0.8751882352941176 : White male' 11'' around 180lbs with hair eyes and no facial hair or glasses
+63. w:16 d:8 c:0.8751882352941176 : White male 5''' around 180lbs with hair eyes and no facial hair or glasses
+64. w:16 d:8 c:0.8751882352941176 : White male' 11'' around 180lbs with hair blue eyes and no hair or glasses
+65. w:16 d:7 c:0.8751882352941176 : White male 5''' around 180lbs with hair blue eyes and no hair or glasses
+66. w:16 d:8 c:0.8751882352941176 : White male' 11'' around 180lbs with brown hair eyes and no hair or glasses
+67. w:16 d:8 c:0.8751882352941176 : White male 5''' around 180lbs with brown hair eyes and no hair or glasses
+68. w:15 d:9 c:0.8734792650419343 : White male' 11'' around 180lbs with brown hair blue eyes and or glasses
+69. w:15 d:7 c:0.8734792650419343 : White male 5''' around 180lbs with brown hair blue eyes and or glasses
+70. w:15 d:9 c:0.8732570340800097 : White male''' around 180lbs with brown hair and no facial hair or glasses
+71. w:15 d:7 c:0.8731375451388889 : male 5' 11'' around 180lbs blue eyes and no facial hair or glasses
+72. w:16 d:8 c:0.8714743146929824 : White male 5' 11'' around 180lbs with blue eyes and no hair or glasses
+73. w:16 d:7 c:0.8714150670794634 : male' 11'' around 180lbs with hair blue eyes and no facial hair or glasses
+74. w:16 d:8 c:0.8714150670794634 : male 5''' around 180lbs with hair blue eyes and no facial hair or glasses
+75. w:16 d:8 c:0.8714150670794634 : male' 11'' around 180lbs with brown hair eyes and no facial hair or glasses
+76. w:16 d:8 c:0.8714150670794634 : male 5''' around 180lbs with brown hair eyes and no facial hair or glasses
+77. w:16 d:7 c:0.8714150670794634 : male' 11'' around 180lbs with brown hair blue eyes and no hair or glasses
+78. w:16 d:8 c:0.8714150670794634 : male 5''' around 180lbs with brown hair blue eyes and no hair or glasses
+79. w:16 d:8 c:0.87053348643474 : White male 5' 11'' around 180lbs with eyes and no facial hair or glasses
+80. w:16 d:9 c:0.8703970588235294 : White male 5' 11'' around 180lbs with hair eyes and no facial hair or
+81. w:16 d:9 c:0.8703970588235294 : White male 5' 11'' around 180lbs with hair blue eyes and no hair or
+82. w:16 d:9 c:0.8703970588235294 : White male 5' 11'' around 180lbs with brown hair eyes and no hair or
+83. w:15 d:9 c:0.8683077166940789 : White male' 11'' around 180lbs with brown hair and no facial hair or
+84. w:16 d:7 c:0.8678520381836945 : male 5' 11'' around 180lbs with hair blue eyes and no facial hair or
+85. w:16 d:9 c:0.8678520381836945 : male 5' 11'' around 180lbs with brown hair eyes and no facial hair or
+86. w:15 d:7 c:0.8676306712903944 : White male' 11'' with hair blue eyes and no facial hair or glasses
+87. w:15 d:8 c:0.8676306712903944 : White male 5''' with hair blue eyes and no facial hair or glasses
+88. w:15 d:7 c:0.8676306712903944 : White male' 11'' with brown hair eyes and no facial hair or glasses
+89. w:15 d:7 c:0.8676306712903944 : White male 5''' with brown hair eyes and no facial hair or glasses
+90. w:15 d:8 c:0.8676306712903944 : White male 5''' with brown hair blue eyes and no hair or glasses
+91. w:15 d:8 c:0.864161951679769 : male' 11'' with brown hair blue eyes and no facial hair or glasses
+92. w:15 d:7 c:0.8640611399365602 : White male 5' 11'' with blue eyes and no facial hair or glasses
+93. w:15 d:7 c:0.8621205226830276 : White male 5' 11'' with hair blue eyes and no facial hair or
+94. w:15 d:7 c:0.8621205226830276 : White male 5' 11'' with brown hair eyes and no facial hair or
+95. w:14 d:7 c:0.8613488597396102 : White male 5''' hair blue eyes and no facial hair or glasses
+96. w:15 d:8 c:0.86076881827302 : male 5' 11'' with brown hair blue eyes and no facial hair or
+97. w:15 d:8 c:0.859734822639066 : White male' 11'' with brown hair blue eyes and no facial hair or
+98. w:13 d:7 c:0.858273623401901 : White male' 11'' around 180lbs with brown hair blue eyes and
+99. w:15 d:7 c:0.8573738989836774 : White male 5' 11'' around 180lbs with hair blue eyes and or glasses
+100. w:15 d:9 c:0.8573738989836774 : White male 5' 11'' around 180lbs with brown hair eyes and or glasses
+101. w:15 d:8 c:0.8571557655557579 : White male' 11'' around 180lbs with brown hair and no hair or glasses
+102. w:16 d:8 c:0.8570882352941176 : White male 5' 11'' around 180lbs with hair eyes and no hair or glasses
+103. w:15 d:9 c:0.8563281847265222 : White male''' around 180lbs with hair blue eyes and no facial hair or
+104. w:15 d:9 c:0.8563281847265222 : White male''' around 180lbs with brown hair eyes and no facial hair or
+105. w:15 d:10 c:0.8563281847265222 : White male''' around 180lbs with brown hair blue eyes and no hair or
+106. w:15 d:9 c:0.8556211287520994 : White male''' around 180lbs with blue eyes and no facial hair or glasses
+107. w:15 d:7 c:0.8550054627986396 : male 5' 11'' around 180lbs with brown hair blue eyes and or glasses
+108. w:16 d:8 c:0.8547222222222222 : White male 5' 11'' around 180lbs with hair and no facial hair or glasses
+109. w:16 d:8 c:0.8544264705882352 : male 5' 11'' around 180lbs with hair eyes and no facial hair or glasses
+110. w:16 d:7 c:0.8544264705882352 : male 5' 11'' around 180lbs with hair blue eyes and no hair or glasses
+111. w:16 d:8 c:0.8544264705882352 : male 5' 11'' around 180lbs with brown hair eyes and no hair or glasses
+112. w:14 d:7 c:0.8533496523338207 : White male 5''' around 180lbs blue eyes and no facial hair or
+113. w:15 d:9 c:0.8522977045641448 : White male 5' 11'' around 180lbs with brown hair and no hair or
+114. w:15 d:9 c:0.8517758655770284 : White male' 11'' around 180lbs with blue eyes and no facial hair or
+115. w:15 d:8 c:0.8517179571723426 : male''' around 180lbs with brown hair blue eyes and no facial hair or
+116. w:15 d:7 c:0.8507158531574394 : White male 5' 11'' with hair eyes and no facial hair or glasses
+117. w:15 d:7 c:0.8507158531574394 : White male 5' 11'' with hair blue eyes and no hair or glasses
+118. w:15 d:7 c:0.8507158531574394 : White male 5' 11'' with brown hair eyes and no hair or glasses
+119. w:15 d:7 c:0.8482603694935146 : White male' 11'' with brown hair blue eyes and no hair or glasses
+120. w:15 d:7 c:0.8482283799025931 : male 5' 11'' with hair blue eyes and no facial hair or glasses
+121. w:15 d:7 c:0.8482283799025931 : male 5' 11'' with brown hair eyes and no facial hair or glasses
+122. w:15 d:7 c:0.8482283799025931 : male 5' 11'' with brown hair blue eyes and no hair or glasses
+123. w:14 d:7 c:0.8474399152748829 : White male' 11'' with brown hair and no facial hair or glasses
+124. w:15 d:9 c:0.8445566470588235 : White male''' around 180lbs with hair eyes and no facial hair or glasses
+125. w:15 d:9 c:0.8445566470588235 : White male''' around 180lbs with hair blue eyes and no hair or glasses
+126. w:15 d:9 c:0.8445566470588235 : White male''' around 180lbs with brown hair eyes and no hair or glasses
+127. w:14 d:8 c:0.8440463244354932 : White male 5''' around 180lbs blue eyes and no hair or glasses
+128. w:14 d:7 c:0.8439389011624838 : White male 5' 11'' around 180lbs and no facial hair or glasses
+129. w:15 d:8 c:0.8438828790546147 : White male 5' 11'' with brown hair blue eyes and no hair or
+130. w:14 d:7 c:0.842942949256579 : White male 5''' around blue eyes and no facial hair or glasses
+131. w:14 d:7 c:0.8417772391710694 : White male 5' 11'' with brown hair and no facial hair or
+132. w:14 d:9 c:0.8409512805117463 : White male''' around 180lbs with brown hair blue eyes and or glasses
+133. w:14 d:7 c:0.8406718932002636 : male' 11'' around 180lbs blue eyes and no facial hair or glasses
+134. w:15 d:8 c:0.8398450341872559 : White male' 11'' around 180lbs with blue eyes and no hair or glasses
+135. w:15 d:9 c:0.8396337132352941 : White male' 11'' around 180lbs with hair eyes and no facial hair or
+136. w:15 d:7 c:0.8396337132352941 : White male 5''' around 180lbs with hair eyes and no facial hair or
+137. w:15 d:9 c:0.8396337132352941 : White male' 11'' around 180lbs with hair blue eyes and no hair or
+138. w:15 d:9 c:0.8396337132352941 : White male' 11'' around 180lbs with brown hair eyes and no hair or
+139. w:15 d:8 c:0.8396337132352941 : White male 5''' around 180lbs with brown hair eyes and no hair or
+140. w:15 d:8 c:0.839592128998968 : male''' around 180lbs with hair blue eyes and no facial hair or glasses
+141. w:15 d:9 c:0.839592128998968 : male''' around 180lbs with brown hair eyes and no facial hair or glasses
+142. w:15 d:8 c:0.839592128998968 : male''' around 180lbs with brown hair blue eyes and no hair or glasses
+143. w:14 d:8 c:0.8394740482308317 : White male 5''' around 180lbs blue eyes and no facial or glasses
+144. w:13 d:7 c:0.8391342918245915 : White male 5''' around 180lbs with brown hair blue eyes and
+145. w:15 d:8 c:0.8379032944764254 : White male' 11'' around 180lbs with eyes and no facial hair or glasses
+146. w:14 d:9 c:0.8371246585843034 : White male 5' 11'' around 180lbs with brown hair and or glasses
+147. w:15 d:9 c:0.83607067065858 : White male 5' 11'' around 180lbs with blue eyes and no hair or
+148. w:15 d:7 c:0.8360138299793601 : male' 11'' around 180lbs with hair blue eyes and no facial hair or
+149. w:15 d:8 c:0.8360138299793601 : male 5''' around 180lbs with hair blue eyes and no facial hair or
+150. w:15 d:7 c:0.8360138299793601 : male' 11'' around 180lbs with brown hair eyes and no facial hair or
+151. w:15 d:8 c:0.8360138299793601 : male 5''' around 180lbs with brown hair eyes and no facial hair or
+152. w:14 d:9 c:0.8354158959365425 : White male''' around 180lbs with brown hair and no facial hair or
+153. w:14 d:7 c:0.835301584849537 : male 5' 11'' around 180lbs blue eyes and no facial hair or
+154. w:15 d:8 c:0.8346868089333794 : White male 5' 11'' around 180lbs with and no facial hair or glasses
+155. w:15 d:8 c:0.834113913852297 : White male 5''' around 180lbs with brown hair and no hair or glasses
+156. w:14 d:7 c:0.8318146673793592 : White male 5' 11'' with brown hair and no hair or glasses
+157. w:14 d:7 c:0.8313053696056245 : White male' 11'' with blue eyes and no facial hair or glasses
+158. w:14 d:7 c:0.830033342201144 : White male' 11'' with hair blue eyes and no facial hair or
+159. w:14 d:8 c:0.830033342201144 : White male 5''' with hair blue eyes and no facial hair or
+160. w:14 d:7 c:0.830033342201144 : White male' 11'' with brown hair eyes and no facial hair or
+161. w:14 d:7 c:0.830033342201144 : White male 5''' with brown hair eyes and no facial hair or
+162. w:14 d:8 c:0.830033342201144 : White male 5''' with brown hair blue eyes and no hair or
+163. w:15 d:8 c:0.8270901470588234 : White male' 11'' around 180lbs with hair eyes and no hair or glasses
+164. w:15 d:8 c:0.8270901470588234 : White male 5''' around 180lbs with hair eyes and no hair or glasses
+165. w:14 d:8 c:0.8267149337736456 : male' 11'' with brown hair blue eyes and no facial hair or
+166. w:14 d:7 c:0.8266184905393092 : White male 5' 11'' with blue eyes and no facial hair or
+167. w:12 d:9 c:0.8254785197970241 : White male''' around 180lbs with brown hair blue eyes and
+168. w:14 d:7 c:0.8254456712181457 : White male' 11'' around 180lbs with hair blue eyes and or glasses
+169. w:14 d:7 c:0.8254456712181457 : White male 5''' around 180lbs with hair blue eyes and or glasses
+170. w:14 d:9 c:0.8254456712181457 : White male' 11'' around 180lbs with brown hair eyes and or glasses
+171. w:14 d:7 c:0.8254456712181457 : White male 5''' around 180lbs with brown hair eyes and or glasses
+172. w:14 d:7 c:0.8251714352996078 : male 5' 11'' around 180lbs blue eyes and no hair or glasses
+173. w:14 d:7 c:0.82511498015625 : male 5' 11'' around blue eyes and no facial hair or glasses
+174. w:14 d:9 c:0.8250186854724587 : White male''' around 180lbs with brown hair and no hair or glasses
+175. w:15 d:8 c:0.8232239338235293 : male' 11'' around 180lbs with hair eyes and no facial hair or glasses
+176. w:15 d:8 c:0.8232239338235293 : male 5''' around 180lbs with hair eyes and no facial hair or glasses
+177. w:15 d:7 c:0.8232239338235293 : male' 11'' around 180lbs with hair blue eyes and no hair or glasses
+178. w:15 d:8 c:0.8232239338235293 : male 5''' around 180lbs with hair blue eyes and no hair or glasses
+179. w:15 d:8 c:0.8232239338235293 : male' 11'' around 180lbs with brown hair eyes and no hair or glasses
+180. w:15 d:8 c:0.8232239338235293 : male 5''' around 180lbs with brown hair eyes and no hair or glasses
+181. w:15 d:8 c:0.8227103583641918 : White male' 11'' around 180lbs with hair and no facial hair or glasses
+182. w:15 d:8 c:0.8227103583641918 : White male 5''' around 180lbs with hair and no facial hair or glasses
+183. w:15 d:7 c:0.8224538844915021 : White male 5' 11'' around 180lbs with eyes and no hair or glasses
+184. w:15 d:9 c:0.822269025735294 : White male 5' 11'' around 180lbs with hair eyes and no hair or
+185. w:14 d:7 c:0.8221456039406693 : male' 11'' around 180lbs with brown hair blue eyes and or glasses
+186. w:14 d:8 c:0.8221456039406693 : male 5''' around 180lbs with brown hair blue eyes and or glasses
+187. w:14 d:9 c:0.8220496937570013 : White male 5' 11'' around 180lbs with blue eyes and or glasses
+188. w:13 d:7 c:0.8215747917905428 : male 5' 11'' with brown hair blue eyes and or glasses
+189. w:13 d:7 c:0.8213576626802711 : White male 5''' hair blue eyes and no facial hair or
+190. w:14 d:7 c:0.8206550134015594 : White male 5' 11'' hair blue eyes and no facial hair or
+191. w:13 d:7 c:0.8203692474546609 : male 5' 11'' around 180lbs with brown hair blue eyes and
+192. w:14 d:7 c:0.8202210300277181 : White male 5' 11'' around 180lbs with hair blue eyes and or
+193. w:14 d:9 c:0.8200123490483417 : White male' 11'' around 180lbs with brown hair and no hair or
+194. w:15 d:9 c:0.8197153952205881 : male 5' 11'' around 180lbs with hair eyes and no facial hair or
+195. w:15 d:9 c:0.8197153952205881 : male 5' 11'' around 180lbs with brown hair eyes and no hair or
+196. w:14 d:7 c:0.8194550262838923 : White male' 11'' with hair eyes and no facial hair or glasses
+197. w:14 d:7 c:0.8194550262838923 : White male 5''' with hair eyes and no facial hair or glasses
+198. w:14 d:7 c:0.8194550262838923 : White male' 11'' with hair blue eyes and no hair or glasses
+199. w:14 d:8 c:0.8194550262838923 : White male 5''' with hair blue eyes and no hair or glasses
+200. w:14 d:7 c:0.8194550262838923 : White male' 11'' with brown hair eyes and no hair or glasses
+201. w:14 d:8 c:0.8194550262838923 : White male 5''' with brown hair eyes and no hair or glasses
+202. w:14 d:9 c:0.8185442131728418 : White male''' around 180lbs with blue eyes and no facial hair or
+203. w:12 d:7 c:0.817612394050808 : White male 5''' with brown hair eyes hair or glasses
+204. w:14 d:8 c:0.8165368650921823 : White male 5''' with brown hair eyes and no facial or glasses
+205. w:14 d:7 c:0.8159776133330696 : White male 5' 11'' with blue eyes and no hair or glasses
+206. w:14 d:8 c:0.8159221386903178 : male' 11'' with hair blue eyes and no facial hair or glasses
+207. w:14 d:7 c:0.8159221386903178 : male' 11'' with brown hair eyes and no facial hair or glasses
+208. w:14 d:8 c:0.8159221386903178 : male' 11'' with brown hair blue eyes and no hair or glasses
+209. w:15 d:8 c:0.8154611371090404 : male 5' 11'' around 180lbs with brown hair and no hair or glasses
+210. w:14 d:7 c:0.813851499520617 : White male 5' 11'' with hair eyes and no facial hair or
+211. w:14 d:8 c:0.813851499520617 : White male 5' 11'' with hair blue eyes and no hair or
+212. w:14 d:8 c:0.813851499520617 : White male 5' 11'' with brown hair eyes and no hair or
+213. w:13 d:7 c:0.8129296664754404 : White male 5''' hair blue eyes and no hair or glasses
+214. w:13 d:7 c:0.8129099108532459 : White male 5''' with brown hair blue eyes and or glasses
+215. w:14 d:7 c:0.8122174715403666 : White male 5' 11'' with eyes and no facial hair or glasses
+216. w:13 d:7 c:0.8118247154092385 : White male 5''' with brown and no facial hair or glasses
+217. w:13 d:7 c:0.8117739649717832 : White male' 11'' around 180lbs and no facial hair or glasses
+218. w:13 d:7 c:0.8117739649717832 : White male 5''' around 180lbs and no facial hair or glasses
+219. w:14 d:7 c:0.8114718167734808 : male 5' 11'' with hair blue eyes and no facial hair or
+220. w:14 d:7 c:0.8114718167734808 : male 5' 11'' with brown hair eyes and no facial hair or
+221. w:14 d:8 c:0.811416205495356 : White male' 11'' with brown hair blue eyes and no hair or
+222. w:13 d:7 c:0.8096796372066863 : male' 11'' hair blue eyes and no facial hair or glasses
+223. w:14 d:7 c:0.8093532670774248 : White male 5' 11'' around 180lbs with hair eyes and or glasses
+224. w:11 d:8 c:0.8082016784992478 : White male 5''' hair blue eyes hair or glasses
+225. w:13 d:7 c:0.8080944906371206 : White male' 11'' with brown hair and no facial hair or
+226. w:14 d:9 c:0.8079591923529411 : White male''' around 180lbs with hair eyes and no facial hair or
+227. w:14 d:9 c:0.8079591923529411 : White male''' around 180lbs with hair blue eyes and no hair or
+228. w:14 d:9 c:0.8079591923529411 : White male''' around 180lbs with brown hair eyes and no hair or
+229. w:14 d:9 c:0.8072795559882127 : White male''' around 180lbs with blue eyes and no hair or glasses
+230. w:13 d:7 c:0.8071689997249535 : White male 5''' around 180lbs eyes and no facial hair or
+231. w:13 d:7 c:0.8070018483512776 : White male 5''' hair blue eyes and no facial or glasses
+232. w:14 d:7 c:0.8069867370567307 : male 5' 11'' around 180lbs with hair blue eyes and or glasses
+233. w:14 d:9 c:0.8069867370567307 : male 5' 11'' around 180lbs with brown hair eyes and or glasses
+234. w:15 d:8 c:0.8066712802768166 : White male 5' 11'' around 180lbs with hair and no hair or glasses
+235. w:13 d:7 c:0.8065004287025048 : male 5' 11'' hair blue eyes and no facial hair or
+236. w:15 d:8 c:0.8061986213235294 : male 5' 11'' around 180lbs with hair eyes and no hair or glasses
+237. w:13 d:8 c:0.8048584593724167 : White male 5''' around 180lbs blue eyes and no hair or
+238. w:13 d:7 c:0.8047560236085114 : White male 5' 11'' around 180lbs and no facial hair or
+239. w:15 d:8 c:0.8043125923227908 : male 5' 11'' around 180lbs with hair and no facial hair or glasses
+240. w:14 d:9 c:0.8042838610269735 : White male''' around 180lbs with eyes and no facial hair or glasses
+241. w:13 d:7 c:0.8038063123268092 : White male 5''' around blue eyes and no facial hair or
+242. w:13 d:9 c:0.8036477879930936 : White male' 11'' around 180lbs with brown hair and or glasses
+243. w:14 d:9 c:0.8034517493724748 : White male' 11'' around 180lbs with blue eyes and no hair or
+244. w:14 d:8 c:0.8032098034090127 : male''' around 180lbs with hair blue eyes and no facial hair or
+245. w:14 d:8 c:0.8032098034090127 : male''' around 180lbs with brown hair eyes and no facial hair or
+246. w:12 d:7 c:0.802966099988783 : White male 5' 11'' with brown hair blue eyes and
+247. w:14 d:7 c:0.8025076595602596 : White male 5' 11'' with hair eyes and no hair or glasses
+248. w:14 d:8 c:0.8017981238406136 : White male' 11'' around 180lbs with and no facial hair or glasses
+249. w:13 d:7 c:0.8016406981588228 : male' 11'' around 180lbs blue eyes and no facial hair or
+250. w:13 d:8 c:0.8004984674201145 : White male 5''' around 180lbs blue eyes and no facial or
+251. w:14 d:6 c:0.8001407272030406 : male 5''' around 180lbs blue eyes and no facial hair or glasses
+252. w:14 d:7 c:0.8000153997479605 : male 5' 11'' with hair eyes and no facial hair or glasses
+253. w:14 d:7 c:0.8000153997479605 : male 5' 11'' with hair blue eyes and no hair or glasses
+254. w:14 d:7 c:0.8000153997479605 : male 5' 11'' with brown hair eyes and no hair or glasses
+255. w:13 d:7 c:0.7989836990321976 : White male' 11'' with brown hair and no hair or glasses
+256. w:14 d:8 c:0.798517047212933 : White male 5' 11'' around 180lbs with and no facial hair or
+257. w:14 d:8 c:0.7979689775853642 : White male 5''' around 180lbs with brown hair and no hair or
+258. w:13 d:7 c:0.7979213333212445 : White male 5' 11'' with hair blue eyes and or glasses
+259. w:13 d:7 c:0.7979213333212445 : White male 5' 11'' with brown hair eyes and or glasses
+260. w:14 d:9 c:0.7962121149019608 : White male''' around 180lbs with hair eyes and no hair or glasses
+261. w:13 d:7 c:0.7959480963886176 : White male 5' 11'' around 180lbs and no hair or glasses
+262. w:14 d:7 c:0.7950745048359356 : White male 5' 11'' with hair and no facial hair or glasses
+263. w:13 d:7 c:0.7936207627734463 : male 5' 11'' around 180lbs and no facial hair or glasses
+264. w:13 d:7 c:0.7935073856647616 : White male' 11'' with brown hair blue eyes and or glasses
+265. w:13 d:8 c:0.7931947006796032 : White male 5' 11'' with brown hair and no hair or
+266. w:13 d:7 c:0.7927090488739348 : White male' 11'' with blue eyes and no facial hair or
+267. w:13 d:9 c:0.7925603311136664 : White male''' around 180lbs with hair blue eyes and or glasses
+268. w:13 d:11 c:0.7925603311136664 : White male''' around 180lbs with brown hair eyes and or glasses
+269. w:13 d:8 c:0.7923585593630277 : male' 11'' around 180lbs blue eyes and no hair or glasses
+270. w:14 d:9 c:0.7912495740196077 : White male' 11'' around 180lbs with hair eyes and no hair or
+271. w:14 d:8 c:0.7912495740196077 : White male 5''' around 180lbs with hair eyes and no hair or
+272. w:13 d:7 c:0.7911322994938195 : male' 11'' around blue eyes and no facial hair or glasses
+273. w:14 d:9 c:0.7910680594117647 : male''' around 180lbs with hair eyes and no facial hair or glasses
+274. w:14 d:8 c:0.7910680594117647 : male''' around 180lbs with hair blue eyes and no hair or glasses
+275. w:14 d:9 c:0.7910680594117647 : male''' around 180lbs with brown hair eyes and no hair or glasses
+276. w:11 d:7 c:0.7909314545029107 : White male 5''' around blue eyes hair or glasses
+277. w:12 d:7 c:0.790864086868326 : White male 5''' around 180lbs with hair blue eyes and
+278. w:13 d:7 c:0.7897572631725329 : White male 5''' around blue eyes and no facial or glasses
+279. w:14 d:9 c:0.7897326296439628 : White male''' around 180lbs with hair and no facial hair or glasses
+280. w:14 d:7 c:0.7894543321360206 : White male' 11'' around 180lbs with eyes and no hair or glasses
+281. w:12 d:9 c:0.7891196430958716 : White male 5''' around 180lbs blue eyes and or glasses
+282. w:11 d:8 c:0.7889451819944178 : White male 5''' hair blue eyes facial or glasses
+283. w:13 d:7 c:0.7887537596615132 : White male 5''' around eyes and no facial hair or glasses
+284. w:13 d:9 c:0.7883470077210584 : White male' 11'' around 180lbs with blue eyes and or glasses
+285. w:13 d:8 c:0.7882934115587334 : male''' around 180lbs with brown hair blue eyes and or glasses
+286. w:13 d:8 c:0.7876294999388184 : male' 11'' around 180lbs blue eyes and no facial or glasses
+287. w:14 d:7 c:0.7875508966911764 : male' 11'' around 180lbs with hair eyes and no facial hair or
+288. w:14 d:8 c:0.7875508966911764 : male 5''' around 180lbs with hair eyes and no facial hair or
+289. w:14 d:8 c:0.7875508966911764 : male' 11'' around 180lbs with brown hair eyes and no hair or
+290. w:14 d:8 c:0.7875508966911764 : male 5''' around 180lbs with brown hair eyes and no hair or
+291. w:12 d:7 c:0.7874544623848795 : male' 11'' around 180lbs with brown hair blue eyes and
+292. w:12 d:8 c:0.7874544623848795 : male 5''' around 180lbs with brown hair blue eyes and
+293. w:13 d:7 c:0.7871214079115889 : White male' 11'' around 180lbs with hair blue eyes and or
+294. w:13 d:7 c:0.7871214079115889 : White male 5''' around 180lbs with brown hair eyes and or
+295. w:14 d:8 c:0.7870144274140513 : White male 5' 11'' around 180lbs with and no hair or glasses
+296. w:13 d:8 c:0.7868599043749831 : male 5' 11'' around 180lbs blue eyes and no hair or
+297. w:13 d:7 c:0.7868060703632812 : male 5' 11'' around blue eyes and no facial hair or
+298. w:13 d:9 c:0.7867142465040946 : White male''' around 180lbs with brown hair and no hair or
+299. w:13 d:7 c:0.7866000470599028 : White male' 11'' hair blue eyes and no facial hair or
+300. w:14 d:8 c:0.7857854209443934 : White male 5''' around 180lbs with hair and no hair or glasses
+301. w:10 d:7 c:0.7853792598452648 : White male 5''' around 180lbs with brown hair
+302. w:13 d:7 c:0.7828477844907014 : White male' 11'' with blue eyes and no hair or glasses
+303. w:12 d:7 c:0.782734810194396 : White male 5''' blue eyes and no hair or glasses
+304. w:14 d:8 c:0.7823976919344738 : male' 11'' around 180lbs with brown hair and no hair or glasses
+305. w:14 d:8 c:0.7823976919344738 : male 5''' around 180lbs with brown hair and no hair or glasses
+306. w:13 d:7 c:0.7814089000635688 : White male' 11'' with hair eyes and no facial hair or
+307. w:13 d:7 c:0.7814089000635688 : White male 5''' with hair eyes and no facial hair or
+308. w:13 d:8 c:0.7814089000635688 : White male' 11'' with hair blue eyes and no hair or
+309. w:13 d:8 c:0.7814089000635688 : White male 5''' with hair blue eyes and no hair or
+310. w:13 d:8 c:0.7814089000635688 : White male' 11'' with brown hair eyes and no hair or
+311. w:13 d:8 c:0.7814089000635688 : White male 5''' with brown hair eyes and no hair or
+312. w:13 d:9 c:0.7801587497339396 : White male''' around 180lbs blue eyes and no facial hair or
+313. w:14 d:9 c:0.7801244878343153 : male 5' 11'' around 180lbs with brown hair and no hair or
+314. w:13 d:8 c:0.7786262249271881 : White male 5''' with brown hair eyes and no facial or
+315. w:12 d:7 c:0.7784946640749212 : White male 5''' blue eyes and no facial or glasses
+316. w:13 d:8 c:0.77809293842832 : White male 5' 11'' with blue eyes and no hair or
+317. w:13 d:8 c:0.7780400393939816 : male' 11'' with hair blue eyes and no facial hair or
+318. w:13 d:7 c:0.7780400393939816 : male' 11'' with brown hair eyes and no facial hair or
+319. w:13 d:8 c:0.7780400393939816 : male' 11'' with brown hair blue eyes and no hair or
+320. w:13 d:7 c:0.7778643101309772 : White male' 11'' with eyes and no facial hair or glasses
+321. w:13 d:7 c:0.7775056145971639 : White male 5''' with brown hair and no hair or glasses
+322. w:13 d:7 c:0.777109040254799 : White male' 11'' around 180lbs with hair eyes and or glasses
+323. w:13 d:7 c:0.777109040254799 : White male 5''' around 180lbs with hair eyes and or glasses
+324. w:13 d:7 c:0.776545261433738 : male 5' 11'' around blue eyes and no hair or glasses
+325. w:12 d:8 c:0.7749648991170182 : White male 5' 11'' with brown hair and or glasses
+326. w:14 d:8 c:0.7747077710784313 : male' 11'' around 180lbs with hair eyes and no hair or glasses
+327. w:14 d:8 c:0.7747077710784313 : male 5''' around 180lbs with hair eyes and no hair or glasses
+328. w:14 d:8 c:0.774336465992647 : White male' 11'' around 180lbs with hair and no hair or glasses
+329. w:13 d:7 c:0.7737587174193641 : male' 11'' around 180lbs with hair blue eyes and or glasses
+330. w:13 d:8 c:0.7737587174193641 : male 5''' around 180lbs with hair blue eyes and or glasses
+331. w:13 d:7 c:0.7737587174193641 : male' 11'' around 180lbs with brown hair eyes and or glasses
+332. w:13 d:8 c:0.7737587174193641 : male 5''' around 180lbs with brown hair eyes and or glasses
+333. w:11 d:7 c:0.7735679256846478 : White male 5''' with brown hair blue eyes and
+334. w:13 d:7 c:0.7734787304332108 : White male 5' 11'' with eyes and no facial hair or
+335. w:11 d:7 c:0.7733250560397226 : White male 5''' with brown hair eyes hair or
+336. w:12 d:7 c:0.7722831831516683 : White male 5''' hair blue eyes and no hair or
+337. w:12 d:7 c:0.7722644153105837 : White male 5''' with brown hair blue eyes and or
+338. w:12 d:7 c:0.7721027125448072 : male 5' 11'' around 180lbs with hair blue eyes and
+339. w:11 d:7 c:0.7720864444090475 : White male 5''' around blue eyes facial or glasses
+340. w:13 d:7 c:0.7720718742890624 : male 5' 11'' around eyes and no facial hair or glasses
+341. w:11 d:9 c:0.7719931564878135 : White male''' around 180lbs with hair blue eyes and
+342. w:11 d:8 c:0.7719931564878135 : White male''' around 180lbs with brown hair eyes and
+343. w:13 d:7 c:0.771776151105973 : White male 5' 11'' around 180lbs with hair eyes and or
+344. w:13 d:7 c:0.7716443015762487 : White male 5''' around 180lbs with brown hair and or glasses
+345. w:14 d:9 c:0.7712633477328431 : male 5' 11'' around 180lbs with hair eyes and no hair or
+346. w:12 d:7 c:0.7712334796387765 : White male 5''' with brown and no facial hair or
+347. w:12 d:7 c:0.7711852667231941 : White male' 11'' around 180lbs and no facial hair or
+348. w:12 d:7 c:0.7711852667231941 : White male 5''' around 180lbs and no facial hair or
+349. w:14 d:8 c:0.7709980964589783 : male' 11'' around 180lbs with hair and no facial hair or glasses
+350. w:14 d:8 c:0.7709980964589783 : male 5''' around 180lbs with hair and no facial hair or glasses
+351. w:13 d:7 c:0.770958525492361 : White male' 11'' with hair eyes and no hair or glasses
+352. w:13 d:8 c:0.770958525492361 : White male 5''' with hair eyes and no hair or glasses
+353. w:13 d:9 c:0.7697987194601885 : White male''' around 180lbs with blue eyes and no hair or
+354. w:12 d:7 c:0.769195655346352 : male' 11'' hair blue eyes and no facial hair or
+355. w:12 d:11 c:0.7691084593267853 : White male''' around 180lbs with brown hair and or glasses
+356. w:12 d:8 c:0.7690032211760169 : male 5' 11'' around 180lbs blue eyes and or glasses
+357. w:11 d:7 c:0.7688927897315601 : White male 5''' with hair eyes hair or glasses
+358. w:10 d:7 c:0.7687687440459344 : male 5' 11'' around 180lbs with brown hair
+359. w:13 d:8 c:0.7679520850575172 : White male''' around 180lbs with and no facial hair or glasses
+360. w:11 d:9 c:0.7678755731264345 : White male' 11'' with brown hair blue eyes and
+361. w:13 d:7 c:0.7677513162921705 : White male 5''' with hair eyes and no facial or glasses
+362. w:13 d:7 c:0.7673546981880207 : male' 11'' with hair eyes and no facial hair or glasses
+363. w:13 d:8 c:0.7673546981880207 : male' 11'' with hair blue eyes and no hair or glasses
+364. w:13 d:8 c:0.7673546981880207 : male' 11'' with brown hair eyes and no hair or glasses
+365. w:14 d:8 c:0.7671445259219898 : male 5' 11'' around 180lbs with hair and no hair or glasses
+366. w:10 d:7 c:0.766845694653799 : White male 5''' hair blue eyes hair or
+367. w:12 d:7 c:0.7666517559337137 : White male 5''' hair blue eyes and no facial or
+368. w:13 d:11 c:0.7659235137545877 : White male''' around 180lbs with eyes and no facial hair or
+369. w:13 d:6 c:0.7658439102892801 : male''' around 180lbs blue eyes and no facial hair or glasses
+370. w:11 d:7 c:0.7655778893276294 : male' 11'' with brown hair eyes hair or glasses
+371. w:12 d:7 c:0.7654853081895034 : White male 5''' with brown hair eyes and or glasses
+372. w:13 d:8 c:0.7652483753663905 : White male 5' 11'' with hair eyes and no hair or
+373. w:13 d:8 c:0.7645717823765851 : White male' 11'' around 180lbs with and no facial hair or
+374. w:13 d:8 c:0.7644413370824763 : male' 11'' with brown hair eyes and no facial or glasses
+375. w:12 d:7 c:0.7641556350871819 : White male 5''' hair eyes and no hair or glasses
+376. w:12 d:7 c:0.7641531219543318 : White male' 11'' with hair blue eyes and or glasses
+377. w:12 d:7 c:0.7641531219543318 : White male 5''' with hair blue eyes and or glasses
+378. w:12 d:7 c:0.7641531219543318 : White male' 11'' with brown hair eyes and or glasses
+379. w:10 d:8 c:0.7637704774796947 : White male 5''' blue eyes hair or glasses
+380. w:13 d:7 c:0.7635219096188008 : White male 5' 11'' with eyes and no hair or glasses
+381. w:12 d:7 c:0.7634604731376307 : White male' 11'' around 180lbs and no hair or glasses
+382. w:12 d:7 c:0.7634604731376307 : White male 5''' around 180lbs and no hair or glasses
+383. w:12 d:7 c:0.7630966867082365 : White male 5''' with brown and no hair or glasses
+384. w:13 d:7 c:0.7628718276168053 : male 5' 11'' with hair eyes and no facial hair or
+385. w:13 d:8 c:0.7628718276168053 : male 5' 11'' with hair blue eyes and no hair or
+386. w:13 d:8 c:0.7628718276168053 : male 5' 11'' with brown hair eyes and no hair or
+387. w:13 d:7 c:0.7627125391607611 : male 5''' around 180lbs blue eyes and no facial hair or
+388. w:12 d:7 c:0.7614344005505529 : White male 5''' hair eyes and no facial or glasses
+389. w:12 d:7 c:0.7612673353343221 : White male 5' 11'' and no facial hair or glasses
+390. w:13 d:7 c:0.7612013089454394 : White male' 11'' with hair and no facial hair or glasses
+391. w:13 d:7 c:0.7612013089454394 : White male 5''' with hair and no facial hair or glasses
+392. w:12 d:7 c:0.7610980974982444 : male' 11'' with brown hair blue eyes and or glasses
+393. w:12 d:8 c:0.761009309018478 : White male 5' 11'' with blue eyes and or glasses
+394. w:12 d:7 c:0.7608611578112267 : male' 11'' hair blue eyes and no hair or glasses
+395. w:10 d:8 c:0.7604443065879286 : White male 5''' hair blue eyes or glasses
+396. w:12 d:7 c:0.7601689928889047 : male' 11'' around 180lbs and no facial hair or glasses
+397. w:13 d:7 c:0.7601187344542227 : male 5' 11'' with brown hair and no hair or glasses
+398. w:11 d:7 c:0.7601089264705524 : White male 5''' with brown hair hair or glasses
+399. w:12 d:7 c:0.7600458857976928 : male' 11'' with brown and no facial hair or glasses
+400. w:10 d:8 c:0.7596330628865574 : White male 5''' blue eyes facial or glasses
+401. w:13 d:9 c:0.7592451238529412 : White male''' around 180lbs with hair eyes and no hair or
+402. w:12 d:8 c:0.7590345140805876 : White male' 11'' with brown hair and no hair or
+403. w:13 d:7 c:0.7586739717816012 : male 5' 11'' around 180lbs with hair eyes and or glasses
+404. w:13 d:9 c:0.7584008044901595 : male 5' 11'' around 180lbs with brown hair and or glasses
+405. w:13 d:7 c:0.75826659442659 : White male 5' 11'' with and no facial hair or glasses
+406. w:10 d:7 c:0.7579454312188688 : White male 5''' with brown hair or glasses
+407. w:10 d:7 c:0.7578980489927902 : White male 5''' around 180lbs hair or glasses
+408. w:12 d:7 c:0.7576921378559553 : White male 5''' hair blue eyes and no or glasses
+409. w:11 d:7 c:0.7574270372665124 : White male 5''' with brown hair eyes or glasses
+410. w:12 d:7 c:0.7570615643047722 : male 5' 11'' with brown and no facial hair or
+411. w:12 d:7 c:0.7566622667980979 : White male 5''' with brown and no facial or glasses
+412. w:12 d:7 c:0.7566149647878031 : White male 5''' around 180lbs and no facial or glasses
+413. w:13 d:7 c:0.7563670719005763 : White male 5' 11'' with hair and no facial hair or
+414. w:11 d:9 c:0.7562691016584429 : male 5' 11'' with brown hair blue eyes and
+415. w:12 d:8 c:0.7561506915691868 : White male 5' 11'' around 180lbs and no hair or
+416. w:10 d:8 c:0.7559427178345983 : male' 11'' hair blue eyes hair or glasses
+417. w:12 d:7 c:0.7558498882645085 : White male 5''' with brown hair blue and or glasses
+418. w:13 d:7 c:0.7557704594806901 : White male 5' 11'' around 180lbs with hair and or glasses
+419. w:13 d:9 c:0.7553830131032562 : White male''' around 180lbs with eyes and no hair or glasses
+420. w:12 d:7 c:0.7552725766247622 : male' 11'' around 180lbs eyes and no facial hair or
+421. w:12 d:7 c:0.7546629439093089 : male' 11'' hair blue eyes and no facial or glasses
+422. w:13 d:8 c:0.7543398995105042 : male''' around 180lbs with hair eyes and no facial hair or
+423. w:13 d:8 c:0.7543398995105042 : male''' around 180lbs with brown hair eyes and no hair or
+424. w:12 d:7 c:0.753939724634774 : male 5' 11'' around 180lbs and no facial hair or
+425. w:11 d:8 c:0.7538996560593694 : White male 5''' hair blue eyes and or glasses
+426. w:13 d:8 c:0.7537924479143743 : White male' 11'' around 180lbs with and no hair or glasses
+427. w:11 d:7 c:0.7536794502207668 : male 5''' around 180lbs with brown hair eyes and
+428. w:10 d:8 c:0.7535987066550828 : White male 5''' around 180lbs eyes hair or
+429. w:12 d:11 c:0.7535758916562918 : White male''' around 180lbs with blue eyes and or glasses
+430. w:11 d:8 c:0.7534923109807209 : male''' around 180lbs with brown hair blue eyes and
+431. w:10 d:4 c:0.7534003317124612 : White male 5''' hair eyes hair or glasses
+432. w:12 d:8 c:0.7527406313948763 : male' 11'' around 180lbs blue eyes and no hair or
+433. w:13 d:6 c:0.751723144047504 : male 5''' around 180lbs blue eyes and no hair or glasses
+434. w:12 d:7 c:0.7515756845191285 : male' 11'' around blue eyes and no facial hair or
+435. w:13 d:7 c:0.7514848321671006 : male 5' 11'' with hair eyes and no hair or glasses
+436. w:13 d:9 c:0.7512852607334022 : White male''' around 180lbs with hair and no facial hair or
+437. w:11 d:7 c:0.7505728805901332 : White male 5''' with hair eyes facial or glasses
+438. w:13 d:8 c:0.7504744718555417 : White male 5' 11'' around 180lbs with and no hair or
+439. w:12 d:7 c:0.7502694000139063 : White male 5''' around blue eyes and no facial or
+440. w:13 d:8 c:0.7493025264005466 : White male 5''' around 180lbs with hair and no hair or
+441. w:12 d:7 c:0.7492556413657725 : White male 5' 11'' with hair eyes and or glasses
+442. w:11 d:7 c:0.7483454178026733 : White male 5''' and no facial hair or glasses
+443. w:13 d:9 c:0.7482715588880369 : male''' around 180lbs with brown hair and no hair or glasses
+444. w:12 d:8 c:0.7482480249418775 : male' 11'' around 180lbs blue eyes and no facial or
+445. w:12 d:7 c:0.7481581830118763 : White male 5''' around eyes and no facial hair or
+446. w:10 d:7 c:0.748077088260219 : White male 5''' hair blue eyes facial or
+447. w:10 d:7 c:0.7476740723976979 : White male 5' 11'' around 180lbs with hair
+448. w:10 d:8 c:0.7475865526118043 : White male 5''' hair blue hair or glasses
+449. w:10 d:10 c:0.7474749271596328 : White male''' around 180lbs with brown hair and
+450. w:12 d:7 c:0.7470648353968669 : male 5' 11'' with hair blue eyes and or glasses
+451. w:12 d:7 c:0.7470648353968669 : male 5' 11'' with brown hair eyes and or glasses
+452. w:13 d:7 c:0.7463613751701268 : White male 5' 11'' with hair and no hair or glasses
+453. w:10 d:8 c:0.7460784945327035 : White male 5''' around 180lbs blue eyes and
+454. w:13 d:8 c:0.7460720848089447 : male' 11'' around 180lbs with brown hair and no hair or
+455. w:13 d:8 c:0.7460720848089447 : male 5''' around 180lbs with brown hair and no hair or
+456. w:12 d:7 c:0.7453491845412998 : male 5' 11'' around 180lbs and no hair or glasses
+457. w:9 d:7 c:0.7448794455488424 : male 5' 11'' around 180lbs blue eyes
+458. w:10 d:7 c:0.7441945958277387 : White male 5''' around blue eyes hair or
+459. w:13 d:7 c:0.744179031967875 : male 5' 11'' with hair and no facial hair or glasses
+460. w:12 d:9 c:0.7438310099819863 : White male''' around 180lbs with hair eyes and or glasses
+461. w:12 d:8 c:0.7437053952661663 : White male' 11'' with blue eyes and no hair or
+462. w:10 d:5 c:0.7429861405212417 : White male 5''' hair eyes facial or glasses
+463. w:13 d:9 c:0.7421834356764706 : male''' around 180lbs with hair eyes and no hair or glasses
+464. w:12 d:7 c:0.7414605690015973 : White male 5''' around blue eyes and no or glasses
+465. w:13 d:9 c:0.7409576983529411 : White male''' around 180lbs with hair and no hair or glasses
+466. w:11 d:7 c:0.7403366746421995 : White male 5''' blue eyes and no hair or
+467. w:11 d:9 c:0.7402238309245954 : White male 5''' around 180lbs eyes and or glasses
+468. w:11 d:5 c:0.7399691312498533 : White male 5''' brown hair eyes and or glasses
+469. w:12 d:7 c:0.7398728474943906 : White male 5' 11'' with hair blue eyes and or
+470. w:11 d:7 c:0.7396215161315636 : male 5' 11'' and no facial hair or glasses
+471. w:12 d:8 c:0.7394585827500222 : male''' around 180lbs with hair blue eyes and or glasses
+472. w:12 d:7 c:0.7394585827500222 : male''' around 180lbs with brown hair eyes and or glasses
+473. w:11 d:8 c:0.739434103760595 : White male' 11'' with brown hair and or glasses
+474. w:11 d:7 c:0.7388026673033444 : male' 11'' around 180lbs with hair blue eyes and
+475. w:11 d:8 c:0.7388026673033444 : male 5''' around 180lbs with hair blue eyes and
+476. w:13 d:8 c:0.7387391959926469 : male' 11'' around 180lbs with hair eyes and no hair or
+477. w:13 d:8 c:0.7387391959926469 : male 5''' around 180lbs with hair eyes and no hair or
+478. w:12 d:7 c:0.7386303338673057 : White male 5''' with brown hair and no hair or
+479. w:10 d:7 c:0.7386263321494763 : male' 11'' around blue eyes hair or glasses
+480. w:10 d:7 c:0.7383296274503534 : White male 5''' with brown facial or glasses
+481. w:10 d:7 c:0.7382834714872889 : White male 5''' around 180lbs facial or glasses
+482. w:12 d:7 c:0.738253588242059 : White male' 11'' around 180lbs with hair eyes and or
+483. w:12 d:7 c:0.738253588242059 : White male 5''' around 180lbs with hair eyes and or
+484. w:12 d:7 c:0.7378291916442008 : White male' 11'' with eyes and no facial hair or
+485. w:12 d:8 c:0.7377179983620511 : male 5' 11'' around blue eyes and no hair or
+486. w:11 d:9 c:0.7375125166216074 : White male 5''' with brown eyes and or glasses
+487. w:12 d:7 c:0.7373758740153933 : male' 11'' around blue eyes and no facial or glasses
+488. w:11 d:9 c:0.737264473903754 : male' 11'' around 180lbs blue eyes and or glasses
+489. w:9 d:7 c:0.7370244692976713 : White male 5''' around 180lbs with hair
+490. w:13 d:9 c:0.7366021611750946 : male''' around 180lbs with hair and no facial hair or glasses
+491. w:11 d:7 c:0.7363792922208112 : White male 5' 11'' around 180lbs and or glasses
+492. w:10 d:8 c:0.7363787447535339 : male' 11'' hair blue eyes facial or glasses
+493. w:12 d:7 c:0.7363616018365551 : male' 11'' around eyes and no facial hair or glasses
+494. w:11 d:7 c:0.7363262031041963 : White male 5''' blue eyes and no facial or
+495. w:12 d:6 c:0.735354246176912 : male 5''' blue eyes and no facial hair or glasses
+496. w:12 d:8 c:0.735138293292378 : White male 5' 11'' around 180lbs with and or glasses
+497. w:12 d:7 c:0.7350817603375114 : White male 5''' around eyes and no facial or glasses
+498. w:12 d:7 c:0.7350707815483959 : male' 11'' around 180lbs with brown hair eyes and or
+499. w:9 d:7 c:0.7340779030745554 : male' 11'' around 180lbs with brown hair
+500. w:13 d:8 c:0.7336836959280636 : male' 11'' around 180lbs with hair and no hair or glasses
+501. w:13 d:8 c:0.7336836959280636 : male 5''' around 180lbs with hair and no hair or glasses
+502. w:13 d:8 c:0.7334628001685587 : male 5''' around 180lbs with hair and no facial hair or
+503. w:10 d:8 c:0.7324686018716232 : White male 5''' brown hair hair or glasses
+504. w:12 d:8 c:0.732410599217743 : White male' 11'' with hair eyes and no hair or
+505. w:12 d:8 c:0.732410599217743 : White male 5''' with hair eyes and no hair or
+506. w:10 d:10 c:0.7323792605507039 : White male''' around 180lbs with blue eyes and
+507. w:12 d:7 c:0.7323348808765925 : male 5' 11'' around eyes and no facial hair or
+508. w:13 d:9 c:0.7315271015041831 : male 5' 11'' around 180lbs with hair and no hair or
+509. w:12 d:9 c:0.7312509871138447 : White male''' around 180lbs blue eyes and no hair or
+510. w:11 d:8 c:0.7306548919890249 : White male 5''' brown hair blue and or glasses
+511. w:11 d:7 c:0.7304470489844548 : male' 11'' blue eyes and no hair or glasses
+512. w:10 d:4 c:0.7298842359113665 : White male 5''' brown hair eyes or glasses
+513. w:10 d:8 c:0.7297742933448365 : White male 5''' hair blue facial or glasses
+514. w:12 d:9 c:0.7295544808046414 : White male''' around 180lbs with and no facial hair or
+515. w:10 d:9 c:0.7293943997581762 : male 5' 11'' around 180lbs blue eyes and
+516. w:12 d:8 c:0.729363750477562 : White male 5''' with hair eyes and no facial or
+517. w:12 d:7 c:0.7289869632786197 : male' 11'' with hair eyes and no facial hair or
+518. w:12 d:8 c:0.7289869632786197 : male' 11'' with hair blue eyes and no hair or
+519. w:12 d:8 c:0.7289869632786197 : male' 11'' with brown hair eyes and no hair or
+520. w:12 d:7 c:0.7287059779897659 : White male 5''' with hair and no hair or glasses
+521. w:12 d:7 c:0.7286506301798067 : White male' 11'' with eyes and no hair or glasses
+522. w:9 d:4 c:0.7276276139701141 : White male 5''' brown hair or glasses
+523. w:10 d:7 c:0.7274172619443436 : White male 5''' around blue eyes or glasses
+524. w:12 d:7 c:0.7273141396411787 : male''' around 180lbs blue eyes and no facial hair or
+525. w:10 d:7 c:0.7264631545121493 : White male 5''' around blue eyes facial or
+526. w:11 d:7 c:0.726273511856412 : White male' 11'' and no facial hair or glasses
+527. w:12 d:8 c:0.7262192702283525 : male' 11'' with brown hair eyes and no facial or
+528. w:11 d:7 c:0.7260874980462246 : male' 11'' blue eyes and no facial or glasses
+529. w:9 d:4 c:0.7259356905020882 : White male 5''' facial hair or glasses
+530. w:12 d:7 c:0.7255643335719161 : male' 11'' with brown hair and no hair or glasses
+531. w:11 d:8 c:0.7253558982129337 : White male' 11'' with blue eyes and or glasses
+532. w:11 d:7 c:0.7251168311106418 : White male 5''' blue eyes and no or glasses
+533. w:12 d:7 c:0.7250425323982442 : male' 11'' around 180lbs with hair eyes and or glasses
+534. w:12 d:8 c:0.7250425323982442 : male 5''' around 180lbs with hair eyes and or glasses
+535. w:12 d:7 c:0.7246751048873566 : White male 5''' with brown hair and no or glasses
+536. w:12 d:7 c:0.724528026748538 : male''' with brown hair eyes and no facial hair or
+537. w:12 d:8 c:0.7242249657678977 : White male 5' 11'' with eyes and no hair or
+538. w:11 d:7 c:0.724021520662572 : White male 5''' with brown hair eyes and or
+539. w:10 d:7 c:0.72401170028222 : White male 5''' with hair blue eyes and
+540. w:12 d:8 c:0.7237819560067832 : male 5''' around 180lbs with brown hair and or glasses
+541. w:10 d:7 c:0.723458215792877 : White male 5''' with hair eyes hair or
+542. w:12 d:7 c:0.7232546341582677 : White male' 11'' with and no facial hair or glasses
+543. w:10 d:8 c:0.7229084835343429 : White male''' around 180lbs with hair eyes and
+544. w:12 d:7 c:0.7227844356421715 : male 5' 11'' around eyes and no hair or glasses
+545. w:11 d:7 c:0.7227638715199596 : White male 5''' hair eyes and no hair or
+546. w:11 d:7 c:0.7227614945151388 : White male 5''' with hair blue eyes and or
+547. w:12 d:7 c:0.7225619633907602 : White male 5''' around 180lbs with hair and or glasses
+548. w:10 d:8 c:0.7224147157652687 : White male 5''' blue eyes and or glasses
+549. w:12 d:7 c:0.722409102358288 : male 5' 11'' with and no facial hair or glasses
+550. w:12 d:8 c:0.7221127977315116 : male 5' 11'' with brown hair and no hair or
+551. w:11 d:8 c:0.722106364176009 : White male' 11'' around 180lbs and no hair or
+552. w:11 d:7 c:0.722106364176009 : White male 5''' around 180lbs and no hair or
+553. w:12 d:7 c:0.7218649817839348 : White male''' around 180lbs and no facial hair or glasses
+554. w:11 d:7 c:0.7217622828448736 : White male 5''' with brown and no hair or
+555. w:12 d:7 c:0.7211973376370144 : White male' 11'' with hair and no facial hair or
+556. w:12 d:7 c:0.7211973376370144 : White male 5''' with hair and no facial hair or
+557. w:10 d:7 c:0.7208902941385181 : male' 11'' with brown hair blue eyes and
+558. w:12 d:8 c:0.7208003704112262 : White male 5''' with hair eyes and no or glasses
+559. w:9 d:7 c:0.7207797024239395 : White male 5''' blue eyes hair or
+560. w:12 d:7 c:0.7207402731925212 : male 5' 11'' around 180lbs with hair eyes and or
+561. w:9 d:7 c:0.7205428441241568 : male 5' 11'' around 180lbs with hair
+562. w:10 d:7 c:0.7203391958673604 : male' 11'' with brown hair eyes hair or
+563. w:12 d:7 c:0.7202949691186049 : White male 5' 11'' with and no facial hair or
+564. w:8 d:6 c:0.7202092742425645 : White male 5''' around 180lbs hair
+565. w:11 d:7 c:0.7201900371873979 : White male 5''' hair eyes and no facial or
+566. w:11 d:7 c:0.7199947382816977 : White male 5' 11'' and no facial hair or
+567. w:11 d:8 c:0.7199544709354109 : male 5' 11'' around blue eyes and or glasses
+568. w:11 d:7 c:0.7198719505504229 : male' 11'' with brown hair blue eyes and or
+569. w:11 d:7 c:0.7196478450964519 : male' 11'' hair blue eyes and no hair or
+570. w:10 d:7 c:0.7196433992157928 : White male 5' 11'' around 180lbs or glasses
+571. w:12 d:8 c:0.7195431331608813 : White male''' around 180lbs with and no hair or glasses
+572. w:10 d:7 c:0.7195105111511193 : male' 11'' around blue eyes facial or glasses
+573. w:12 d:7 c:0.7194468074466587 : male' 11'' around 180lbs with brown hair and or glasses
+574. w:11 d:7 c:0.7189931724407557 : male' 11'' around 180lbs and no facial hair or
+575. w:11 d:7 c:0.7188767336503178 : male' 11'' with brown and no facial hair or
+576. w:12 d:8 c:0.7184330084687707 : male' 11'' with hair eyes and no hair or glasses
+577. w:12 d:6 c:0.7169594368770921 : male''' around 180lbs blue eyes and no hair or glasses
+578. w:9 d:7 c:0.7168751727947156 : White male 5''' blue eyes facial or
+579. w:12 d:11 c:0.7165049619590985 : White male''' around 180lbs with eyes and no hair or
+580. w:10 d:7 c:0.7164268056593409 : male' 11'' with hair eyes hair or glasses
+581. w:11 d:9 c:0.716389062105393 : White male 5''' with hair eyes and or glasses
+582. w:12 d:8 c:0.7161028255186556 : White male' 11'' around 180lbs with and no hair or
+583. w:9 d:8 c:0.7158610991211858 : White male 5''' with brown hair or
+584. w:11 d:7 c:0.7156763940132009 : White male 5''' with brown and no facial or
+585. w:11 d:7 c:0.7156316541951304 : White male 5''' around 180lbs and no facial or
+586. w:12 d:7 c:0.7152139302342193 : male' 11'' with hair eyes and no facial or glasses
+587. w:10 d:7 c:0.7151933989972925 : White male 5''' with brown hair hair or
+588. w:11 d:7 c:0.715015875474545 : White male' 11'' with hair eyes and or glasses
+589. w:11 d:7 c:0.7149080193168477 : White male 5''' with brown hair blue and or
+590. w:9 d:7 c:0.7139695848439865 : male' 11'' hair blue eyes hair or
+591. w:12 d:8 c:0.7139105905587456 : male 5' 11'' with hair eyes and no hair or
+592. w:11 d:7 c:0.713785367780888 : male' 11'' hair blue eyes and no facial or
+593. w:9 d:7 c:0.7137237784370885 : White male' 11'' around 180lbs with hair
+594. w:11 d:7 c:0.7133005191731933 : male' 11'' with brown hair eyes and or glasses
+595. w:11 d:7 c:0.7121145099050827 : White male 5' 11'' and no hair or glasses
+596. w:12 d:7 c:0.7120060764089126 : White male' 11'' with hair and no hair or glasses
+597. w:11 d:7 c:0.7119332527135033 : male' 11'' with hair blue eyes and or glasses
+598. w:11 d:7 c:0.7116513592905718 : male' 11'' hair eyes and no hair or glasses
+599. w:10 d:7 c:0.7116138049010152 : White male 5''' hair blue eyes and or
+600. w:11 d:7 c:0.7114901376473303 : male' 11'' around 180lbs and no hair or glasses
+601. w:12 d:7 c:0.7114191573440232 : male 5' 11'' with hair and no hair or glasses
+602. w:9 d:8 c:0.7111513243051351 : male' 11'' blue eyes hair or glasses
+603. w:10 d:7 c:0.7110506719553281 : White male 5''' with hair hair or glasses
+604. w:11 d:7 c:0.7109152304340715 : male' 11'' with brown and no hair or glasses
+605. w:12 d:8 c:0.7108579809436351 : male''' around 180lbs with brown hair and no hair or
+606. w:10 d:8 c:0.710693879653549 : White male 5''' brown eyes and or glasses
+607. w:10 d:7 c:0.7099898488848049 : White male 5''' around 180lbs and or glasses
+608. w:12 d:7 c:0.7099191365653279 : White male 5' 11'' with and no hair or glasses
+609. w:11 d:9 c:0.7098070123059932 : White male''' around 180lbs blue eyes and or glasses
+610. w:12 d:7 c:0.7096715279653665 : male 5' 11'' around 180lbs with hair and or glasses
+611. w:11 d:7 c:0.7089494830972538 : male' 11'' hair eyes and no facial or glasses
+612. w:12 d:7 c:0.7089364296885772 : male' 11'' with hair and no facial hair or glasses
+613. w:9 d:5 c:0.7087964423523392 : White male 5''' brown facial or glasses
+614. w:12 d:7 c:0.7086935227312343 : White male 5''' with hair and no facial or glasses
+615. w:9 d:8 c:0.7086346758082589 : White male 5''' around 180lbs hair or
+616. w:10 d:7 c:0.7079851442365638 : male' 11'' with brown hair hair or glasses
+617. w:11 d:7 c:0.7079052897265976 : White male 5''' hair eyes and no or glasses
+618. w:9 d:6 c:0.7073962620350353 : White male 5''' hair blue eyes and
+619. w:11 d:9 c:0.7072765295459267 : White male 5''' with brown hair and or glasses
+620. w:11 d:7 c:0.707261299420555 : White male 5''' around 180lbs and no or glasses
+621. w:9 d:8 c:0.7071741676677825 : White male 5''' hair eyes hair or
+622. w:10 d:7 c:0.707148368737965 : White male 5''' with hair eyes or glasses
+623. w:12 d:8 c:0.7071372977977606 : White male 5' 11'' with hair and no hair or
+624. w:11 d:7 c:0.7069242917144357 : White male 5''' with brown and no or glasses
+625. w:9 d:8 c:0.7069069366696338 : male' 11'' blue eyes facial or glasses
+626. w:10 d:9 c:0.7068362402390286 : male 5' 11'' with hair blue eyes and
+627. w:9 d:8 c:0.7068064411753494 : male' 11'' hair blue eyes or glasses
+628. w:9 d:7 c:0.7067441633353075 : male 5''' hair blue eyes hair or
+629. w:10 d:7 c:0.7063514214543961 : White male 5' 11'' around 180lbs with eyes
+630. w:10 d:7 c:0.7062208467370799 : White male 5''' with hair eyes facial or
+631. w:11 d:9 c:0.7060456449723879 : White male 5''' with hair blue and or glasses
+632. w:8 d:6 c:0.7059975420184421 : White male 5''' with brown hair
+633. w:10 d:7 c:0.7059963468613266 : White male 5''' and no facial hair or
+634. w:9 d:4 c:0.7059619111846809 : White male 5''' blue eyes or glasses
+635. w:9 d:7 c:0.7055910111969883 : male' 11'' around 180lbs hair or glasses
+636. w:9 d:7 c:0.7054767428464159 : male' 11'' with brown hair or glasses
+637. w:12 d:8 c:0.705074263892647 : male''' around 180lbs with hair eyes and no hair or
+638. w:12 d:7 c:0.7050696448802234 : male 5' 11'' with hair and no facial hair or
+639. w:11 d:8 c:0.7049761037119794 : male 5' 11'' around 180lbs and no hair or
+640. w:11 d:7 c:0.7048533225834558 : male' 11'' hair blue eyes and no or glasses
+641. w:10 d:7 c:0.7048266015116593 : White male 5' 11'' around 180lbs with glasses
+642. w:12 d:7 c:0.7047404475445349 : male 5''' around 180lbs and no facial hair or glasses
+643. w:10 d:7 c:0.7046484894554313 : male 5''' around 180lbs with hair eyes and
+644. w:10 d:8 c:0.7043659172169481 : male''' around 180lbs with hair blue eyes and
+645. w:11 d:9 c:0.7042174963090665 : White male' 11'' with hair blue eyes and or
+646. w:11 d:7 c:0.7042121086901382 : male' 11'' around 180lbs and no facial or glasses
+647. w:10 d:7 c:0.7040996648816228 : male' 11'' with brown hair eyes or glasses
+648. w:11 d:7 c:0.704098063648696 : male' 11'' with brown and no facial or glasses
+649. w:11 d:9 c:0.703540163607962 : White male''' around 180lbs with hair eyes and or
+650. w:11 d:7 c:0.7032229296676488 : male' 11'' with brown hair blue and or glasses
+651. w:12 d:9 c:0.7020176043760504 : White male''' around 180lbs with hair and no hair or
+652. w:10 d:8 c:0.7013244457804386 : male' 11'' hair blue eyes and or glasses
+653. w:9 d:8 c:0.7010461437591203 : male' 11'' around 180lbs eyes hair or
+654. w:10 d:7 c:0.7006916425487094 : White male' 11'' around 180lbs and or glasses
+655. w:9 d:6 c:0.7000897002389571 : male' 11'' hair eyes hair or glasses
+656. w:11 d:7 c:0.7000291992487951 : male''' blue eyes and no facial hair or glasses
+657. w:10 d:7 c:0.6998335793812333 : White male 5''' around 180lbs eyes and or
+658. w:11 d:8 c:0.6996093367949278 : White male' 11'' around 180lbs with and or glasses
+659. w:12 d:9 c:0.6990683912590955 : male''' around 180lbs with hair and no hair or glasses
+660. w:10 d:7 c:0.6990282454588899 : male 5' 11'' and no facial hair or
+661. w:10 d:5 c:0.6989245363807678 : White male 5''' and no hair or glasses
+662. w:11 d:8 c:0.6988417201975023 : male 5' 11'' with brown hair and or glasses
+663. w:11 d:7 c:0.6980538200344555 : male 5' 11'' with hair eyes and or glasses
+664. w:10 d:7 c:0.6978855135616783 : male' 11'' with hair eyes facial or glasses
+665. w:10 d:7 c:0.6976934653657512 : White male 5''' brown hair eyes and or
+666. w:11 d:7 c:0.6974346808395595 : male' 11'' around blue eyes and no facial or
+667. w:11 d:7 c:0.6971669303266332 : male 5''' blue eyes and no facial hair or
+668. w:12 d:8 c:0.6969995111316604 : male' 11'' around 180lbs with hair and no hair or
+669. w:12 d:8 c:0.6969995111316604 : male 5''' around 180lbs with hair and no hair or
+670. w:9 d:8 c:0.6967708557163915 : White male 5''' with brown facial or
+671. w:11 d:6 c:0.6963164441764879 : White male''' around and no facial hair or glasses
+672. w:10 d:7 c:0.6959112876432232 : male' 11'' and no facial hair or glasses
+673. w:11 d:7 c:0.6952075081801938 : male' 11'' around eyes and no facial hair or
+674. w:9 d:7 c:0.6949297834425356 : male' 11'' hair blue eyes facial or
+675. w:10 d:7 c:0.6948247966232156 : White male 5''' with brown eyes and or
+676. w:9 d:8 c:0.694692041387361 : White male 5''' hair eyes facial or
+677. w:11 d:7 c:0.6939991950128633 : White male 5''' around eyes and no facial or
+678. w:9 d:8 c:0.6935774436132439 : male' 11'' hair blue hair or glasses
+679. w:9 d:7 c:0.693140993576247 : male' 11'' around 180lbs blue eyes and
+680. w:6 d:6 c:0.693140993576247 : male' 11'' around eyes
+681. w:10 d:9 c:0.6929097858157773 : male 5''' around 180lbs with brown hair and
+682. w:10 d:5 c:0.692657684437496 : White male 5''' and no facial or glasses
+683. w:11 d:7 c:0.6922622371231234 : male 5''' around 180lbs blue eyes and or glasses
+684. w:9 d:11 c:0.6915771942487011 : male 5' 11'' hair blue eyes and
+685. w:8 d:7 c:0.6910659237219566 : male 5' 11'' with brown hair
+686. w:10 d:7 c:0.6908644351285235 : White male 5''' around 180lbs with hair glasses
+687. w:9 d:7 c:0.6906156205597603 : male' 11'' around blue eyes hair or
+688. w:10 d:7 c:0.6905507556581267 : male 5' 11'' and no hair or glasses
+689. w:11 d:7 c:0.6904884854865273 : White male 5' 11'' with hair eyes and or
+690. w:10 d:5 c:0.690338550756106 : White male 5''' hair eyes and or glasses
+691. w:9 d:8 c:0.6902950458406151 : White male 5''' around 180lbs facial or
+692. w:11 d:7 c:0.690246813940826 : male''' around 180lbs with hair eyes and or glasses
+693. w:9 d:7 c:0.6902216450473778 : male' 11'' hair eyes facial or glasses
+694. w:9 d:4 c:0.6901774872095905 : male 5''' hair eyes hair or glasses
+695. w:9 d:7 c:0.6894465464678243 : male 5''' hair blue eyes facial or
+696. w:10 d:7 c:0.6892683272828819 : White male 5' 11'' with eyes or glasses
+697. w:11 d:7 c:0.6892344041819869 : White male 5''' with hair and no hair or
+698. w:9 d:4 c:0.6892050354253592 : White male 5''' hair eyes or glasses
+699. w:9 d:8 c:0.6891483300922151 : White male 5''' with brown eyes and
+700. w:10 d:7 c:0.6889113640689623 : White male 5''' brown hair blue and or
+701. w:9 d:6 c:0.6885780569748081 : White male 5''' around 180lbs or glasses
+702. w:11 d:7 c:0.6885247223618735 : male' 11'' around blue eyes and no or glasses
+703. w:9 d:7 c:0.688249951772876 : White male 5''' with brown or glasses
+704. w:10 d:7 c:0.6879527444511436 : male' 11'' around 180lbs eyes and or glasses
+705. w:11 d:8 c:0.6879496053516555 : male''' around 180lbs with brown hair and or glasses
+706. w:11 d:8 c:0.6879274906212038 : White male' 11'' with eyes and no hair or
+707. w:10 d:6 c:0.6873623184759863 : male' 11'' brown hair eyes and or glasses
+708. w:10 d:7 c:0.6872842688171915 : male' 11'' blue eyes and no hair or
+709. w:11 d:5 c:0.6871219363559216 : male 5''' blue eyes and no hair or glasses
+710. w:9 d:7 c:0.6865856630374008 : White male 5''' brown hair hair or
+711. w:9 d:7 c:0.6864644761397308 : male 5' 11'' with hair or glasses
+712. w:11 d:7 c:0.6862629321701039 : male' 11'' with brown hair and no hair or
+713. w:11 d:7 c:0.6858510263264775 : White male 5''' around eyes and no or glasses
+714. w:11 d:7 c:0.6857693952266727 : male' 11'' around 180lbs with hair eyes and or
+715. w:9 d:7 c:0.685609414649523 : male' 11'' around 180lbs facial or glasses
+716. w:9 d:7 c:0.6854983822586538 : male' 11'' with brown facial or glasses
+717. w:8 d:7 c:0.6853938079633203 : male' 11'' around 180lbs with hair
+718. w:10 d:7 c:0.6850225060467601 : male 5' 11'' around 180lbs and or glasses
+719. w:10 d:9 c:0.6847781929610898 : male' 11'' with brown eyes and or glasses
+720. w:9 d:5 c:0.6847546017578894 : male 5''' hair eyes facial or glasses
+721. w:9 d:8 c:0.6845270187337554 : White male 5''' around blue eyes and
+722. w:11 d:7 c:0.6840429200907672 : White male' 11'' with and no facial hair or
+723. w:10 d:7 c:0.6833558335686081 : White male' 11'' and no facial hair or
+724. w:11 d:7 c:0.6832786093138807 : male 5' 11'' with and no facial hair or
+725. w:10 d:7 c:0.6831823277071295 : male' 11'' blue eyes and no facial or
+726. w:9 d:7 c:0.6831743514849917 : White male' 11'' around 180lbs or glasses
+727. w:9 d:8 c:0.6826086450771149 : White male 5''' hair hair or glasses
+728. w:11 d:9 c:0.682500921306255 : White male''' around 180lbs and no facial hair or
+729. w:11 d:8 c:0.6823891484848973 : male 5' 11'' around eyes and no hair or
+730. w:11 d:7 c:0.6820726834642388 : male' 11'' around eyes and no facial or glasses
+731. w:11 d:8 c:0.6817570170139515 : White male 5''' with hair eyes and no or
+732. w:10 d:8 c:0.6815573830169839 : White male 5''' brown hair and or glasses
+733. w:11 d:9 c:0.6805678801146668 : White male''' around 180lbs with and no hair or
+734. w:10 d:9 c:0.6803712578824829 : White male 5''' hair blue and or glasses
+735. w:9 d:8 c:0.6796657384671012 : male' 11'' brown hair hair or glasses
+736. w:11 d:8 c:0.6795178871767122 : male' 11'' with hair eyes and no hair or
+737. w:9 d:11 c:0.6794112302389759 : White male' 11'' hair blue eyes and
+738. w:8 d:8 c:0.678807165532885 : White male''' around 180lbs with hair
+739. w:10 d:11 c:0.6786095873523732 : White male' 11'' hair blue eyes and or
+740. w:10 d:8 c:0.6776511867706434 : male' 11'' brown hair blue and or glasses
+741. w:10 d:7 c:0.6765108081414005 : White male' 11'' and no hair or glasses
+742. w:11 d:8 c:0.6764731756798658 : male' 11'' with hair eyes and no facial or
+743. w:11 d:7 c:0.6763567885345779 : male' 11'' with hair and no hair or glasses
+744. w:11 d:7 c:0.676168600434795 : White male 5' 11'' with hair and or glasses
+745. w:9 d:6 c:0.6759356782863579 : male' 11'' brown hair eyes or glasses
+746. w:10 d:7 c:0.6758484100335368 : White male 5''' with hair eyes and or
+747. w:9 d:8 c:0.6756274983113674 : male' 11'' hair blue facial or glasses
+748. w:11 d:7 c:0.6750651212766303 : White male 5''' with hair and no or glasses
+749. w:11 d:7 c:0.6748887148283327 : male''' with hair eyes and no facial hair or
+750. w:11 d:7 c:0.6748887148283327 : male''' with brown hair eyes and no hair or
+751. w:11 d:8 c:0.6745377437794328 : male 5''' around 180lbs with hair and or glasses
+752. w:11 d:7 c:0.6743989238145172 : White male' 11'' with and no hair or glasses
+753. w:8 d:6 c:0.6741222209421308 : male' 11'' brown hair or glasses
+754. w:11 d:7 c:0.6737434540761699 : male 5' 11'' with and no hair or glasses
+755. w:9 d:7 c:0.6733810061429392 : male' 11'' around blue eyes or glasses
+756. w:11 d:7 c:0.673118904637072 : White male''' around 180lbs and no hair or glasses
+757. w:11 d:8 c:0.6728839529878886 : male 5' 11'' with hair and no hair or
+758. w:9 d:7 c:0.6727423279262965 : male' 11'' around blue eyes facial or
+759. w:10 d:7 c:0.6723676669902685 : White male 5' 11'' with hair or glasses
+760. w:11 d:7 c:0.6721547367950945 : male' 11'' with brown hair and no or glasses
+761. w:10 d:7 c:0.6717899374750971 : male' 11'' blue eyes and no or glasses
+762. w:11 d:8 c:0.6714304150565557 : White male 5' 11'' with and no hair or
+763. w:11 d:8 c:0.671364333072368 : White male' 11'' with hair and no hair or
+764. w:11 d:7 c:0.6712309868672425 : male 5' 11'' around 180lbs with hair and or
+765. w:10 d:7 c:0.6711509430402318 : male' 11'' with brown hair eyes and or
+766. w:9 d:7 c:0.6710273660111835 : White male 5''' with hair hair or
+767. w:10 d:6 c:0.6709958462064337 : White male''' and no facial hair or glasses
+768. w:9 d:7 c:0.6707843570670424 : male' 11'' with hair blue eyes and
+769. w:9 d:7 c:0.6701774229895734 : White male' 11'' around 180lbs with eyes
+770. w:10 d:7 c:0.6700335294738072 : White male 5' 11'' and no hair or
+771. w:11 d:7 c:0.669909089830461 : male' 11'' around 180lbs with hair and or glasses
+772. w:10 d:7 c:0.6698644695986145 : male' 11'' with hair blue eyes and or
+773. w:9 d:7 c:0.6698590632914837 : male' 11'' with hair eyes hair or
+774. w:7 d:7 c:0.6697264464630258 : blue eyes and no facial hair or
+775. w:10 d:7 c:0.6695992335143107 : male' 11'' hair eyes and no hair or
+776. w:10 d:7 c:0.6694475386045334 : male' 11'' around 180lbs and no hair or
+777. w:9 d:6 c:0.6693877783644301 : male' 11'' blue eyes and or glasses
+778. w:11 d:7 c:0.6691621410852859 : male''' around 180lbs and no facial hair or glasses
+779. w:10 d:7 c:0.668906603181149 : male' 11'' with brown and no hair or
+780. w:11 d:7 c:0.6684699036686752 : male' 11'' with hair and no facial hair or
+781. w:9 d:7 c:0.6681702808542467 : White male' 11'' around 180lbs with glasses
+782. w:11 d:8 c:0.6678310073562023 : male' 11'' with hair eyes and no or glasses
+783. w:8 d:6 c:0.6673263927560763 : male' 11'' blue eyes hair or
+784. w:10 d:7 c:0.667057013641507 : male' 11'' hair eyes and no facial or
+785. w:6 d:7 c:0.6669199845675088 : White hair blue eyes hair or
+786. w:9 d:6 c:0.66667835866441 : White male 5''' and no or glasses
+787. w:7 d:6 c:0.6665345795705511 : male' 11'' around 180lbs hair
+788. w:11 d:8 c:0.6663102060197929 : male 5''' around 180lbs and no facial hair or
+789. w:9 d:7 c:0.6638405087072926 : White male 5''' around 180lbs and or
+790. w:10 d:9 c:0.6637540955200543 : male' 11'' with hair eyes and or glasses
+791. w:8 d:7 c:0.6633435668884241 : male' 11'' blue eyes facial or
+792. w:10 d:10 c:0.6628663040411279 : White male''' around 180lbs with and or glasses
+793. w:8 d:8 c:0.6626654093612461 : male' 11'' with brown hair or
+794. w:10 d:7 c:0.6625995749948118 : male' 11'' around 180lbs and no facial or
+795. w:10 d:7 c:0.6624922689785457 : male' 11'' with brown and no facial or
+796. w:9 d:7 c:0.6619661098611871 : male' 11'' with brown hair hair or
+797. w:10 d:7 c:0.661668847460015 : male' 11'' with brown hair blue and or
+798. w:7 d:6 c:0.6614259342724178 : male 5' 11'' blue eyes
+799. w:11 d:8 c:0.6612021867325611 : male''' around 180lbs with hair and no hair or
+800. w:10 d:7 c:0.6607244895229196 : male''' blue eyes and no facial hair or
+801. w:10 d:7 c:0.6600251110952443 : White male''' around and no facial hair or
+802. w:9 d:7 c:0.658489929609353 : male' 11'' with hair hair or glasses
+803. w:9 d:7 c:0.6582934866547623 : male' 11'' hair blue eyes and or
+804. w:8 d:5 c:0.6582489089895324 : male 5''' facial hair or glasses
+805. w:9 d:13 c:0.6581533943171949 : White male 5' 11'' blue eyes and
+806. w:9 d:6 c:0.6573870652426462 : male' 11'' brown eyes and or glasses
+807. w:9 d:6 c:0.6572323834500139 : White male 5''' with hair or glasses
+808. w:10 d:8 c:0.6569658527588987 : White male 5''' hair eyes and no or
+809. w:9 d:7 c:0.6568066800047409 : male' 11'' around 180lbs and or glasses
+810. w:8 d:7 c:0.6567747639333752 : White male 5''' around 180lbs and
+811. w:7 d:6 c:0.6565126275358588 : male 5' 11'' brown hair
+812. w:10 d:7 c:0.6564399464337433 : male''' around 180lbs blue eyes and or glasses
+813. w:11 d:6 c:0.6561165488852286 : male 5''' around 180lbs and no hair or glasses
+814. w:8 d:6 c:0.6561004777806649 : White male 5''' hair eyes or
+815. w:11 d:8 c:0.6559057744076237 : male 5' 11'' around 180lbs with and or glasses
+816. w:8 d:7 c:0.6556713166741184 : male 5' 11'' blue eyes and
+817. w:9 d:7 c:0.6556252090911084 : White male 5''' and no hair or
+818. w:11 d:7 c:0.6556127693813677 : male' 11'' with hair and no facial or glasses
+819. w:10 d:13 c:0.6556095509741962 : White male 5' 11'' blue eyes and or
+820. w:10 d:6 c:0.6552424663812697 : male''' with brown hair eyes and or glasses
+821. w:8 d:6 c:0.6550317874916025 : male' 11'' brown facial or glasses
+822. w:8 d:8 c:0.6546316603883169 : male' 11'' around 180lbs hair or
+823. w:10 d:7 c:0.6545035986202683 : male' 11'' hair eyes and no or glasses
+824. w:10 d:7 c:0.6543553235635295 : male' 11'' around 180lbs and no or glasses
+825. w:10 d:9 c:0.6541747073589356 : White male' 11'' with hair eyes and or
+826. w:10 d:9 c:0.6541289988326897 : male' 11'' with brown hair and or glasses
+827. w:10 d:7 c:0.6538265831416384 : male' 11'' with brown and no or glasses
+828. w:8 d:5 c:0.6535917094017383 : White male 5''' and or glasses
+829. w:8 d:6 c:0.6531864854395543 : male' 11'' hair blue eyes and
+830. w:9 d:7 c:0.6531424378260992 : male' 11'' with hair eyes or glasses
+831. w:10 d:9 c:0.6528751533406786 : male' 11'' with hair blue and or glasses
+832. w:9 d:7 c:0.6525229551801692 : male' 11'' with hair eyes facial or
+833. w:8 d:6 c:0.6522819974282421 : male' 11'' blue eyes or glasses
+834. w:7 d:6 c:0.651834556277856 : male' 11'' with brown hair
+835. w:10 d:7 c:0.6514142098896349 : White male 5' 11'' with and or glasses
+836. w:10 d:7 c:0.6513178173230116 : male''' blue eyes and no hair or glasses
+837. w:9 d:7 c:0.6508720384171014 : White male' 11'' with eyes or glasses
+838. w:9 d:7 c:0.6506770539464137 : male' 11'' and no facial hair or
+839. w:6 d:7 c:0.6505970674883288 : White hair blue eyes facial or
+840. w:9 d:7 c:0.6497465971640943 : White male 5''' and no facial or
+841. w:8 d:6 c:0.6495276663328102 : male' 11'' hair eyes hair or
+842. w:10 d:7 c:0.6493481103330246 : male 5' 11'' with hair and or glasses
+843. w:7 d:4 c:0.6479384821602174 : White male 5''' hair eyes
+844. w:8 d:7 c:0.6476865117866247 : male' 11'' hair eyes facial or
+845. w:8 d:7 c:0.6470785519368742 : White male''' around 180lbs with and
+846. w:9 d:7 c:0.6470313093765852 : male' 11'' around 180lbs eyes and or
+847. w:10 d:6 c:0.646949781151685 : White male''' around and no hair or glasses
+848. w:6 d:5 c:0.6461695081876985 : White hair eyes facial or glasses
+849. w:7 d:7 c:0.6461622279179111 : male 5' 11'' around 180lbs
+850. w:9 d:7 c:0.646025261833159 : male 5' 11'' around eyes or glasses
+851. w:8 d:7 c:0.645990398551611 : White male 5' 11'' with hair
+852. w:9 d:7 c:0.6459863718187545 : male' 11'' and no hair or glasses
+853. w:9 d:7 c:0.6456649565403485 : male 5' 11'' and no hair or
+854. w:9 d:6 c:0.645439237467273 : male 5''' around 180lbs blue eyes and
+855. w:9 d:8 c:0.6452032751740664 : White male 5''' around and or glasses
+856. w:9 d:8 c:0.6443909818617286 : White male''' around 180lbs with hair and
+857. w:10 d:7 c:0.6443675810875104 : male 5''' around and no facial hair or
+858. w:9 d:8 c:0.6443049053186225 : male' 11'' brown hair eyes and or
+859. w:9 d:7 c:0.6432729772401051 : male 5''' around 180lbs with hair and
+860. w:8 d:8 c:0.6432543216027451 : male' 11'' with brown facial or
+861. w:8 d:8 c:0.6420877135931219 : male 5' 11'' around 180lbs and
+862. w:9 d:7 c:0.6413122055997559 : male' 11'' with brown eyes and or
+863. w:10 d:7 c:0.6403718433163228 : male' 11'' around eyes and no facial or
+864. w:10 d:7 c:0.6402701842268126 : White male 5''' with hair and or glasses
+865. w:8 d:5 c:0.6401374996510723 : male 5''' blue eyes or glasses
+866. w:7 d:7 c:0.6398159147846635 : male 5' 11'' with hair
+867. w:10 d:9 c:0.6386559643011507 : male 5' 11'' with hair eyes and or
+868. w:8 d:7 c:0.6385430108115016 : White male 5''' with brown or
+869. w:9 d:7 c:0.6384662594564249 : male 5' 11'' around 180lbs or glasses
+870. w:10 d:7 c:0.6380749438240508 : male''' around 180lbs with hair and or glasses
+871. w:9 d:7 c:0.6380484582577881 : male' 11'' around 180lbs with hair glasses
+872. w:9 d:6 c:0.637203931699252 : male' 11'' hair eyes and or glasses
+873. w:10 d:7 c:0.6363902510302619 : male' 11'' with hair and no hair or
+874. w:8 d:8 c:0.6360931791470574 : male' 11'' around 180lbs facial or
+875. w:8 d:6 c:0.635497632245834 : male' 11'' hair eyes or glasses
+876. w:8 d:6 c:0.635353662911399 : male' 11'' around 180lbs or glasses
+877. w:8 d:7 c:0.6353001027420419 : male 5''' hair eyes facial or
+878. w:9 d:8 c:0.6352020935616144 : male' 11'' brown hair blue and or
+879. w:8 d:7 c:0.6348402764504342 : male' 11'' with brown or glasses
+880. w:8 d:8 c:0.6346015281558728 : male' 11'' with brown eyes and
+881. w:10 d:8 c:0.634546670390142 : White male' 11'' with and no hair or
+882. w:9 d:7 c:0.6344394561573096 : White male' 11'' with hair or glasses
+883. w:9 d:7 c:0.6344391239014051 : male' 11'' and no facial or glasses
+884. w:10 d:8 c:0.6339313408807599 : male 5' 11'' with and no hair or
+885. w:8 d:8 c:0.6339255782972684 : male 5' 11'' with brown and
+886. w:9 d:7 c:0.6336241066514345 : White male''' and no facial hair or
+887. w:10 d:9 c:0.6332485329269679 : White male''' around 180lbs and no hair or
+888. w:9 d:7 c:0.63258904630295 : White male' 11'' and no hair or
+889. w:8 d:6 c:0.6325453938673565 : male' 11'' brown hair hair or
+890. w:10 d:7 c:0.6321908814413565 : male' 11'' around eyes and no or glasses
+891. w:8 d:7 c:0.6304314075774713 : White male 5' 11'' or glasses
+892. w:8 d:8 c:0.6301372802790972 : White male''' around 180lbs with glasses
+893. w:8 d:6 c:0.629916437058566 : White male 5''' around or glasses
+894. w:10 d:7 c:0.6298991553361655 : male''' with brown hair and no hair or
+895. w:8 d:8 c:0.629223710515604 : male' 11'' hair hair or glasses
+896. w:10 d:8 c:0.6283682660124267 : male' 11'' with hair eyes and no or
+897. w:9 d:11 c:0.6280077190645782 : White male' 11'' hair eyes and or
+898. w:9 d:8 c:0.6279638388793821 : male' 11'' brown hair and or glasses
+899. w:8 d:7 c:0.6275643031247136 : White male 5' 11'' around 180lbs
+900. w:8 d:6 c:0.6274545393662719 : White male 5''' with or glasses
+901. w:9 d:7 c:0.6267601472070514 : male' 11'' hair blue and or glasses
+902. w:7 d:6 c:0.6265728185413674 : White male 5''' with hair
+903. w:9 d:7 c:0.626430669875876 : male 5' 11'' around 180lbs with glasses
+904. w:9 d:7 c:0.6253576414940496 : White male 5' 11'' and or glasses
+905. w:8 d:5 c:0.6249430474000502 : male 5''' hair eyes or glasses
+906. w:10 d:7 c:0.6247741393937623 : male''' with hair eyes and no hair or
+907. w:9 d:7 c:0.6226336249602435 : male' 11'' with hair eyes and or
+908. w:7 d:6 c:0.62247678783306 : White male' 11'' around 180lbs
+909. w:6 d:5 c:0.6221040671117829 : eyes and no facial hair or
+910. w:10 d:7 c:0.6220432888492254 : male' 11'' with hair and no or glasses
+911. w:9 d:5 c:0.6210717899056176 : White male''' and no hair or glasses
+912. w:8 d:8 c:0.6210431054825546 : male' 11'' blue eyes and or
+913. w:8 d:7 c:0.6209304598959026 : male 5' 11'' and or glasses
+914. w:7 d:6 c:0.6209136577796417 : male''' around 180lbs with hair
+915. w:10 d:7 c:0.6200098876392961 : male''' around 180lbs and no hair or glasses
+916. w:9 d:7 c:0.6193494097811613 : male 5''' blue eyes and or glasses
+917. w:9 d:7 c:0.61859287784401 : male 5''' and no facial hair or
+918. w:8 d:9 c:0.6185293660942026 : White male 5''' and no or
+919. w:8 d:6 c:0.618098831901969 : White male 5''' around 180lbs glasses
+920. w:8 d:7 c:0.617910273628157 : male' 11'' with hair hair or
+921. w:10 d:8 c:0.6172532655797193 : male 5''' around 180lbs and no hair or
+922. w:9 d:9 c:0.6156953157536287 : male 5' 11'' with and or glasses
+923. w:8 d:7 c:0.6147842074650485 : male 5''' around 180lbs with hair
+924. w:7 d:7 c:0.6147246243400305 : White male''' around 180lbs and
+925. w:7 d:11 c:0.6136908786240305 : White male 5' 11'' hair
+926. w:9 d:11 c:0.6131097257291046 : male 5' 11'' hair eyes and or
+927. w:9 d:8 c:0.6128809066137383 : White male' 11'' with and or glasses
+928. w:8 d:8 c:0.6126231570820498 : White male''' around 180lbs with eyes
+929. w:9 d:7 c:0.6109204782610547 : White male''' around and no hair or
+930. w:8 d:7 c:0.6102876281365982 : White male 5' 11'' with eyes
+931. w:7 d:6 c:0.6098564908088204 : White male 5''' around glasses
+932. w:6 d:4 c:0.6091732854648968 : male 5''' blue eyes
+933. w:8 d:7 c:0.6089701837060736 : White male 5' 11'' with glasses
+934. w:9 d:5 c:0.6078966295014775 : male''' and no facial hair or glasses
+935. w:7 d:6 c:0.606224641437922 : White male' 11'' with hair
+936. w:8 d:6 c:0.6060772863530877 : male''' around 180lbs blue eyes and
+937. w:9 d:13 c:0.6048907393518338 : White male 5' 11'' eyes and or
+938. w:7 d:5 c:0.6047661851341328 : male 5''' facial hair or
+939. w:9 d:6 c:0.6046790270886575 : male''' with hair eyes and or glasses
+940. w:8 d:6 c:0.603979929295155 : male' 11'' with hair or glasses
+941. w:5 d:5 c:0.6037512788079887 : White facial hair or glasses
+942. w:9 d:7 c:0.6032335353719296 : male' 11'' hair eyes and no or
+943. w:7 d:6 c:0.6030047888306882 : White male 5''' with eyes
+944. w:9 d:7 c:0.6026665964237643 : male''' with brown hair and or glasses
+945. w:7 d:6 c:0.6022187078012665 : White male 5''' with glasses
+946. w:7 d:7 c:0.600487383012847 : White male 5''' and or
+947. w:8 d:7 c:0.5993318005207333 : male' 11'' and no hair or
+948. w:7 d:6 c:0.5992840851371974 : male' 11'' blue eyes or
+949. w:7 d:6 c:0.598961141392036 : White male 5''' around eyes
+950. w:7 d:6 c:0.5985499841920561 : White male 5''' around 180lbs
+951. w:7 d:5 c:0.5984206152056377 : White male 5''' or glasses
+952. w:5 d:5 c:0.5974688713815058 : blue eyes and or glasses
+953. w:8 d:6 c:0.5969068719510442 : White male 5''' with hair glasses
+954. w:7 d:11 c:0.5961860879684779 : White male 5' 11'' 180lbs
+955. w:9 d:7 c:0.5954891967505744 : male 5''' around and no hair or
+956. w:7 d:4 c:0.5951924077440799 : White and no facial hair or glasses
+957. w:9 d:6 c:0.5947720522501627 : male 5''' around 180lbs and or glasses
+958. w:9 d:7 c:0.5938614097022912 : male''' eyes and no facial hair or
+959. w:6 d:5 c:0.5932741241152857 : White male 5''' and
+960. w:7 d:7 c:0.5902626396830328 : White male' 11'' or glasses
+961. w:8 d:7 c:0.5886185205085258 : male' 11'' and no facial or
+962. w:7 d:7 c:0.5882544705201307 : male 5' 11'' or glasses
+963. w:7 d:5 c:0.5881263278044226 : male 5''' blue eyes or
+964. w:9 d:8 c:0.5880205339498157 : male 5' 11'' with hair and or
+965. w:8 d:7 c:0.5873001177561064 : male''' blue eyes and or glasses
+966. w:6 d:6 c:0.5871481641865559 : White male''' around 180lbs
+967. w:5 d:5 c:0.5871393461488125 : White blue eyes or glasses
+968. w:9 d:7 c:0.5868625084465195 : male' 11'' with hair and or glasses
+969. w:8 d:8 c:0.5845747865434967 : White male''' around and or glasses
+970. w:7 d:6 c:0.58386344962586 : male' 11'' hair eyes or
+971. w:8 d:7 c:0.5837684570050078 : White male''' and no hair or
+972. w:7 d:6 c:0.5834677976431197 : White male 5''' hair or
+973. w:7 d:7 c:0.5832595039888364 : male' 11'' with brown or
+974. w:8 d:7 c:0.5825840056958027 : male' 11'' and no or glasses
+975. w:7 d:7 c:0.5819650939800888 : male 5' 11'' with glasses
+976. w:7 d:11 c:0.5797732467297683 : White male 5' 11'' eyes
+977. w:6 d:6 c:0.5797212360561321 : male 5' 11'' and
+978. w:9 d:7 c:0.5792349735012519 : male''' with hair and no hair or
+979. w:7 d:11 c:0.5785216745207699 : White male 5' 11'' glasses
+980. w:7 d:5 c:0.5775999769159109 : male 5''' hair or glasses
+981. w:6 d:4 c:0.5772152198580616 : White and no hair or glasses
+982. w:5 d:5 c:0.5761678114673645 : White hair eyes facial or
+983. w:7 d:5 c:0.5741664247987962 : male 5''' hair eyes or
+984. w:7 d:6 c:0.5738831088291445 : male' 11'' around or glasses
+985. w:5 d:4 c:0.5736996821496089 : White male 5'''
+986. w:6 d:5 c:0.5736329958249335 : White male 5' 11''
+987. w:5 d:5 c:0.5732028703688163 : White hair eyes or glasses
+988. w:7 d:6 c:0.5731691766474468 : White male 5''' facial or
+989. w:6 d:4 c:0.5720396649390925 : White and no facial or glasses
+990. w:7 d:5 c:0.5719308798668337 : male 5''' blue eyes and
+991. w:7 d:6 c:0.5717530239781723 : male' 11'' with or glasses
+992. w:6 d:4 c:0.5702629998345818 : male 5''' hair eyes
+993. w:7 d:6 c:0.5694807892227706 : male' 11'' facial or glasses
+994. w:7 d:6 c:0.5692371197738599 : White male' 11'' with eyes
+995. w:8 d:7 c:0.5690230102283267 : male 5''' and no hair or
+996. w:6 d:7 c:0.5682531531322057 : White male''' around and
+997. w:6 d:6 c:0.5680272561849888 : male' 11'' with hair
+998. w:7 d:6 c:0.567532287935459 : White male' 11'' with glasses
+999. w:7 d:6 c:0.56538182828954 : male' 11'' around 180lbs glasses
+1000. w:5 d:5 c:0.5621124202515112 : hair eyes facial or glasses
+1001. w:6 d:5 c:0.5593542865299835 : male 5''' around 180lbs
+1002. w:8 d:5 c:0.5592742251766712 : male''' and no hair or glasses
+1003. w:5 d:5 c:0.5575788729278683 : hair eyes hair or glasses
+1004. w:8 d:7 c:0.5555910079524515 : male''' around 180lbs and or glasses
+1005. w:8 d:7 c:0.5512967514639799 : male''' with hair and or glasses
+1006. w:7 d:6 c:0.5511161938435577 : male 5''' around 180lbs and
+1007. w:5 d:5 c:0.5498643018177655 : male 5' 11''
+1008. w:4 d:5 c:0.5492841939560691 : eyes and hair or
+1009. w:6 d:6 c:0.5486097361995121 : White male''' around glasses
+1010. w:7 d:6 c:0.5466306595859352 : male' 11'' and or glasses
+1011. w:6 d:6 c:0.5458138470575803 : male' 11'' with glasses
+1012. w:6 d:6 c:0.545608579480889 : male' 11'' with eyes
+1013. w:6 d:5 c:0.5449156757168163 : male' 11'' or glasses
+1014. w:4 d:5 c:0.5444112462857111 : White hair or glasses
+1015. w:6 d:7 c:0.5431434413376841 : male'' and no hair or
+1016. w:6 d:6 c:0.5420177863790308 : male' 11'' around 180lbs
+1017. w:7 d:6 c:0.5419473324461213 : male' 11'' with hair glasses
+1018. w:4 d:4 c:0.5396860786373036 : eyes and no facial
+1019. w:4 d:4 c:0.5396074477783708 : White male'''
+1020. w:7 d:6 c:0.5321274218948202 : male 5''' and or glasses
+1021. w:6 d:6 c:0.5309437384580769 : male''' blue eyes and
+1022. w:5 d:5 c:0.5305165238981038 : and no facial hair or
+1023. w:5 d:5 c:0.5303696095900586 : White male''' and
+1024. w:6 d:4 c:0.527376512296383 : male 5''' or glasses
+1025. w:4 d:5 c:0.5252636125629502 : White facial hair or
+1026. w:6 d:5 c:0.5239656933451478 : male 5''' hair or
+1027. w:6 d:5 c:0.5238401750538074 : and no facial hair or glasses
+1028. w:6 d:7 c:0.5205939630092954 : male' 11'' around or
+1029. w:5 d:5 c:0.5200830725367086 : male''' around 180lbs
+1030. w:6 d:4 c:0.5186616717516277 : male' 11'' with or
+1031. w:6 d:6 c:0.5166004302235133 : male' 11'' facial or
+1032. w:7 d:7 c:0.5151778367676095 : male''' eyes and or glasses
+1033. w:4 d:5 c:0.5108112311494668 : White blue eyes or
+1034. w:3 d:4 c:0.5101632242086084 : White hair eyes
+1035. w:4 d:5 c:0.5093292259158071 : White and or glasses
+1036. w:5 d:5 c:0.5030628734324322 : White male' 11''
+1037. w:5 d:5 c:0.5017996091443635 : male''' with hair
+1038. w:4 d:5 c:0.4986864972208702 : White hair eyes or
+1039. w:5 d:5 c:0.4964852578584688 : and no hair or glasses
+1040. w:7 d:5 c:0.49350171306277785 : male''' and no hair or
+1041. w:5 d:5 c:0.4920335618010834 : and no facial or glasses
+1042. w:4 d:5 c:0.4890378056188147 : hair eyes facial or
+1043. w:5 d:4 c:0.4869048610727969 : male''' or glasses
+1044. w:5 d:4 c:0.4858831441808279 : male' 11'' or
+1045. w:4 d:5 c:0.48509361944724544 : hair eyes hair or
+1046. w:4 d:5 c:0.4837722569726577 : male 5'''
+1047. w:4 d:4 c:0.4784764267337719 : male''' 180lbs
+1048. w:5 d:5 c:0.4702440567976082 : male 5''' or
+1049. w:4 d:4 c:0.4616556404128144 : male''' hair
+1050. w:4 d:5 c:0.4603805395416953 : male' 11''
+1051. w:4 d:4 c:0.45907327204394494 : hair eyes or glasses
+1052. w:3 d:5 c:0.45594441876428304 : White hair or
+1053. w:2 d:3 c:0.44981526861636545 : blue eyes
+1054. w:2 d:5 c:0.4457823874734085 : eyes and
+1055. w:2 d:5 c:0.4415178705482944 : hair or
+1056. w:2 d:5 c:0.4368228331332426 : White and
+1057. w:4 d:4 c:0.4334213470423992 : male''' glasses
+1058. w:4 d:5 c:0.4319421743368679 : and no hair or
+1059. w:1 d:3 c:0.4310336176425173 : White
+1060. w:4 d:5 c:0.4280691987669425 : and no facial or
+1061. w:4 d:5 c:0.4236072291333333 : male''' or
+1062. w:3 d:4 c:0.42050540293823235 : and no facial
+1063. w:3 d:4 c:0.4180514729764902 : White or glasses
+1064. w:3 d:5 c:0.3943295545020833 : and or glasses
+1065. w:3 d:5 c:0.3844738653368039 : hair eyes or
+1066. w:2 d:3 c:0.37688308188410946 : hair eyes
+1067. w:2 d:5 c:0.327473653831584 : White or
+1068. w:2 d:4 c:0.3011131859522331 : or glasses
+GENERATED: 1/3
+---------------------------------------------------------
+Input phrase:
+Male black wearing a red hoodie blue jeans and a white hat
+
+Expected hypothesis:
+1. black
+2. red
+3. blue
+4. white
+
+Hypothesis:
+1. w:12 d:7 c:1.0 : Male black wearing a red hoodie blue jeans and a white hat
+2. w:11 d:7 c:0.94 : black wearing a red hoodie blue jeans and a white hat
+3. w:11 d:7 c:0.925 : Male black wearing a hoodie blue jeans and a white hat
+4. w:11 d:7 c:0.925 : Male black wearing a red hoodie jeans and a white hat
+5. w:11 d:7 c:0.925 : Male black wearing a red hoodie blue jeans and a hat
+6. w:9 d:7 c:0.8899769487847222 : Male black wearing a red hoodie blue jeans and
+7. w:10 d:7 c:0.865015625 : Male black wearing a red hoodie and a white hat
+8. w:10 d:7 c:0.863090909090909 : black wearing a hoodie blue jeans and a white hat
+9. w:10 d:7 c:0.863090909090909 : black wearing a red hoodie jeans and a white hat
+10. w:10 d:7 c:0.863090909090909 : black wearing a red hoodie blue jeans and a hat
+11. w:10 d:7 c:0.8493181818181819 : Male black wearing a hoodie jeans and a white hat
+12. w:10 d:7 c:0.8493181818181819 : Male black wearing a hoodie blue jeans and a hat
+13. w:10 d:7 c:0.8493181818181819 : Male black wearing a red hoodie jeans and a hat
+14. w:8 d:8 c:0.8275208906461307 : black wearing a red hoodie blue jeans and
+15. w:8 d:7 c:0.8143157700507138 : Male black wearing a hoodie blue jeans and
+16. w:8 d:7 c:0.8143157700507138 : Male black wearing a red hoodie jeans and
+17. w:9 d:7 c:0.8020342837465564 : black wearing a red hoodie and a white hat
+18. w:9 d:7 c:0.789235864325069 : Male black wearing a hoodie and a white hat
+19. w:9 d:7 c:0.789235864325069 : Male black wearing a red hoodie and a hat
+20. w:9 d:7 c:0.7854127272727272 : black wearing a hoodie jeans and a white hat
+21. w:9 d:7 c:0.7854127272727272 : black wearing a hoodie blue jeans and a hat
+22. w:9 d:7 c:0.7854127272727272 : black wearing a red hoodie jeans and a hat
+23. w:9 d:7 c:0.7728795454545455 : Male black wearing a hoodie jeans and a hat
+24. w:7 d:6 c:0.7720302814888358 : Male black wearing a red hoodie and
+25. w:7 d:8 c:0.7499039308949998 : black wearing a hoodie blue jeans and
+26. w:7 d:7 c:0.7499039308949998 : black wearing a red hoodie jeans and
+27. w:7 d:7 c:0.73793737880625 : Male black wearing a hoodie jeans and
+28. w:6 d:8 c:0.7281051910637695 : Male black wearing blue jeans and
+29. w:8 d:7 c:0.7242965407575757 : black wearing a hoodie and a white hat
+30. w:8 d:7 c:0.7242965407575757 : black wearing a red hoodie and a hat
+31. w:7 d:6 c:0.7142001160873938 : Male black wearing and a white hat
+32. w:8 d:7 c:0.7127386172348485 : Male black wearing a hoodie and a hat
+33. w:8 d:7 c:0.7068714545454544 : black wearing a hoodie jeans and a hat
+34. w:6 d:6 c:0.6934439538547877 : Male black wearing a hoodie and
+35. w:6 d:6 c:0.6856928490739665 : black wearing a red hoodie and
+36. w:6 d:7 c:0.6714823812104938 : black wearing a hoodie jeans and
+37. w:5 d:6 c:0.6488896322041908 : Male black wearing jeans and
+38. w:6 d:5 c:0.6486514124278215 : black wearing and a white hat
+39. w:7 d:7 c:0.6457571327328843 : black wearing a hoodie and a hat
+40. w:6 d:6 c:0.6383005920167395 : Male black wearing and a hat
+41. w:5 d:6 c:0.6067638199853115 : black wearing a hoodie and
+42. w:4 d:6 c:0.577414717423472 : black wearing jeans and
+43. w:5 d:5 c:0.5709454159653643 : black wearing and a hat
+44. w:4 d:5 c:0.52542588738751 : and a white hat
+45. w:3 d:6 c:0.5106789551842928 : black wearing and
+46. w:3 d:4 c:0.4419919697881351 : and a hat
+GENERATED: 0/4
+---------------------------------------------------------
+Input phrase:
+call a cab
+
+Expected hypothesis:
+1. cab
+
+Hypothesis:
+1. w:3 d:5 c:1.0 : call a cab
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+can you skip the commercials? 
+
+Expected hypothesis:
+1. commercial
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : can you skip the commercials
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+his glasses had a pink tint to them 
+
+Expected hypothesis:
+1. tinted
+2. pink
+3. glass
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : his glasses had a pink tint to them
+2. w:7 d:7 c:0.95 : glasses had a pink tint to them
+3. w:7 d:7 c:0.8875 : his glasses had a tint to them
+4. w:6 d:7 c:0.8278571428571428 : glasses had a tint to them
+GENERATED: 0/3
+---------------------------------------------------------
+Input phrase:
+the residence has a broken front window
+
+Expected hypothesis:
+1. window
+2. front
+
+Hypothesis:
+1. w:7 d:5 c:1.0 : the residence has a broken front window
+2. w:6 d:5 c:0.8714285714285714 : the residence has a front window
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+i can't afford that!
+
+Expected hypothesis:
+1. ford 
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : i ca n't afford that
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i want to go to Malibu!
+
+Expected hypothesis:
+1. malibu
+
+Hypothesis:
+1. w:7 d:9 c:1.0 : i want to go to Malibu
+2. w:5 d:8 c:0.8642857142857143 : i want to go to
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+we went on vacation and saw the wild mustangs
+
+Expected hypothesis:
+1. mustang
+
+Hypothesis:
+1. w:9 d:7 c:1.0 : we went on vacation and saw the wild mustangs
+2. w:8 d:7 c:0.9 : we went on vacation and saw the mustangs
+3. w:7 d:6 c:0.8493827160493828 : we went and saw the wild mustangs
+4. w:6 d:6 c:0.7481249999999999 : we went and saw the mustangs
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+there were 2 doors to the residence
+
+Expected hypothesis:
+1. two-door
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : there were 2 doors to the residence
+2. w:6 d:7 c:0.92 : there were doors to the residence
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she had to choose one of the four doors
+
+Expected hypothesis:
+1. four-door
+
+Hypothesis:
+1. w:9 d:10 c:1.0 : she had to choose one of the four doors
+2. w:8 d:9 c:0.9377777777777778 : she had to choose of the four doors
+3. w:8 d:10 c:0.9222222222222223 : she had to choose one of the doors
+4. w:7 d:10 c:0.9017283950617284 : she had to choose one of doors
+5. w:7 d:9 c:0.8557222222222223 : she had to choose of the doors
+6. w:6 d:9 c:0.8343291666666667 : she had to choose of doors
+7. w:5 d:8 c:0.7659125133363817 : she had to choose one
+8. w:4 d:7 c:0.6935361197916667 : she had to choose
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+they were playing dodge ball when she rammed her fist against the wall for no reason
+
+Expected hypothesis:
+1. dodge
+2. ram
+
+Hypothesis:
+1. w:16 d:11 c:1.0 : they were playing dodge ball when she rammed her fist against the wall for no reason
+2. w:15 d:11 c:0.9875 : they were playing dodge ball when she rammed her fist against wall for no reason
+3. w:15 d:11 c:0.9875 : they were playing dodge ball when she rammed her fist against the wall for reason
+4. w:15 d:11 c:0.975 : they were playing dodge ball when she rammed fist against the wall for no reason
+5. w:14 d:11 c:0.9743333333333334 : they were playing dodge ball when she rammed her fist against wall for reason
+6. w:14 d:11 c:0.962 : they were playing dodge ball when she rammed fist against wall for no reason
+7. w:14 d:11 c:0.962 : they were playing dodge ball when she rammed fist against the wall for reason
+8. w:13 d:11 c:0.9482571428571428 : they were playing dodge ball when she rammed fist against wall for reason
+9. w:13 d:11 c:0.9361169018554688 : they were playing dodge ball when she rammed her fist against the wall
+10. w:13 d:11 c:0.9276869163894653 : they were playing dodge ball when she rammed her fist for no reason
+11. w:12 d:11 c:0.9217151033653846 : they were playing dodge ball when she rammed her fist against wall
+12. w:12 d:11 c:0.9134148099834736 : they were playing dodge ball when she rammed her fist for reason
+13. w:12 d:11 c:0.9086386197777777 : they were playing dodge ball when she rammed fist against the wall
+14. w:12 d:11 c:0.8998934398368055 : they were playing dodge ball when she rammed fist for no reason
+15. w:11 d:11 c:0.8934946427814814 : they were playing dodge ball when she rammed fist against wall
+16. w:11 d:11 c:0.8848952158395254 : they were playing dodge ball when she rammed fist for reason
+17. w:10 d:10 c:0.8246350510582613 : they were playing dodge ball when she rammed her fist
+18. w:9 d:10 c:0.7917355306869238 : they were playing dodge ball when she rammed fist
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+my sign is aires, the ram
+
+Expected hypothesis:
+1. ram
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : my sign is aires the ram
+2. w:5 d:5 c:0.9714285714285714 : my sign is aires ram
+3. w:5 d:6 c:0.9428571428571428 : sign is aires the ram
+4. w:4 d:5 c:0.9051428571428571 : sign is aires ram
+5. w:3 d:4 c:0.7850728862973761 : my sign is
+6. w:2 d:4 c:0.6661851428571428 : sign is
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+every saturday they blow a ram's horn
+
+Expected hypothesis:
+1. ram
+
+Hypothesis:
+1. w:7 d:8 c:0.975 : every saturday they blow a ram horn
+2. w:6 d:5 c:0.8426785714285714 : every they blow a ram horn
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+my favorite piece by Beethoven is the Moonlight Sonata
+
+Expected hypothesis:
+1. sonata
+
+Hypothesis:
+1. w:9 d:6 c:1.0 : my favorite piece by Beethoven is the Moonlight Sonata
+2. w:8 d:6 c:0.9644444444444444 : favorite piece by Beethoven is the Moonlight Sonata
+3. w:8 d:6 c:0.9 : my piece by Beethoven is the Moonlight Sonata
+4. w:7 d:6 c:0.855 : piece by Beethoven is the Moonlight Sonata
+5. w:7 d:5 c:0.8546913580246914 : my favorite piece is the Moonlight Sonata
+6. w:6 d:5 c:0.8074208333333334 : favorite piece is the Moonlight Sonata
+7. w:6 d:5 c:0.75346875 : my piece is the Moonlight Sonata
+8. w:5 d:5 c:0.6967377551020408 : piece is the Moonlight Sonata
+9. w:6 d:5 c:0.6812552083333334 : my favorite piece by is the
+10. w:5 d:5 c:0.6358381944444446 : my favorite piece is the
+11. w:5 d:5 c:0.6182637847222223 : favorite piece by is the
+12. w:5 d:5 c:0.5769512276785715 : my piece by is the
+13. w:4 d:5 c:0.5688026819444445 : favorite piece is the
+14. w:4 d:5 c:0.5307951294642859 : my piece is the
+15. w:4 d:5 c:0.5037889017857143 : piece by is the
+16. w:3 d:5 c:0.4534100116071429 : piece is the
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+they pulled the crown right off her head
+
+Expected hypothesis:
+1. crown vic toria 
+
+Hypothesis:
+1. w:8 d:6 c:1.0 : they pulled the crown right off her head
+2. w:7 d:6 c:0.95 : they pulled the crown right off head
+3. w:5 d:5 c:0.7896875 : they pulled the crown right
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+then the baby started to crown
+
+Expected hypothesis:
+1. crown vic toria 
+
+Hypothesis:
+1. w:6 d:9 c:1.0 : then the baby started to crown
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+his name is Vic Arturian
+
+Expected hypothesis:
+1. crown vic toria 
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : his name is Vic Arturian
+2. w:4 d:5 c:0.9199999999999999 : name is Vic Arturian
+3. w:3 d:4 c:0.6176250000000001 : his name is
+4. w:2 d:4 c:0.47935833333333333 : name is
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Victoria Gabriels, 23, white female
+
+Expected hypothesis:
+1. crown vic toria 
+
+Hypothesis:
+1. w:7 d:5 c:1.0 : Victoria Gabriels 23 white female
+2. w:4 d:4 c:0.92 : Victoria Gabriels white female
+3. w:4 d:4 c:0.8714285714285714 : Victoria Gabriels 23 female
+4. w:2 d:3 c:0.7772950765306123 : Victoria Gabriels
+5. w:3 d:4 c:0.7494285714285714 : Victoria Gabriels female
+6. w:3 d:4 c:0.7274404761904762 : 23 white female
+7. w:2 d:3 c:0.47935833333333333 : white female
+8. w:1 d:4 c:0.4587118402777778 : 23
+9. w:2 d:3 c:0.45405059523809527 : 23 female
+10. w:1 d:3 c:0.26885749999999997 : female
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+do you want me to tag you in this picture?
+
+Expected hypothesis:
+1. tag
+
+Hypothesis:
+1. w:11 d:11 c:1.0 : do you want me to tag you in this picture
+2. w:9 d:11 c:0.9818181818181818 : do you want me to tag you in picture
+3. w:7 d:10 c:0.8601051840721262 : do you want me to tag you
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+The kids were playing tag
+
+Expected hypothesis:
+1. tag
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : The kids were playing tag
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she had a skin tag on her neck
+
+Expected hypothesis:
+1. tag
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : she had a skin tag on her neck
+2. w:7 d:7 c:0.95 : she had a skin tag on neck
+3. w:5 d:5 c:0.7896875 : she had a skin tag
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+the suspects tagged the building and then ran off
+
+Expected hypothesis:
+1. tag
+
+Hypothesis:
+1. w:9 d:6 c:1.0 : the suspects tagged the building and then ran off
+2. w:6 d:7 c:0.8917098871527778 : the suspects tagged the building and
+3. w:6 d:5 c:0.8450989271833562 : the suspects and then ran off
+4. w:5 d:6 c:0.7672794009718888 : the suspects and ran off
+5. w:4 d:8 c:0.6994615162304356 : and then ran off
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+this tag on the inside of my shirt is really bugging me
+
+Expected hypothesis:
+1. tag
+
+Hypothesis:
+1. w:12 d:8 c:1.0 : this tag on the inside of my shirt is really bugging me
+2. w:11 d:8 c:0.9666666666666667 : this tag on the inside of shirt is really bugging me
+3. w:9 d:6 c:0.856574074074074 : this tag on the inside is really bugging me
+4. w:8 d:6 c:0.8422978395061729 : this tag on inside is really bugging me
+5. w:6 d:6 c:0.7463694744513032 : this tag is really bugging me
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+ooh what was the price tag on that?
+
+Expected hypothesis:
+1. tag
+
+Hypothesis:
+1. w:9 d:10 c:1.0 : ooh what was the price tag on that
+2. w:6 d:7 c:0.934320987654321 : ooh what was the price tag
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she drank a few shots of crown royal
+
+Expected hypothesis:
+1. crown vic toria 
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : she drank a few shots of crown royal
+2. w:7 d:7 c:0.8875 : she drank a shots of crown royal
+3. w:7 d:7 c:0.875 : she drank a few shots of crown
+4. w:6 d:7 c:0.7607142857142857 : she drank a shots of crown
+5. w:5 d:5 c:0.72734375 : she drank a few shots
+6. w:4 d:5 c:0.6147813411078717 : she drank a shots
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i was feeling really blue yesterday
+
+Expected hypothesis:
+1. blue
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : i was feeling really blue yesterday
+2. w:5 d:6 c:0.85 : i was feeling really yesterday
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he was the best blues saxophonist of the 60s
+
+Expected hypothesis:
+1. blue
+
+Hypothesis:
+1. w:9 d:7 c:1.0 : he was the best blues saxophonist of the 60s
+2. w:8 d:7 c:0.9777777777777777 : he was the best blues saxophonist of 60s
+3. w:9 d:7 c:0.9444444444444444 : he was the best blues saxophonist of the 60
+4. w:8 d:7 c:0.9 : he was the blues saxophonist of the 60s
+5. w:7 d:7 c:0.8775000000000001 : he was the blues saxophonist of 60s
+6. w:8 d:7 c:0.8709876543209877 : he was the best blues saxophonist of the
+7. w:8 d:7 c:0.84375 : he was the blues saxophonist of the 60
+8. w:6 d:5 c:0.8305075445816187 : he was the best blues saxophonist
+9. w:7 d:7 c:0.769921875 : he was the blues saxophonist of the
+10. w:5 d:5 c:0.729421875 : he was the blues saxophonist
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+you're looking a bit blue in the face
+
+Expected hypothesis:
+1. blue
+
+Hypothesis:
+1. w:9 d:8 c:1.0 : you're looking a bit blue in the face
+2. w:8 d:8 c:0.9777777777777777 : you're looking a bit blue in face
+3. w:6 d:7 c:0.8305075445816187 : you're looking a bit blue
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+the company ended up in the black after all
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:9 d:6 c:1.0 : the company ended up in the black after all
+2. w:7 d:6 c:0.957083950617284 : the company ended up in the black
+3. w:6 d:6 c:0.8812069484953703 : the company ended up after all
+4. w:4 d:5 c:0.76390367053234 : the company ended up
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+then they called him up to the blackboard
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:8 d:6 c:1.0 : then they called him up to the blackboard
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+look at that blackbird over there
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:6 d:8 c:1.0 : look at that blackbird over there
+2. w:4 d:6 c:0.8944444444444445 : look at that blackbird
+3. w:3 d:6 c:0.8646296296296296 : look at blackbird
+4. w:1 d:3 c:0.6724897119341564 : look
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+they dressed up in blackface all the time in the 20s
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:11 d:7 c:1.0 : they dressed up in blackface all the time in the 20s
+2. w:11 d:7 c:0.9545454545454546 : they dressed up in blackface all the time in the 20
+3. w:10 d:7 c:0.9363636363636364 : they dressed up in blackface all the time in the
+4. w:8 d:6 c:0.88590833959429 : they dressed up in blackface all the time
+5. w:9 d:6 c:0.8760330578512396 : they dressed up all the time in the 20s
+6. w:9 d:6 c:0.8362133734034561 : they dressed up all the time in the 20
+7. w:8 d:6 c:0.8090181818181819 : they dressed up all the time in the
+8. w:6 d:5 c:0.7548352662426736 : they dressed up all the time
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i don't wanna get blackballed/blacklisted
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:7 d:9 c:1.0 : i do n't wan na get blackballed/blacklisted
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+they blackened out the windows in her aparment
+
+Expected hypothesis:
+1. black
+2. windows
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : they blackened out the windows in her aparment
+2. w:7 d:7 c:0.95 : they blackened out the windows in aparment
+3. w:5 d:5 c:0.7896875 : they blackened out the windows
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+there was a blackout last night
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : there was a blackout last night
+2. w:5 d:5 c:0.85 : there was a blackout night
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+there was a brownout last night
+
+Expected hypothesis:
+1. brown
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : there was a brownout last night
+2. w:5 d:5 c:0.85 : there was a brownout night
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+use some white out and fix it
+
+Expected hypothesis:
+1. white
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : use some white out and fix it
+2. w:6 d:6 c:0.9428571428571428 : use some white and fix it
+3. w:5 d:8 c:0.935970025510204 : use some white out and
+4. w:4 d:5 c:0.8610924234693877 : use some white and
+5. w:3 d:6 c:0.7738530931763385 : and fix it
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i have an appointment to whiten my teeth tomorrow
+
+Expected hypothesis:
+1. white
+
+Hypothesis:
+1. w:9 d:9 c:1.0 : i have an appointment to whiten my teeth tomorrow
+2. w:8 d:9 c:0.9555555555555556 : i have an appointment to whiten teeth tomorrow
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. John Black 
+
+Expected hypothesis:
+1. black
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr John Black
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. John White
+
+Expected hypothesis:
+1. white
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr John White
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. John Brown/Browne
+
+Expected hypothesis:
+1. brown
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr John Brown/Browne
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. John Green/Greene
+
+Expected hypothesis:
+1. green
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr John Green/Greene
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. John Gray/Grey
+
+Expected hypothesis:
+1. gray
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr John Gray/Grey
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I baked a batch of brownies last night 
+
+Expected hypothesis:
+1. brown
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : I baked a batch of brownies last night
+2. w:7 d:7 c:0.8875 : I baked a batch of brownies night
+3. w:6 d:6 c:0.7765624999999999 : I baked a batch of brownies
+4. w:4 d:4 c:0.645517578125 : I baked a batch
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Don't you think she's a bit green for this job?
+
+Expected hypothesis:
+1. green
+
+Hypothesis:
+1. w:13 d:10 c:1.0 : Do n't you think she's a bit green for this job
+2. w:11 d:13 c:0.9846153846153847 : Do n't you think she's a bit green for job
+3. w:9 d:12 c:0.880910332271279 : Do n't you think she's a bit green
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+There's no greenery in this part of town
+
+Expected hypothesis:
+1. green
+
+Hypothesis:
+1. w:9 d:9 c:1.0 : There's no greenery in this part of town
+2. w:7 d:7 c:0.8493827160493828 : There's no greenery in this part
+3. w:6 d:7 c:0.8305075445816186 : There's no greenery in part
+4. w:4 d:5 c:0.7054187539162391 : There's no greenery
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+eat your greens!
+
+Expected hypothesis:
+1. green
+
+Hypothesis:
+1. w:4 d:5 c:1.0 : eat your greens
+2. w:2 d:5 c:0.9 : eat greens
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i read this great book last week
+
+Expected hypothesis:
+1. red
+
+Hypothesis:
+1. w:7 d:5 c:1.0 : i read this great book last week
+2. w:6 d:5 c:0.8714285714285714 : i read this book last week
+3. w:6 d:5 c:0.8714285714285714 : i read this great book week
+4. w:5 d:5 c:0.7407142857142858 : i read this book week
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she went all red in the face when i asked her
+
+Expected hypothesis:
+1. red
+
+Hypothesis:
+1. w:11 d:8 c:1.0 : she went all red in the face when i asked her
+2. w:10 d:8 c:0.9818181818181818 : she went all red in face when i asked her
+3. w:8 d:9 c:0.8601051840721262 : she went all red when i asked her
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i don't want them to think i'm yellow
+
+Expected hypothesis:
+1. yellow
+
+Hypothesis:
+1. w:10 d:12 c:1.0 : i do n't want them to think i'm yellow
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+pass me that orange?
+
+Expected hypothesis:
+1. orange
+
+Hypothesis:
+1. w:5 d:7 c:1.0 : pass me that orange
+2. w:2 d:5 c:0.736 : pass me
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i planted some violets in my flowerbox.
+
+Expected hypothesis:
+1. violet
+
+Hypothesis:
+1. w:8 d:6 c:1.0 : i planted some violets in my flowerbox
+2. w:6 d:6 c:0.95 : i planted some violets in flowerbox
+3. w:4 d:5 c:0.7896875 : i planted some violets
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i ain't no pinko
+
+Expected hypothesis:
+1. pink
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : i ai n't no pinko
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+they're all reds over there
+
+Expected hypothesis:
+1. red
+
+Hypothesis:
+1. w:6 d:7 c:1.0 : they're all reds over there
+2. w:4 d:5 c:0.8944444444444445 : they're all reds
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+pass me a stick of big red
+
+Expected hypothesis:
+1. stick
+2. red
+
+Hypothesis:
+1. w:7 d:8 c:1.0 : pass me a stick of big red
+2. w:6 d:8 c:0.8714285714285714 : pass me a stick of red
+3. w:4 d:6 c:0.7042565597667638 : pass me a stick
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+i want to go to florida and get a tan
+
+Expected hypothesis:
+1. florida
+2. tan
+
+Hypothesis:
+1. w:10 d:10 c:1.0 : i want to go to florida and get a tan
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+there's a window of 10 minutes to log on
+
+Expected hypothesis:
+1. window
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : there's a window of 10 minutes to log on
+2. w:9 d:8 c:0.96 : there's a window of 10 minutes to log
+3. w:9 d:11 c:0.93 : there's a window of minutes to log on
+4. w:8 d:10 c:0.8886666666666667 : there's a window of minutes to log
+5. w:6 d:7 c:0.8207824074074075 : there's a window of minutes
+6. w:7 d:9 c:0.8035199999999999 : there's a window to log on
+7. w:6 d:7 c:0.7576045714285713 : there's a window to log
+8. w:4 d:5 c:0.6971583904892548 : there's a window
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he recorded it on his dashcam
+
+Expected hypothesis:
+1. dash
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : he recorded it on his dashcam
+2. w:5 d:6 c:0.9333333333333333 : he recorded it on dashcam
+3. w:3 d:5 c:0.725925925925926 : he recorded it
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+there's a car parked in the rear/front of the building 
+
+Expected hypothesis:
+1. car
+2. rear/front
+
+Hypothesis:
+1. w:11 d:10 c:1.0 : there's a car parked in the rear/front of the building
+2. w:10 d:10 c:0.9818181818181818 : there's a car parked in the rear/front of building
+3. w:8 d:8 c:0.8601051840721262 : there's a car parked in the rear/front
+4. w:7 d:8 c:0.8444669079980875 : there's a car parked in rear/front
+5. w:5 d:6 c:0.7397809276677462 : there's a car parked
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+i bought a set of dinner plates last night 
+
+Expected hypothesis:
+1. plates
+
+Hypothesis:
+1. w:9 d:7 c:1.0 : i bought a set of dinner plates last night
+2. w:8 d:7 c:0.9 : i bought a set of dinner plates night
+3. w:8 d:7 c:0.8888888888888888 : i bought a set of dinner last night
+4. w:7 d:7 c:0.7875 : i bought a set of dinner night
+5. w:6 d:5 c:0.7550068587105625 : i bought a set last night
+6. w:5 d:5 c:0.6546093749999999 : i bought a set night
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+the bracelet was gold plated 
+
+Expected hypothesis:
+1. plate
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : the bracelet was gold plated
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he has a steel plate in his head
+
+Expected hypothesis:
+1. plate
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : he has a steel plate in his head
+2. w:7 d:7 c:0.95 : he has a steel plate in head
+3. w:5 d:5 c:0.7896875 : he has a steel plate
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he tried to give her a pick-up line
+
+Expected hypothesis:
+1. pick-up
+
+Hypothesis:
+1. w:8 d:8 c:1.0 : he tried to give her a pick-up line
+2. w:7 d:8 c:0.9760416666666667 : he tried to give a pick-up line
+3. w:7 d:8 c:0.8875 : he tried to give her a line
+4. w:6 d:8 c:0.8631994047619047 : he tried to give a line
+5. w:5 d:8 c:0.8377284521484375 : he tried to give her
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I've gotta pick up the kids at 4
+
+Expected hypothesis:
+1. pick-up
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : I've got ta pick up the kids at 4
+2. w:9 d:7 c:0.93 : I've got ta pick up the kids at
+3. w:9 d:10 c:0.91 : I've got pick up the kids at 4
+4. w:8 d:8 c:0.9093333333333333 : I've got ta pick up kids at
+5. w:8 d:7 c:0.8927999999999999 : I've got ta pick up the kids
+6. w:7 d:8 c:0.8749439999999999 : I've got ta pick up kids
+7. w:8 d:8 c:0.8392222222222223 : I've got pick up the kids at
+8. w:7 d:8 c:0.8019234567901236 : I've got pick up the kids
+9. w:6 d:6 c:0.7723720164609054 : I've got ta pick at
+10. w:5 d:6 c:0.7559516159999999 : I've got ta pick
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+pick up those papers from the floor 
+
+Expected hypothesis:
+1. pick-up
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : pick up those papers from the floor
+2. w:6 d:7 c:0.9714285714285714 : pick up those papers from floor
+3. w:4 d:5 c:0.7850728862973761 : pick up those papers
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Things are sure to pick up later on
+
+Expected hypothesis:
+1. pick-up
+
+Hypothesis:
+1. w:8 d:9 c:1.0 : Things are sure to pick up later on
+2. w:7 d:9 c:0.95 : Things are sure to pick up later
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I didn't pick up on that right away 
+
+Expected hypothesis:
+1. pick-up
+
+Hypothesis:
+1. w:9 d:7 c:1.0 : I did n't pick up on that right away
+2. w:6 d:6 c:0.8408888888888889 : I did n't pick up away
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she has to get her license first 
+
+Expected hypothesis:
+1. license
+
+Hypothesis:
+1. w:7 d:8 c:1.0 : she has to get her license first
+2. w:6 d:8 c:0.9428571428571428 : she has to get license first
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+why don't they offer civics class any more in school? 
+
+Expected hypothesis:
+1. civic
+
+Hypothesis:
+1. w:12 d:6 c:1.0 : why do n't they offer civics class any more in school
+2. w:10 d:12 c:0.9375 : why do n't they offer civics class any in school
+3. w:9 d:9 c:0.8861111111111111 : why do n't they offer civics class any more
+4. w:8 d:8 c:0.81 : why do n't they offer civics class any
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Ms. Georgia Jones
+
+Expected hypothesis:
+1. georgia
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Ms Georgia Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Ms. Virginia Jones
+
+Expected hypothesis:
+1. virginia
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Ms Virginia Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Ms. Caroline Jones
+
+Expected hypothesis:
+1. carolina
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Ms Caroline Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he ran the 100 yard dash last year 
+
+Expected hypothesis:
+1. dash
+
+Hypothesis:
+1. w:8 d:5 c:1.0 : he ran the 100 yard dash last year
+2. w:7 d:5 c:0.93 : he ran the yard dash last year
+3. w:7 d:5 c:0.8875 : he ran the 100 yard dash year
+4. w:6 d:5 c:0.8165 : he ran the yard dash year
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+you need to put a dash there 
+
+Expected hypothesis:
+1. dash
+
+Hypothesis:
+1. w:7 d:8 c:1.0 : you need to put a dash there
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he was wearing vans
+
+Expected hypothesis:
+1. van
+
+Hypothesis:
+1. w:4 d:6 c:1.0 : he was wearing vans
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+van gogh is my favorite painter
+
+Expected hypothesis:
+1. van
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : van gogh is my favorite painter
+2. w:5 d:5 c:0.9466666666666667 : van gogh is favorite painter
+3. w:5 d:5 c:0.85 : van gogh is my painter
+4. w:4 d:5 c:0.782 : van gogh is painter
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she bought a convertible car seat 
+
+Expected hypothesis:
+1. convertible
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : she bought a convertible car seat
+2. w:5 d:5 c:0.85 : she bought a car seat
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i saw an impala at the zoo last week 
+
+Expected hypothesis:
+1. impala
+
+Hypothesis:
+1. w:9 d:6 c:1.0 : i saw an impala at the zoo last week
+2. w:8 d:6 c:0.9777777777777777 : i saw an impala at zoo last week
+3. w:8 d:6 c:0.9 : i saw an impala at the zoo week
+4. w:7 d:6 c:0.8775000000000001 : i saw an impala at zoo week
+5. w:6 d:5 c:0.8305075445816187 : i saw an impala last week
+6. w:5 d:5 c:0.729421875 : i saw an impala week
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i drank a whole bottle of burgundy last week 
+
+Expected hypothesis:
+1. burgundy
+
+Hypothesis:
+1. w:9 d:7 c:1.0 : i drank a whole bottle of burgundy last week
+2. w:8 d:7 c:0.9 : i drank a bottle of burgundy last week
+3. w:8 d:7 c:0.9 : i drank a whole bottle of burgundy week
+4. w:7 d:5 c:0.8493827160493828 : i drank a whole bottle last week
+5. w:7 d:7 c:0.7987500000000001 : i drank a bottle of burgundy week
+6. w:6 d:5 c:0.7481249999999999 : i drank a bottle last week
+7. w:6 d:5 c:0.7481249999999999 : i drank a whole bottle week
+8. w:5 d:5 c:0.6455204081632654 : i drank a bottle week
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+the passengers on the plane were all shouting
+
+Expected hypothesis:
+1. passenger
+
+Hypothesis:
+1. w:8 d:6 c:1.0 : the passengers on the plane were all shouting
+2. w:7 d:6 c:0.975 : the passengers on plane were all shouting
+3. w:5 d:5 c:0.81046875 : the passengers were all shouting
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i can play a chord on the guitar
+
+Expected hypothesis:
+1. accord    
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : i can play a chord on the guitar
+2. w:7 d:7 c:0.975 : i can play a chord on guitar
+3. w:5 d:6 c:0.81046875 : i can play a chord
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+we were all in accord with one another
+
+Expected hypothesis:
+1. accord
+
+Hypothesis:
+1. w:8 d:9 c:1.0 : we were all in accord with one another
+2. w:7 d:9 c:0.9125 : we were all in accord with another
+3. w:5 d:7 c:0.8452031249999999 : we were all in accord
+4. w:3 d:5 c:0.7025750976562499 : we were all
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he wrapped a cord around her neck
+
+Expected hypothesis:
+1. accord
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : he wrapped a cord around her neck
+2. w:6 d:5 c:0.9428571428571428 : he wrapped a cord around neck
+3. w:4 d:5 c:0.7619825072886297 : he wrapped a cord
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+My daughter is a taurus
+
+Expected hypothesis:
+1. taurus
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : My daughter is a taurus
+2. w:4 d:5 c:0.9199999999999999 : daughter is a taurus
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+what other explorer do you know besides dora?
+
+Expected hypothesis:
+1. explorer
+
+Hypothesis:
+1. w:9 d:7 c:1.0 : what other explorer do you know besides dora
+2. w:7 d:7 c:0.9 : what explorer do you know besides dora
+3. w:6 d:5 c:0.8493827160493828 : what other explorer do you know
+4. w:5 d:5 c:0.7273469387755103 : what explorer do you know
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Ms. Portia Jones
+
+Expected hypothesis:
+1. porsche
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Ms Portia Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Ms. Mercedes Jones
+
+Expected hypothesis:
+1. mercedes
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Ms Mercedes Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He's a smart boy
+
+Expected hypothesis:
+1. smart
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : He's a smart boy
+2. w:4 d:5 c:0.82 : He's a boy
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+That smarts!
+
+Expected hypothesis:
+1. smart
+
+Hypothesis:
+1. w:3 d:4 c:1.0 : That smarts
+2. w:1 d:3 c:0.9450000000000001 : smarts
+3. w:1 d:4 c:0.7833333333333333 : That
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+That Outfit is smart!
+
+Expected hypothesis:
+1. smart
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : That Outfit is smart
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+That's an accurate description... 
+
+Expected hypothesis:
+1. acura
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : That's an accurate description
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+The biggest number is infinity plus 1
+
+Expected hypothesis:
+1. infiniti
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : The biggest number is infinity plus 1
+2. w:6 d:5 c:0.92 : The biggest number is infinity plus
+3. w:6 d:7 c:0.8714285714285714 : The number is infinity plus 1
+4. w:5 d:5 c:0.7900952380952381 : The number is infinity plus
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Why don't you go then?
+
+Expected hypothesis:
+1. yugo
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : Why do n't you go then
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Ms. Kia Jones
+
+Expected hypothesis:
+1. kia
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Ms Kia Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+She reported with lacerations on her vulva
+
+Expected hypothesis:
+1. volvo
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : She reported with lacerations on her vulva
+2. w:6 d:6 c:0.9428571428571428 : She reported with lacerations on vulva
+3. w:5 d:6 c:0.8514648526077098 : She reported on her vulva
+4. w:4 d:6 c:0.8410065889212829 : She reported with lacerations
+5. w:4 d:6 c:0.7803481481481481 : She reported on vulva
+6. w:2 d:4 c:0.5676794475218659 : She reported
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. George Bentley
+
+Expected hypothesis:
+1. bentley
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr George Bentley
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+The kid was killed by a wild jaguar
+
+Expected hypothesis:
+1. jaguar
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : The kid was killed by a wild jaguar
+2. w:7 d:7 c:0.8875 : The kid was killed by a jaguar
+3. w:6 d:7 c:0.8653124999999999 : The kid was killed by jaguar
+4. w:4 d:5 c:0.719291015625 : The kid was killed
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Lincoln was the best Republican ever. 
+
+Expected hypothesis:
+1. lincoln
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : Lincoln was the best Republican ever
+2. w:5 d:5 c:0.8971428571428571 : Lincoln was the Republican ever
+3. w:5 d:5 c:0.8642857142857143 : was the best Republican ever
+4. w:4 d:5 c:0.7266857142857143 : was the Republican ever
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. Lincoln Jones
+
+Expected hypothesis:
+1. lincoln
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr Lincoln Jones
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Mr. John Lincoln
+
+Expected hypothesis:
+1. lincoln
+
+Hypothesis:
+1. w:3 d:3 c:1.0 : Mr John Lincoln
+2. w:1 d:3 c:0.017937499999999995 : NP
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+The pilgrims landed on Plymouth rock 
+
+Expected hypothesis:
+1. plymouth
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : The pilgrims landed on Plymouth rock
+2. w:5 d:6 c:0.8416666666666667 : The pilgrims landed on rock
+3. w:5 d:6 c:0.8333333333333334 : The pilgrims landed on Plymouth
+4. w:3 d:4 c:0.6546296296296297 : The pilgrims landed
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Saturn was a roman god
+
+Expected hypothesis:
+1. saturn
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : Saturn was a roman god
+2. w:4 d:4 c:0.81 : was a roman god
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I have a huge fear of spiders
+
+Expected hypothesis:
+1. spider
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : I have a huge fear of spiders
+2. w:6 d:7 c:0.8714285714285714 : I have a fear of spiders
+3. w:5 d:5 c:0.8081632653061225 : I have a huge fear
+4. w:4 d:5 c:0.6777777777777778 : I have a fear
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I used to play lacrosse in high school
+
+Expected hypothesis:
+1. lacrosse
+
+Hypothesis:
+1. w:8 d:9 c:1.0 : I used to play lacrosse in high school
+2. w:7 d:9 c:0.8875 : I used to play lacrosse in school
+3. w:5 d:8 c:0.7377343749999999 : I used to play lacrosse
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I didn;t know she was so intrepid
+
+Expected hypothesis:
+1. intrepid
+
+Hypothesis:
+1. w:9 d:9 c:1.0 : I didn t know she was so intrepid
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+that neon sign has been broken for ages
+
+Expected hypothesis:
+1. neon
+
+Hypothesis:
+1. w:8 d:9 c:1.0 : that neon sign has been broken for ages
+2. w:2 d:4 c:1.0 : that neon
+3. w:6 d:7 c:0.8312499999999999 : that neon sign has been broken
+4. w:1 d:3 c:0.8 : neon
+GENERATED: 1/1
+---------------------------------------------------------
+Input phrase:
+Mary Rogers from Lucerne, PA
+
+Expected hypothesis:
+1. lucerne
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : Mary Rogers from Lucerne PA
+2. w:4 d:5 c:0.8333333333333334 : Mary Rogers from Lucerne
+3. w:2 d:3 c:0.6546296296296297 : Mary Rogers
+4. w:2 d:4 c:0.5198343750000001 : from PA
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+She looked quite regal in that dress
+
+Expected hypothesis:
+1. regal
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : She looked quite regal in that dress
+2. w:6 d:6 c:0.9714285714285714 : She looked quite regal in dress
+3. w:4 d:5 c:0.7850728862973761 : She looked quite regal
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+it's next to the Pacific ocean 
+
+Expected hypothesis:
+1. pacifica
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : it's next to the Pacific ocean
+2. w:6 d:7 c:0.8642857142857143 : it's next to the ocean
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Usain Bolt is really fast
+
+Expected hypothesis:
+1. bolt
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : Usain Bolt is really fast
+2. w:3 d:5 c:0.6176250000000001 : is really fast
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+They vacationed on the Riviera
+
+Expected hypothesis:
+1. riviera
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : They vacationed on the Riviera
+2. w:4 d:6 c:0.96 : They vacationed on Riviera
+3. w:4 d:6 c:0.81 : They vacationed on the
+4. w:2 d:4 c:0.715392 : They vacationed
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He bolted right out of there
+
+Expected hypothesis:
+1. bolt
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : He bolted right out of there
+2. w:4 d:5 c:0.8944444444444445 : He bolted right out
+3. w:4 d:6 c:0.7777777777777778 : He bolted of there
+4. w:2 d:4 c:0.65625 : He bolted
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+make sure you bolt the door
+
+Expected hypothesis:
+1. bolt
+
+Hypothesis:
+1. w:6 d:7 c:1.0 : make sure you bolt the door
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+That's a 220 volt line
+
+Expected hypothesis:
+1. volt
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : That's a 220 volt line
+2. w:5 d:5 c:0.9066666666666667 : That's a volt line
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I grew up in a suburban town 
+
+Expected hypothesis:
+1. suburban
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : I grew up in a suburban town
+2. w:6 d:6 c:0.8714285714285714 : I grew up in a town
+3. w:5 d:6 c:0.8465306122448979 : I grew up in town
+4. w:3 d:5 c:0.6841349437734278 : I grew up
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+My favore vacation spot is Lake Tahoe
+
+Expected hypothesis:
+1. tahoe
+
+Hypothesis:
+1. w:7 d:5 c:1.0 : My favore vacation spot is Lake Tahoe
+2. w:6 d:5 c:0.9542857142857143 : favore vacation spot is Lake Tahoe
+3. w:6 d:5 c:0.8714285714285714 : My vacation spot is Lake Tahoe
+4. w:5 d:5 c:0.8133333333333334 : vacation spot is Lake Tahoe
+5. w:5 d:4 c:0.7274404761904762 : My favore vacation spot is
+6. w:4 d:4 c:0.6505842857142857 : favore vacation spot is
+7. w:4 d:4 c:0.5940964285714285 : My vacation spot is
+8. w:3 d:4 c:0.5023350000000001 : vacation spot is
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He was a real trailblazer in the field of medicine
+
+Expected hypothesis:
+1. trailblazer
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : He was a real trailblazer in the field of medicine
+2. w:9 d:9 c:0.91 : He was a trailblazer in the field of medicine
+3. w:8 d:7 c:0.864 : He was a real trailblazer in the field
+4. w:7 d:7 c:0.8467199999999999 : He was a real trailblazer in field
+5. w:7 d:7 c:0.7729382716049383 : He was a trailblazer in the field
+6. w:6 d:7 c:0.755761865569273 : He was a trailblazer in field
+7. w:5 d:5 c:0.7315660799999999 : He was a real trailblazer
+8. w:4 d:5 c:0.6419310660637776 : He was a trailblazer
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Wy are you always so cavalier about these things? 
+
+Expected hypothesis:
+1. cavalier
+
+Hypothesis:
+1. w:10 d:8 c:1.0 : Wy are you always so cavalier about these things
+2. w:8 d:7 c:0.98 : Wy are you always so cavalier about things
+3. w:6 d:6 c:0.8467199999999999 : Wy are you always so cavalier
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I only care about celebrity news
+
+Expected hypothesis:
+1. celebrity
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : I only care about celebrity news
+2. w:5 d:6 c:0.8333333333333334 : I only care about celebrity
+3. w:3 d:5 c:0.6481481481481481 : I only care
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+She dyed her hair cobalt blue
+
+Expected hypothesis:
+1. cobalt 
+2. blue
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : She dyed her hair cobalt blue
+2. w:5 d:5 c:0.9333333333333333 : She dyed hair cobalt blue
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+i always ride the metro in DC
+
+Expected hypothesis:
+1. metro
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : i always ride the metro in DC
+2. w:5 d:5 c:0.8081632653061225 : i always ride the metro
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+my dream is to go to monte carlo
+
+Expected hypothesis:
+1. monte carlo
+
+Hypothesis:
+1. w:8 d:9 c:1.0 : my dream is to go to monte carlo
+2. w:7 d:9 c:0.95 : dream is to go to monte carlo
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+did you catch the last episode of nova
+
+Expected hypothesis:
+1. nova
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : did you catch the last episode of nova
+2. w:7 d:7 c:0.8875 : did you catch the episode of nova
+3. w:6 d:5 c:0.8312499999999999 : did you catch the last episode
+4. w:5 d:5 c:0.7172448979591837 : did you catch the episode
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I always root for "nova
+
+Expected hypothesis:
+1. nova
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : I always root for `` nova
+2. w:5 d:6 c:1.0 : I always root for nova
+3. w:3 d:5 c:0.7453703703703705 : I always root
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+someday soon Betelgeuse is going to nova 
+
+Expected hypothesis:
+1. nova
+
+Hypothesis:
+1. w:7 d:10 c:1.0 : someday soon Betelgeuse is going to nova
+2. w:6 d:8 c:0.8642857142857143 : someday soon is going to nova
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+my kid has to wear a green blazer to school
+
+Expected hypothesis:
+1. green
+2. blazer
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : my kid has to wear a green blazer to school
+2. w:9 d:9 c:0.96 : kid has to wear a green blazer to school
+3. w:9 d:9 c:0.91 : my kid has to wear a blazer to school
+4. w:8 d:9 c:0.864 : kid has to wear a blazer to school
+GENERATED: 0/2
+---------------------------------------------------------
+Input phrase:
+I love Cruella DeVille
+
+Expected hypothesis:
+1. deville
+
+Hypothesis:
+1. w:4 d:5 c:1.0 : I love Cruella DeVille
+2. w:2 d:4 c:0.5210416666666666 : I love
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I ike to drink beer and play darts
+
+Expected hypothesis:
+1. dart
+
+Hypothesis:
+1. w:8 d:9 c:1.0 : I ike to drink beer and play darts
+2. w:6 d:8 c:0.8851582031249999 : I ike to drink beer and
+3. w:6 d:6 c:0.8453821614583333 : I ike to and play darts
+4. w:4 d:6 c:0.760322186009725 : I and play darts
+5. w:4 d:5 c:0.717051388136122 : I ike to and
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+She just darted out of the room 
+
+Expected hypothesis:
+1. dart
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : She just darted out of the room
+2. w:6 d:6 c:0.9714285714285714 : She just darted out of room
+3. w:6 d:6 c:0.9578571428571429 : She just darted of the room
+4. w:5 d:6 c:0.9259285714285714 : She just darted of room
+5. w:6 d:6 c:0.8891964285714286 : She darted out of the room
+6. w:5 d:6 c:0.8595565476190477 : She darted out of room
+7. w:5 d:6 c:0.8299166666666666 : She darted of the room
+8. w:4 d:6 c:0.7907920238095238 : She darted of room
+9. w:4 d:5 c:0.7850728862973761 : She just darted out
+10. w:3 d:5 c:0.7201666666666666 : She just darted
+11. w:3 d:5 c:0.6685439814814814 : She darted out
+12. w:2 d:4 c:0.58638592 : She darted
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i bought that horse when he was just a colt
+
+Expected hypothesis:
+1. colt
+
+Hypothesis:
+1. w:10 d:8 c:1.0 : i bought that horse when he was just a colt
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He was carrying a colt
+
+Expected hypothesis:
+1. colt
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : He was carrying a colt
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+They were drinking colt 45
+
+Expected hypothesis:
+1. colt
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : They were drinking colt 45
+2. w:4 d:6 c:0.888 : They were drinking colt
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he was the challenger on the game show 
+
+Expected hypothesis:
+1. challenger
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : he was the challenger on the game show
+2. w:6 d:7 c:0.853125 : he was the challenger on game
+3. w:4 d:5 c:0.70916015625 : he was the challenger
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+My niece is going to Daytona Beach for spring break 
+
+Expected hypothesis:
+1. daytona
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : My niece is going to Daytona Beach for spring break
+2. w:9 d:9 c:0.96 : niece is going to Daytona Beach for spring break
+3. w:9 d:9 c:0.9 : My niece is going to Daytona Beach for spring
+4. w:8 d:9 c:0.8533333333333333 : niece is going to Daytona Beach for spring
+5. w:8 d:7 c:0.8094722222222223 : My niece is going to for spring break
+6. w:7 d:7 c:0.7776 : My niece is going to Daytona Beach
+7. w:7 d:7 c:0.7567 : niece is going to for spring break
+8. w:6 d:7 c:0.7248065843621398 : niece is going to Daytona Beach
+9. w:7 d:7 c:0.7082881944444445 : My niece is going to for spring
+10. w:6 d:7 c:0.6486000000000001 : niece is going to for spring
+11. w:5 d:6 c:0.5887645616319445 : My niece is going to
+12. w:4 d:6 c:0.5241746938775511 : niece is going to
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+We shadowed the suspect for 3 hours
+
+Expected hypothesis:
+1. shadow
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : We shadowed the suspect for 3 hours
+2. w:6 d:6 c:0.9 : We shadowed the suspect for hours
+3. w:4 d:5 c:0.7273469387755102 : We shadowed the suspect
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+You'd be afraid of your own shadow
+
+Expected hypothesis:
+1. shadow
+
+Hypothesis:
+1. w:8 d:8 c:1.0 : You'd be afraid of your own shadow
+2. w:7 d:8 c:0.96 : You'd be afraid of own shadow
+3. w:7 d:8 c:0.8875 : You'd be afraid of your shadow
+4. w:6 d:8 c:0.8367857142857142 : You'd be afraid of shadow
+5. w:4 d:6 c:0.70084765625 : You'd be afraid
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+In the name of the father, and of the son, and of the holy spirit
+
+Expected hypothesis:
+1. spirit
+
+Hypothesis:
+1. w:17 d:9 c:1.0 : In the name of the father and of the son and of the holy spirit
+2. w:14 d:7 c:0.9882352941176471 : In the name of father and of the son and of the holy spirit
+3. w:14 d:7 c:0.9882352941176471 : In the name of the father and of son and of the holy spirit
+4. w:13 d:7 c:0.9741176470588235 : In the name of father and of son and of the holy spirit
+5. w:14 d:7 c:0.9470588235294117 : In the name of the father and of the son and of the spirit
+6. w:13 d:7 c:0.9359169550173011 : In the name of the father and of the son and of spirit
+7. w:13 d:7 c:0.9335294117647058 : In the name of father and of the son and of the spirit
+8. w:13 d:7 c:0.9335294117647058 : In the name of the father and of son and of the spirit
+9. w:12 d:7 c:0.9271075010950539 : In the name of the father and and of the holy spirit
+10. w:12 d:7 c:0.9191674208144796 : In the name of father and of son and of the spirit
+11. w:12 d:6 c:0.9144925494484022 : In the name and of the son and of the holy spirit
+12. w:11 d:7 c:0.9116557094101363 : In the name of father and and of the holy spirit
+13. w:12 d:7 c:0.9114957983193277 : In the name of father and of the son and of spirit
+14. w:12 d:7 c:0.9114957983193277 : In the name of the father and of son and of spirit
+15. w:11 d:9 c:0.9074725453951701 : In the name of the father and of the son and
+16. w:11 d:6 c:0.8992510069575955 : In name and of the son and of the holy spirit
+17. w:11 d:6 c:0.8992510069575955 : In the name and of son and of the holy spirit
+18. w:11 d:7 c:0.8927298294465715 : In the name of father and of son and of spirit
+19. w:10 d:9 c:0.8909730445698033 : In the name of father and of the son and
+20. w:10 d:6 c:0.8829009886492756 : In name and of son and of the holy spirit
+21. w:10 d:7 c:0.87753300277261 : In the name of the father and the holy spirit
+22. w:9 d:7 c:0.8707236571932169 : In the name of the father and of son
+23. w:11 d:7 c:0.8635899421404561 : In the name of the father and and of the spirit
+24. w:9 d:7 c:0.8585385792337606 : In the name of father and the holy spirit
+25. w:8 d:7 c:0.8513247440864471 : In the name of father and of son
+26. w:11 d:6 c:0.8492196051488594 : In the name and of the son and of the spirit
+27. w:10 d:7 c:0.8478883068288114 : In the name of father and and of the spirit
+28. w:10 d:6 c:0.8337792486916075 : In name and of the son and of the spirit
+29. w:10 d:6 c:0.8337792486916075 : In the name and of son and of the spirit
+30. w:10 d:6 c:0.8318071814357758 : In the name and of the son and of spirit
+31. w:10 d:8 c:0.8244589158226143 : In the name of the father and and of spirit
+32. w:10 d:9 c:0.8222064139941692 : In the name of the father and of son and
+33. w:9 d:6 c:0.8171036637177753 : In name and of son and of the spirit
+34. w:9 d:7 c:0.8132733380735948 : In the name of the father and the spirit
+35. w:9 d:6 c:0.8106636350325167 : In name and of the son and of spirit
+36. w:9 d:6 c:0.8106636350325167 : In the name and of son and of spirit
+37. w:9 d:7 c:0.8101260486291276 : In the name and and of the holy spirit
+38. w:9 d:9 c:0.7987026639782344 : In the name of father and of son and
+39. w:9 d:6 c:0.7968363089429804 : and of the son and of the holy spirit
+40. w:7 d:8 c:0.7962958455091412 : In the name of the father and
+41. w:8 d:7 c:0.7962432809194876 : In the name and of the son and
+42. w:9 d:7 c:0.794225112044818 : In the name of father and and of spirit
+43. w:8 d:7 c:0.7936234551917675 : In the name of father and the spirit
+44. w:8 d:6 c:0.787371101677424 : In name and of son and of spirit
+45. w:7 d:7 c:0.7763371988965004 : In name and of the son and
+46. w:6 d:8 c:0.7735445356374515 : In the name of father and
+47. w:8 d:7 c:0.7734504528663075 : In name and and of the holy spirit
+48. w:8 d:6 c:0.7734504528663075 : and of son and of the holy spirit
+49. w:8 d:6 c:0.771693545209967 : In the name of the father and spirit
+50. w:7 d:5 c:0.7526171007326155 : In the name and the holy spirit
+51. w:6 d:5 c:0.7520766614309848 : In the name and of son
+52. w:7 d:6 c:0.7496430952173108 : In and and of the holy spirit
+53. w:8 d:7 c:0.7437964273057932 : In the name and and of the spirit
+54. w:7 d:6 c:0.7378449343379327 : In the name of father and spirit
+55. w:8 d:6 c:0.730418184804218 : and of the son and of the spirit
+56. w:5 d:5 c:0.7272219883540688 : In name and of son
+57. w:6 d:5 c:0.7118161199035237 : In name and the holy spirit
+58. w:8 d:7 c:0.7103863416909622 : In the name of the father and and
+59. w:7 d:7 c:0.7059775654521578 : In name and and of the spirit
+60. w:7 d:6 c:0.7059775654521578 : and of son and of the spirit
+61. w:7 d:6 c:0.7043077766653001 : and of the son and of spirit
+62. w:7 d:9 c:0.6961786148571428 : In the name and of son and
+63. w:6 d:5 c:0.6845251495048629 : In the name and the spirit
+64. w:6 d:6 c:0.6844705329820508 : In and and of the spirit
+65. w:2 d:4 c:0.6806766610851593 : In name
+66. w:6 d:7 c:0.6802886318492942 : In name and of son and
+67. w:7 d:7 c:0.6784042380457103 : In the name of father and and
+68. w:7 d:6 c:0.6746010828232528 : In the name and and of spirit
+69. w:6 d:6 c:0.673262265012465 : In name and and of spirit
+70. w:6 d:6 c:0.673262265012465 : and of son and of spirit
+71. w:6 d:6 c:0.6617785663737147 : and and of the holy spirit
+72. w:5 d:7 c:0.6453302965827159 : and of the son and
+73. w:5 d:5 c:0.6418632763447679 : In name and the spirit
+74. w:5 d:7 c:0.6349360563926746 : name and of son and
+75. w:4 d:6 c:0.6251502777804709 : In the name and
+76. w:5 d:4 c:0.6133362906076717 : In the name and spirit
+77. w:4 d:6 c:0.6084803873763132 : In name son and
+78. w:4 d:4 c:0.6021956925944827 : In name and spirit
+79. w:5 d:6 c:0.5919811132155436 : and and of the spirit
+80. w:3 d:5 c:0.5877140967106352 : In name and
+81. w:3 d:4 c:0.5814573571127699 : In the name
+82. w:3 d:5 c:0.5654502306314442 : and of son
+83. w:5 d:5 c:0.5626259826192419 : In the name and and
+84. w:2 d:4 c:0.5563583033106334 : In spirit
+85. w:4 d:6 c:0.5563359617778225 : and of son and
+86. w:3 d:5 c:0.5549341132871976 : name son and
+87. w:4 d:5 c:0.552932939068315 : and and of spirit
+88. w:3 d:6 c:0.5128570367966333 : In and and
+89. w:2 d:4 c:0.4665371673388908 : and spirit
+90. w:1 d:3 c:0.4331663456358095 : and
+91. w:2 d:4 c:0.42292552454734983 : and and
+92. w:1 d:3 c:0.3734833883708816 : FRAG
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i only drink spirits
+
+Expected hypothesis:
+1. spirit
+
+Hypothesis:
+1. w:4 d:5 c:1.0 : i only drink spirits
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i'll be there in spirit
+
+Expected hypothesis:
+1. spirit
+
+Hypothesis:
+1. w:6 d:7 c:1.0 : i'll be there in spirit
+2. w:4 d:6 c:0.7777777777777778 : i'll be there
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Where's your team spirit? 
+
+Expected hypothesis:
+1. spirit
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : Where's your team spirit
+2. w:4 d:4 c:0.9333333333333333 : Where's team spirit
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i'm taking a journey next month 
+
+Expected hypothesis:
+1. journey 
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : i'm taking a journey next month
+2. w:6 d:6 c:0.8714285714285714 : i'm taking a journey month
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+she worked nights as an escort 
+
+Expected hypothesis:
+1. escort
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : she worked nights as an escort
+2. w:5 d:6 c:0.9666666666666667 : she worked nights as escort
+3. w:3 d:5 c:0.7518518518518519 : she worked nights
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I live in the Fairmont section of the city 
+
+Expected hypothesis:
+1. fairmont
+
+Hypothesis:
+1. w:9 d:8 c:1.0 : I live in the Fairmont section of the city
+2. w:8 d:8 c:0.9777777777777777 : I live in the Fairmont section of city
+3. w:8 d:8 c:0.9 : I live in the section of the city
+4. w:7 d:8 c:0.8775000000000001 : I live in the section of city
+5. w:6 d:6 c:0.8305075445816187 : I live in the Fairmont section
+6. w:4 d:6 c:0.7308466392318245 : I live in section
+7. w:5 d:6 c:0.729421875 : I live in the section
+8. w:2 d:4 c:0.6207685034462904 : I live
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+we're gonna have a fiesta this weekend!
+
+Expected hypothesis:
+1. fiesta
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : we're gon na have a fiesta this weekend
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He was the focus of the investigation
+
+Expected hypothesis:
+1. focus
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : He was the focus of the investigation
+2. w:6 d:7 c:0.9714285714285714 : He was the focus of investigation
+3. w:4 d:5 c:0.7850728862973761 : He was the focus
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Focus on what you're doing 
+
+Expected hypothesis:
+1. focus
+
+Hypothesis:
+1. w:6 d:8 c:1.0 : Focus on what you're doing
+2. w:3 d:5 c:1.0 : Focus on you
+3. w:1 d:3 c:0.7334211516203704 : Focus
+GENERATED: 1/1
+---------------------------------------------------------
+Input phrase:
+i hope they hurry up and figure out nuclear fusion
+
+Expected hypothesis:
+1. fusion
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : i hope they hurry up and figure out nuclear fusion
+2. w:9 d:9 c:0.91 : i hope they hurry up and figure out fusion
+3. w:8 d:7 c:0.8881512291666667 : i hope they and figure out nuclear fusion
+4. w:6 d:7 c:0.8406671550320313 : i hope they hurry up and
+5. w:7 d:7 c:0.7972437677469136 : i hope they and figure out fusion
+6. w:6 d:5 c:0.768274905873187 : i and figure out nuclear fusion
+7. w:4 d:5 c:0.7138657649839111 : i hope they and
+8. w:5 d:5 c:0.6746618890527095 : i and figure out fusion
+9. w:3 d:3 c:0.5079150766606069 : i and figure
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+it's fusion cuisine: Russian and ethiopian 
+
+Expected hypothesis:
+1. fusion
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : it's fusion cuisine Russian and ethiopian
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I hate pinto beans 
+
+Expected hypothesis:
+1. pinto
+
+Hypothesis:
+1. w:4 d:5 c:1.0 : I hate pinto beans
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Do you have any idea how huge the galaxy is? 
+
+Expected hypothesis:
+1. galaxy
+
+Hypothesis:
+1. w:11 d:11 c:1.0 : Do you have any idea how huge the galaxy is
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He tried to escape, but we managed to catch up with him 
+
+Expected hypothesis:
+1. escape
+
+Hypothesis:
+1. w:13 d:11 c:1.0 : He tried to escape but we managed to catch up with him
+2. w:10 d:14 c:0.9505917159763314 : He tried to escape but we managed to catch up
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He wants to go on an expedition to mt. everest
+
+Expected hypothesis:
+1. expedition
+
+Hypothesis:
+1. w:10 d:13 c:1.0 : He wants to go on an expedition to mt everest
+2. w:6 d:9 c:0.82125225 : He wants to go on expedition
+3. w:4 d:7 c:0.7095619439999999 : He wants to go
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+It was a cargo train 
+
+Expected hypothesis:
+1. cargo
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : It was a cargo train
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+That park ranger looked mighty suspicious 
+
+Expected hypothesis:
+1. ranger
+
+Hypothesis:
+1. w:6 d:6 c:1.0 : That park ranger looked mighty suspicious
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+They were just passing through hong kong in transit 
+
+Expected hypothesis:
+1. transit
+
+Hypothesis:
+1. w:9 d:9 c:1.0 : They were just passing through hong kong in transit
+2. w:7 d:7 c:0.8493827160493828 : They were just passing through hong kong
+3. w:6 d:7 c:0.7550068587105624 : They were just passing through hong
+4. w:4 d:5 c:0.6412897762874902 : They were just passing
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I'm part cherokee
+
+Expected hypothesis:
+1. cherokee
+
+Hypothesis:
+1. w:4 d:5 c:1.0 : I'm part cherokee
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+they always called him a renegade
+
+Expected hypothesis:
+1. renegade
+
+Hypothesis:
+1. w:6 d:5 c:1.0 : they always called him a renegade
+2. w:5 d:5 c:0.9692708333333333 : they always called a renegade
+3. w:4 d:5 c:0.8723472222222222 : they always called him
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+give me liberty or give me death 
+
+Expected hypothesis:
+1. liberty
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : give me liberty or give me death
+2. w:6 d:6 c:0.9726190476190476 : give liberty or give me death
+3. w:6 d:6 c:0.9726190476190476 : give me liberty or give death
+4. w:5 d:6 c:0.9415492724867724 : give liberty or give death
+5. w:6 d:6 c:0.9071428571428571 : give me or give me death
+6. w:6 d:6 c:0.9071428571428571 : give me liberty or give me
+7. w:5 d:6 c:0.8781646825396825 : give me or give death
+8. w:5 d:6 c:0.8672519841269841 : give liberty or give me
+9. w:4 d:6 c:0.8490585231413994 : give me liberty or
+10. w:5 d:6 c:0.8088690476190477 : give me or give me
+11. w:3 d:5 c:0.8026304189659805 : give liberty or
+12. w:4 d:6 c:0.7981884055110139 : or give me death
+13. w:3 d:5 c:0.748597771422371 : give me or
+14. w:3 d:6 c:0.7459732065093833 : or give death
+15. w:3 d:6 c:0.6957546919952877 : or give me
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I'm not at liberty to say 
+
+Expected hypothesis:
+1. liberty
+
+Hypothesis:
+1. w:7 d:9 c:1.0 : I'm not at liberty to say
+2. w:5 d:6 c:0.9022959183673469 : I'm not at liberty
+3. w:3 d:4 c:0.7292024156601417 : I'm not
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+you better take a compass with you if you're gonna go camping there 
+
+Expected hypothesis:
+1. compass
+
+Hypothesis:
+1. w:15 d:13 c:1.0 : you better take a compass with you if you're gon na go camping there
+2. w:9 d:6 c:1.0 : you better take a compass with you if you
+3. w:13 d:12 c:0.9571111111111111 : you better take a compass if you're gon na go camping there
+4. w:7 d:8 c:0.9290123456790124 : you better take a compass if you
+5. w:7 d:8 c:0.7562759320017597 : you better take a compass with you
+6. w:5 d:7 c:0.6875937300138447 : you better take a compass
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+I don't really consider myself a patriot 
+
+Expected hypothesis:
+1. patriot
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : I do n't really consider myself a patriot
+2. w:7 d:6 c:0.97421875 : I do n't really consider a patriot
+3. w:6 d:6 c:0.9038203125000001 : I do n't really consider myself
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Wranglers are my favorite jeans 
+
+Expected hypothesis:
+1. wrangler
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : Wranglers are my favorite jeans
+2. w:4 d:5 c:0.9359999999999999 : Wranglers are favorite jeans
+3. w:4 d:5 c:0.82 : Wranglers are my jeans
+4. w:3 d:5 c:0.738 : Wranglers are jeans
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+he was my commander in the navy 
+
+Expected hypothesis:
+1. commander
+
+Hypothesis:
+1. w:7 d:7 c:1.0 : he was my commander in the navy
+2. w:6 d:7 c:0.9714285714285714 : he was my commander in navy
+3. w:6 d:7 c:0.9428571428571428 : he was commander in the navy
+4. w:5 d:7 c:0.9114285714285714 : he was commander in navy
+5. w:4 d:5 c:0.7850728862973761 : he was my commander
+6. w:3 d:5 c:0.7088888888888889 : he was commander
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+You never heard of prince henry the navigator? 
+
+Expected hypothesis:
+1. navigator
+
+Hypothesis:
+1. w:9 d:8 c:1.0 : You never heard of prince henry the navigator
+2. w:6 d:5 c:0.8493827160493828 : You never heard henry the navigator
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i used to be a state trooper 
+
+Expected hypothesis:
+1. trooper
+
+Hypothesis:
+1. w:7 d:9 c:1.0 : i used to be a state trooper
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+i excel at math 
+
+Expected hypothesis:
+1. excel
+
+Hypothesis:
+1. w:4 d:6 c:1.0 : i excel at math
+2. w:2 d:4 c:0.675 : i excel
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+My sister lives in tacoma
+
+Expected hypothesis:
+1. tacoma
+
+Hypothesis:
+1. w:5 d:6 c:1.0 : My sister lives in tacoma
+2. w:4 d:6 c:0.9199999999999999 : sister lives in tacoma
+3. w:3 d:4 c:0.736 : My sister lives
+4. w:2 d:3 c:0.621 : sister lives
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+Sienna is the most beautifl city i've ever seen 
+
+Expected hypothesis:
+1. sienna
+
+Hypothesis:
+1. w:10 d:9 c:1.0 : Sienna is the most beautifl city i've ever seen
+2. w:9 d:9 c:0.925 : Sienna is the beautifl city i've ever seen
+3. w:9 d:8 c:0.905 : is the most beautifl city i've ever seen
+4. w:8 d:8 c:0.8273611111111112 : is the beautifl city i've ever seen
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+He took his entourage with him to the movies 
+
+Expected hypothesis:
+1. entourage
+
+Hypothesis:
+1. w:9 d:6 c:1.0 : He took his entourage with him to the movies
+2. w:8 d:6 c:0.9555555555555556 : He took entourage with him to the movies
+3. w:7 d:6 c:0.9474076003086419 : He took his entourage to the movies
+4. w:6 d:6 c:0.8991089572482639 : He took entourage to the movies
+5. w:6 d:6 c:0.8978669667352537 : He took his entourage with him
+6. w:5 d:6 c:0.8461076196289063 : He took entourage with him
+7. w:4 d:5 c:0.8030921202465324 : He took his entourage
+8. w:3 d:5 c:0.7394980595556642 : He took entourage
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+The beetle was a sacred insect in egypt 
+
+Expected hypothesis:
+1. beetle
+
+Hypothesis:
+1. w:8 d:7 c:1.0 : The beetle was a sacred insect in egypt
+2. w:7 d:7 c:0.8875 : The beetle was a insect in egypt
+3. w:6 d:5 c:0.8312499999999999 : The beetle was a sacred insect
+4. w:5 d:5 c:0.7172448979591837 : The beetle was a insect
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+how can you hate the beatles? 
+
+Expected hypothesis:
+1. beetle
+
+Hypothesis:
+1. w:7 d:6 c:1.0 : how can you hate the beatles
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+only rich people play golf
+
+Expected hypothesis:
+1. golf
+
+Hypothesis:
+1. w:5 d:5 c:1.0 : only rich people play golf
+2. w:4 d:5 c:0.82 : only people play golf
+GENERATED: 0/1
+---------------------------------------------------------
+Input phrase:
+let's head to the gulf of mexico next weekend 
+
+Expected hypothesis:
+1. golf
+
+Hypothesis:
+1. w:10 d:8 c:0.98 : let NP head to the gulf of mexico next weekend
+2. w:9 d:8 c:0.8917999999999999 : let NP head to the gulf of mexico weekend
+3. w:9 d:8 c:0.8869 : let head to the gulf of mexico next weekend
+4. w:8 d:7 c:0.8467199999999999 : let NP head to the gulf next weekend
+5. w:8 d:8 c:0.7976655555555555 : let head to the gulf of mexico weekend
+6. w:8 d:8 c:0.792711111111111 : let NP head to the gulf of mexico
+7. w:7 d:7 c:0.7533175308641975 : let head to the gulf next weekend
+8. w:7 d:8 c:0.6979573611111111 : let head to the gulf of mexico
+9. w:6 d:6 c:0.6733151165980795 : let NP head to the gulf
+10. w:5 d:6 c:0.5801770564236111 : let head to the gulf
+GENERATED: 0/1
+---------------------------------------------------------
+----------------------------TEST RESULTS------------------------------
+TOTAL TESTS: 182
+PASS TESTS: 3
+
