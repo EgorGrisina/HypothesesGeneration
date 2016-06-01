@@ -274,12 +274,12 @@ query=find+my+video+record+with+smth+in+gallery&query=find+video+record+with+smt
 Input phrase: can you search for newton's laws via internet
 
 Expected action: /device/commands/web/text/search
-Primary action: /personality/smalltalk/unknown
-Primary result: FAIL
+Primary action: /device/commands/web/text/search
+Primary result: DONE
 
-Received action: /personality/smalltalk/unknown
+Received action: /device/commands/web/text/search
 Resolved query: can you search for newton laws via internet
-Resolved result: FAIL
+Resolved result: DONE
 
 Hypothesis:
 1. w:8 d:8 c:0.9777777777777777 : can you search for newton laws via internet
@@ -293,12 +293,12 @@ query=can+you+search+for+newton+laws+via+internet&query=can+you+search+for+newto
 Input phrase: show me the quickest way to the art museum
 
 Expected action: /device/ecosystem/maps/navigation_start
-Primary action: /private/search/incidents
-Primary result: FAIL
+Primary action: /device/ecosystem/maps/navigation_start
+Primary result: DONE
 
-Received action: /private/search/incidents
+Received action: /device/ecosystem/maps/navigation_start
 Resolved query: show me the quickest way to the art museum
-Resolved result: FAIL
+Resolved result: DONE
 
 Hypothesis:
 1. w:9 d:8 c:1.0 : show me the quickest way to the art museum
@@ -359,9 +359,9 @@ Expected action: /private/search/cad/witness/navigate
 Primary action: /public/encyclopedia/generic
 Primary result: FAIL
 
-Received action: /private/search/cad/witness/navigate
-Resolved query: Show me how to get to witness house
-Resolved result: DONE
+Received action: /public/encyclopedia/generic
+Resolved query: Show me how to get to witness Bernie Dickens house
+Resolved result: FAIL
 
 Hypothesis:
 1. w:10 d:11 c:0.9818181818181818 : Show me how to get to witness Bernie Dickens house
@@ -394,27 +394,27 @@ Hypothesis:
 query=describe+suspect+1+in+incident+088975&query=describe+suspect+in+incident+088975&query=describe+suspect+1+in+incident&query=describe+suspect+in+incident&query=describe+suspect+1&query=describe+suspect+088975&query=describe+suspect&confidence=1.0&confidence=0.9066666666666667&confidence=0.8833333333333333&confidence=0.8051200000000001&confidence=0.6870370370370371&confidence=0.6673066666666667&confidence=0.543456
 
 ----------------------------TEST 18------------------------------
-Input phrase: gimme the information on the female suspect in case 9765
+Input phrase: give me the information on the female suspect in case 9765
 
 Expected action: /private/search/cad/arrestee/describe
 Primary action: input.unknown
 Primary result: FAIL
 
 Received action: input.unknown
-Resolved query: gim me the information on the female suspect in case 9765
+Resolved query: give me the information on the female suspect in case 9765
 Resolved result: FAIL
 
 Hypothesis:
-1. w:11 d:10 c:1.0 : gim me the information on the female suspect in case 9765
-2. w:10 d:10 c:0.9363636363636364 : gim me the information on the female suspect in case
-3. w:10 d:10 c:0.9181818181818182 : gim me the information on the suspect in case 9765
-4. w:9 d:10 c:0.853909090909091 : gim me the information on the suspect in case
-5. w:8 d:8 c:0.8202854996243426 : gim me the information on the female suspect
-6. w:6 d:8 c:0.7394772090828371 : gim me the information on suspect
-7. w:7 d:8 c:0.7377774545454546 : gim me the information on the suspect
-8. w:4 d:6 c:0.6478064806841384 : gim me the information
+1. w:11 d:9 c:1.0 : give me the information on the female suspect in case 9765
+2. w:10 d:9 c:0.9363636363636364 : give me the information on the female suspect in case
+3. w:10 d:9 c:0.9181818181818182 : give me the information on the suspect in case 9765
+4. w:9 d:9 c:0.853909090909091 : give me the information on the suspect in case
+5. w:8 d:7 c:0.8202854996243426 : give me the information on the female suspect
+6. w:6 d:7 c:0.7394772090828371 : give me the information on suspect
+7. w:7 d:7 c:0.7377774545454546 : give me the information on the suspect
+8. w:4 d:5 c:0.6478064806841384 : give me the information
 
-query=gim+me+the+information+on+the+female+suspect+in+case+9765&query=gim+me+the+information+on+the+female+suspect+in+case&query=gim+me+the+information+on+the+suspect+in+case+9765&query=gim+me+the+information+on+the+suspect+in+case&query=gim+me+the+information+on+the+female+suspect&query=gim+me+the+information+on+suspect&query=gim+me+the+information+on+the+suspect&query=gim+me+the+information&confidence=1.0&confidence=0.9363636363636364&confidence=0.9181818181818182&confidence=0.853909090909091&confidence=0.8202854996243426&confidence=0.7394772090828371&confidence=0.7377774545454546&confidence=0.6478064806841384
+query=give+me+the+information+on+the+female+suspect+in+case+9765&query=give+me+the+information+on+the+female+suspect+in+case&query=give+me+the+information+on+the+suspect+in+case+9765&query=give+me+the+information+on+the+suspect+in+case&query=give+me+the+information+on+the+female+suspect&query=give+me+the+information+on+suspect&query=give+me+the+information+on+the+suspect&query=give+me+the+information&confidence=1.0&confidence=0.9363636363636364&confidence=0.9181818181818182&confidence=0.853909090909091&confidence=0.8202854996243426&confidence=0.7394772090828371&confidence=0.7377774545454546&confidence=0.6478064806841384
 
 ----------------------------TEST 19------------------------------
 Input phrase: how do i get to witness No. 2 in this incident?
@@ -423,8 +423,8 @@ Expected action: /private/search/cad/witness/navigate
 Primary action: /device/ecosystem/maps/navigation_start
 Primary result: FAIL
 
-Received action: /private/search/cad/witness/describe
-Resolved query: how do i get to witness in this incident
+Received action: /device/ecosystem/maps/navigation_start
+Resolved query: how do i get to witness 2 in this incident
 Resolved result: FAIL
 
 Hypothesis:
@@ -460,6 +460,6 @@ query=Please+map+the+route+to+the+main+witness+in+case+3456&query=Please+map+the
 
 ----------------------------TEST RESULTS------------------------------
 TOTAL TESTS: 20
-PASS BEFORE: 1/20
-PASS AFTER: 8/20
+PASS BEFORE: 3/20
+PASS AFTER: 9/20
 

@@ -13,8 +13,8 @@ import org.apache.commons.io.IOUtils;
 
 public class S2iCommunicator {
 
-    static final String agentName = "i8_dev";
-    static final String clientKey = "a0991cdbe2504c5192ae60b60c704d11";
+    static final String agentName = "NGPS_i9_NG_STP_2";
+    static final String clientKey = "b62da3df751e4f69ae2f57a8e879dcbf";
     static final String subscriptionKey = "db5a659e-f840-4a4d-8fc5-fee52c99f321";
     static final String version = "20150701";
 
