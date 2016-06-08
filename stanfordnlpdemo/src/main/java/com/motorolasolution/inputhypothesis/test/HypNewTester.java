@@ -16,8 +16,8 @@ import java.util.List;
 
 public class HypNewTester {
 
-    final static String INPUT_FILE_NAME = "testlog/testNegative.txt";
-    final static String OUTPUT_FILE_NAME = "testlog/testNegativeResults.txt";
+    final static String INPUT_FILE_NAME = "testlog/testPositive.txt";
+    final static String OUTPUT_FILE_NAME = "testlog/testPositiveResults.txt";
 
     public static void main(String[] args) throws IOException {
 
@@ -46,6 +46,8 @@ public class HypNewTester {
         int i = 0;
         int beforePass = 0;
         int afterPass = 0;
+        int totalHyp = 0;
+        int totalExpected = 0;
         String LOG = "";
 
         try {
@@ -118,6 +120,8 @@ public class HypNewTester {
                     afterPass++;
                 }
                 LOG += "GENERATED: "+ passCount+"/"+(phrases.length-1) + "\n";
+                totalExpected += phrases.length-1;
+                totalHyp += passCount;
                 LOG += "---------------------------------------------------------";
 
                 System.out.println(LOG);
@@ -128,7 +132,10 @@ public class HypNewTester {
 
             LOG = "----------------------------TEST RESULTS------------------------------\n"
                     + "TOTAL TESTS: " + (i) + "\n"
-                    + "PASS TESTS: " + afterPass + "\n";
+                    + "PASS TESTS: " + afterPass + "\n\n"
+                    + "TOTAL EXPECTED: " + totalExpected + "\n"
+                    + "TOTAL GENERATED: " + totalHyp + "\n";
+
             System.out.println(LOG);
             writer.println(LOG);
 
